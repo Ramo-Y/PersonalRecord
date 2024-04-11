@@ -6,3 +6,6 @@ https://www.sqlite.org/
 
 ## Use MAUI
 https://learn.microsoft.com/en-us/dotnet/maui/get-started/first-app?view=net-maui-8.0&tabs=vswin&pivots=devices-android
+
+## Material Design
+https://github.com/mdc-maui/mdc-maui
