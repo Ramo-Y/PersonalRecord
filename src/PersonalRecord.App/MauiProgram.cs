@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace PersonalRecord.App
+﻿namespace PersonalRecord.App
 {
+    using Microsoft.Extensions.Logging;
+
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
