@@ -2,7 +2,7 @@
   <PropertyGroup>
     <VersionPrefix>1.0.0</VersionPrefix>
     <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
-    <ApplicationVersion>1.0.0</ApplicationVersion>
+    <ApplicationVersion>1</ApplicationVersion>
 
     <Authors>Ramazan Yilmaz</Authors>
     <Copyright>Copyright © Ramazan Yilmaz, $([System.DateTime]::Now.ToString(yyyy))</Copyright>
