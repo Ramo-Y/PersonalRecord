@@ -1,9 +1,10 @@
-namespace PersonalRecord.Views;
-
-public partial class SettingsView : ContentPage
+namespace PersonalRecord.App.Views
 {
-	public SettingsView()
-	{
-		InitializeComponent();
-	}
+    public partial class SettingsView : ContentPage
+    {
+        public SettingsView()
+        {
+            InitializeComponent();
+        }
+    }
 }

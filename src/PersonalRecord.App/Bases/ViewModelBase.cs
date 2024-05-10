@@ -1,4 +1,4 @@
-﻿namespace PersonalRecord.Bases
+﻿namespace PersonalRecord.App.Bases
 {
     using System.ComponentModel;
 

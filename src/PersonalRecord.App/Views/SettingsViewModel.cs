@@ -1,7 +1,7 @@
-﻿namespace PersonalRecord.Views
+﻿namespace PersonalRecord.App.Views
 {
+    using PersonalRecord.App.Bases;
     using PersonalRecord.Domain.Models.Entities;
-    using PersonalRecord.Bases;
     using System.Collections.ObjectModel;
 
     public class SettingsViewModel : ViewModelBase
