@@ -17,20 +17,17 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <material:DataGrid Grid.Column="0" Grid.Row="0"
-                           Margin="30"
-                           ItemsSource="{Binding UnitItems}">
-            <material:DataGrid.CellItemTemplate>
-                <DataTemplate>
-                    <Editor Margin="10" Text="{material:DataGridValueBinding Mode=TwoWay}" />
-                </DataTemplate>
-            </material:DataGrid.CellItemTemplate>
-            <material:DataGrid.Columns>
-                <material:DataGridColumn ValueBinding="{Binding Name}"
-                                         Title="Name"/>
-            </material:DataGrid.Columns>
-        </material:DataGrid>
+        <material:TextField Grid.Column="0" Grid.Row="0"
+                            Text="{Binding Setting.Unit}"
+                            Content="Unit"/>
+
+        <material:TextField Grid.Column="0" Grid.Row="1"
+                            Text="{Binding Setting.DateFormat}"
+                            Content="Date format"/>
+
     </Grid>
 </ContentPage>

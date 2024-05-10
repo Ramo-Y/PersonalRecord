@@ -2,28 +2,25 @@
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using PersonalRecord.Domain.Models.Entities;
-    using System.Collections.ObjectModel;
 
     public class SettingsViewModel : ObservableObject
     {
-        private ObservableCollection<Unit> _unitItems;
+        private Setting _setting;
 
         public SettingsViewModel()
         {
-            UnitItems =
-            [
-                new()
-                {
-                    UnitID = Guid.NewGuid(),
-                    Name = "kg"
-                }
-            ];
+            // TODO: load from Firestore
+            Setting = new Setting
+            {
+                Unit = "kg",
+                DateFormat = "yyyy-MM-dd"
+            };
         }
 
-        public ObservableCollection<Unit> UnitItems
+        public Setting Setting
         {
-            get => _unitItems;
-            set => SetProperty(ref _unitItems, value);
+            get => _setting;
+            set => SetProperty(ref _setting, value);
         }
     }
 }

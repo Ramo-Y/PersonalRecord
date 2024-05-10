@@ -13,9 +13,6 @@
         public float Value { get; set; }
 
         [FirestoreProperty]
-        public Unit Unit { get; set; }
-
-        [FirestoreProperty]
         public int Reps { get; set; }
 
         [FirestoreProperty]
