@@ -11,6 +11,6 @@
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate views:SettingsView}"
-        Route="MainPage" />
+        Route="SettingsView" />
 
 </Shell>
