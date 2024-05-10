@@ -6,8 +6,12 @@
 
         public float Value { get; set; }
 
-        public Movement Movement { get; set; }
+        public Unit Unit { get; set; }
 
-        public Guid MovementID_FK { get; set; }
+        public int Reps { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public Movement Movement { get; set; }
     }
 }
