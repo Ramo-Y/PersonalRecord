@@ -1,10 +1,10 @@
 ﻿namespace PersonalRecord.App.Views
 {
-    using PersonalRecord.App.Bases;
+    using CommunityToolkit.Mvvm.ComponentModel;
     using PersonalRecord.Domain.Models.Entities;
     using System.Collections.ObjectModel;
 
-    public class SettingsViewModel : ViewModelBase
+    public class SettingsViewModel : ObservableObject
     {
         private ObservableCollection<Unit> _unitItems;
 
@@ -23,14 +23,7 @@
         public ObservableCollection<Unit> UnitItems
         {
             get => _unitItems;
-            set
-            {
-                if (_unitItems != value)
-                {
-                    _unitItems = value;
-                    OnPropertyChanged(nameof(UnitItems));
-                }
-            }
+            set => SetProperty(ref _unitItems, value);
         }
     }
 }
