@@ -45,4 +45,20 @@
 		<PackageReference Include="UraniumUI.Material" Version="2.8.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\PersonalRecord.Domain\PersonalRecord.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\SettingsView.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\SettingsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
