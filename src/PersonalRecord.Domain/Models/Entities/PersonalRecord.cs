@@ -1,11 +1,12 @@
 ﻿namespace PersonalRecord.Domain.Models.Entities
 {
+    using global::PersonalRecord.Domain.Converters;
     using Google.Cloud.Firestore;
 
     [FirestoreData]
     public class PersonalRecord
     {
-        [FirestoreProperty]
+        [FirestoreProperty(ConverterType = typeof(GuidConverter))]
         public Guid PersonalRecordID { get; set; }
 
         [FirestoreProperty]
