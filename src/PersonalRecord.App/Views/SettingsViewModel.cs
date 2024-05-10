@@ -10,7 +10,14 @@
 
         public SettingsViewModel()
         {
-            UnitItems = [];
+            UnitItems =
+            [
+                new()
+                {
+                    UnitID = Guid.NewGuid(),
+                    Name = "kg"
+                }
+            ];
         }
 
         public ObservableCollection<Unit> UnitItems

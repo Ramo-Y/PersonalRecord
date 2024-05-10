@@ -20,8 +20,13 @@
         </Grid.RowDefinitions>
 
         <material:DataGrid Grid.Column="0" Grid.Row="0"
-                           ItemsSource="{Binding UnitItems}"
-                           HorizontalOptions="Center">
+                           Margin="30"
+                           ItemsSource="{Binding UnitItems}">
+            <material:DataGrid.CellItemTemplate>
+                <DataTemplate>
+                    <Editor Margin="10" Text="{material:DataGridValueBinding Mode=TwoWay}" />
+                </DataTemplate>
+            </material:DataGrid.CellItemTemplate>
             <material:DataGrid.Columns>
                 <material:DataGridColumn ValueBinding="{Binding Name}"
                                          Title="Name"/>
