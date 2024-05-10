@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PersonalRecord.App.Views.SettingsView"
              x:Name="SettingsViewXaml"
-             Title="SettingsView"
+             Title="Settings"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.Views"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material">
 
@@ -13,21 +13,30 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <material:TextField Grid.Column="0" Grid.Row="0"
-                            Text="{Binding Setting.Unit}"
-                            Content="Unit"/>
+        <Label Grid.Column="1" Grid.Row="1"
+               VerticalTextAlignment="Center"
+               Text="Unit"/>
+        <material:TextField Grid.Column="2" Grid.Row="1"
+                            Text="{Binding Setting.Unit}"/>
 
-        <material:TextField Grid.Column="0" Grid.Row="1"
-                            Text="{Binding Setting.DateFormat}"
-                            Content="Date format"/>
+        <Label Grid.Column="1" Grid.Row="2"
+               VerticalTextAlignment="Center"
+               Text="Date format"/>
+        <material:TextField Grid.Column="2" Grid.Row="2"
+                            Text="{Binding Setting.DateFormat}"/>
 
     </Grid>
 </ContentPage>
