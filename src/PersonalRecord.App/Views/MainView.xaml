@@ -3,13 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PersonalRecord.App.Views.MainView"
              x:Name="MainViewXaml"
-             xmlns:viewModels="clr-namespace:PersonalRecord.App.Views"
+             xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             x:DataType="viewModels:MainViewModel"
              Title="MainView">
-
-    <ContentPage.BindingContext>
-        <viewModels:MainViewModel/>
-    </ContentPage.BindingContext>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -28,6 +25,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
-        
+
+        <Button Grid.Column="1" Grid.Row="1"
+                Text="To GraphicsPage"
+                Command="{Binding GoToSettingsViewCommand}"/>
+
     </Grid>
 </ContentPage>

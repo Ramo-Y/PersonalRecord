@@ -1,4 +1,4 @@
-﻿namespace PersonalRecord.App.Views
+﻿namespace PersonalRecord.App.ViewModels
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using PersonalRecord.Domain.Models.Entities;

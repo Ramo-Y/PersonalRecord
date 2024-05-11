@@ -4,7 +4,7 @@
              x:Class="PersonalRecord.App.Views.SettingsView"
              x:Name="SettingsViewXaml"
              Title="Settings"
-             xmlns:viewModels="clr-namespace:PersonalRecord.App.Views"
+             xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material">
 
     <ContentPage.BindingContext>
