@@ -31,5 +31,26 @@
                 Text="To GraphicsPage"
                 Command="{Binding GoToSettingsViewCommand}"/>
 
+        <material:DataGrid Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="3"
+                           Margin="5, 10"
+                           UseAutoColumns="False"
+                           ItemsSource="{Binding PersonalRecords}">
+            <material:DataGrid.CellItemTemplate>
+                <DataTemplate>
+                    <Editor Margin="10" Text="{material:DataGridValueBinding Mode=TwoWay}" />
+                </DataTemplate>
+            </material:DataGrid.CellItemTemplate>
+            <material:DataGrid.Columns>
+                <material:DataGridColumn ValueBinding="{Binding Movement.Name}"
+                                         Title="Movement"/>
+                <material:DataGridColumn ValueBinding="{Binding Value}"
+                                         Title="Value"/>
+                <material:DataGridColumn ValueBinding="{Binding Reps}"
+                                         Title="Reps"/>
+                <material:DataGridColumn ValueBinding="{Binding Reps}"
+                                         Title="Reps"/>
+            </material:DataGrid.Columns>
+        </material:DataGrid>
+
     </Grid>
 </ContentPage>
