@@ -1,9 +1,14 @@
-namespace PersonalRecord.App.Views;
-
-public partial class MainView : ContentPage
+namespace PersonalRecord.App.Views
 {
-	public MainView()
-	{
-		InitializeComponent();
-	}
+    using PersonalRecord.App.ViewModels;
+
+    public partial class MainView : ContentPage
+    {
+        public MainView(MainViewModel viewModel)
+        {
+            InitializeComponent();
+
+            BindingContext = viewModel;
+        }
+    }
 }

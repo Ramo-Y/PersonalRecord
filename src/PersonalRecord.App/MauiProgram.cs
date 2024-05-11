@@ -6,6 +6,7 @@
     using PersonalRecord.App.Interfaces;
     using PersonalRecord.App.Services;
     using PersonalRecord.App.ViewModels;
+    using PersonalRecord.App.Views;
     using UraniumUI;
 
     [AutoRoutes("View")]
@@ -26,8 +27,12 @@
                 .UseUraniumUIMaterial();
 
             // Register ViewModels
+            builder.Services.AddSingleton<MainView>();
+            builder.Services.AddTransient<SettingsView>();
+
+            // Register ViewModels
             builder.Services.AddSingleton<MainViewModel>();
-            builder.Services.AddSingleton<SettingsViewModel>();
+            builder.Services.AddTransient<SettingsViewModel>();
 
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
