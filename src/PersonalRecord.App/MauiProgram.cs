@@ -1,9 +1,13 @@
 ﻿namespace PersonalRecord.App
 {
     using CommunityToolkit.Maui;
+    using epj.RouteGenerator;
     using Microsoft.Extensions.Logging;
+    using PersonalRecord.App.Interfaces;
+    using PersonalRecord.App.Services;
     using UraniumUI;
 
+    [AutoRoutes("View")]
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
@@ -19,6 +23,10 @@
                 })
                 .UseUraniumUI()
                 .UseUraniumUIMaterial();
+
+
+            // Register services
+            builder.Services.AddSingleton<INavigationService, NavigationService>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
