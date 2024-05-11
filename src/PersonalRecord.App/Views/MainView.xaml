@@ -6,7 +6,7 @@
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              x:DataType="viewModels:MainViewModel"
-             Title="MainView">
+             Title="Personal Record">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -27,6 +27,7 @@
         </Grid.RowDefinitions>
 
         <Button Grid.Column="1" Grid.Row="1"
+                Margin="5, 2"
                 Text="To GraphicsPage"
                 Command="{Binding GoToSettingsViewCommand}"/>
 
