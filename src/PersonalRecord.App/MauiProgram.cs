@@ -27,6 +27,7 @@
 
             // Register ViewModels
             builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<SettingsViewModel>();
 
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
