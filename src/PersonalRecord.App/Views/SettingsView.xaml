@@ -3,13 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PersonalRecord.App.Views.SettingsView"
              x:Name="SettingsViewXaml"
-             Title="Settings"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
-             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material">
-
-    <ContentPage.BindingContext>
-        <viewModels:SettingsViewModel/>
-    </ContentPage.BindingContext>
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             x:DataType="viewModels:SettingsViewModel"
+             Title="Settings">
     
     <Grid>
         <Grid.ColumnDefinitions>
