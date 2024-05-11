@@ -6,7 +6,7 @@
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              x:DataType="viewModels:MainViewModel"
-             Title="Personal Record">
+             Title="Personal Records">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -47,8 +47,8 @@
                                          Title="Value"/>
                 <material:DataGridColumn ValueBinding="{Binding Reps}"
                                          Title="Reps"/>
-                <material:DataGridColumn ValueBinding="{Binding Reps}"
-                                         Title="Reps"/>
+                <material:DataGridColumn ValueBinding="{Binding Date}"
+                                         Title="Date"/>
             </material:DataGrid.Columns>
         </material:DataGrid>
 
