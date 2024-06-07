@@ -43,5 +43,10 @@
             get => _setting;
             set => SetProperty(ref _setting, value);
         }
+
+        public IEnumerable<Language> Languages
+        {
+            get => Enum.GetValues(typeof(Language)).Cast<Language>();
+        }
     }
 }

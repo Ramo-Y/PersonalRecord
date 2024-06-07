@@ -10,5 +10,8 @@
 
         [FirestoreProperty]
         public string DateFormat { get; set; }
+
+        [FirestoreProperty]
+        public Language Language { get; set; }
     }
 }
