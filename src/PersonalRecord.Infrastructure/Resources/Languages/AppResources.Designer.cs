@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PersonalRecord.App.Resources.Languages {
+namespace PersonalRecord.Infrastructure.Resources.Languages {
     using System;
     
     
@@ -22,7 +22,7 @@ namespace PersonalRecord.App.Resources.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResources {
+    public class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace PersonalRecord.App.Resources.Languages {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PersonalRecord.App.Resources.Languages.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PersonalRecord.Infrastructure.Resources.Languages.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace PersonalRecord.App.Resources.Languages {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace PersonalRecord.App.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
-        internal static string Date {
+        public static string Date {
             get {
                 return ResourceManager.GetString("Date", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace PersonalRecord.App.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Date format.
         /// </summary>
-        internal static string DateFormat {
+        public static string DateFormat {
             get {
                 return ResourceManager.GetString("DateFormat", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace PersonalRecord.App.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
-        internal static string Language {
+        public static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace PersonalRecord.App.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Movement.
         /// </summary>
-        internal static string Movement {
+        public static string Movement {
             get {
                 return ResourceManager.GetString("Movement", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace PersonalRecord.App.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
-        internal static string Name {
+        public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace PersonalRecord.App.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Reps.
         /// </summary>
-        internal static string Reps {
+        public static string Reps {
             get {
                 return ResourceManager.GetString("Reps", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace PersonalRecord.App.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Unit.
         /// </summary>
-        internal static string Unit {
+        public static string Unit {
             get {
                 return ResourceManager.GetString("Unit", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace PersonalRecord.App.Resources.Languages {
         /// <summary>
         ///   Looks up a localized string similar to Value.
         /// </summary>
-        internal static string Value {
+        public static string Value {
             get {
                 return ResourceManager.GetString("Value", resourceCulture);
             }

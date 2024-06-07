@@ -5,7 +5,7 @@
              x:Name="SettingsViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
-             xmlns:lang="clr-namespace:PersonalRecord.App.Resources.Languages"
+             xmlns:lang="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:SettingsViewModel"
              Title="Settings">
     
