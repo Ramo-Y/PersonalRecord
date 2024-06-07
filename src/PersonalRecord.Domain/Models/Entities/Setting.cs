@@ -1,7 +1,7 @@
 ﻿namespace PersonalRecord.Domain.Models.Entities
 {
+    using global::PersonalRecord.Infrastructure;
     using Google.Cloud.Firestore;
-    using PersonalRecord.Infrastructure;
 
     [FirestoreData]
     public class Setting
