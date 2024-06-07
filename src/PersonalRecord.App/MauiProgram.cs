@@ -39,6 +39,9 @@
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
 
+            // Language
+            builder.Services.AddLocalization();
+
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
