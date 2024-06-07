@@ -5,6 +5,7 @@
              x:Name="MainViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:lang="clr-namespace:PersonalRecord.App.Resources.Languages"
              x:DataType="viewModels:MainViewModel"
              Title="Personal Records">
 
@@ -42,13 +43,13 @@
             </material:DataGrid.CellItemTemplate>
             <material:DataGrid.Columns>
                 <material:DataGridColumn ValueBinding="{Binding Movement.Name}"
-                                         Title="Movement"/>
+                                         Title="{Static lang:AppResources.Movement}"/>
                 <material:DataGridColumn ValueBinding="{Binding Value}"
-                                         Title="Value"/>
+                                         Title="{Static lang:AppResources.Value}"/>
                 <material:DataGridColumn ValueBinding="{Binding Reps}"
-                                         Title="Reps"/>
+                                         Title="{Static lang:AppResources.Reps}"/>
                 <material:DataGridColumn ValueBinding="{Binding Date}"
-                                         Title="Date"/>
+                                         Title="{Static lang:AppResources.Date}"/>
             </material:DataGrid.Columns>
         </material:DataGrid>
 
