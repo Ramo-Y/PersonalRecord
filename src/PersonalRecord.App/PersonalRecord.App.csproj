@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\PersonalRecord.Domain\PersonalRecord.Domain.csproj" />
+	  <ProjectReference Include="..\PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Domain", "Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Database", "PersonalRecord.Database\PersonalRecord.Database.csproj", "{977594FB-660C-440F-866A-2F10E8DF1295}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalRecord.Infrastructure", "PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj", "{96557DCD-4575-4658-8731-E9FA044B34B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{977594FB-660C-440F-866A-2F10E8DF1295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{977594FB-660C-440F-866A-2F10E8DF1295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{977594FB-660C-440F-866A-2F10E8DF1295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96557DCD-4575-4658-8731-E9FA044B34B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96557DCD-4575-4658-8731-E9FA044B34B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96557DCD-4575-4658-8731-E9FA044B34B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96557DCD-4575-4658-8731-E9FA044B34B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

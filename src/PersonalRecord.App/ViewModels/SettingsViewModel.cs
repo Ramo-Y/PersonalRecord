@@ -2,6 +2,7 @@
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using PersonalRecord.Domain.Models.Entities;
+    using PersonalRecord.Infrastructure;
     using System.Collections.ObjectModel;
 
     public class SettingsViewModel : ObservableObject

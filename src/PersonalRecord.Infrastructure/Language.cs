@@ -1,4 +1,4 @@
-﻿namespace PersonalRecord.Domain.Models.Entities
+﻿namespace PersonalRecord.Infrastructure
 {
     public enum Language
     {
