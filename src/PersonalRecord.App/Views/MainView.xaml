@@ -29,7 +29,7 @@
 
         <Button Grid.Column="1" Grid.Row="1"
                 Margin="5, 2"
-                Text="To GraphicsPage"
+                Text="{extensions:Localize Settings}"
                 Command="{Binding GoToSettingsViewCommand}"/>
 
         <material:DataGrid Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="3"
