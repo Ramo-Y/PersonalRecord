@@ -4,7 +4,7 @@
     using Google.Cloud.Firestore;
 
     [FirestoreData]
-    public class PersonalRecord
+    public class MovementRecord
     {
         [FirestoreProperty(ConverterType = typeof(GuidConverter))]
         public Guid PersonalRecordID { get; set; }

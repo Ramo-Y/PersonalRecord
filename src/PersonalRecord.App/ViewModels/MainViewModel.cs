@@ -10,7 +10,7 @@
     {
         private readonly INavigationService _navigationService;
 
-        private ObservableCollection<PersonalRecord> _personalRecords;
+        private ObservableCollection<MovementRecord> _movementRecords;
 
         private ObservableCollection<Movement> _movements;
 
@@ -31,7 +31,7 @@
                 }
             ];
 
-            PersonalRecords =
+            MovementRecords =
             [
                 new()
                 {
@@ -42,11 +42,12 @@
                 }
             ];
         }
-        public ObservableCollection<PersonalRecord> PersonalRecords
+        public ObservableCollection<MovementRecord> MovementRecords
         {
-            get => _personalRecords;
-            set => SetProperty(ref _personalRecords, value);
+            get => _movementRecords;
+            set => SetProperty(ref _movementRecords, value);
         }
+
         public ObservableCollection<Movement> Movements
         {
             get => _movements;
