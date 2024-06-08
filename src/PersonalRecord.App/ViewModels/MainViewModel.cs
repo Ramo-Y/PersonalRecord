@@ -37,7 +37,7 @@
                 {
                     Date = DateTime.Now,
                     Reps = 1,
-                    Value = 100,
+                    Weight = 100,
                     Movement = Movements?.FirstOrDefault()
                 }
             ];

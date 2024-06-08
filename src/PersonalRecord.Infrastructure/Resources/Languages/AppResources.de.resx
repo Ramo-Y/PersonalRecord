@@ -138,7 +138,7 @@
   <data name="Unit" xml:space="preserve">
     <value>Einheit</value>
   </data>
-  <data name="Value" xml:space="preserve">
-    <value>Wert</value>
+  <data name="Weight" xml:space="preserve">
+    <value>Gewicht</value>
   </data>
 </root>

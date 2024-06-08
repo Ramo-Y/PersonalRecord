@@ -10,7 +10,7 @@
         public Guid PersonalRecordID { get; set; }
 
         [FirestoreProperty]
-        public float Value { get; set; }
+        public float Weight { get; set; }
 
         [FirestoreProperty]
         public int Reps { get; set; }

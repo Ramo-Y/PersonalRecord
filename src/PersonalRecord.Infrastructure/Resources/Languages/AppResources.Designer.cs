@@ -124,11 +124,11 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Value.
+        ///   Looks up a localized string similar to Weight.
         /// </summary>
-        public static string Value {
+        public static string Weight {
             get {
-                return ResourceManager.GetString("Value", resourceCulture);
+                return ResourceManager.GetString("Weight", resourceCulture);
             }
         }
     }
