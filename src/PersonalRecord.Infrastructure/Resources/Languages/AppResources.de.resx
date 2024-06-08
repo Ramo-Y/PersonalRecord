@@ -129,8 +129,20 @@
   <data name="Movement" xml:space="preserve">
     <value>Bewegung</value>
   </data>
+  <data name="MovementRecord" xml:space="preserve">
+    <value>Bewegungsaufzeichnung</value>
+  </data>
+  <data name="MovementRecords" xml:space="preserve">
+    <value>Bewegungsaufzeichnungen</value>
+  </data>
+  <data name="Movements" xml:space="preserve">
+    <value>Bewegungen</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="PersonalRecordTitle" xml:space="preserve">
+    <value>Personal Record</value>
   </data>
   <data name="Reps" xml:space="preserve">
     <value>Wiederholungen</value>

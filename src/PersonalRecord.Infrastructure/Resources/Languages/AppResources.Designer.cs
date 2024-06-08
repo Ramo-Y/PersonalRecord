@@ -97,11 +97,47 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Movement record.
+        /// </summary>
+        public static string MovementRecord {
+            get {
+                return ResourceManager.GetString("MovementRecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Movement records.
+        /// </summary>
+        public static string MovementRecords {
+            get {
+                return ResourceManager.GetString("MovementRecords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Movements.
+        /// </summary>
+        public static string Movements {
+            get {
+                return ResourceManager.GetString("Movements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Personal Record.
+        /// </summary>
+        public static string PersonalRecordTitle {
+            get {
+                return ResourceManager.GetString("PersonalRecordTitle", resourceCulture);
             }
         }
         
