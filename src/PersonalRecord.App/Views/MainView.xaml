@@ -7,15 +7,11 @@
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MainViewModel"
-             Title="Personal Records">
+             Title="{extensions:Localize PersonalRecordTitle}">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -23,8 +19,8 @@
             <RowDefinition Height="5"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
@@ -33,31 +29,9 @@
                 Text="{extensions:Localize Settings}"
                 Command="{Binding GoToSettingsViewCommand}"/>
 
-        <material:DataGrid Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="3"
-                           Margin="5, 10"
-                           UseAutoColumns="False"
-                           ItemsSource="{Binding MovementRecords}">
-            <material:DataGrid.CellItemTemplate>
-                <DataTemplate>
-                    <Editor Margin="10" Text="{material:DataGridValueBinding Mode=TwoWay}" />
-                </DataTemplate>
-            </material:DataGrid.CellItemTemplate>
-            <material:DataGrid.Columns>
-                <material:DataGridColumn ValueBinding="{Binding Movement.Name}"
-                                         Title="{extensions:Localize Movement}"/>
-                <material:DataGridColumn ValueBinding="{Binding Weight}"
-                                         Title="{extensions:Localize Weight}"/>
-                <material:DataGridColumn ValueBinding="{Binding Reps}"
-                                         Title="{extensions:Localize Reps}"/>
-                <!--TODO: Format from settings-->
-                <material:DataGridColumn ValueBinding="{Binding Date, StringFormat=yyyy-MM-dd}"
-                                         Title="{extensions:Localize Date}"/>
-            </material:DataGrid.Columns>
-        </material:DataGrid>
-
-        <Button Grid.Column="3" Grid.Row="4"
+        <Button Grid.Column="1" Grid.Row="2"
                 Margin="5, 2"
-                Text="Add"
-                Command="{Binding GoToMovementRecordDetailsViewCommand}"/>
+                Text="{extensions:Localize Movements}"
+                Command="{Binding GoToMovementRecordsViewCommand}"/>
     </Grid>
 </ContentPage>

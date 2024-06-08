@@ -7,7 +7,7 @@
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:SettingsViewModel"
-             Title="Settings">
+             Title="{extensions:Localize Settings}">
     
     <Grid>
         <Grid.ColumnDefinitions>

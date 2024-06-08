@@ -7,7 +7,8 @@
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MovementRecordDetailViewModel"
-             Title="MovementRecordDetailView">
+             Title="{extensions:Localize MovementRecord}">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
