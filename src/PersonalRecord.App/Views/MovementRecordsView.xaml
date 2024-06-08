@@ -13,30 +13,18 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <material:DataGrid Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="3"
+        <material:DataGrid Grid.Column="1" Grid.Row="1"
                            Margin="5, 10"
                            UseAutoColumns="False"
                            ItemsSource="{Binding MovementRecords}">
-            <material:DataGrid.CellItemTemplate>
-                <DataTemplate>
-                    <Editor Margin="10" Text="{material:DataGridValueBinding Mode=TwoWay}" />
-                </DataTemplate>
-            </material:DataGrid.CellItemTemplate>
             <material:DataGrid.Columns>
                 <material:DataGridColumn ValueBinding="{Binding Movement.Name}"
                                          Title="{extensions:Localize Movement}"/>
