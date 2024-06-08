@@ -24,6 +24,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
@@ -54,5 +55,9 @@
             </material:DataGrid.Columns>
         </material:DataGrid>
 
+        <Button Grid.Column="3" Grid.Row="4"
+                Margin="5, 2"
+                Text="Add"
+                Command="{Binding GoToMovementRecordDetailsViewCommand}"/>
     </Grid>
 </ContentPage>

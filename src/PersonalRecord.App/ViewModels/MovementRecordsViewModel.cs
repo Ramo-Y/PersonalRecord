@@ -5,7 +5,7 @@
     using PersonalRecord.Domain.Models.Entities;
     using System.Collections.ObjectModel;
 
-    public class MovementRecordsViewModel : ObservableObject
+    public partial class MovementRecordsViewModel : ObservableObject
     {
         private ObservableCollection<MovementRecord> _movementRecords;
 

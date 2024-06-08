@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PersonalRecord.App.Views.MovementRecordsView"
-             x:Name="MovementsViewXaml"
+             x:Name="MovementRecoedsViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
@@ -26,6 +26,26 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
-        
+
+        <material:DataGrid Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="3"
+                           Margin="5, 10"
+                           UseAutoColumns="False"
+                           ItemsSource="{Binding MovementRecords}">
+            <material:DataGrid.CellItemTemplate>
+                <DataTemplate>
+                    <Editor Margin="10" Text="{material:DataGridValueBinding Mode=TwoWay}" />
+                </DataTemplate>
+            </material:DataGrid.CellItemTemplate>
+            <material:DataGrid.Columns>
+                <material:DataGridColumn ValueBinding="{Binding Movement.Name}"
+                                         Title="{extensions:Localize Movement}"/>
+                <material:DataGridColumn ValueBinding="{Binding Value}"
+                                         Title="{extensions:Localize Value}"/>
+                <material:DataGridColumn ValueBinding="{Binding Reps}"
+                                         Title="{extensions:Localize Reps}"/>
+                <material:DataGridColumn ValueBinding="{Binding Date}"
+                                         Title="{extensions:Localize Date}"/>
+            </material:DataGrid.Columns>
+        </material:DataGrid>
     </Grid>
 </ContentPage>

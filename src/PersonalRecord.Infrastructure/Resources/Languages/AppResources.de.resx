@@ -135,6 +135,9 @@
   <data name="Reps" xml:space="preserve">
     <value>Wiederholungen</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
   <data name="Unit" xml:space="preserve">
     <value>Einheit</value>
   </data>

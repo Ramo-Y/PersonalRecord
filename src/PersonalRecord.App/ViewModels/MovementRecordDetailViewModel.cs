@@ -6,15 +6,15 @@
     using PersonalRecord.Domain.Models.Entities;
     using System.Collections.ObjectModel;
 
-    public partial class MainViewModel : ObservableObject
+    public partial class MovementRecordDetailViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
 
-        private ObservableCollection<MovementRecord> _movementRecords;
-
         private ObservableCollection<Movement> _movements;
 
-        public MainViewModel(INavigationService navigationService)
+        private MovementRecord _movementRecord;
+
+        public MovementRecordDetailViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
 
@@ -31,21 +31,17 @@
                 }
             ];
 
-            MovementRecords =
-            [
-                new()
-                {
-                    Date = DateTime.Now,
-                    Reps = 1,
-                    Weight = 100,
-                    Movement = Movements?.FirstOrDefault()
-                }
-            ];
+            // TODO: Depending on situation, can be loaded if it's editing, or a new one
+            MovementRecord = new MovementRecord
+            {
+                Date = DateTime.Now,
+            };
         }
-        public ObservableCollection<MovementRecord> MovementRecords
+
+        public MovementRecord MovementRecord
         {
-            get => _movementRecords;
-            set => SetProperty(ref _movementRecords, value);
+            get => _movementRecord;
+            set => SetProperty(ref _movementRecord, value);
         }
 
         public ObservableCollection<Movement> Movements
@@ -55,15 +51,9 @@
         }
 
         [RelayCommand]
-        public async Task GoToSettingsViewAsync()
+        public async Task GoBack()
         {
-            await _navigationService.GoToAsync(Routes.SettingsView);
-        }
-
-        [RelayCommand]
-        public async Task GoToMovementRecordDetailsViewAsync()
-        {
-            await _navigationService.GoToAsync(Routes.MovementRecordDetailView);
+            await _navigationService.GoBackAsync();
         }
     }
 }

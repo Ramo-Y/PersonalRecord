@@ -135,6 +135,9 @@
   <data name="Reps" xml:space="preserve">
     <value>Reps</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="Unit" xml:space="preserve">
     <value>Unit</value>
   </data>

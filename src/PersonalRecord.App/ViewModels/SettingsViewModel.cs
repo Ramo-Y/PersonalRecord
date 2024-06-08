@@ -5,7 +5,7 @@
     using PersonalRecord.Infrastructure;
     using System.Collections.ObjectModel;
 
-    public class SettingsViewModel : ObservableObject
+    public partial class SettingsViewModel : ObservableObject
     {
         private Setting _setting;
 

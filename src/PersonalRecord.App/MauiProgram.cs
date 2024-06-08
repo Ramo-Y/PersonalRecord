@@ -28,11 +28,15 @@
 
             // Register ViewModels
             builder.Services.AddSingleton<MainView>();
+            builder.Services.AddTransient<MovementRecordDetailView>();
+            builder.Services.AddTransient<MovementRecordsView>();
             builder.Services.AddTransient<PersonalRecordView>();
             builder.Services.AddTransient<SettingsView>();
 
             // Register ViewModels
             builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddTransient<MovementRecordDetailViewModel>();
+            builder.Services.AddTransient<MovementRecordsViewModel>();
             builder.Services.AddTransient<PersonalRecordViewModel>();
             builder.Services.AddTransient<SettingsViewModel>();
 
