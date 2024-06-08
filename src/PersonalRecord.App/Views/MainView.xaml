@@ -48,7 +48,8 @@
                                          Title="{extensions:Localize Weight}"/>
                 <material:DataGridColumn ValueBinding="{Binding Reps}"
                                          Title="{extensions:Localize Reps}"/>
-                <material:DataGridColumn ValueBinding="{Binding Date}"
+                <!--TODO: Format from settings-->
+                <material:DataGridColumn ValueBinding="{Binding Date, StringFormat=yyyy-MM-dd}"
                                          Title="{extensions:Localize Date}"/>
             </material:DataGrid.Columns>
         </material:DataGrid>
