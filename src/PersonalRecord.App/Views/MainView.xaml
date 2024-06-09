@@ -4,7 +4,6 @@
              x:Class="PersonalRecord.App.Views.MainView"
              x:Name="MainViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
-             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MainViewModel"
              Title="{extensions:Localize PersonalRecordTitle}">

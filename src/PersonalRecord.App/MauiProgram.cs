@@ -7,7 +7,7 @@
     using PersonalRecord.App.Services;
     using PersonalRecord.App.ViewModels;
     using PersonalRecord.App.Views;
-    using UraniumUI;
+    using Syncfusion.Maui.Core.Hosting;
 
     [AutoRoutes("View")]
     public static class MauiProgram
@@ -18,13 +18,15 @@
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                })
-                .UseUraniumUI()
-                .UseUraniumUIMaterial();
+                });
+
+            var license = LicenseService.LoadLicenseAsync();
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(license);
 
             // Register ViewModels
             builder.Services.AddSingleton<MainView>();

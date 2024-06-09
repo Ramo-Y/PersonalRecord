@@ -4,8 +4,8 @@
              x:Class="PersonalRecord.App.Views.MovementRecordsView"
              x:Name="MovementRecoedsViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
-             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
+             xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              x:DataType="viewModels:MovementRecordsViewModel"
              Title="{extensions:Localize MovementRecords}">
 
@@ -21,22 +21,37 @@
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <material:DataGrid Grid.Column="1" Grid.Row="1"
-                           Margin="5, 10"
-                           UseAutoColumns="False"
-                           ItemsSource="{Binding MovementRecords}">
-            <material:DataGrid.Columns>
-                <material:DataGridColumn ValueBinding="{Binding Movement.Name}"
-                                         Title="{extensions:Localize Movement}"/>
-                <material:DataGridColumn ValueBinding="{Binding Weight}"
-                                         Title="{extensions:Localize Weight}"/>
-                <material:DataGridColumn ValueBinding="{Binding Reps}"
-                                         Title="{extensions:Localize Reps}"/>
-                <!--TODO: Format from settings-->
-                <material:DataGridColumn ValueBinding="{Binding Date, StringFormat=yyyy-MM-dd}"
-                                         Title="{extensions:Localize Date}"/>
-            </material:DataGrid.Columns>
-        </material:DataGrid>
+        <sfgrid:SfDataGrid x:Name="dataGrid"
+                           Grid.Column="1" Grid.Row="1"
+                           ItemsSource="{Binding MovementRecords}"
+                           AutoGenerateColumnsMode="None"
+                           SelectionMode="Single"
+                           AllowEditing="True"
+                           ColumnWidthMode="Fill"
+                           HeaderRowHeight="52"
+                           RowHeight="48">
+
+            <sfgrid:SfDataGrid.Columns>
+
+                <sfgrid:DataGridComboBoxColumn HeaderText="{extensions:Localize Movement}"
+                                               ItemsSource="{Binding Movements}"
+                                               ValueBinding="{Binding Movement.Name}">
+                </sfgrid:DataGridComboBoxColumn>
+
+                <sfgrid:DataGridNumericColumn HeaderText="{extensions:Localize Weight}"
+                                              ValueBinding="{Binding Weight}">
+                </sfgrid:DataGridNumericColumn>
+
+                <sfgrid:DataGridNumericColumn HeaderText="{extensions:Localize Reps}"
+                                              ValueBinding="{Binding Reps}">
+                </sfgrid:DataGridNumericColumn>
+
+                <sfgrid:DataGridDateColumn HeaderText="{extensions:Localize Date}"
+                                           ValueBinding="{Binding Date}">
+                </sfgrid:DataGridDateColumn>
+
+            </sfgrid:SfDataGrid.Columns>
+        </sfgrid:SfDataGrid>
 
         <Button Grid.Column="3" Grid.Row="4"
                 Margin="5, 2"

@@ -4,7 +4,6 @@
              x:Class="PersonalRecord.App.Views.MovementRecordDetailView"
              x:Name="MovementRecordDetailViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
-             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MovementRecordDetailViewModel"
              Title="{extensions:Localize MovementRecord}">
@@ -35,11 +34,11 @@
                Margin="5, 2"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Movement}"/>
-        <material:PickerField Grid.Column="1" Grid.Row="2"
-                              Margin="5, 2"
-                              ItemsSource="{Binding Movements}"
-                              ItemDisplayBinding="{Binding Name}"
-                              SelectedItem="{Binding MovementRecord.Movement}"/>
+        <Picker Grid.Column="1" Grid.Row="2"
+                Margin="5, 2"
+                ItemsSource="{Binding Movements}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedItem="{Binding MovementRecord.Movement}"/>
 
         <Label Grid.Column="1" Grid.Row="3"
                Margin="5, 2"
@@ -65,9 +64,9 @@
                Margin="5, 2"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Date}"/>
-        <material:DatePickerField Grid.Column="1" Grid.Row="8"
-                                  Margin="5, 2"
-                                  Date="{Binding MovementRecord.Date}"/>
+        <DatePicker Grid.Column="1" Grid.Row="8"
+                    Margin="5, 2"
+                    Date="{Binding MovementRecord.Date}"/>
 
         <Button Grid.Column="1" Grid.Row="11"
                 Margin="5, 2"
