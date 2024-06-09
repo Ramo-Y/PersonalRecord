@@ -6,6 +6,7 @@
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="viewModels:MovementRecordsViewModel"
              Title="{extensions:Localize MovementRecords}">
 
@@ -54,9 +55,28 @@
             </sfgrid:SfDataGrid.Columns>
         </sfgrid:SfDataGrid>
 
-        <Button Grid.Column="1" Grid.Row="2"
-                Margin="5, 2"
-                Text="Add"
-                Command="{Binding GoToMovementRecordDetailsViewCommand}"/>
+        <button:SfButton Grid.Column="1" Grid.Row="2"
+                         WidthRequest="50"
+                         CornerRadius="25"
+                         Style="{StaticResource sfButtonStyle}"
+                         Command="{Binding GoToMovementRecordDetailsViewCommand}">
+            <button:SfButton.Content>
+                <DataTemplate>
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                        <Grid Padding="5,0,5,0"  Grid.Column="1" >
+                            <Label Text="&#xe78a;"
+                                       FontFamily="MauiSampleFontIcon"
+                                       HorizontalTextAlignment="Center" 
+                                       VerticalOptions="Center"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalOptions="Start" 
+                                       FontSize="23" 
+                                       TextColor="White">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </button:SfButton.Content>
+        </button:SfButton>
     </Grid>
 </ContentPage>
