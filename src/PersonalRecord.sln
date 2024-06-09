@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FB97B10F-1644-4E02-B18D-888AD2BCF0A9}"
 	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
 		Directory.Build.props = Directory.Build.props
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.App", "PersonalRecord.App\PersonalRecord.App.csproj", "{CC1472DE-07B3-4335-B2D1-3F15E2CE4BA8}"
@@ -14,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Domain", "Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Database", "PersonalRecord.Database\PersonalRecord.Database.csproj", "{977594FB-660C-440F-866A-2F10E8DF1295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalRecord.Infrastructure", "PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj", "{96557DCD-4575-4658-8731-E9FA044B34B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Infrastructure", "PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj", "{96557DCD-4575-4658-8731-E9FA044B34B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
