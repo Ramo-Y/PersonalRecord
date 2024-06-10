@@ -25,12 +25,17 @@
 
         <Button Grid.Column="1" Grid.Row="1"
                 Margin="5, 2"
-                Text="{extensions:Localize Settings}"
-                Command="{Binding GoToSettingsViewCommand}"/>
+                Text="{extensions:Localize MovementRecordsc}"
+                Command="{Binding GoToMovementRecordsViewCommand}"/>
 
         <Button Grid.Column="1" Grid.Row="2"
                 Margin="5, 2"
                 Text="{extensions:Localize Movements}"
-                Command="{Binding GoToMovementRecordsViewCommand}"/>
+                Command="{Binding GoToMovementsViewCommand}"/>
+
+        <Button Grid.Column="1" Grid.Row="3"
+                Margin="5, 2"
+                Text="{extensions:Localize Settings}"
+                Command="{Binding GoToSettingsViewCommand}"/>
     </Grid>
 </ContentPage>

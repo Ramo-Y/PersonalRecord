@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalRecord.App.Views.MovementsView"
+             x:Name="MovementsViewXaml"
+             xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
+             xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
+             xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             x:DataType="viewModels:MovementsViewModel"
+             Title="{extensions:Localize Movements}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+
+        <sfgrid:SfDataGrid x:Name="dataGrid"
+                           Grid.Column="1" Grid.Row="1"
+                           Margin="5, 2"
+                           ItemsSource="{Binding Movements}"
+                           AutoGenerateColumnsMode="None"
+                           SelectionMode="Single"
+                           AllowEditing="True"
+                           ColumnWidthMode="Fill"
+                           HeaderRowHeight="52"
+                           RowHeight="48">
+            <sfgrid:SfDataGrid.Columns>
+                <sfgrid:DataGridTextColumn HeaderText="{extensions:Localize Movement}"
+                                           ValueBinding="{Binding Name}">
+                </sfgrid:DataGridTextColumn>
+            </sfgrid:SfDataGrid.Columns>
+        </sfgrid:SfDataGrid>
+
+        <button:SfButton Grid.Column="1" Grid.Row="2"
+                         WidthRequest="50"
+                         CornerRadius="25"
+                         Command="{Binding AddNewMovementCommand}">
+            <button:SfButton.Content>
+                <DataTemplate>
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                        <Grid Padding="5,0,5,0"  Grid.Column="1" >
+                            <Label Text="+"
+                                   FontFamily="MauiSampleFontIcon"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="Start"
+                                   FontSize="23"
+                                   TextColor="White">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </button:SfButton.Content>
+        </button:SfButton>
+
+    </Grid>
+</ContentPage>

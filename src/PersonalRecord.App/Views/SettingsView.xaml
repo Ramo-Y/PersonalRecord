@@ -5,7 +5,6 @@
              x:Name="SettingsViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
-             xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              x:DataType="viewModels:SettingsViewModel"
              Title="{extensions:Localize Settings}">
     
@@ -21,8 +20,6 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
@@ -51,29 +48,5 @@
                 Margin="5, 2"
                 ItemsSource="{Binding Languages}"
                 SelectedItem="{Binding Setting.Language}"/>
-
-        <Label Grid.Column="1" Grid.Row="4"
-               Margin="5, 2"
-               VerticalTextAlignment="Center"
-               Text="{extensions:Localize Movements}"/>
-        <sfgrid:SfDataGrid x:Name="dataGrid"
-                           Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5"
-                           Margin="5, 2"
-                           ItemsSource="{Binding Movements}"
-                           AutoGenerateColumnsMode="None"
-                           SelectionMode="Single"
-                           AllowEditing="True"
-                           ColumnWidthMode="Fill"
-                           HeaderRowHeight="52"
-                           RowHeight="48">
-
-            <sfgrid:SfDataGrid.Columns>
-
-                <sfgrid:DataGridTextColumn HeaderText="{extensions:Localize Movement}"
-                                           ValueBinding="{Binding Name}">
-                </sfgrid:DataGridTextColumn>
-
-            </sfgrid:SfDataGrid.Columns>
-        </sfgrid:SfDataGrid>
     </Grid>
 </ContentPage>

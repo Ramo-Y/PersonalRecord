@@ -14,15 +14,21 @@
         }
 
         [RelayCommand]
-        public async Task GoToSettingsViewAsync()
-        {
-            await _navigationService.GoToAsync(Routes.SettingsView);
-        }
-
-        [RelayCommand]
         public async Task GoToMovementRecordsViewAsync()
         {
             await _navigationService.GoToAsync(Routes.MovementRecordsView);
+        }
+
+        [RelayCommand]
+        public async Task GoToMovementsViewAsync()
+        {
+            await _navigationService.GoToAsync(Routes.MovementsView);
+        }
+
+        [RelayCommand]
+        public async Task GoToSettingsViewAsync()
+        {
+            await _navigationService.GoToAsync(Routes.SettingsView);
         }
     }
 }
