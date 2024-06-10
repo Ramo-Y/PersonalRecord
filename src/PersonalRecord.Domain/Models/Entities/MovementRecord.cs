@@ -1,6 +1,6 @@
 ﻿namespace PersonalRecord.Domain.Models.Entities
 {
-    using global::PersonalRecord.Domain.Converters;
+    using PersonalRecord.Domain.Converters;
     using Google.Cloud.Firestore;
 
     [FirestoreData]
