@@ -51,9 +51,9 @@
         }
 
         [RelayCommand]
-        public async Task GoBack()
+        public async Task GoToMovementRecordsView()
         {
-            await _navigationService.GoBackAsync();
+            await _navigationService.GoToAsync(Routes.MovementRecordsView);
         }
     }
 }

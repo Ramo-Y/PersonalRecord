@@ -71,6 +71,6 @@
         <Button Grid.Column="1" Grid.Row="11"
                 Margin="5, 2"
                 Text="{extensions:Localize Save}"
-                Command="{Binding GoBackCommand}"/>
+                Command="{Binding GoToMovementRecordsViewCommand}"/>
     </Grid>
 </ContentPage>
