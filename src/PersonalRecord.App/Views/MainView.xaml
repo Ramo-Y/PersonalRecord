@@ -25,7 +25,7 @@
 
         <Button Grid.Column="1" Grid.Row="1"
                 Margin="5, 2"
-                Text="{extensions:Localize MovementRecordsc}"
+                Text="{extensions:Localize MovementRecords}"
                 Command="{Binding GoToMovementRecordsViewCommand}"/>
 
         <Button Grid.Column="1" Grid.Row="2"
