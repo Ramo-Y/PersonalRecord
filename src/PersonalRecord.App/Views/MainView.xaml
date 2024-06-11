@@ -17,7 +17,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="5"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="5"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="5"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="5"/>
@@ -25,16 +27,19 @@
 
         <Button Grid.Column="1" Grid.Row="1"
                 Margin="5, 2"
+                CornerRadius="25"
                 Text="{extensions:Localize MovementRecords}"
                 Command="{Binding GoToMovementRecordsViewCommand}"/>
 
-        <Button Grid.Column="1" Grid.Row="2"
+        <Button Grid.Column="1" Grid.Row="3"
                 Margin="5, 2"
+                CornerRadius="25"
                 Text="{extensions:Localize Movements}"
                 Command="{Binding GoToMovementsViewCommand}"/>
 
-        <Button Grid.Column="1" Grid.Row="3"
+        <Button Grid.Column="1" Grid.Row="5"
                 Margin="5, 2"
+                CornerRadius="25"
                 Text="{extensions:Localize Settings}"
                 Command="{Binding GoToSettingsViewCommand}"/>
     </Grid>
