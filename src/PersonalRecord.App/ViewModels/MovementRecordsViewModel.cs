@@ -4,6 +4,7 @@
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.App.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
+    using PersonalRecord.Infrastructure.Constants;
     using System.Collections.ObjectModel;
 
     public partial class MovementRecordsViewModel : ObservableObject
@@ -36,7 +37,7 @@
                 new()
                 {
                     Date = DateTime.Now,
-                    Reps = 1,
+                    Reps = DefaultConstants.DEFAULT_REP_COUNT,
                     Weight = 100,
                     Movement = Movements?.FirstOrDefault()
                 }

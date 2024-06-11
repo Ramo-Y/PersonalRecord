@@ -23,8 +23,6 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="5"/>
@@ -43,32 +41,22 @@
         <Label Grid.Column="1" Grid.Row="3"
                Margin="5, 2"
                VerticalTextAlignment="Center"
-               Text="{extensions:Localize Reps}"/>
-        <Entry Grid.Column="1" Grid.Row="4"
-               Margin="5, 2"
-               VerticalTextAlignment="Center"
-               Keyboard="Numeric"
-               Text="{Binding MovementRecord.Reps}"/>
-
-        <Label Grid.Column="1" Grid.Row="5"
-               Margin="5, 2"
-               VerticalTextAlignment="Center"
                Text="{extensions:Localize Weight}"/>
-        <Entry Grid.Column="1" Grid.Row="6"
+        <Entry Grid.Column="1" Grid.Row="4"
                Margin="5, 2"
                VerticalTextAlignment="Center"
                Keyboard="Numeric"
                Text="{Binding MovementRecord.Weight}"/>
         
-        <Label Grid.Column="1" Grid.Row="7"
+        <Label Grid.Column="1" Grid.Row="5"
                Margin="5, 2"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Date}"/>
-        <DatePicker Grid.Column="1" Grid.Row="8"
+        <DatePicker Grid.Column="1" Grid.Row="6"
                     Margin="5, 2"
                     Date="{Binding MovementRecord.Date}"/>
 
-        <Button Grid.Column="1" Grid.Row="11"
+        <Button Grid.Column="1" Grid.Row="9"
                 Margin="5, 2"
                 Text="{extensions:Localize Save}"
                 Command="{Binding GoToMovementRecordsViewCommand}"/>

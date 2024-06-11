@@ -44,10 +44,6 @@
                                               ValueBinding="{Binding Weight}">
                 </sfgrid:DataGridNumericColumn>
 
-                <sfgrid:DataGridNumericColumn HeaderText="{extensions:Localize Reps}"
-                                              ValueBinding="{Binding Reps}">
-                </sfgrid:DataGridNumericColumn>
-
                 <sfgrid:DataGridDateColumn HeaderText="{extensions:Localize Date}"
                                            ValueBinding="{Binding Date}">
                 </sfgrid:DataGridDateColumn>

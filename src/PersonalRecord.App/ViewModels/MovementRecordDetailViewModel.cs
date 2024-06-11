@@ -4,6 +4,7 @@
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.App.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
+    using PersonalRecord.Infrastructure.Constants;
     using System.Collections.ObjectModel;
 
     public partial class MovementRecordDetailViewModel : ObservableObject
@@ -32,9 +33,11 @@
             ];
 
             // TODO: Depending on situation, can be loaded if it's editing, or a new one
+            // INFO: For now, we use 1RM, maybe later a custom rep count can be added
             MovementRecord = new MovementRecord
             {
                 Date = DateTime.Now,
+                Reps = DefaultConstants.DEFAULT_REP_COUNT
             };
         }
 
