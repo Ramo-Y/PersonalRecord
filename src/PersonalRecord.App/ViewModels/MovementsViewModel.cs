@@ -13,6 +13,8 @@
 
         public MovementsViewModel(IMovementRepository movementRepository)
         {
+            _movementRepository = movementRepository;
+
             // TODO: load from Firestore
             Movements =
             [
@@ -25,8 +27,6 @@
                     Name = "Backsquat",
                 }
             ];
-            
-            _movementRepository = movementRepository;
         }
 
         [RelayCommand]
