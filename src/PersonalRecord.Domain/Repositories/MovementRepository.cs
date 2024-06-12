@@ -42,10 +42,10 @@
             QuerySnapshot querySnapshot = await query.GetSnapshotAsync();
             foreach (DocumentSnapshot queryResult in querySnapshot.Documents)
             {
-                string name = queryResult.GetValue<string>("Name.First");
+                string firstName = queryResult.GetValue<string>("Name.First");
                 string lastName = queryResult.GetValue<string>("Name.Last");
                 int born = queryResult.GetValue<int>("Born");
-                Console.WriteLine($"{name} {lastName}; born {born}");
+                Console.WriteLine($"{firstName} {lastName}; born {born}");
             }
         }
     }
