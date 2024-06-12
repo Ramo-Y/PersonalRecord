@@ -2,14 +2,29 @@
 {
     using Google.Api.Gax;
     using Google.Cloud.Firestore;
+    using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
 
-    public class MovementRepository
+    public class MovementRepository : IMovementRepository
     {
-        public async Task CreateDb()
+        public async Task AddMovement(Movement movement)
         {
-            // Documentation: https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Firestore/latest/datamodel
-            // should use a real id
+            var db = GetDb();
+            var collection = db.Collection("Movements");
+            var document = await collection.AddAsync(movement);
+        }
+
+        public async Task<IEnumerable<Movement>> GetMovements()
+        {
+            var db = GetDb();
+            var collection = db.Collection("Movements");
+            var snapshot = await collection.GetSnapshotAsync();
+            var movements = snapshot.OfType<Movement>();
+            return movements;
+        }
+
+        private FirestoreDb GetDb()
+        {
             var projectId = Guid.NewGuid().ToString();
             var db = new FirestoreDbBuilder
             {
@@ -18,6 +33,14 @@
             }.Build();
             // Use db as normal
 
+            return db;
+        }
+
+        public async Task CreateDb()
+        {
+            // Documentation: https://cloud.google.com/dotnet/docs/reference/Google.Cloud.Firestore/latest/datamodel
+
+            var db = GetDb();
             // Create a document with a random ID in the "Movements" collection.
             CollectionReference collection = db.Collection("Movements");
             DocumentReference document = await collection.AddAsync(new Movement{ MovementID = Guid.NewGuid(), Name = "Deadlift"});

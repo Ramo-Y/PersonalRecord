@@ -7,6 +7,8 @@
     using PersonalRecord.App.Services;
     using PersonalRecord.App.ViewModels;
     using PersonalRecord.App.Views;
+    using PersonalRecord.Domain.Interfaces;
+    using PersonalRecord.Domain.Repositories;
     using Syncfusion.Maui.Core.Hosting;
 
     [AutoRoutes("View")]
@@ -44,6 +46,9 @@
 
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
+
+            // Register repositories
+            builder.Services.AddSingleton<IMovementRepository, MovementRepository>();
 
             // Language
             builder.Services.AddLocalization();

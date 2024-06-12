@@ -2,14 +2,16 @@
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
+    using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
     using System.Collections.ObjectModel;
 
     public partial class MovementsViewModel : ObservableObject
     {
         private ObservableCollection<Movement> _movements;
+        private readonly IMovementRepository _movementRepository;
 
-        public MovementsViewModel()
+        public MovementsViewModel(IMovementRepository movementRepository)
         {
             // TODO: load from Firestore
             Movements =
@@ -23,12 +25,17 @@
                     Name = "Backsquat",
                 }
             ];
+            
+            _movementRepository = movementRepository;
         }
 
         [RelayCommand]
         public void AddNewMovement()
         {
-            Movements.Add(new Movement());
+            // TODO: read from UI
+            var movement = new Movement { MovementID = Guid.NewGuid(), Name = "Deadlift"};
+            Movements.Add(movement);
+            _movementRepository.AddMovement(movement);
         }
 
         public ObservableCollection<Movement> Movements
