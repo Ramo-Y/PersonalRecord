@@ -15,18 +15,13 @@
         {
             _movementRepository = movementRepository;
 
-            // TODO: load from Firestore
-            Movements =
-            [
-                new()
-                {
-                    Name = "Deadlift",
-                },
-                new()
-                {
-                    Name = "Backsquat",
-                }
-            ];
+            // TODO: Loading in NavigatedTo or equivalent to this method
+            Movements = [];
+            var movements = _movementRepository.GetAllMovements().Result;
+            foreach (var movement in movements)
+            {
+                Movements.Add(movement);
+            }
         }
 
         [RelayCommand]

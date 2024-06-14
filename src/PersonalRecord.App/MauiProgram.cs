@@ -2,12 +2,16 @@
 {
     using CommunityToolkit.Maui;
     using epj.RouteGenerator;
+    using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Logging;
     using PersonalRecord.App.Interfaces;
     using PersonalRecord.App.Services;
     using PersonalRecord.App.ViewModels;
     using PersonalRecord.App.Views;
+    using PersonalRecord.Domain.Helpers;
     using PersonalRecord.Domain.Interfaces;
+    using PersonalRecord.Domain.Models;
+    using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Domain.Repositories;
     using Syncfusion.Maui.Core.Hosting;
 
@@ -47,6 +51,10 @@
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
 
+            // DB Context
+            builder.Services.AddDbContext<PersonalRecordContext>(opt => opt.UseSqlite(DatabaseHelper.GetConnectionString()));
+            builder.Services.AddTransient<PreparationDatabase>();
+
             // Register repositories
             builder.Services.AddSingleton<IMovementRepository, MovementRepository>();
 
@@ -56,8 +64,8 @@
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-
-            return builder.Build();
+            var app = builder.Build();
+            return app;
         }
     }
 }

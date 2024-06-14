@@ -3,6 +3,7 @@
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.App.Interfaces;
+    using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure.Constants;
     using System.Collections.ObjectModel;
@@ -11,26 +12,24 @@
     {
         private readonly INavigationService _navigationService;
 
+        private readonly IMovementRepository _movementRepository;
+
         private ObservableCollection<MovementRecord> _movementRecords;
 
         private ObservableCollection<Movement> _movements;
 
-        public MovementRecordsViewModel(INavigationService navigationService)
+        public MovementRecordsViewModel(INavigationService navigationService, IMovementRepository movementRepository)
         {
             _navigationService = navigationService;
+            _movementRepository = movementRepository;
 
-            // TODO: Load from Firebase
-            Movements =
-            [
-                new()
-                {
-                    Name = "Deadlift",
-                },
-                new()
-                {
-                    Name = "Backsquat",
-                }
-            ];
+            // TODO: Loading in NavigatedTo or equivalent to this method
+            Movements = [];
+            var movements = _movementRepository.GetAllMovements().Result;
+            foreach (var movement in movements)
+            {
+                Movements.Add(movement);
+            }
 
             MovementRecords =
             [
