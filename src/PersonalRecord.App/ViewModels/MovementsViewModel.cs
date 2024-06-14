@@ -10,10 +10,10 @@
     public partial class MovementsViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
-
         private readonly IMovementRepository _movementRepository;
 
         private ObservableCollection<Movement> _movements;
+        private Movement _selectedMovement;
 
         public MovementsViewModel(INavigationService navigationService, IMovementRepository movementRepository)
         {
@@ -52,6 +52,19 @@
             // TODO: Call on go back
             await _movementRepository.SaveAsync();
             await _navigationService.GoToAsync(Routes.MainView);
+        }
+
+        public Movement SelectedMovement
+        {
+            get => _selectedMovement;
+            set 
+            {
+                SetProperty(ref _selectedMovement, value);
+                MainThread.BeginInvokeOnMainThread(async () =>
+                {
+                    await _movementRepository.SaveAsync();
+                });
+            }
         }
 
         public ObservableCollection<Movement> Movements

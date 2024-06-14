@@ -26,6 +26,7 @@
                            Grid.Column="1" Grid.Row="1"
                            Margin="5, 2"
                            ItemsSource="{Binding Movements}"
+                           SelectedRow="{Binding SelectedMovement}" 
                            AutoGenerateColumnsMode="None"
                            SelectionMode="Single"
                            AllowEditing="True"
