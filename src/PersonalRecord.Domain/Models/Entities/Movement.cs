@@ -1,15 +1,12 @@
 ﻿namespace PersonalRecord.Domain.Models.Entities
 {
-    using PersonalRecord.Domain.Converters;
-    using Google.Cloud.Firestore;
+    using System.ComponentModel.DataAnnotations;
 
-    [FirestoreData]
     public class Movement
     {
-        [FirestoreProperty(ConverterType = typeof(GuidConverter))]
+        [Key]
         public Guid MovementID { get; set; }
 
-        [FirestoreProperty]
         public string Name { get; set; }
     }
 }

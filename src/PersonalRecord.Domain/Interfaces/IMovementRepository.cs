@@ -6,6 +6,8 @@
     {
         Task AddMovement(Movement movement);
 
-        Task<IEnumerable<Movement>> GetMovements();
+        Task<IEnumerable<Movement>> GetAllMovements();
+
+        Task DeleteMovement(Movement movement);
     }
 }
