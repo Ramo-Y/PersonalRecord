@@ -4,10 +4,12 @@
 
     public interface IMovementRepository
     {
-        Task AddMovement(Movement movement);
+        Task AddMovementAsync(Movement movement);
 
-        Task<IEnumerable<Movement>> GetAllMovements();
+        Task<IEnumerable<Movement>> GetAllMovementsAsync();
 
-        Task DeleteMovement(Movement movement);
+        Task DeleteMovementAsync(Movement movement);
+
+        Task SaveAsync();
     }
 }

@@ -2,26 +2,39 @@
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
+    using PersonalRecord.App.Interfaces;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
     using System.Collections.ObjectModel;
 
     public partial class MovementsViewModel : ObservableObject
     {
-        private ObservableCollection<Movement> _movements;
+        private readonly INavigationService _navigationService;
+
         private readonly IMovementRepository _movementRepository;
 
-        public MovementsViewModel(IMovementRepository movementRepository)
+        private ObservableCollection<Movement> _movements;
+
+        public MovementsViewModel(INavigationService navigationService, IMovementRepository movementRepository)
         {
+            _navigationService = navigationService;
             _movementRepository = movementRepository;
 
-            // TODO: Loading in NavigatedTo or equivalent to this method
             Movements = [];
-            var movements = _movementRepository.GetAllMovements().Result;
-            foreach (var movement in movements)
+            
+            LoadItems();
+        }
+
+        private void LoadItems()
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
             {
-                Movements.Add(movement);
-            }
+                var movements = await _movementRepository.GetAllMovementsAsync();
+                foreach (var movement in movements)
+                {
+                    Movements.Add(movement);
+                }
+            });
         }
 
         [RelayCommand]
@@ -30,7 +43,15 @@
             // TODO: read from UI
             var movement = new Movement { MovementID = Guid.NewGuid(), Name = "Deadlift"};
             Movements.Add(movement);
-            _movementRepository.AddMovement(movement);
+            _movementRepository.AddMovementAsync(movement);
+        }
+
+        [RelayCommand]
+        public async Task GoBack()
+        {
+            // TODO: Call on go back
+            await _movementRepository.SaveAsync();
+            await _navigationService.GoToAsync(Routes.MainView);
         }
 
         public ObservableCollection<Movement> Movements
