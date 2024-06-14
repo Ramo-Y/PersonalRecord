@@ -8,5 +8,9 @@
             : base(options)
         {
         }
+
+        public DbSet<Movement> MovementItems { get; set; }
+
+        public DbSet<MovementRecord> MovementRecordItems { get; set; }
     }
 }
