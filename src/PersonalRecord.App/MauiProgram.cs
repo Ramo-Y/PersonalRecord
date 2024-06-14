@@ -57,6 +57,7 @@
 
             // Register repositories
             builder.Services.AddSingleton<IMovementRepository, MovementRepository>();
+            builder.Services.AddSingleton<IMovementRecordRepository, MovementRecordRepository>();
 
             // Language
             builder.Services.AddLocalization();
