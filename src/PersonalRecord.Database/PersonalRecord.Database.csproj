@@ -1,8 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<ItemGroup>
-		<PackageReference Include="Google.Cloud.Firestore" Version="3.7.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
-	</ItemGroup>
-
-</Project>
