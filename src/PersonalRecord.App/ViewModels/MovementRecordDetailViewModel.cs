@@ -12,18 +12,19 @@
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
-
+        private readonly IMovementRecordRepository _movementRecordRepository;
         private ObservableCollection<Movement> _movements;
 
         private MovementRecord _movementRecord;
 
         public MovementRecordDetailViewModel(
             INavigationService navigationService,
-            IMovementRepository movementRepository)
+            IMovementRepository movementRepository,
+            IMovementRecordRepository movementRecordRepository)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
-
+            _movementRecordRepository = movementRecordRepository;
             Movements = [];
 
             LoadItems();
@@ -52,7 +53,11 @@
         public MovementRecord MovementRecord
         {
             get => _movementRecord;
-            set => SetProperty(ref _movementRecord, value);
+            set
+            {
+                SetProperty(ref _movementRecord, value);
+                _movementRecordRepository.AddMovementRecordAsync(value);
+            }
         }
 
         public ObservableCollection<Movement> Movements
@@ -65,6 +70,7 @@
         public async Task GoToMovementRecordsView()
         {
             await _navigationService.GoToAsync(Routes.MovementRecordsView);
+            await _movementRecordRepository.SaveAsync();
         }
     }
 }
