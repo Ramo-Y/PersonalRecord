@@ -22,10 +22,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\personalrecord_icon.png" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -36,6 +36,15 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidResource Include="Resources\AppIcon\mipmap-hdpi\ic_launcher.png" />
+	  <AndroidResource Include="Resources\AppIcon\mipmap-ldpi\ic_launcher.png" />
+	  <AndroidResource Include="Resources\AppIcon\mipmap-mdpi\ic_launcher.png" />
+	  <AndroidResource Include="Resources\AppIcon\mipmap-xhdpi\ic_launcher.png" />
+	  <AndroidResource Include="Resources\AppIcon\mipmap-xxhdpi\ic_launcher.png" />
+	  <AndroidResource Include="Resources\AppIcon\mipmap-xxxhdpi\ic_launcher.png" />
 	</ItemGroup>
 
 	<ItemGroup>

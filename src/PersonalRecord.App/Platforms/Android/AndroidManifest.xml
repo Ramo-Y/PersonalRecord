@@ -1,13 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ramo.personalrecord">
-	<application android:allowBackup="true" android:supportsRtl="true">
-    android:icon="@mipmap/ic_launcher"
+	<application android:allowBackup="true" android:supportsRtl="true" android:icon="@mipmap/personalrecord_icon" android:label="Personal Record">
     android:roundIcon="@mipmap/ic_launcher_round"
   </application>
-  <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@color/ic_launcher_background" />
-    <foreground android:drawable="@mipmap/ic_launcher_foreground" />
-  </adaptive-icon>
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>
