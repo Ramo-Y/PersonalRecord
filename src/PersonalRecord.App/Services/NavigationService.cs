@@ -12,6 +12,12 @@
             await Shell.Current.GoToAsync(state);
         }
 
+        public async Task GoToMainViewAsync()
+        {
+            // INFO: https://stackoverflow.com/questions/73547988/maui-relative-routing-to-shell-elements-is-currently-not-supported
+            await Shell.Current.GoToAsync("//MainView");
+        }
+
         public async Task GoToAsync(ShellNavigationState state, string parameterName, string parameterValue)
         {
             await Shell.Current.GoToAsync($"{state}?{parameterName}={parameterValue}");

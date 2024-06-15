@@ -64,7 +64,7 @@
         [RelayCommand]
         public async Task GoToMainViewAsync()
         {
-            await _navigationService.GoToAsync(Routes.MainView);
+            await _navigationService.GoToMainViewAsync();
         }
 
         [RelayCommand]

@@ -11,8 +11,7 @@
              Title="{extensions:Localize MovementRecords}">
     
     <Shell.BackButtonBehavior>
-        <BackButtonBehavior Command="{Binding GoToMainViewCommand}"
-                            IconOverride="back.png" />
+        <BackButtonBehavior Command="{Binding GoToMainViewCommand}" />
     </Shell.BackButtonBehavior>
 
     <Grid>
