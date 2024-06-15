@@ -19,7 +19,10 @@
 
         private void LoadSettings()
         {
-            Setting = _settingsService.LoadSettings().Result;
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                Setting = await _settingsService.LoadSettingsAsync();
+            });
         }
 
         public Setting Setting
