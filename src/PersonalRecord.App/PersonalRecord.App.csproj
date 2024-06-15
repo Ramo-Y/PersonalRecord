@@ -73,15 +73,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\MovementRecordsView.xaml.cs">
-	    <DependentUpon>MovementRecordsView.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\SettingsView.xaml.cs">
-	    <DependentUpon>%(Filename)</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="Views\MainView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
