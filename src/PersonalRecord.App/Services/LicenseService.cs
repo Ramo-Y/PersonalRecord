@@ -4,7 +4,7 @@
 
     public static class LicenseService
     {
-        public static string LoadLicenseAsync()
+        public static string LoadLicense()
         {
             var stream = FileSystem.OpenAppPackageFileAsync(EnvironmentConstants.LICENSE_FILENAME).Result;
             var reader = new StreamReader(stream);

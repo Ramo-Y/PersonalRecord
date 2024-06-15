@@ -31,7 +31,7 @@
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            var license = LicenseService.LoadLicenseAsync();
+            var license = LicenseService.LoadLicense();
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(license);
 
             // Register ViewModels
