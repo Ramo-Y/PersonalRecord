@@ -46,6 +46,7 @@
                 </sfgrid:DataGridComboBoxColumn>
 
                 <sfgrid:DataGridNumericColumn HeaderText="{extensions:Localize Weight}"
+                                              Format="###.#"
                                               ValueBinding="{Binding MvrWeight}">
                 </sfgrid:DataGridNumericColumn>
 
