@@ -9,6 +9,11 @@
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="viewModels:MovementRecordsViewModel"
              Title="{extensions:Localize MovementRecords}">
+    
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoToMainViewCommand}"
+                            IconOverride="back.png" />
+    </Shell.BackButtonBehavior>
 
     <Grid>
         <Grid.ColumnDefinitions>
