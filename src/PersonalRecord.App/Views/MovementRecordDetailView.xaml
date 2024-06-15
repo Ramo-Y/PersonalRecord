@@ -8,6 +8,10 @@
              x:DataType="viewModels:MovementRecordDetailViewModel"
              Title="{extensions:Localize MovementRecord}">
 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoToMovementRecordsViewCommand}" />
+    </Shell.BackButtonBehavior>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -59,6 +63,6 @@
         <Button Grid.Column="1" Grid.Row="9"
                 Margin="5, 2"
                 Text="{extensions:Localize Save}"
-                Command="{Binding GoToMovementRecordsViewCommand}"/>
+                Command="{Binding SaveAndGoToMovementRecordsViewCommand}"/>
     </Grid>
 </ContentPage>

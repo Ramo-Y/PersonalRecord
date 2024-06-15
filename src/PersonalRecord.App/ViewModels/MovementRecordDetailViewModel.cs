@@ -25,6 +25,7 @@
             _navigationService = navigationService;
             _movementRepository = movementRepository;
             _movementRecordRepository = movementRecordRepository;
+
             Movements = [];
 
             LoadItems();
@@ -52,11 +53,7 @@
         public MovementRecord MovementRecord
         {
             get => _movementRecord;
-            set
-            {
-                SetProperty(ref _movementRecord, value);
-                _movementRecordRepository.AddMovementRecordAsync(value);
-            }
+            set => SetProperty(ref _movementRecord, value);
         }
 
         public ObservableCollection<Movement> Movements
@@ -68,6 +65,13 @@
         [RelayCommand]
         public async Task GoToMovementRecordsView()
         {
+            await _navigationService.GoToAsync(Routes.MovementRecordMaxesView);
+        }
+
+        [RelayCommand]
+        public async Task SaveAndGoToMovementRecordsView()
+        {
+            await _movementRecordRepository.AddMovementRecordAsync(MovementRecord);
             await _movementRecordRepository.SaveAsync();
             await _navigationService.GoToAsync(Routes.MovementRecordMaxesView);
         }
