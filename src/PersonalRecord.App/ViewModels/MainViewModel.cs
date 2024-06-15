@@ -26,6 +26,12 @@
         }
 
         [RelayCommand]
+        public async Task GoToMovementRecordAllViewAsync()
+        {
+            await _navigationService.GoToAsync(Routes.MovementRecordAllView);
+        }
+
+        [RelayCommand]
         public async Task GoToSettingsViewAsync()
         {
             await _navigationService.GoToAsync(Routes.SettingsView);
