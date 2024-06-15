@@ -19,7 +19,7 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
@@ -29,7 +29,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
         <Label Grid.Column="1" Grid.Row="1"
@@ -63,6 +63,7 @@
 
         <Button Grid.Column="1" Grid.Row="9"
                 Margin="5, 2"
+                CornerRadius="25"
                 Text="{extensions:Localize Save}"
                 Command="{Binding SaveAndGoToMovementRecordsViewCommand}"/>
     </Grid>
