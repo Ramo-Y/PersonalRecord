@@ -39,12 +39,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="SyncfusionLicense.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <AndroidResource Include="Resources\AppIcon\mipmap-hdpi\ic_launcher.png" />
 	  <AndroidResource Include="Resources\AppIcon\mipmap-ldpi\ic_launcher.png" />
 	  <AndroidResource Include="Resources\AppIcon\mipmap-mdpi\ic_launcher.png" />
 	  <AndroidResource Include="Resources\AppIcon\mipmap-xhdpi\ic_launcher.png" />
 	  <AndroidResource Include="Resources\AppIcon\mipmap-xxhdpi\ic_launcher.png" />
 	  <AndroidResource Include="Resources\AppIcon\mipmap-xxxhdpi\ic_launcher.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Include="SyncfusionLicense.txt">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </MauiAsset>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -87,12 +97,6 @@
 	  <MauiXaml Update="Views\SettingsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="SyncfusionLicense.txt">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
 	</ItemGroup>
 
 </Project>

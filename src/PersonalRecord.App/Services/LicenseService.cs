@@ -6,10 +6,9 @@
     {
         public static string LoadLicenseAsync()
         {
-            // TODO: Load from somewhere else and make non static
-            var currentDirectory = Directory.GetCurrentDirectory();
-            var licenseFilePath = Path.Combine(currentDirectory, EnvironmentConstants.LICENSE_FILENAME);
-            var license = File.ReadAllText(licenseFilePath);
+            var stream = FileSystem.OpenAppPackageFileAsync(EnvironmentConstants.LICENSE_FILENAME).Result;
+            var reader = new StreamReader(stream);
+            var license = reader.ReadToEnd();
             return license;
         }
     }
