@@ -16,6 +16,8 @@
         private ObservableCollection<MovementRecord> _movementRecords;
         private ObservableCollection<Movement> _movements;
 
+        private Setting _setting;
+
         public MovementRecordsViewModel(
             INavigationService navigationService,
             IMovementRepository movementRepository,
@@ -29,6 +31,20 @@
             MovementRecords = [];
 
             LoadItems();
+
+            // Load from database
+            Setting = new Setting
+            {
+                DateFormat = "yyyy-MM-dd",
+                Unit = "kg",
+                UnitFormat = $"###.# kg"
+            };
+        }
+
+        public Setting Setting
+        {
+            get => _setting;
+            set => SetProperty(ref _setting, value);
         }
 
         public ObservableCollection<MovementRecord> MovementRecords

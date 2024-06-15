@@ -46,11 +46,12 @@
                 </sfgrid:DataGridComboBoxColumn>
 
                 <sfgrid:DataGridNumericColumn HeaderText="{extensions:Localize Weight}"
-                                              Format="###.#"
+                                              Format="{Binding Setting.UnitFormat}"
                                               ValueBinding="{Binding MvrWeight}">
                 </sfgrid:DataGridNumericColumn>
 
                 <sfgrid:DataGridDateColumn HeaderText="{extensions:Localize Date}"
+                                           Format="{Binding Setting.DateFormat}"
                                            ValueBinding="{Binding MvrDate}">
                 </sfgrid:DataGridDateColumn>
 
