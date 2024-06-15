@@ -68,8 +68,8 @@
         [RelayCommand]
         public async Task GoToMovementRecordsView()
         {
-            await _navigationService.GoToAsync(Routes.MovementRecordsView);
             await _movementRecordRepository.SaveAsync();
+            await _navigationService.GoToAsync(Routes.MovementRecordsView);
         }
     }
 }
