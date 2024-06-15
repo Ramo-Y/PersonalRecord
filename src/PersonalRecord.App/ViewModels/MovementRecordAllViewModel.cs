@@ -5,6 +5,8 @@
     using PersonalRecord.App.Interfaces;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
+    using PersonalRecord.Infrastructure;
+    using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
     public partial class MovementRecordAllViewModel : ObservableObject
@@ -12,6 +14,7 @@
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
         private readonly IMovementRecordRepository _movementRecordRepository;
+        private readonly ISettingsService _settingsService;
 
         private ObservableCollection<MovementRecord> _movementRecords;
         private ObservableCollection<Movement> _movements;
@@ -21,23 +24,17 @@
         public MovementRecordAllViewModel(
             INavigationService navigationService,
             IMovementRepository movementRepository,
-            IMovementRecordRepository movementRecordRepository)
+            IMovementRecordRepository movementRecordRepository,
+            ISettingsService settingsService)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
             _movementRecordRepository = movementRecordRepository;
-
+            _settingsService = settingsService;
             Movements = [];
             MovementRecords = [];
 
             LoadItems();
-            // Load from database
-            Setting = new Setting
-            {
-                DateFormat = "yyyy-MM-dd",
-                Unit = "kg",
-                UnitFormat = $"###.# kg"
-            };
         }
 
 
@@ -74,6 +71,8 @@
                 {
                     MovementRecords.Add(movementRecord);
                 }
+
+                Setting = await _settingsService.LoadSettings();
             });
         }
 

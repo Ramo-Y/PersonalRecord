@@ -5,5 +5,7 @@
         public static string LICENSE_FILENAME = "SyncfusionLicense.txt";
 
         public static string DATABASE_NAME = "PersonalRecord.db";
+
+        public static string SETTINGS_FILE_NAME = "personalrecords.json";
     }
 }

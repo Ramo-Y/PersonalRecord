@@ -1,12 +1,12 @@
-﻿namespace PersonalRecord.Domain.Models.Entities
+﻿namespace PersonalRecord.Infrastructure
 {
-    using PersonalRecord.Infrastructure;
-
     public class Setting
     {
         public string Unit { get; set; }
 
         public string DateFormat { get; set; }
+
+        public string UnitFormat { get; set; }
 
         public Language Language { get; set; }
     }

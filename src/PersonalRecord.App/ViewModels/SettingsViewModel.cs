@@ -1,21 +1,25 @@
 ﻿namespace PersonalRecord.App.ViewModels
 {
     using CommunityToolkit.Mvvm.ComponentModel;
-    using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure;
+    using PersonalRecord.Services.Interfaces;
 
     public partial class SettingsViewModel : ObservableObject
     {
+        private readonly ISettingsService _settingsService;
+
         private Setting _setting;
 
-        public SettingsViewModel()
+        public SettingsViewModel(ISettingsService settingsService)
         {
-            // TODO: load from Firestore
-            Setting = new Setting
-            {
-                Unit = "kg",
-                DateFormat = "yyyy-MM-dd"
-            };
+            _settingsService = settingsService;
+
+            LoadSettings();
+        }
+
+        private void LoadSettings()
+        {
+            Setting = _settingsService.LoadSettings().Result;
         }
 
         public Setting Setting

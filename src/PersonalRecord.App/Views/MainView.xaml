@@ -45,10 +45,10 @@
                 Text="{extensions:Localize MovementRecordAll}"
                 Command="{Binding GoToMovementRecordAllViewCommand}"/>
 
-        <!--<Button Grid.Column="1" Grid.Row="7"
+        <Button Grid.Column="1" Grid.Row="7"
                 Margin="5, 2"
                 CornerRadius="25"
                 Text="{extensions:Localize Settings}"
-                Command="{Binding GoToSettingsViewCommand}"/>-->
+                Command="{Binding GoToSettingsViewCommand}"/>
     </Grid>
 </ContentPage>

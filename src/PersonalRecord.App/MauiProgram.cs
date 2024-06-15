@@ -13,6 +13,8 @@
     using PersonalRecord.Domain.Models;
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Domain.Repositories;
+    using PersonalRecord.Services;
+    using PersonalRecord.Services.Interfaces;
     using Syncfusion.Maui.Core.Hosting;
 
     [AutoRoutes("View")]
@@ -51,6 +53,7 @@
 
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
+            builder.Services.AddSingleton<ISettingsService, SettingsService>();
 
             // DB Context
             builder.Services.AddDbContext<PersonalRecordContext>(opt => opt.UseSqlite(DatabaseHelper.GetConnectionString()));

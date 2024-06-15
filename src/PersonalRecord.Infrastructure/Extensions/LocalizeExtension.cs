@@ -18,7 +18,7 @@
 
         public object ProvideValue(IServiceProvider serviceProvider)
         {
-            string localizedText = _localizer[Key];
+            var localizedText = _localizer[Key];
             return localizedText;
         }
 
