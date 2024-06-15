@@ -37,7 +37,7 @@
 
                 <sfgrid:DataGridComboBoxColumn HeaderText="{extensions:Localize Movement}"
                                                ItemsSource="{Binding Movements}"
-                                               DisplayMemberPath="MvrName"
+                                               DisplayMemberPath="MovName"
                                                ValueBinding="{Binding Movement}">
                 </sfgrid:DataGridComboBoxColumn>
 

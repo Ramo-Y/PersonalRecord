@@ -35,7 +35,7 @@
         <Picker Grid.Column="1" Grid.Row="2"
                 Margin="5, 2"
                 ItemsSource="{Binding Movements}"
-                ItemDisplayBinding="{Binding Name}"
+                ItemDisplayBinding="{Binding MovName}"
                 SelectedItem="{Binding MovementRecord.Movement}"/>
 
         <Label Grid.Column="1" Grid.Row="3"
