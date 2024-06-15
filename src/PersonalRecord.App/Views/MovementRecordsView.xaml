@@ -37,16 +37,16 @@
 
                 <sfgrid:DataGridComboBoxColumn HeaderText="{extensions:Localize Movement}"
                                                ItemsSource="{Binding Movements}"
-                                               DisplayMemberPath="Name"
+                                               DisplayMemberPath="MvrName"
                                                ValueBinding="{Binding Movement}">
                 </sfgrid:DataGridComboBoxColumn>
 
                 <sfgrid:DataGridNumericColumn HeaderText="{extensions:Localize Weight}"
-                                              ValueBinding="{Binding Weight}">
+                                              ValueBinding="{Binding MvrWeight}">
                 </sfgrid:DataGridNumericColumn>
 
                 <sfgrid:DataGridDateColumn HeaderText="{extensions:Localize Date}"
-                                           ValueBinding="{Binding Date}">
+                                           ValueBinding="{Binding MvrDate}">
                 </sfgrid:DataGridDateColumn>
 
             </sfgrid:SfDataGrid.Columns>

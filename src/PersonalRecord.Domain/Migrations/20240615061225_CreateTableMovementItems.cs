@@ -16,7 +16,7 @@ namespace PersonalRecord.Domain.Migrations
                 columns: table => new
                 {
                     MovementID = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", nullable: false)
+                    MovName = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

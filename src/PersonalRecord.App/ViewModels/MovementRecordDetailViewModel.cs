@@ -33,8 +33,8 @@
             // INFO: For now, we use 1RM, maybe later a custom rep count can be added
             MovementRecord = new MovementRecord
             {
-                Date = DateTime.Now,
-                Reps = DefaultConstants.DEFAULT_REP_COUNT
+                MvrDate = DateTime.Now,
+                MvrReps = DefaultConstants.DEFAULT_REP_COUNT
             };
         }
 

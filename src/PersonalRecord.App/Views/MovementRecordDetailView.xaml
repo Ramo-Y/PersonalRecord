@@ -46,7 +46,7 @@
                Margin="5, 2"
                VerticalTextAlignment="Center"
                Keyboard="Numeric"
-               Text="{Binding MovementRecord.Weight}"/>
+               Text="{Binding MovementRecord.MvrWeight}"/>
         
         <Label Grid.Column="1" Grid.Row="5"
                Margin="5, 2"
@@ -54,7 +54,7 @@
                Text="{extensions:Localize Date}"/>
         <DatePicker Grid.Column="1" Grid.Row="6"
                     Margin="5, 2"
-                    Date="{Binding MovementRecord.Date}"/>
+                    Date="{Binding MovementRecord.MvrDate}"/>
 
         <Button Grid.Column="1" Grid.Row="9"
                 Margin="5, 2"

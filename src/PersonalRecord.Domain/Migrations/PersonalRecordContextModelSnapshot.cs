@@ -23,7 +23,7 @@ namespace PersonalRecord.Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("MovName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -34,25 +34,25 @@ namespace PersonalRecord.Domain.Migrations
 
             modelBuilder.Entity("PersonalRecord.Domain.Models.Entities.MovementRecord", b =>
                 {
-                    b.Property<Guid>("PersonalRecordID")
+                    b.Property<Guid>("MovementRecordID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime>("MvrDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("MovementID_FK")
+                    b.Property<Guid>("MvrMovementID_FK")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Reps")
+                    b.Property<int>("MvrReps")
                         .HasColumnType("INTEGER");
 
-                    b.Property<float>("Weight")
+                    b.Property<float>("MvrWeight")
                         .HasColumnType("REAL");
 
-                    b.HasKey("PersonalRecordID");
+                    b.HasKey("MovementRecordID");
 
-                    b.HasIndex("MovementID_FK");
+                    b.HasIndex("MvrMovementID_FK");
 
                     b.ToTable("MovementRecordItems");
                 });
@@ -61,7 +61,7 @@ namespace PersonalRecord.Domain.Migrations
                 {
                     b.HasOne("PersonalRecord.Domain.Models.Entities.Movement", "Movement")
                         .WithMany()
-                        .HasForeignKey("MovementID_FK")
+                        .HasForeignKey("MvrMovementID_FK")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

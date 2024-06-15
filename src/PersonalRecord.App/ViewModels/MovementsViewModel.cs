@@ -41,7 +41,7 @@
         public void AddNewMovement()
         {
             // TODO: read from UI
-            var movement = new Movement { MovementID = Guid.NewGuid(), Name = "Deadlift"};
+            var movement = new Movement { MovementID = Guid.NewGuid(), MovName = "Deadlift"};
             Movements.Add(movement);
             _movementRepository.AddMovementAsync(movement);
         }

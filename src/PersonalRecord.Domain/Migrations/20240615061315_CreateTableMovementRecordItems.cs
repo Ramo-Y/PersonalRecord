@@ -15,27 +15,27 @@ namespace PersonalRecord.Domain.Migrations
                 name: "MovementRecordItems",
                 columns: table => new
                 {
-                    PersonalRecordID = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Weight = table.Column<float>(type: "REAL", nullable: false),
-                    Reps = table.Column<int>(type: "INTEGER", nullable: false),
-                    Date = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    MovementID_FK = table.Column<Guid>(type: "TEXT", nullable: false)
+                    MovementRecordID = table.Column<Guid>(type: "TEXT", nullable: false),
+                    MvrWeight = table.Column<float>(type: "REAL", nullable: false),
+                    MvrReps = table.Column<int>(type: "INTEGER", nullable: false),
+                    MvrDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    MvrMovementID_FK = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MovementRecordItems", x => x.PersonalRecordID);
+                    table.PrimaryKey("PK_MovementRecordItems", x => x.MovementRecordID);
                     table.ForeignKey(
-                        name: "FK_MovementRecordItems_MovementItems_MovementID_FK",
-                        column: x => x.MovementID_FK,
+                        name: "FK_MovementRecordItems_MovementItems_MvrMovementID_FK",
+                        column: x => x.MvrMovementID_FK,
                         principalTable: "MovementItems",
                         principalColumn: "MovementID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_MovementRecordItems_MovementID_FK",
+                name: "IX_MovementRecordItems_MvrMovementID_FK",
                 table: "MovementRecordItems",
-                column: "MovementID_FK");
+                column: "MvrMovementID_FK");
         }
 
         /// <inheritdoc />
