@@ -106,6 +106,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Movement record maxes.
+        /// </summary>
+        public static string MovementRecordMaxes {
+            get {
+                return ResourceManager.GetString("MovementRecordMaxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Movement records.
         /// </summary>
         public static string MovementRecords {

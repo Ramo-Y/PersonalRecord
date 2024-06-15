@@ -132,6 +132,9 @@
   <data name="MovementRecord" xml:space="preserve">
     <value>Bewegungsaufzeichnung</value>
   </data>
+  <data name="MovementRecordMaxes" xml:space="preserve">
+    <value>Bewegungsaufzeichnungen Höchstwerte</value>
+  </data>
   <data name="MovementRecords" xml:space="preserve">
     <value>Bewegungsaufzeichnungen</value>
   </data>

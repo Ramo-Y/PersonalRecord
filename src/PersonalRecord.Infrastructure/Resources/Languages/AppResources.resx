@@ -132,6 +132,9 @@
   <data name="MovementRecord" xml:space="preserve">
     <value>Movement record</value>
   </data>
+  <data name="MovementRecordMaxes" xml:space="preserve">
+    <value>Movement record maxes</value>
+  </data>
   <data name="MovementRecords" xml:space="preserve">
     <value>Movement records</value>
   </data>

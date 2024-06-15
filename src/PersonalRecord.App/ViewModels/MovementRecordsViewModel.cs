@@ -7,7 +7,7 @@
     using PersonalRecord.Domain.Models.Entities;
     using System.Collections.ObjectModel;
 
-    public partial class MovementRecordsViewModel : ObservableObject
+    public partial class MovementRecordMaxesViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
@@ -18,7 +18,7 @@
 
         private Setting _setting;
 
-        public MovementRecordsViewModel(
+        public MovementRecordMaxesViewModel(
             INavigationService navigationService,
             IMovementRepository movementRepository,
             IMovementRecordRepository movementRecordRepository)

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PersonalRecord.App.Views.MovementRecordsView"
-             x:Name="MovementRecoedsViewXaml"
+             x:Class="PersonalRecord.App.Views.MovementRecordMaxesView"
+             x:Name="MovementRecordMaxesViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
-             x:DataType="viewModels:MovementRecordsViewModel"
-             Title="{extensions:Localize MovementRecords}">
+             x:DataType="viewModels:MovementRecordMaxesViewModel"
+             Title="{extensions:Localize MovementRecordMaxes}">
     
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding GoToMainViewCommand}" />

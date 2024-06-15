@@ -28,8 +28,8 @@
         <Button Grid.Column="1" Grid.Row="1"
                 Margin="5, 2"
                 CornerRadius="25"
-                Text="{extensions:Localize MovementRecords}"
-                Command="{Binding GoToMovementRecordsViewCommand}"/>
+                Text="{extensions:Localize MovementRecordMaxes}"
+                Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
 
         <Button Grid.Column="1" Grid.Row="3"
                 Margin="5, 2"

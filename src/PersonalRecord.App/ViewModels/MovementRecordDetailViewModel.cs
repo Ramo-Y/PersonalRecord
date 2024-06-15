@@ -69,7 +69,7 @@
         public async Task GoToMovementRecordsView()
         {
             await _movementRecordRepository.SaveAsync();
-            await _navigationService.GoToAsync(Routes.MovementRecordsView);
+            await _navigationService.GoToAsync(Routes.MovementRecordMaxesView);
         }
     }
 }
