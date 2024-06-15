@@ -3,6 +3,7 @@
     using Microsoft.EntityFrameworkCore;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
@@ -19,6 +20,12 @@
         {
             await _context.MovementRecordItems.AddAsync(movementRecord);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<MovementRecord> GetMovementRecordByIdAsync(Guid movementRecordID)
+        {
+            var movementRecord = await _context.MovementRecordItems.SingleOrDefaultAsync(m => m.MovementRecordID == movementRecordID);
+            return movementRecord;
         }
 
         public async Task<IEnumerable<MovementRecord>> GetAllMovementRecordsAsync()
