@@ -67,7 +67,6 @@
                     <Grid HorizontalOptions="Center" VerticalOptions="Center">
                         <Grid Padding="5,0,5,0"  Grid.Column="1" >
                             <Label Text="+"
-                                   FontFamily="MauiSampleFontIcon"
                                    HorizontalTextAlignment="Center"
                                    VerticalOptions="Center"
                                    VerticalTextAlignment="Center"

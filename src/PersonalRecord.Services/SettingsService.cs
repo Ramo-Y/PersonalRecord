@@ -15,7 +15,7 @@
             _jsonFilePath = Path.Combine(appDataDirectory, EnvironmentConstants.SETTINGS_FILE_NAME);
         }
 
-        public async Task<Setting> LoadSettings()
+        public async Task<Setting> LoadSettingsAsync()
         {
             Setting setting;
             var exists = File.Exists(_jsonFilePath);
@@ -34,7 +34,7 @@
             return setting;
         }
 
-        public async Task UpdateSettings(Setting setting)
+        public async Task UpdateSettingsAsync(Setting setting)
         {
             await using FileStream createStream = File.OpenWrite(_jsonFilePath);
             await JsonSerializer.SerializeAsync(createStream, setting);

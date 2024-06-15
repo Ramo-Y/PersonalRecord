@@ -6,6 +6,7 @@
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure;
+    using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
@@ -73,7 +74,7 @@
                     MovementRecords.Add(movementRecord);
                 }
 
-                Setting = await _settingsService.LoadSettings();
+                Setting = await _settingsService.LoadSettingsAsync();
             });
         }
 
@@ -86,7 +87,7 @@
         [RelayCommand]
         public async Task GoToMovementRecordDetailsViewAsync()
         {
-            await _navigationService.GoToAsync(Routes.MovementRecordDetailView);
+            await _navigationService.GoToAsync(Routes.MovementRecordDetailView, NavigationConstants.PREVIOUS_PAGE_NAME, Routes.MovementRecordMaxesView);
         }
     }
 }

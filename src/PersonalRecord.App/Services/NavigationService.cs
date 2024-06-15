@@ -20,7 +20,7 @@
 
         public async Task GoToAsync(ShellNavigationState state, string parameterName, string parameterValue)
         {
-            await Shell.Current.GoToAsync($"{state}?{parameterName}={parameterValue}");
+            await Shell.Current.GoToAsync($"{state.Location}?{parameterName}={parameterValue}");
         }
 
         public async Task GoToAsync(ShellNavigationState state, Dictionary<string, object> navigationParameter)

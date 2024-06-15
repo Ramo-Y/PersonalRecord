@@ -58,6 +58,7 @@
                Text="{extensions:Localize Date}"/>
         <DatePicker Grid.Column="1" Grid.Row="6"
                     Margin="5, 2"
+                    Format="{Binding Setting.DateFormat}"
                     Date="{Binding MovementRecord.MvrDate}"/>
 
         <Button Grid.Column="1" Grid.Row="9"
