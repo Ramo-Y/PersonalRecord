@@ -6,6 +6,8 @@
     {
         Task AddMovementAsync(Movement movement);
 
+        Task AddOrUpdateAllAsync(IEnumerable<Movement> movements);
+
         Task<IEnumerable<Movement>> GetAllMovementsAsync();
 
         Task DeleteMovementAsync(Movement movement);

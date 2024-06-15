@@ -19,6 +19,20 @@
             await _context.SaveChangesAsync();
         }
 
+        public async Task AddOrUpdateAllAsync(IEnumerable<Movement> movements)
+        {
+            foreach (var movement in movements)
+            {
+                var find = await _context.MovementItems.FindAsync(movement.MovementID);
+                if (find == null)
+                {
+                    await _context.MovementItems.AddAsync(movement);
+                }
+            }
+
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<Movement>> GetAllMovementsAsync()
         {
             var movementItems = await _context.MovementItems.ToListAsync();

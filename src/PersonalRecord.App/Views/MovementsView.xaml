@@ -9,6 +9,11 @@
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="viewModels:MovementsViewModel"
              Title="{extensions:Localize Movements}">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}" />
+    </Shell.BackButtonBehavior>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -26,7 +31,7 @@
                            Grid.Column="1" Grid.Row="1"
                            Margin="5, 2"
                            ItemsSource="{Binding Movements}"
-                           SelectedRow="{Binding SelectedMovement}" 
+                           AllowDeleting="True"
                            AutoGenerateColumnsMode="None"
                            SelectionMode="Single"
                            AllowEditing="True"

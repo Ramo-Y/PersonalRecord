@@ -15,7 +15,9 @@
         private ObservableCollection<Movement> _movements;
         private Movement _selectedMovement;
 
-        public MovementsViewModel(INavigationService navigationService, IMovementRepository movementRepository)
+        public MovementsViewModel(
+            INavigationService navigationService,
+            IMovementRepository movementRepository)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
@@ -40,31 +42,19 @@
         [RelayCommand]
         public void AddNewMovement()
         {
-            // TODO: read from UI
-            var movement = new Movement { MovementID = Guid.NewGuid(), MovName = "Deadlift"};
+            var movement = new Movement
+            {
+                MovementID = Guid.NewGuid()
+            };
+
             Movements.Add(movement);
-            _movementRepository.AddMovementAsync(movement);
         }
 
         [RelayCommand]
         public async Task GoBack()
         {
-            // TODO: Call on go back
-            await _movementRepository.SaveAsync();
-            await _navigationService.GoToAsync(Routes.MainView);
-        }
-
-        public Movement SelectedMovement
-        {
-            get => _selectedMovement;
-            set 
-            {
-                SetProperty(ref _selectedMovement, value);
-                MainThread.BeginInvokeOnMainThread(async () =>
-                {
-                    await _movementRepository.SaveAsync();
-                });
-            }
+            await _movementRepository.AddOrUpdateAllAsync(Movements);
+            await _navigationService.GoToMainViewAsync();
         }
 
         public ObservableCollection<Movement> Movements
