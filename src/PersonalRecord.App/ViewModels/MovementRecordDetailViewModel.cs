@@ -29,10 +29,9 @@
 
             LoadItems();
 
-            // TODO: Depending on situation, can be loaded if it's editing, or a new one
-            // INFO: For now, we use 1RM, maybe later a custom rep count can be added
             MovementRecord = new MovementRecord
             {
+                MovementRecordID = Guid.NewGuid(),
                 MvrDate = DateTime.Now,
                 MvrReps = DefaultConstants.DEFAULT_REP_COUNT
             };
