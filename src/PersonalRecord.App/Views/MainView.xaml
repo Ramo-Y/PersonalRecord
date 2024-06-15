@@ -10,19 +10,19 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="25"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
         <Button Grid.Column="1" Grid.Row="1"
