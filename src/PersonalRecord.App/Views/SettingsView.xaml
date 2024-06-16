@@ -39,10 +39,10 @@
             <Entry Text="{Binding Setting.DateFormat}" />
         </inputLayout:SfTextInputLayout>
 
-        <editors:SfComboBox Grid.Column="1" Grid.Row="5"
+        <!--<editors:SfComboBox Grid.Column="1" Grid.Row="5"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Languages}"
-                            SelectedItem="{Binding Setting.Language}"/>
+                            SelectedItem="{Binding Setting.Language}"/>-->
 
         <button:SfButton Grid.Column="1" Grid.Row="7"
                          Text="{extensions:Localize Save}"
