@@ -27,8 +27,7 @@
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <sfgrid:SfDataGrid x:Name="dataGrid"
-                           Grid.Column="1" Grid.Row="1"
+        <sfgrid:SfDataGrid Grid.Column="1" Grid.Row="1"
                            Margin="5, 2"
                            ItemsSource="{Binding Movements}"
                            AllowDeleting="True"
