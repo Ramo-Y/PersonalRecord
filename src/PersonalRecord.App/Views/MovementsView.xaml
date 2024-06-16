@@ -40,7 +40,7 @@
                            RowHeight="48">
             <sfgrid:SfDataGrid.Columns>
                 <sfgrid:DataGridTextColumn HeaderText="{extensions:Localize Movement}"
-                                           ValueBinding="{Binding MovName}">
+                                           ValueBinding="{Binding MovName, UpdateSourceEventName=PropertyChanged}">
                 </sfgrid:DataGridTextColumn>
             </sfgrid:SfDataGrid.Columns>
         </sfgrid:SfDataGrid>

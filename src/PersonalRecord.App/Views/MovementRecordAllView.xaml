@@ -44,7 +44,7 @@
 
                 <sfgrid:DataGridNumericColumn HeaderText="{extensions:Localize Weight}"
                                               Format="{Binding Setting.UnitFormat}"
-                                              ValueBinding="{Binding MvrWeight}">
+                                              ValueBinding="{Binding MvrWeight, UpdateSourceEventName=PropertyChanged}">
                 </sfgrid:DataGridNumericColumn>
 
                 <sfgrid:DataGridDateColumn HeaderText="{extensions:Localize Date}"
