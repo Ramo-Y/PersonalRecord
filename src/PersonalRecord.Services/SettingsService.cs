@@ -47,6 +47,7 @@
                 DateFormat = DefaultConstants.DEFAULT_DATE_FORMAT,
                 Unit = DefaultConstants.DEFAULT_UNIT,
                 UnitFormat = DefaultConstants.DEFAULT_UNIT_FORMAT,
+                IsDarkTheme = false,
                 Language = Language.English
             };
 

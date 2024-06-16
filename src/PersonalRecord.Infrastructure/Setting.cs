@@ -8,6 +8,8 @@
 
         public string UnitFormat { get; set; }
 
+        public bool IsDarkTheme { get; set; }
+
         public Language Language { get; set; }
     }
 }
