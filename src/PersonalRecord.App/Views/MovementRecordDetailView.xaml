@@ -59,12 +59,6 @@
                     Format="{Binding Setting.DateFormat}"
                     Date="{Binding MovementRecord.MvrDate}"/>
 
-        <Button Grid.Column="1" Grid.Row="9"
-                Margin="5, 2"
-                CornerRadius="25"
-                Text="{extensions:Localize Save}"
-                Command="{Binding SaveAndGoToMovementRecordsViewCommand}"/>
-
         <button:SfButton Grid.Column="1" Grid.Row="9"
                          Text="{extensions:Localize Save}"
                          Command="{Binding SaveAndGoToMovementRecordsViewCommand}"/>
