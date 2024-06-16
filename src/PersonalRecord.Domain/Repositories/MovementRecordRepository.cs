@@ -34,6 +34,16 @@
             return movementRecordItems;
         }
 
+        public async Task UpdateAllEntriesAsync(IEnumerable<MovementRecord> movementRecords)
+        {
+            foreach (var movementRecord in movementRecords)
+            {
+                _context.MovementRecordItems.Update(movementRecord);
+            }
+
+            await _context.SaveChangesAsync();
+        }
+
         public async Task DeleteMovementRecordAsync(MovementRecord movementRecord)
         {
             await _context.MovementRecordItems.Where(m => m.MovementRecordID == movementRecord.MovementRecordID).ExecuteDeleteAsync();

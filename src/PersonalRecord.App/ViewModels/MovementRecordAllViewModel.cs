@@ -78,6 +78,7 @@
         [RelayCommand]
         public async Task GoToMainViewAsync()
         {
+            await _movementRecordRepository.UpdateAllEntriesAsync(MovementRecords);
             await _navigationService.GoToMainViewAsync();
         }
 
