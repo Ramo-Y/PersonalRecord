@@ -16,9 +16,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="5"/>
@@ -27,7 +25,8 @@
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <sfgrid:SfDataGrid Grid.Column="1" Grid.Row="1"
+        <sfgrid:SfDataGrid Grid.Column="0" Grid.Row="1"
+                           Margin="-35,0,5,0"
                            ItemsSource="{Binding MovementRecords}"
                            GroupCaptionTextFormat="{}{Key} - {ItemsCount} Item(s)"
                            AllowDeleting="True"
@@ -38,6 +37,7 @@
                            EditTapAction="OnTap"
                            ColumnWidthMode="Fill"
                            HeaderRowHeight="52"
+                           VerticalOptions="FillAndExpand"
                            RowHeight="48">
 
             <sfgrid:SfDataGrid.Columns>
@@ -58,7 +58,7 @@
             </sfgrid:SfDataGrid.GroupColumnDescriptions>
         </sfgrid:SfDataGrid>
 
-        <button:SfButton Grid.Column="1" Grid.Row="2"
+        <button:SfButton Grid.Column="0" Grid.Row="2"
                          WidthRequest="50"
                          CornerRadius="25"
                          Command="{Binding GoToMovementRecordDetailsViewCommand}">
