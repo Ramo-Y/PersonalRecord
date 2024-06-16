@@ -3,28 +3,25 @@
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.Infrastructure;
+    using PersonalRecord.Infrastructure.Helpers;
     using PersonalRecord.Services.Interfaces;
 
     public partial class SettingsViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
-        private readonly ISettingsService _settingsService;
 
         private Setting _setting;
 
-        public SettingsViewModel(
-            INavigationService navigationService,
-            ISettingsService settingsService)
+        public SettingsViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            _settingsService = settingsService;
 
             LoadSettings();
         }
 
         private void LoadSettings()
         {
-            Setting = _settingsService.LoadSettings();
+            Setting = SettingsHelper.LoadSettings();
         }
 
         public Setting Setting
@@ -41,7 +38,7 @@
         [RelayCommand]
         public async Task SaveAndGoBack()
         {
-            _settingsService.UpdateSettings(Setting);
+            SettingsHelper.UpdateSettings(Setting);
             await _navigationService.GoToMainViewAsync();
         }
     }

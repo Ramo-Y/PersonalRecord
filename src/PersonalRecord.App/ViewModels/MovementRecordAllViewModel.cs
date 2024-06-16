@@ -6,6 +6,7 @@
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure;
     using PersonalRecord.Infrastructure.Constants;
+    using PersonalRecord.Infrastructure.Helpers;
     using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
@@ -14,7 +15,6 @@
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
         private readonly IMovementRecordRepository _movementRecordRepository;
-        private readonly ISettingsService _settingsService;
 
         private ObservableCollection<MovementRecord> _movementRecords;
         private ObservableCollection<Movement> _movements;
@@ -24,13 +24,12 @@
         public MovementRecordAllViewModel(
             INavigationService navigationService,
             IMovementRepository movementRepository,
-            IMovementRecordRepository movementRecordRepository,
-            ISettingsService settingsService)
+            IMovementRecordRepository movementRecordRepository)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
             _movementRecordRepository = movementRecordRepository;
-            _settingsService = settingsService;
+
             Movements = [];
             MovementRecords = [];
 
@@ -72,7 +71,7 @@
                     MovementRecords.Add(movementRecord);
                 }
 
-                Setting = _settingsService.LoadSettings();
+                Setting = SettingsHelper.LoadSettings();
             });
         }
 

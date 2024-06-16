@@ -53,7 +53,6 @@
 
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
-            builder.Services.AddSingleton<ISettingsService, SettingsService>();
 
             // DB Context
             builder.Services.AddDbContext<PersonalRecordContext>(opt => opt.UseSqlite(DatabaseHelper.GetConnectionString()));

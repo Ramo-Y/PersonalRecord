@@ -13,7 +13,6 @@
         private readonly IMovementRepository _movementRepository;
 
         private ObservableCollection<Movement> _movements;
-        private Movement _selectedMovement;
 
         public MovementsViewModel(
             INavigationService navigationService,

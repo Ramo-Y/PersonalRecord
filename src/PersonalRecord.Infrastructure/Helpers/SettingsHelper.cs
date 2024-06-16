@@ -1,21 +1,19 @@
-﻿namespace PersonalRecord.Services
+﻿namespace PersonalRecord.Infrastructure.Helpers
 {
     using Newtonsoft.Json;
-    using PersonalRecord.Infrastructure;
     using PersonalRecord.Infrastructure.Constants;
-    using PersonalRecord.Services.Interfaces;
 
-    public class SettingsService : ISettingsService
+    public static class SettingsHelper
     {
-        private readonly string _jsonFilePath;
+        private static string _jsonFilePath;
 
-        public SettingsService()
+        static SettingsHelper()
         {
             var appDataDirectory = FileSystem.AppDataDirectory;
             _jsonFilePath = Path.Combine(appDataDirectory, EnvironmentConstants.SETTINGS_FILE_NAME);
         }
 
-        public Setting LoadSettings()
+        public static Setting LoadSettings()
         {
             Setting setting;
             var exists = File.Exists(_jsonFilePath);
@@ -32,12 +30,12 @@
             return setting;
         }
 
-        public void UpdateSettings(Setting setting)
+        public static void UpdateSettings(Setting setting)
         {
             SerializeSettings(setting);
         }
 
-        private void SerializeSettings(Setting setting)
+        private static void SerializeSettings(Setting setting)
         {
             var serializer = new JsonSerializer
             {
@@ -51,7 +49,7 @@
             }
         }
 
-        private Setting CreateDefaultSettings()
+        private static Setting CreateDefaultSettings()
         {
             var setting = new Setting()
             {

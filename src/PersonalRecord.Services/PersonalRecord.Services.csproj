@@ -1,10 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj" />
   </ItemGroup>
   
