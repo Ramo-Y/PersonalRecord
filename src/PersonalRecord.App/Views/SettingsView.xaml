@@ -26,6 +26,7 @@
             <RowDefinition Height="5"/>
             <RowDefinition Height="75"/>
             <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="55"/>
@@ -51,12 +52,16 @@
                          HorizontalOptions="End"
                          IsOn="{Binding Setting.IsDarkTheme}"/>
 
-        <editors:SfComboBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7"
+        <Label Grid.Column="1" Grid.Row="7"
+               Margin="5, 2"
+               VerticalTextAlignment="Center"
+               Text="{extensions:Localize LanguageNeedsRestart}"/>
+        <editors:SfComboBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Languages}"
                             SelectedItem="{Binding Setting.Language}"/>
 
-        <button:SfButton Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9"
+        <button:SfButton Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="10"
                          Text="{extensions:Localize Save}"
                          Command="{Binding SaveAndGoBackCommand}"/>
     </Grid>

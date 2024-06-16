@@ -97,6 +97,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language (needs restart).
+        /// </summary>
+        public static string LanguageNeedsRestart {
+            get {
+                return ResourceManager.GetString("LanguageNeedsRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Movement.
         /// </summary>
         public static string Movement {
