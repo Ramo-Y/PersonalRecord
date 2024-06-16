@@ -25,10 +25,7 @@
 
         private void LoadSettings()
         {
-            MainThread.BeginInvokeOnMainThread(async () =>
-            {
-                Setting = await _settingsService.LoadSettingsAsync();
-            });
+            Setting = _settingsService.LoadSettings();
         }
 
         public Setting Setting
@@ -45,7 +42,7 @@
         [RelayCommand]
         public async Task SaveAndGoBack()
         {
-            await _settingsService.UpdateSettingsAsync(Setting);
+            _settingsService.UpdateSettings(Setting);
             await _navigationService.GoToMainViewAsync();
         }
     }

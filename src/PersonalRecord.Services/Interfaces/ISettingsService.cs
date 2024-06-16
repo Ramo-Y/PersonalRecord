@@ -4,8 +4,8 @@
 
     public interface ISettingsService
     {
-        Task<Setting> LoadSettingsAsync();
+        Setting LoadSettings();
 
-        Task UpdateSettingsAsync(Setting setting);
+        void UpdateSettings(Setting setting);
     }
 }

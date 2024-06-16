@@ -56,7 +56,7 @@
                     Movements.Add(movement);
                 }
 
-                Setting = await _settingsService.LoadSettingsAsync();
+                Setting = _settingsService.LoadSettings();
             });
         }
 

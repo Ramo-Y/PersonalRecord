@@ -74,7 +74,7 @@
                     MovementRecords.Add(movementRecord);
                 }
 
-                Setting = await _settingsService.LoadSettingsAsync();
+                Setting = _settingsService.LoadSettings();
             });
         }
 

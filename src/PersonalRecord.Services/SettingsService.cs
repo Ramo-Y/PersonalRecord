@@ -1,9 +1,9 @@
 ﻿namespace PersonalRecord.Services
 {
+    using Newtonsoft.Json;
     using PersonalRecord.Infrastructure;
     using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Services.Interfaces;
-    using System.Text.Json;
 
     public class SettingsService : ISettingsService
     {
@@ -15,29 +15,40 @@
             _jsonFilePath = Path.Combine(appDataDirectory, EnvironmentConstants.SETTINGS_FILE_NAME);
         }
 
-        public async Task<Setting> LoadSettingsAsync()
+        public Setting LoadSettings()
         {
             Setting setting;
             var exists = File.Exists(_jsonFilePath);
             if (!exists)
             {
                 setting = CreateDefaultSettings();
-                await using FileStream createStream = File.Create(_jsonFilePath);
-                await JsonSerializer.SerializeAsync(createStream, setting);
-
+                SerializeSettings(setting);
                 return setting;
             }
 
-            await using FileStream stream = File.OpenRead(_jsonFilePath);
-            setting = await JsonSerializer.DeserializeAsync<Setting>(stream);
+            var settingJsonText = File.ReadAllText(_jsonFilePath);
+            setting = JsonConvert.DeserializeObject<Setting>(settingJsonText);
 
             return setting;
         }
 
-        public async Task UpdateSettingsAsync(Setting setting)
+        public void UpdateSettings(Setting setting)
         {
-            await using FileStream createStream = File.OpenWrite(_jsonFilePath);
-            await JsonSerializer.SerializeAsync(createStream, setting);
+            SerializeSettings(setting);
+        }
+
+        private void SerializeSettings(Setting setting)
+        {
+            var serializer = new JsonSerializer
+            {
+                Formatting = Formatting.Indented
+            };
+
+            using (var sw = new StreamWriter(_jsonFilePath))
+            using (var writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, setting);
+            }
         }
 
         private Setting CreateDefaultSettings()
