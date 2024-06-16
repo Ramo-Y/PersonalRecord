@@ -5,6 +5,7 @@
              x:Name="MainViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="viewModels:MainViewModel"
              Title="{extensions:Localize PersonalRecordTitle}">
 
@@ -16,39 +17,31 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="1" Grid.Row="1"
-                Margin="5, 2"
-                CornerRadius="25"
-                Text="{extensions:Localize MovementRecordMaxes}"
-                Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
+        <button:SfButton Grid.Column="1" Grid.Row="1"
+                         Text="{extensions:Localize MovementRecordMaxes}"
+                         Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
 
-        <Button Grid.Column="1" Grid.Row="3"
-                Margin="5, 2"
-                CornerRadius="25"
-                Text="{extensions:Localize Movements}"
-                Command="{Binding GoToMovementsViewCommand}"/>
+        <button:SfButton Grid.Column="1" Grid.Row="3"
+                         Text="{extensions:Localize Movements}"
+                         Command="{Binding GoToMovementsViewCommand}"/>
 
-        <Button Grid.Column="1" Grid.Row="5"
-                Margin="5, 2"
-                CornerRadius="25"
-                Text="{extensions:Localize MovementRecordAll}"
-                Command="{Binding GoToMovementRecordAllViewCommand}"/>
+        <button:SfButton Grid.Column="1" Grid.Row="5"
+                         Text="{extensions:Localize MovementRecordAll}"
+                         Command="{Binding GoToMovementRecordAllViewCommand}"/>
 
-        <Button Grid.Column="1" Grid.Row="7"
-                Margin="5, 2"
-                CornerRadius="25"
-                Text="{extensions:Localize Settings}"
-                Command="{Binding GoToSettingsViewCommand}"/>
+        <button:SfButton Grid.Column="1" Grid.Row="7"
+                         Text="{extensions:Localize Settings}"
+                         Command="{Binding GoToSettingsViewCommand}"/>
     </Grid>
 </ContentPage>
