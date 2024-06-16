@@ -25,7 +25,7 @@
 		<MauiIcon Include="Resources\AppIcon\personalrecord_icon.png" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#00E1FB" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
