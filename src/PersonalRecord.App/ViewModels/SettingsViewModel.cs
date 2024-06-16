@@ -1,17 +1,23 @@
 ﻿namespace PersonalRecord.App.ViewModels
 {
     using CommunityToolkit.Mvvm.ComponentModel;
+    using CommunityToolkit.Mvvm.Input;
+    using PersonalRecord.App.Interfaces;
     using PersonalRecord.Infrastructure;
     using PersonalRecord.Services.Interfaces;
 
     public partial class SettingsViewModel : ObservableObject
     {
+        private readonly INavigationService _navigationService;
         private readonly ISettingsService _settingsService;
 
         private Setting _setting;
 
-        public SettingsViewModel(ISettingsService settingsService)
+        public SettingsViewModel(
+            INavigationService navigationService,
+            ISettingsService settingsService)
         {
+            _navigationService = navigationService;
             _settingsService = settingsService;
 
             LoadSettings();
@@ -34,6 +40,13 @@
         public IEnumerable<Language> Languages
         {
             get => Enum.GetValues(typeof(Language)).Cast<Language>();
+        }
+
+        [RelayCommand]
+        public async Task SaveAndGoBack()
+        {
+            await _settingsService.UpdateSettingsAsync(Setting);
+            await _navigationService.GoToMainViewAsync();
         }
     }
 }

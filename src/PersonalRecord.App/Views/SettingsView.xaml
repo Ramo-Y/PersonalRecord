@@ -5,6 +5,9 @@
              x:Name="SettingsViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
              x:DataType="viewModels:SettingsViewModel"
              Title="{extensions:Localize Settings}">
     
@@ -12,41 +15,37 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="75"/>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Column="1" Grid.Row="1"
-               Margin="5, 2"
-               VerticalTextAlignment="Center"
-               Text="{extensions:Localize Unit}"/>
-        
-        <Editor Grid.Column="2" Grid.Row="1"
-                Margin="5, 2"
-                Text="{Binding Setting.Unit}"/>
+        <inputLayout:SfTextInputLayout Grid.Column="1" Grid.Row="1"
+                                       Hint="{extensions:Localize Unit}">
+            <Entry Text="{Binding Setting.Unit}"/>
+        </inputLayout:SfTextInputLayout>
 
-        <Label Grid.Column="1" Grid.Row="2"
-               Margin="5, 2"
-               VerticalTextAlignment="Center"
-               Text="{extensions:Localize DateFormat}"/>
-        <Editor Grid.Column="2" Grid.Row="2"
-                Margin="5, 2"
-                Text="{Binding Setting.DateFormat}"/>
+        <inputLayout:SfTextInputLayout Grid.Column="1" Grid.Row="3"
+                                       Hint="{extensions:Localize DateFormat}">
+            <Entry Text="{Binding Setting.DateFormat}" />
+        </inputLayout:SfTextInputLayout>
 
-        <!--<Label Grid.Column="1" Grid.Row="3"
-               Margin="5, 2"
-               VerticalTextAlignment="Center"
-               Text="{extensions:Localize Language}"/>
-        <Picker Grid.Column="2" Grid.Row="3"
-                Margin="5, 2"
-                ItemsSource="{Binding Languages}"
-                SelectedItem="{Binding Setting.Language}"/>-->
+        <editors:SfComboBox Grid.Column="1" Grid.Row="5"
+                            IsClearButtonVisible="False"
+                            ItemsSource="{Binding Languages}"
+                            SelectedItem="{Binding Setting.Language}"/>
+
+        <button:SfButton Grid.Column="1" Grid.Row="7"
+                         Text="{extensions:Localize Save}"
+                         Command="{Binding SaveAndGoBackCommand}"/>
     </Grid>
 </ContentPage>
