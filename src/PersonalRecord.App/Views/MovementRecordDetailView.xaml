@@ -49,6 +49,7 @@
                Text="{extensions:Localize Weight}"/>
         <editors:SfNumericEntry Grid.Column="1" Grid.Row="4"
                                 Value="{Binding MovementRecord.MvrWeight}"
+                                ValueChangeMode="OnKeyFocus"
                                 CustomFormat="N1"
                                 AllowNull="False"/>
         
