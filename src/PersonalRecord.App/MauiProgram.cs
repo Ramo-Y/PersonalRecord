@@ -4,7 +4,6 @@
     using epj.RouteGenerator;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Logging;
-    using PersonalRecord.App.Interfaces;
     using PersonalRecord.App.Services;
     using PersonalRecord.App.ViewModels;
     using PersonalRecord.App.Views;
@@ -15,6 +14,7 @@
     using PersonalRecord.Domain.Repositories;
     using PersonalRecord.Services;
     using PersonalRecord.Services.Interfaces;
+    using PersonalRecord.Services.Services;
     using Syncfusion.Maui.Core.Hosting;
 
     [AutoRoutes("View")]

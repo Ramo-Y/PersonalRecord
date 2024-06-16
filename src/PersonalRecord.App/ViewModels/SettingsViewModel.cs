@@ -2,7 +2,6 @@
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
-    using PersonalRecord.App.Interfaces;
     using PersonalRecord.Infrastructure;
     using PersonalRecord.Services.Interfaces;
 

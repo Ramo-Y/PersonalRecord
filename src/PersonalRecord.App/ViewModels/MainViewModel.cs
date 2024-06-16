@@ -2,7 +2,7 @@
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
-    using PersonalRecord.App.Interfaces;
+    using PersonalRecord.Services.Interfaces;
 
     public partial class MainViewModel : ObservableObject
     {

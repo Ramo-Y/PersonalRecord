@@ -1,7 +1,7 @@
-﻿namespace PersonalRecord.App.Services
+﻿namespace PersonalRecord.Services.Services
 {
     using Microsoft.Maui.Controls;
-    using PersonalRecord.App.Interfaces;
+    using PersonalRecord.Services.Interfaces;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 

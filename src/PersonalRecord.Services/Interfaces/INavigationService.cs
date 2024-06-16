@@ -1,4 +1,4 @@
-﻿namespace PersonalRecord.App.Interfaces
+﻿namespace PersonalRecord.Services.Interfaces
 {
     public interface INavigationService
     {
