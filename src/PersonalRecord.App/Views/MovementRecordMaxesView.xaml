@@ -27,13 +27,9 @@
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <sfgrid:SfDataGrid x:Name="dataGrid"
-                           Grid.Column="1" Grid.Row="1"
+        <sfgrid:SfDataGrid Grid.Column="1" Grid.Row="1"
                            ItemsSource="{Binding MovementRecords}"
                            AutoGenerateColumnsMode="None"
-                           SelectionMode="Single"
-                           AllowEditing="True"
-                           EditTapAction="OnTap"
                            ColumnWidthMode="Fill"
                            HeaderRowHeight="52"
                            RowHeight="48">
