@@ -1,9 +1,9 @@
-﻿namespace PersonalRecord.App.Services
+﻿namespace PersonalRecord.Infrastructure.Helpers
 {
     using PersonalRecord.Infrastructure.Constants;
     using Syncfusion.Licensing;
 
-    public static class LicenseService
+    public static class LicenseHelper
     {
         public static void RegisterLicense()
         {

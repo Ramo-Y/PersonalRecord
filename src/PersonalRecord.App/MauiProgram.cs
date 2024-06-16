@@ -4,7 +4,6 @@
     using epj.RouteGenerator;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Logging;
-    using PersonalRecord.App.Services;
     using PersonalRecord.App.ViewModels;
     using PersonalRecord.App.Views;
     using PersonalRecord.Domain.Helpers;
@@ -12,6 +11,7 @@
     using PersonalRecord.Domain.Models;
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Domain.Repositories;
+    using PersonalRecord.Infrastructure.Helpers;
     using PersonalRecord.Services;
     using PersonalRecord.Services.Interfaces;
     using PersonalRecord.Services.Services;
@@ -33,7 +33,7 @@
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            LicenseService.RegisterLicense();
+            LicenseHelper.RegisterLicense();
             
             // Register ViewModels
             builder.Services.AddSingleton<MainView>();
