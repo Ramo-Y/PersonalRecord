@@ -159,6 +159,9 @@
   <data name="Save" xml:space="preserve">
     <value>Speichern</value>
   </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
   <data name="Unit" xml:space="preserve">
     <value>Einheit</value>
   </data>
