@@ -11,9 +11,11 @@
     using PersonalRecord.Domain.Models;
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Domain.Repositories;
+    using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Infrastructure.Helpers;
     using PersonalRecord.Services.Interfaces;
     using PersonalRecord.Services.Services;
+    using Syncfusion.Licensing;
     using Syncfusion.Maui.Core.Hosting;
     using System.Globalization;
 
@@ -33,7 +35,7 @@
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            LicenseHelper.RegisterLicense();
+            RegisterLicense();
             
             // Register ViewModels
             builder.Services.AddSingleton<MainView>();
@@ -87,6 +89,14 @@
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+        }
+
+        public static void RegisterLicense()
+        {
+            var stream = FileSystem.OpenAppPackageFileAsync(EnvironmentConstants.LICENSE_FILENAME).Result;
+            var reader = new StreamReader(stream);
+            var license = reader.ReadToEnd();
+            SyncfusionLicenseProvider.RegisterLicense(license);
         }
     }
 }
