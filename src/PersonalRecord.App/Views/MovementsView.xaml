@@ -35,6 +35,7 @@
                            SelectionMode="Single"
                            AllowEditing="True"
                            ColumnWidthMode="Fill"
+                           EditTapAction="OnTap"
                            HeaderRowHeight="52"
                            RowHeight="48">
             <sfgrid:SfDataGrid.Columns>

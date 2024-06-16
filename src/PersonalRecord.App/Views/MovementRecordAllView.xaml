@@ -35,6 +35,7 @@
                            AutoGenerateColumnsMode="None"
                            SelectionMode="Single"
                            AllowEditing="True"
+                           EditTapAction="OnTap"
                            ColumnWidthMode="Fill"
                            HeaderRowHeight="52"
                            RowHeight="48">
