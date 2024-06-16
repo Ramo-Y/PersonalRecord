@@ -61,15 +61,6 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark theme.
-        /// </summary>
-        public static string DarkTheme {
-            get {
-                return ResourceManager.GetString("DarkTheme", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {

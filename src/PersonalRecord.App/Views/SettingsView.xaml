@@ -24,9 +24,7 @@
             <RowDefinition Height="5"/>
             <RowDefinition Height="75"/>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="5"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="55"/>
@@ -46,22 +44,13 @@
         <Label Grid.Column="1" Grid.Row="5"
                Margin="5, 2"
                VerticalTextAlignment="Center"
-               Text="{extensions:Localize DarkTheme}"/>
-        <button:SfSwitch Grid.Column="2" Grid.Row="5"
-                         StateChanged="SfSwitch_StateChanged"
-                         HorizontalOptions="End"
-                         IsOn="{Binding Setting.IsDarkTheme}"/>
-
-        <Label Grid.Column="1" Grid.Row="7"
-               Margin="5, 2"
-               VerticalTextAlignment="Center"
                Text="{extensions:Localize LanguageNeedsRestart}"/>
-        <editors:SfComboBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8"
+        <editors:SfComboBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Languages}"
                             SelectedItem="{Binding Setting.Language}"/>
 
-        <button:SfButton Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="10"
+        <button:SfButton Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8"
                          Text="{extensions:Localize Save}"
                          Command="{Binding SaveAndGoBackCommand}"/>
     </Grid>
