@@ -1,8 +1,8 @@
 <Project>
   <PropertyGroup>
-    <VersionPrefix>1.0.6</VersionPrefix>
-    <ApplicationDisplayVersion>1.0.6</ApplicationDisplayVersion>
-    <ApplicationVersion>6</ApplicationVersion>
+    <VersionPrefix>1.0.7</VersionPrefix>
+    <ApplicationDisplayVersion>1.0.7</ApplicationDisplayVersion>
+    <ApplicationVersion>7</ApplicationVersion>
 
     <Authors>Ramazan Yilmaz</Authors>
     <Copyright>Copyright © Ramazan Yilmaz, $([System.DateTime]::Now.ToString(yyyy))</Copyright>
