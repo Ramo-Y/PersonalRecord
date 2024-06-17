@@ -75,12 +75,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\MovementRecordMaxesView.xaml.cs">
-	    <DependentUpon>MovementRecordMaxesView.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="Views\MainView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
