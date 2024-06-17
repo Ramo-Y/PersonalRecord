@@ -17,7 +17,7 @@
     <TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
     <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 
-    <MauiVersion>8.0.21</MauiVersion>
+    <MauiVersion>8.0.60</MauiVersion>
 
     <UseMaui>true</UseMaui>
     <SingleProject>true</SingleProject>
