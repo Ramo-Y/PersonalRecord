@@ -25,8 +25,9 @@
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <sfgrid:SfDataGrid Grid.Column="0" Grid.Row="1"
-                           Margin="-35,0,5,0"
+        <sfgrid:SfDataGrid x:Name="dataGrid"
+                           Grid.Column="0" Grid.Row="1"
+                           Margin="-30,0,5,0"
                            ItemsSource="{Binding MovementRecords}"
                            GroupCaptionTextFormat="{}{Key} - {ItemsCount} Item(s)"
                            AllowDeleting="True"
@@ -51,6 +52,17 @@
                                            Format="{Binding Setting.DateFormat}"
                                            ValueBinding="{Binding MvrDate}">
                 </sfgrid:DataGridDateColumn>
+
+                <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
+                    <sfgrid:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <button:SfButton Background="Transparent"
+                                             Text="&#128465;"
+                                             Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.DeleteEntryCommand}"
+                                             CommandParameter="{Binding .}" />
+                        </DataTemplate>
+                    </sfgrid:DataGridTemplateColumn.CellTemplate>
+                </sfgrid:DataGridTemplateColumn>
 
             </sfgrid:SfDataGrid.Columns>
             <sfgrid:SfDataGrid.GroupColumnDescriptions>

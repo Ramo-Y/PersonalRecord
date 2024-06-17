@@ -75,6 +75,14 @@
             });
         }
 
+
+        [RelayCommand]
+        public async Task DeleteEntry(MovementRecord record)
+        {
+            await _movementRecordRepository.DeleteMovementRecordAsync(record);
+            MovementRecords.Remove(record);
+        }
+
         [RelayCommand]
         public async Task GoToMainViewAsync()
         {
