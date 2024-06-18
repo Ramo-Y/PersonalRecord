@@ -39,16 +39,91 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="SyncfusionLicense.txt" />
+	  <AndroidResource Remove="Resources\AppIcon\mipmap-hdpi\**" />
+	  <AndroidResource Remove="Resources\AppIcon\mipmap-ldpi\**" />
+	  <AndroidResource Remove="Resources\AppIcon\mipmap-mdpi\**" />
+	  <AndroidResource Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+	  <AndroidResource Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+	  <AndroidResource Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+	  <Compile Remove="Resources\AppIcon\mipmap-hdpi\**" />
+	  <Compile Remove="Resources\AppIcon\mipmap-ldpi\**" />
+	  <Compile Remove="Resources\AppIcon\mipmap-mdpi\**" />
+	  <Compile Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+	  <Compile Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+	  <Compile Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-hdpi\**" />
+	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-ldpi\**" />
+	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-mdpi\**" />
+	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+	  <EmbeddedResource Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+	  <MauiCss Remove="Resources\AppIcon\mipmap-hdpi\**" />
+	  <MauiCss Remove="Resources\AppIcon\mipmap-ldpi\**" />
+	  <MauiCss Remove="Resources\AppIcon\mipmap-mdpi\**" />
+	  <MauiCss Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+	  <MauiCss Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+	  <MauiCss Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+	  <MauiXaml Remove="Resources\AppIcon\mipmap-hdpi\**" />
+	  <MauiXaml Remove="Resources\AppIcon\mipmap-ldpi\**" />
+	  <MauiXaml Remove="Resources\AppIcon\mipmap-mdpi\**" />
+	  <MauiXaml Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+	  <MauiXaml Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+	  <MauiXaml Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
+	  <None Remove="Resources\AppIcon\mipmap-hdpi\**" />
+	  <None Remove="Resources\AppIcon\mipmap-ldpi\**" />
+	  <None Remove="Resources\AppIcon\mipmap-mdpi\**" />
+	  <None Remove="Resources\AppIcon\mipmap-xhdpi\**" />
+	  <None Remove="Resources\AppIcon\mipmap-xxhdpi\**" />
+	  <None Remove="Resources\AppIcon\mipmap-xxxhdpi\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidResource Include="Resources\AppIcon\mipmap-hdpi\ic_launcher.png" />
-	  <AndroidResource Include="Resources\AppIcon\mipmap-ldpi\ic_launcher.png" />
-	  <AndroidResource Include="Resources\AppIcon\mipmap-mdpi\ic_launcher.png" />
-	  <AndroidResource Include="Resources\AppIcon\mipmap-xhdpi\ic_launcher.png" />
-	  <AndroidResource Include="Resources\AppIcon\mipmap-xxhdpi\ic_launcher.png" />
-	  <AndroidResource Include="Resources\AppIcon\mipmap-xxxhdpi\ic_launcher.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher.xml" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_round.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-ldpi\ic_launcher.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_round.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_round.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+	  <AndroidResource Remove="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\AppIcon\ic_launcher-web.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher.xml" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-hdpi\ic_launcher_round.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-ldpi\ic_launcher.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-mdpi\ic_launcher_round.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xhdpi\ic_launcher_round.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+	  <EmbeddedResource Include="Platforms\Android\Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
 	</ItemGroup>
 
 	<ItemGroup>
