@@ -30,7 +30,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Column="0" Grid.Row="1"
-               Margin="5, 2"
+               Margin="5, 0"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Movement}"/>
         <editors:SfComboBox Grid.Column="0" Grid.Row="2"
@@ -40,7 +40,7 @@
                             SelectedItem="{Binding MovementRecord.Movement}"/>
 
         <Label Grid.Column="0" Grid.Row="3"
-               Margin="5, 2"
+               Margin="5, 0"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Weight}"/>
         <editors:SfNumericEntry Grid.Column="0" Grid.Row="4"
@@ -50,7 +50,7 @@
                                 AllowNull="False"/>
         
         <Label Grid.Column="0" Grid.Row="5"
-               Margin="5, 2"
+               Margin="5, 0"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Date}"/>
         <DatePicker Grid.Column="0" Grid.Row="6"
