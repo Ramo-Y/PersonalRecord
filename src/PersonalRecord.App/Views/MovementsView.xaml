@@ -10,6 +10,11 @@
              x:DataType="viewModels:MovementsViewModel"
              Title="{extensions:Localize Movements}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="&#128190;"
+                     Command="{Binding SaveAndGoBackCommand}"/>
+    </ContentPage.ToolbarItems>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
@@ -41,7 +46,7 @@
             </sfgrid:SfDataGrid.Columns>
         </sfgrid:SfDataGrid>
 
-        <button:SfButton Grid.Column="1" Grid.Row="1"
+        <button:SfButton Grid.Column="2" Grid.Row="1"
                          WidthRequest="50"
                          CornerRadius="25"
                          Command="{Binding AddNewMovementCommand}">
@@ -62,12 +67,5 @@
                 </DataTemplate>
             </button:SfButton.Content>
         </button:SfButton>
-
-        <button:SfButton Grid.Column="3" Grid.Row="1"
-                         Text="&#128190;"
-                         WidthRequest="50"
-                         CornerRadius="25"
-                         Command="{Binding SaveAndGoBackCommand}"/>
-
     </Grid>
 </ContentPage>
