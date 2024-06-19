@@ -8,6 +8,10 @@
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="viewModels:MainViewModel"
              Title="{extensions:Localize PersonalRecordTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="&#9881;"
+                     Command="{Binding GoToSettingsViewCommand}"/>
+    </ContentPage.ToolbarItems>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -39,9 +43,5 @@
         <button:SfButton Grid.Column="1" Grid.Row="5"
                          Text="{extensions:Localize MovementRecordAll}"
                          Command="{Binding GoToMovementRecordAllViewCommand}"/>
-
-        <button:SfButton Grid.Column="1" Grid.Row="7"
-                         Text="{extensions:Localize Settings}"
-                         Command="{Binding GoToSettingsViewCommand}"/>
     </Grid>
 </ContentPage>
