@@ -27,7 +27,6 @@
 
         <sfgrid:SfDataGrid x:Name="dataGrid"
                            Grid.Column="0" Grid.Row="0"
-                           Margin="-35,0,5,0"
                            ItemsSource="{Binding MovementRecords}"
                            GroupCaptionTextFormat="{}{Key} - {ItemsCount} Item(s)"
                            AllowDeleting="True"
@@ -39,6 +38,7 @@
                            ColumnWidthMode="Fill"
                            HeaderRowHeight="52"
                            VerticalOptions="FillAndExpand"
+                           IndentColumnWidth="0"
                            RowHeight="48">
 
             <sfgrid:SfDataGrid.Columns>
