@@ -5,7 +5,6 @@
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure;
-    using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Infrastructure.Helpers;
     using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
@@ -77,14 +76,18 @@
 
 
         [RelayCommand]
-        public async Task DeleteEntry(MovementRecord record)
+        public async Task DeleteEntry(MovementRecord movementRecord)
         {
-            await _movementRecordRepository.DeleteMovementRecordAsync(record);
-            MovementRecords.Remove(record);
+            await _movementRecordRepository.DeleteMovementRecordAsync(movementRecord);
+            var record = MovementRecords.SingleOrDefault(m => m.MovementRecordID == movementRecord.MovementRecordID);
+            if (record != null)
+            {
+                MovementRecords.Remove(movementRecord);
+            }
         }
 
         [RelayCommand]
-        public async Task GoToMainViewAsync()
+        public async Task SaveAndGoBack()
         {
             await _movementRecordRepository.UpdateAllEntriesAsync(MovementRecords);
             await _navigationService.GoBackAsync();

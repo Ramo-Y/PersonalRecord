@@ -10,6 +10,11 @@
              x:DataType="viewModels:MovementRecordAllViewModel"
              Title="{extensions:Localize MovementRecordAll}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="&#128190;"
+                     Command="{Binding SaveAndGoBackCommand}"/>
+    </ContentPage.ToolbarItems>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
