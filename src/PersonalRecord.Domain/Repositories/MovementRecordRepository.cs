@@ -46,8 +46,12 @@
 
         public async Task DeleteMovementRecordAsync(MovementRecord movementRecord)
         {
-            _context.MovementRecordItems.Remove(movementRecord);
-            await _context.SaveChangesAsync();
+            var record = await _context.MovementRecordItems.SingleOrDefaultAsync(r => r.MovementRecordID == movementRecord.MovementRecordID);
+            if (record != null)
+            {
+                _context.MovementRecordItems.Remove(record);
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task SaveAsync()
