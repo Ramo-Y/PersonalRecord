@@ -17,11 +17,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -29,7 +25,7 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <sfgrid:SfDataGrid Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0"
+        <sfgrid:SfDataGrid Grid.Column="0" Grid.Row="0"
                            ItemsSource="{Binding Movements}"
                            AllowDeleting="True"
                            AutoGenerateColumnsMode="None"
@@ -46,7 +42,7 @@
             </sfgrid:SfDataGrid.Columns>
         </sfgrid:SfDataGrid>
 
-        <button:SfButton Grid.Column="2" Grid.Row="1"
+        <button:SfButton Grid.Column="0" Grid.Row="1"
                          WidthRequest="50"
                          CornerRadius="25"
                          Command="{Binding AddNewMovementCommand}">
