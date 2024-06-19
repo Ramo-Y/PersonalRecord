@@ -18,6 +18,7 @@
         private ObservableCollection<MovementRecord> _movementRecords;
         private ObservableCollection<Movement> _movements;
 
+        private MovementRecord _dummyRecord;
         private Setting _setting;
 
         public MovementRecordAllViewModel(
@@ -33,8 +34,15 @@
             MovementRecords = [];
 
             LoadItems();
+
+            DummyRecord = new MovementRecord();
         }
 
+        public MovementRecord DummyRecord
+        {
+            get => _dummyRecord;
+            set => SetProperty(ref _dummyRecord, value);
+        }
 
         public Setting Setting
         {

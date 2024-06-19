@@ -97,6 +97,7 @@
                          WidthRequest="0"
                          HeightRequest="0"
                          IsVisible="False"
-                         Command="{Binding DeleteEntryCommand}"/>
+                         Command="{Binding DeleteEntryCommand}"
+                         CommandParameter="{Binding DummyRecord}"/>
     </Grid>
 </ContentPage>
