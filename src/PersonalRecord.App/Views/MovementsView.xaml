@@ -10,25 +10,21 @@
              x:DataType="viewModels:MovementsViewModel"
              Title="{extensions:Localize Movements}">
 
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior Command="{Binding GoBackCommand}" />
-    </Shell.BackButtonBehavior>
-    
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <sfgrid:SfDataGrid Grid.Column="1" Grid.Row="1"
-                           Margin="5, 2"
+        <sfgrid:SfDataGrid Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0"
                            ItemsSource="{Binding Movements}"
                            AllowDeleting="True"
                            AutoGenerateColumnsMode="None"
@@ -45,7 +41,7 @@
             </sfgrid:SfDataGrid.Columns>
         </sfgrid:SfDataGrid>
 
-        <button:SfButton Grid.Column="1" Grid.Row="2"
+        <button:SfButton Grid.Column="1" Grid.Row="1"
                          WidthRequest="50"
                          CornerRadius="25"
                          Command="{Binding AddNewMovementCommand}">
@@ -66,6 +62,12 @@
                 </DataTemplate>
             </button:SfButton.Content>
         </button:SfButton>
+
+        <button:SfButton Grid.Column="3" Grid.Row="1"
+                         Text="&#128190;"
+                         WidthRequest="50"
+                         CornerRadius="25"
+                         Command="{Binding SaveAndGoBackCommand}"/>
 
     </Grid>
 </ContentPage>

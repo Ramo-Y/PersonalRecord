@@ -11,15 +11,9 @@
              x:DataType="viewModels:MovementRecordDetailViewModel"
              Title="{extensions:Localize MovementRecord}">
 
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior Command="{Binding GoToMovementRecordsViewCommand}" />
-    </Shell.BackButtonBehavior>
-
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -32,36 +26,40 @@
             <RowDefinition Height="55"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="55"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Column="1" Grid.Row="1"
+        <Label Grid.Column="0" Grid.Row="1"
+               Margin="5, 2"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Movement}"/>
-        <editors:SfComboBox Grid.Column="1" Grid.Row="2"
+        <editors:SfComboBox Grid.Column="0" Grid.Row="2"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Movements}"
                             DisplayMemberPath="MovName"
                             SelectedItem="{Binding MovementRecord.Movement}"/>
 
-        <Label Grid.Column="1" Grid.Row="3"
+        <Label Grid.Column="0" Grid.Row="3"
+               Margin="5, 2"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Weight}"/>
-        <editors:SfNumericEntry Grid.Column="1" Grid.Row="4"
+        <editors:SfNumericEntry Grid.Column="0" Grid.Row="4"
                                 Value="{Binding MovementRecord.MvrWeight}"
                                 ValueChangeMode="OnKeyFocus"
                                 CustomFormat="N1"
                                 AllowNull="False"/>
         
-        <Label Grid.Column="1" Grid.Row="5"
+        <Label Grid.Column="0" Grid.Row="5"
+               Margin="5, 2"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize Date}"/>
-        <DatePicker Grid.Column="1" Grid.Row="6"
+        <DatePicker Grid.Column="0" Grid.Row="6"
                     Format="{Binding Setting.DateFormat}"
                     Date="{Binding MovementRecord.MvrDate}"/>
 
-        <button:SfButton Grid.Column="1" Grid.Row="9"
+        <button:SfButton Grid.Column="0" Grid.Row="9"
+                         Margin="5, 0"
                          Text="{extensions:Localize Save}"
-                         Command="{Binding SaveAndGoToMovementRecordsViewCommand}"/>
+                         Command="{Binding SaveAndGoBackCommand}"/>
     </Grid>
 </ContentPage>

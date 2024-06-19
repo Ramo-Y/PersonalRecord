@@ -10,14 +10,12 @@
     using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
-    [QueryProperty(nameof(PreviousPageName), nameof(NavigationConstants.PREVIOUS_PAGE_NAME))]
     public partial class MovementRecordDetailViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
         private readonly IMovementRecordRepository _movementRecordRepository;
         
-        private string _previousPageName;
         private ObservableCollection<Movement> _movements;
         private MovementRecord _movementRecord;
         private Setting _setting;
@@ -63,12 +61,6 @@
             set => SetProperty(ref _setting, value);
         }
 
-        public string PreviousPageName
-        {
-            get => _previousPageName;
-            set => SetProperty(ref _previousPageName, value);
-        }
-
         public MovementRecord MovementRecord
         {
             get => _movementRecord;
@@ -82,16 +74,10 @@
         }
 
         [RelayCommand]
-        public async Task GoToMovementRecordsView()
-        {
-            await _navigationService.GoToAsync(PreviousPageName);
-        }
-
-        [RelayCommand]
-        public async Task SaveAndGoToMovementRecordsView()
+        public async Task SaveAndGoBack()
         {
             await _movementRecordRepository.AddMovementRecordAsync(MovementRecord);
-            await _navigationService.GoToAsync(PreviousPageName);
+            await _navigationService.GoBackAsync();
         }
     }
 }

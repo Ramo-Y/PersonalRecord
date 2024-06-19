@@ -87,13 +87,13 @@
         public async Task GoToMainViewAsync()
         {
             await _movementRecordRepository.UpdateAllEntriesAsync(MovementRecords);
-            await _navigationService.GoToMainViewAsync();
+            await _navigationService.GoBackAsync();
         }
 
         [RelayCommand]
         public async Task GoToMovementRecordDetailsViewAsync()
         {
-            await _navigationService.GoToAsync(Routes.MovementRecordDetailView, NavigationConstants.PREVIOUS_PAGE_NAME, Routes.MovementRecordAllView);
+            await _navigationService.GoToAsync(Routes.MovementRecordDetailView);
         }
     }
 }

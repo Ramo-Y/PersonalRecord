@@ -50,10 +50,10 @@
         }
 
         [RelayCommand]
-        public async Task GoBack()
+        public async Task SaveAndGoBack()
         {
             await _movementRepository.AddOrUpdateAllAsync(Movements);
-            await _navigationService.GoToMainViewAsync();
+            await _navigationService.GoBackAsync();
         }
 
         public ObservableCollection<Movement> Movements

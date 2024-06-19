@@ -10,24 +10,19 @@
              x:DataType="viewModels:MovementRecordAllViewModel"
              Title="{extensions:Localize MovementRecordAll}">
 
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior Command="{Binding GoToMainViewCommand}" />
-    </Shell.BackButtonBehavior>
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
         <sfgrid:SfDataGrid x:Name="dataGrid"
-                           Grid.Column="0" Grid.Row="1"
-                           Margin="-30,0,5,0"
+                           Grid.Column="0" Grid.Row="0"
+                           Margin="-35,0,5,0"
                            ItemsSource="{Binding MovementRecords}"
                            GroupCaptionTextFormat="{}{Key} - {ItemsCount} Item(s)"
                            AllowDeleting="True"
@@ -70,7 +65,7 @@
             </sfgrid:SfDataGrid.GroupColumnDescriptions>
         </sfgrid:SfDataGrid>
 
-        <button:SfButton Grid.Column="0" Grid.Row="2"
+        <button:SfButton Grid.Column="0" Grid.Row="1"
                          WidthRequest="50"
                          CornerRadius="25"
                          Command="{Binding GoToMovementRecordDetailsViewCommand}">

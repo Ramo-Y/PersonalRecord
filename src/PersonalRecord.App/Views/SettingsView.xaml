@@ -13,9 +13,7 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -27,29 +25,29 @@
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="55"/>
-            <RowDefinition Height="5"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <inputLayout:SfTextInputLayout Grid.Column="1" Grid.Row="1"
+        <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="1"
                                        Hint="{extensions:Localize Unit}">
             <Entry Text="{Binding Setting.Unit}"/>
         </inputLayout:SfTextInputLayout>
 
-        <inputLayout:SfTextInputLayout Grid.Column="1" Grid.Row="3"
+        <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="3"
                                        Hint="{extensions:Localize DateFormat}">
             <Entry Text="{Binding Setting.DateFormat}" />
         </inputLayout:SfTextInputLayout>
 
-        <Label Grid.Column="1" Grid.Row="5"
+        <Label Grid.Column="0" Grid.Row="5"
                Margin="5, 2"
                VerticalTextAlignment="Center"
                Text="{extensions:Localize LanguageNeedsRestart}"/>
-        <editors:SfComboBox Grid.Column="1" Grid.Row="6"
+        <editors:SfComboBox Grid.Column="0" Grid.Row="6"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Languages}"
                             SelectedItem="{Binding Setting.Language}"/>
 
-        <button:SfButton Grid.Column="1" Grid.Row="8"
+        <button:SfButton Grid.Column="0" Grid.Row="8"
                          Text="{extensions:Localize Save}"
                          Command="{Binding SaveAndGoBackCommand}"/>
     </Grid>

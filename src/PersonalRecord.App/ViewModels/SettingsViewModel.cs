@@ -39,7 +39,7 @@
         public async Task SaveAndGoBack()
         {
             SettingsHelper.UpdateSettings(Setting);
-            await _navigationService.GoToMainViewAsync();
+            await _navigationService.GoBackAsync();
         }
     }
 }
