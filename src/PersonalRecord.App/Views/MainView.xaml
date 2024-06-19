@@ -8,6 +8,7 @@
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:DataType="viewModels:MainViewModel"
              Title="{extensions:Localize PersonalRecordTitle}">
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="&#9881;"
                      Command="{Binding GoToSettingsViewCommand}"/>
