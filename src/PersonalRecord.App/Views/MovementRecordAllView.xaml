@@ -53,7 +53,7 @@
                                            ValueBinding="{Binding MvrDate}">
                 </sfgrid:DataGridDateColumn>
 
-                <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
+                <!--<sfgrid:DataGridTemplateColumn MaximumWidth="50" >
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <button:SfButton Background="Transparent"
@@ -62,7 +62,7 @@
                                              CommandParameter="{Binding .}" />
                         </DataTemplate>
                     </sfgrid:DataGridTemplateColumn.CellTemplate>
-                </sfgrid:DataGridTemplateColumn>
+                </sfgrid:DataGridTemplateColumn>-->
 
             </sfgrid:SfDataGrid.Columns>
             <sfgrid:SfDataGrid.GroupColumnDescriptions>
