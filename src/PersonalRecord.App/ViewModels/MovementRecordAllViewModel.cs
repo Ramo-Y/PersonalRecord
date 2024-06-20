@@ -2,7 +2,6 @@
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
-    using MetroLog;
     using Microsoft.Extensions.Logging;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
@@ -19,8 +18,8 @@
         private ObservableCollection<MovementRecord> _movementRecords;
         private ObservableCollection<Movement> _movements;
 
-        private MovementRecord _dummyRecord;
         private Setting _setting;
+
         private readonly ILogger<MovementRecordAllViewModel> _logger;
 
         public MovementRecordAllViewModel(
@@ -38,14 +37,6 @@
             MovementRecords = [];
 
             LoadItems();
-
-            DummyRecord = new MovementRecord();
-        }
-
-        public MovementRecord DummyRecord
-        {
-            get => _dummyRecord;
-            set => SetProperty(ref _dummyRecord, value);
         }
 
         public Setting Setting

@@ -91,13 +91,5 @@
                 </DataTemplate>
             </button:SfButton.Content>
         </button:SfButton>
-
-        <!--Workaround, on release build, the DeleteEntryCommand is probably getting removed-->
-        <button:SfButton Grid.Column="0" Grid.Row="1"
-                         WidthRequest="0"
-                         HeightRequest="0"
-                         IsVisible="False"
-                         Command="{Binding DeleteEntryCommand}"
-                         CommandParameter="{Binding DummyRecord}"/>
     </Grid>
 </ContentPage>
