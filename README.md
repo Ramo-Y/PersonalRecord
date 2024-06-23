@@ -1,11 +1,9 @@
-## Use Google Authentication
-https://www.syncfusion.com/blogs/post/google-login-integration-in-xamarin-forms-a-complete-guide.aspx
+# Contribution
+TODO
 
-## Use sqlite
-https://www.sqlite.org/
+# Syncfusion
+Syncfusion components are used in this project, therefore a community license is required for each developer. Please make sure that you never commit your own license key.
 
-## Use MAUI
-https://learn.microsoft.com/en-us/dotnet/maui/get-started/first-app?view=net-maui-8.0&tabs=vswin&pivots=devices-android
+## Get a community license
+You can apply for a community license here: https://www.syncfusion.com/sales/communitylicense
 
-## Material Design
-https://github.com/mdc-maui/mdc-maui
