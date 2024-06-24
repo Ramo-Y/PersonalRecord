@@ -3,7 +3,6 @@
     x:Class="PersonalRecord.App.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:PersonalRecord.App"
     xmlns:views="clr-namespace:PersonalRecord.App.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="PersonalRecord.App">
