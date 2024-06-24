@@ -1,20 +1,27 @@
 ﻿using PersonalRecord.Domain.Models;
+using PersonalRecord.Infrastructure.Helpers;
+using PersonalRecord.Services.Interfaces;
 using Syncfusion.Maui.Themes;
+using System.Globalization;
 
 namespace PersonalRecord.App
 {
     public partial class App : Application
     {
-        public App(PreparationDatabase preparationDatabase)
+        private readonly ISettingsService _settingsService;
+
+        public App(PreparationDatabase preparationDatabase, ISettingsService settingsService)
         {
             InitializeComponent();
+
+            _settingsService = settingsService;
 
             MainThread.BeginInvokeOnMainThread(async () => 
             {
                 await preparationDatabase.PreparatePopulation();
             });
-
-
+            
+            SetCulture();
             SetTheme();
             Current!.RequestedThemeChanged += (s, a) =>
             {
@@ -22,6 +29,22 @@ namespace PersonalRecord.App
             };
 
             MainPage = new AppShell();
+        }
+
+        private void SetCulture()
+        {
+            var culture = "en-US";
+            var settings = _settingsService.LoadSettings();
+
+            culture = settings.Language switch
+            {
+                Infrastructure.Language.English => "en-US",
+                Infrastructure.Language.German => "de-DE",
+                _ => "en-US",
+            };
+
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
         }
 
         private static void SetTheme()

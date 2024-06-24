@@ -15,6 +15,7 @@
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
         private readonly IMovementRecordRepository _movementRecordRepository;
+        private readonly ISettingsService _settingsService;
         private ObservableCollection<MovementRecord> _movementRecords;
         private ObservableCollection<Movement> _movements;
 
@@ -26,11 +27,13 @@
             INavigationService navigationService,
             IMovementRepository movementRepository,
             IMovementRecordRepository movementRecordRepository,
+            ISettingsService settingsService,
             ILogger<MovementRecordAllViewModel> logger)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
             _movementRecordRepository = movementRecordRepository;
+            _settingsService = settingsService;
             _logger = logger;
 
             Movements = [];
@@ -73,7 +76,7 @@
                     MovementRecords.Add(movementRecord);
                 }
 
-                Setting = SettingsHelper.LoadSettings();
+                Setting = _settingsService.LoadSettings();
             });
         }
 

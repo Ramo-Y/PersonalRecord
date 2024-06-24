@@ -14,10 +14,9 @@
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Domain.Repositories;
     using PersonalRecord.Infrastructure.Helpers;
+    using PersonalRecord.Services;
     using PersonalRecord.Services.Interfaces;
-    using PersonalRecord.Services.Services;
     using Syncfusion.Maui.Core.Hosting;
-    using System.Globalization;
 
     [AutoRoutes("View")]
     public static class MauiProgram
@@ -55,6 +54,7 @@
 
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
+            builder.Services.AddSingleton<ISettingsService, SettingsService>();
 
             // DB Context
             builder.Services.AddDbContext<PersonalRecordContext>(opt => opt.UseSqlite(DatabaseHelper.GetConnectionString()));
@@ -66,7 +66,6 @@
 
             // Language
             builder.Services.AddLocalization();
-            SetCulture();
 
             builder.Logging
                 .AddTraceLogger(
@@ -97,22 +96,6 @@
 #endif
             var app = builder.Build();
             return app;
-        }
-
-        private static void SetCulture()
-        {
-            var culture = "en-US";
-            var settings = SettingsHelper.LoadSettings();
-
-            culture = settings.Language switch
-            {
-                Infrastructure.Language.English => "en-US",
-                Infrastructure.Language.German => "de-DE",
-                _ => "en-US",
-            };
-
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
         }
     }
 }
