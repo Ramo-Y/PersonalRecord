@@ -11,6 +11,8 @@ namespace PersonalRecord.App
     public partial class App : Application
     {
         private readonly ISettingsService _settingsService;
+        
+        private delegate void Callback();
 
         public App(PreparationDatabase preparationDatabase, ISettingsService settingsService)
         {
@@ -18,30 +20,36 @@ namespace PersonalRecord.App
 
             _settingsService = settingsService;
 
-            MainThread.BeginInvokeOnMainThread(async () => 
+            MainThread.BeginInvokeOnMainThread(async () =>
             {
                 await preparationDatabase.PreparatePopulation();
             });
-            
+
             // Language
             SetCulture();
             WeakReferenceMessenger.Default.Register<LanguageChangedMessage>(this, (m, e) =>
             {
-                (App.Current as App)!.MainPage!.Dispatcher.Dispatch(() =>
-                {
-                    SetCulture();
-                    (App.Current as App)!.MainPage = new AppShell();
-                });
+                RestartAppWithAction(SetCulture);
             });
 
             // Theme
             SetTheme();
             Current!.RequestedThemeChanged += (s, a) =>
             {
-                SetTheme();
+                RestartAppWithAction(SetTheme);
             };
 
             MainPage = new AppShell();
+        }
+
+
+        private void RestartAppWithAction(Callback callback)
+        {
+            (App.Current as App)!.MainPage!.Dispatcher.Dispatch(() =>
+            {
+                callback();
+                (App.Current as App)!.MainPage = new AppShell();
+            });
         }
 
         private void SetCulture()
