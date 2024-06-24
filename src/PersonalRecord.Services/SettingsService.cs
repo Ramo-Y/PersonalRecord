@@ -1,8 +1,10 @@
 ﻿namespace PersonalRecord.Services
 {
+    using CommunityToolkit.Mvvm.Messaging;
     using Newtonsoft.Json;
     using PersonalRecord.Infrastructure;
     using PersonalRecord.Infrastructure.Constants;
+    using PersonalRecord.Services.Events;
     using PersonalRecord.Services.Interfaces;
 
     public class SettingsService : ISettingsService
@@ -26,15 +28,31 @@
                 return setting;
             }
 
-            var settingJsonText = File.ReadAllText(_jsonFilePath);
-            setting = JsonConvert.DeserializeObject<Setting>(settingJsonText);
+            setting = DeserializeSetting();
 
             return setting;
         }
 
-        public void UpdateSettings(Setting setting)
+        public void UpdateSettings(Setting newSetting)
         {
-            SerializeSettings(setting);
+            var currentSetting = DeserializeSetting();
+            if (currentSetting.Language != newSetting.Language)
+            {
+                SerializeSettings(newSetting);
+                WeakReferenceMessenger.Default.Send(new LanguageChangedMessage());
+                
+                return;
+            }
+
+            SerializeSettings(newSetting);
+        }
+
+        private Setting DeserializeSetting()
+        {
+            var settingJsonText = File.ReadAllText(_jsonFilePath);
+            var setting = JsonConvert.DeserializeObject<Setting>(settingJsonText);
+            
+            return setting;
         }
 
         private void SerializeSettings(Setting setting)

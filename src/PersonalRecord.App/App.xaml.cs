@@ -1,8 +1,10 @@
-﻿using PersonalRecord.Domain.Models;
-using PersonalRecord.Infrastructure.Helpers;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using PersonalRecord.Domain.Models;
+using PersonalRecord.Services.Events;
 using PersonalRecord.Services.Interfaces;
 using Syncfusion.Maui.Themes;
 using System.Globalization;
+using System.Resources;
 
 namespace PersonalRecord.App
 {
@@ -21,7 +23,18 @@ namespace PersonalRecord.App
                 await preparationDatabase.PreparatePopulation();
             });
             
+            // Language
             SetCulture();
+            WeakReferenceMessenger.Default.Register<LanguageChangedMessage>(this, (m, e) =>
+            {
+                (App.Current as App)!.MainPage!.Dispatcher.Dispatch(() =>
+                {
+                    SetCulture();
+                    (App.Current as App)!.MainPage = new AppShell();
+                });
+            });
+
+            // Theme
             SetTheme();
             Current!.RequestedThemeChanged += (s, a) =>
             {
@@ -43,11 +56,14 @@ namespace PersonalRecord.App
                 _ => "en-US",
             };
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+            var cultureInfo = new CultureInfo(culture, false);
+            Thread.CurrentThread.CurrentCulture = cultureInfo;
+            Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
         }
 
-        private static void SetTheme()
+        private void SetTheme()
         {
             var plattformTheme = Current!.PlatformAppTheme;
             ICollection<ResourceDictionary> mergedDictionaries = Current.Resources.MergedDictionaries;

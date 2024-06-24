@@ -6,6 +6,6 @@
     {
         Setting LoadSettings();
 
-        void UpdateSettings(Setting setting);
+        void UpdateSettings(Setting newSetting);
     }
 }
