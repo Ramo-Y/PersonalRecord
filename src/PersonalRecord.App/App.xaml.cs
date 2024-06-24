@@ -4,7 +4,6 @@ using PersonalRecord.Services.Events;
 using PersonalRecord.Services.Interfaces;
 using Syncfusion.Maui.Themes;
 using System.Globalization;
-using System.Resources;
 
 namespace PersonalRecord.App
 {
@@ -41,7 +40,6 @@ namespace PersonalRecord.App
 
             MainPage = new AppShell();
         }
-
 
         private void RestartAppWithAction(Callback callback)
         {
