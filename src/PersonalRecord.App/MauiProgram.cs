@@ -37,7 +37,7 @@
             LicenseHelper.RegisterLicense();
             
             // Register ViewModels
-            builder.Services.AddSingleton<MainView>();
+            builder.Services.AddTransient<MainView>();
             builder.Services.AddTransient<MovementRecordAllView>();
             builder.Services.AddTransient<MovementRecordDetailView>();
             builder.Services.AddTransient<MovementRecordMaxesView>();
@@ -45,7 +45,7 @@
             builder.Services.AddTransient<SettingsView>();
 
             // Register ViewModels
-            builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddTransient<MovementRecordAllViewModel>();
             builder.Services.AddTransient<MovementRecordDetailViewModel>();
             builder.Services.AddTransient<MovementRecordMaxesViewModel>();
