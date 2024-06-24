@@ -4,11 +4,11 @@
              x:Class="PersonalRecord.App.Views.MovementsView"
              x:Name="MovementsViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
-             xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MovementsViewModel"
-             Title="{extensions:Localize Movements}">
+             Title="{x:Static resources:AppResources.Movements}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="&#128190;"
@@ -36,7 +36,7 @@
                            HeaderRowHeight="52"
                            RowHeight="48">
             <sfgrid:SfDataGrid.Columns>
-                <sfgrid:DataGridTextColumn HeaderText="{extensions:Localize Movement}"
+                <sfgrid:DataGridTextColumn HeaderText="{x:Static resources:AppResources.Movement}"
                                            ValueBinding="{Binding MovName, UpdateSourceEventName=PropertyChanged}">
                 </sfgrid:DataGridTextColumn>
             </sfgrid:SfDataGrid.Columns>

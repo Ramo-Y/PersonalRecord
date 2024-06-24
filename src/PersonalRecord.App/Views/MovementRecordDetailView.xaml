@@ -4,12 +4,12 @@
              x:Class="PersonalRecord.App.Views.MovementRecordDetailView"
              x:Name="MovementRecordDetailViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
-             xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MovementRecordDetailViewModel"
-             Title="{extensions:Localize MovementRecord}">
+             Title="{x:Static resources:AppResources.MovementRecord}">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -32,7 +32,7 @@
         <Label Grid.Column="0" Grid.Row="1"
                Margin="5, 0"
                VerticalTextAlignment="Center"
-               Text="{extensions:Localize Movement}"/>
+               Text="{x:Static resources:AppResources.Movement}"/>
         <editors:SfComboBox Grid.Column="0" Grid.Row="2"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Movements}"
@@ -42,7 +42,7 @@
         <Label Grid.Column="0" Grid.Row="3"
                Margin="5, 0"
                VerticalTextAlignment="Center"
-               Text="{extensions:Localize Weight}"/>
+               Text="{x:Static resources:AppResources.Weight}"/>
         <editors:SfNumericEntry Grid.Column="0" Grid.Row="4"
                                 Value="{Binding MovementRecord.MvrWeight}"
                                 ValueChangeMode="OnKeyFocus"
@@ -52,14 +52,14 @@
         <Label Grid.Column="0" Grid.Row="5"
                Margin="5, 0"
                VerticalTextAlignment="Center"
-               Text="{extensions:Localize Date}"/>
+               Text="{x:Static resources:AppResources.Date}"/>
         <DatePicker Grid.Column="0" Grid.Row="6"
                     Format="{Binding Setting.DateFormat}"
                     Date="{Binding MovementRecord.MvrDate}"/>
 
         <button:SfButton Grid.Column="0" Grid.Row="9"
                          Margin="5, 0"
-                         Text="{extensions:Localize Save}"
+                         Text="{x:Static resources:AppResources.Save}"
                          Command="{Binding SaveAndGoBackCommand}"/>
     </Grid>
 </ContentPage>

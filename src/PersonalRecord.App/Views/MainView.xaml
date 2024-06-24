@@ -4,10 +4,10 @@
              x:Class="PersonalRecord.App.Views.MainView"
              x:Name="MainViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
-             xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MainViewModel"
-             Title="{extensions:Localize PersonalRecordTitle}">
+             Title="{x:Static resources:AppResources.PersonalRecordTitle}">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="&#9881;"
@@ -34,15 +34,15 @@
         </Grid.RowDefinitions>
 
         <button:SfButton Grid.Column="1" Grid.Row="1"
-                         Text="{extensions:Localize MovementRecordMaxes}"
+                         Text="{x:Static resources:AppResources.MovementRecordMaxes}"
                          Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
 
         <button:SfButton Grid.Column="1" Grid.Row="3"
-                         Text="{extensions:Localize Movements}"
+                         Text="{x:Static resources:AppResources.Movements}"
                          Command="{Binding GoToMovementsViewCommand}"/>
 
         <button:SfButton Grid.Column="1" Grid.Row="5"
-                         Text="{extensions:Localize MovementRecordAll}"
+                         Text="{x:Static resources:AppResources.MovementRecordAll}"
                          Command="{Binding GoToMovementRecordAllViewCommand}"/>
     </Grid>
 </ContentPage>

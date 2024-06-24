@@ -4,12 +4,12 @@
              x:Class="PersonalRecord.App.Views.SettingsView"
              x:Name="SettingsViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
-             xmlns:extensions="clr-namespace:PersonalRecord.Infrastructure.Extensions;assembly=PersonalRecord.Infrastructure"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:SettingsViewModel"
-             Title="{extensions:Localize Settings}">
+             Title="{x:Static resources:AppResources.Settings}">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -29,19 +29,19 @@
         </Grid.RowDefinitions>
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="1"
-                                       Hint="{extensions:Localize Unit}">
+                                       Hint="{x:Static resources:AppResources.Unit}">
             <Entry Text="{Binding Setting.Unit}"/>
         </inputLayout:SfTextInputLayout>
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="3"
-                                       Hint="{extensions:Localize DateFormat}">
+                                       Hint="{x:Static resources:AppResources.DateFormat}">
             <Entry Text="{Binding Setting.DateFormat}" />
         </inputLayout:SfTextInputLayout>
 
         <Label Grid.Column="0" Grid.Row="5"
                Margin="5, 0"
                VerticalTextAlignment="Center"
-               Text="{extensions:Localize LanguageNeedsRestart}"/>
+               Text="{x:Static resources:AppResources.Language}"/>
         <editors:SfComboBox Grid.Column="0" Grid.Row="6"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Languages}"
@@ -49,7 +49,7 @@
 
         <button:SfButton Grid.Column="0" Grid.Row="8"
                          Margin="5, 0"
-                         Text="{extensions:Localize Save}"
+                         Text="{x:Static resources:AppResources.Save}"
                          Command="{Binding SaveAndGoBackCommand}"/>
     </Grid>
 </ContentPage>
