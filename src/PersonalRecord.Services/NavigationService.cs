@@ -1,4 +1,4 @@
-﻿namespace PersonalRecord.Services.Services
+﻿namespace PersonalRecord.Services
 {
     using Microsoft.Maui.Controls;
     using PersonalRecord.Services.Interfaces;
