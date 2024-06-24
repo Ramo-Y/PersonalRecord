@@ -126,9 +126,6 @@
   <data name="Language" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="LanguageNeedsRestart" xml:space="preserve">
-    <value>Language (needs restart)</value>
-  </data>
   <data name="Movement" xml:space="preserve">
     <value>Movement</value>
   </data>
