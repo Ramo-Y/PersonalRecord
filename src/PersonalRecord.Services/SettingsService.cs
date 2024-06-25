@@ -1,7 +1,6 @@
 ﻿namespace PersonalRecord.Services
 {
     using CommunityToolkit.Mvvm.Messaging;
-    using Newtonsoft.Json;
     using PersonalRecord.Infrastructure;
     using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Services.Events;
@@ -9,77 +8,45 @@
 
     public class SettingsService : ISettingsService
     {
-        private static string _jsonFilePath;
-
-        public SettingsService()
-        {
-            var appDataDirectory = FileSystem.AppDataDirectory;
-            _jsonFilePath = Path.Combine(appDataDirectory, EnvironmentConstants.SETTINGS_FILE_NAME);
-        }
-
         public Setting LoadSettings()
         {
-            Setting setting;
-            var exists = File.Exists(_jsonFilePath);
-            if (!exists)
-            {
-                setting = CreateDefaultSettings();
-                SerializeSettings(setting);
-                return setting;
-            }
-
-            setting = DeserializeSetting();
-
+            var setting = GetSettingFromPreferences();
             return setting;
         }
 
         public void UpdateSettings(Setting newSetting)
         {
-            var currentSetting = DeserializeSetting();
+            var currentSetting = GetSettingFromPreferences();
             if (currentSetting.Language != newSetting.Language)
             {
-                SerializeSettings(newSetting);
+                UpdatePreferences(newSetting);
                 WeakReferenceMessenger.Default.Send(new LanguageChangedMessage());
                 
                 return;
             }
 
-            SerializeSettings(newSetting);
+            UpdatePreferences(newSetting);
         }
 
-        private Setting DeserializeSetting()
-        {
-            var settingJsonText = File.ReadAllText(_jsonFilePath);
-            var setting = JsonConvert.DeserializeObject<Setting>(settingJsonText);
-            
-            return setting;
-        }
-
-        private void SerializeSettings(Setting setting)
-        {
-            var serializer = new JsonSerializer
-            {
-                Formatting = Formatting.Indented
-            };
-
-            using (var sw = new StreamWriter(_jsonFilePath))
-            using (var writer = new JsonTextWriter(sw))
-            {
-                serializer.Serialize(writer, setting);
-            }
-        }
-
-        private Setting CreateDefaultSettings()
+        private Setting GetSettingFromPreferences()
         {
             var setting = new Setting()
             {
-                DateFormat = DefaultConstants.DEFAULT_DATE_FORMAT,
-                Unit = DefaultConstants.DEFAULT_UNIT,
-                UnitFormat = DefaultConstants.DEFAULT_UNIT_FORMAT,
-                Language = Language.English
+                Unit = Preferences.Default.Get(nameof(Setting.Unit), DefaultConstants.DEFAULT_UNIT),
+                DateFormat = Preferences.Default.Get(nameof(Setting.DateFormat), DefaultConstants.DEFAULT_DATE_FORMAT),
+                UnitFormat = Preferences.Default.Get(nameof(Setting.UnitFormat), DefaultConstants.DEFAULT_UNIT_FORMAT),
+                Language = (Language)Preferences.Default.Get(nameof(Setting.Language), DefaultConstants.DEFAULT_LANGUAGE)
             };
 
             return setting;
+        }
+
+        private void UpdatePreferences(Setting newSetting)
+        {
+            Preferences.Default.Set(nameof(Setting.Unit), newSetting.Unit);
+            Preferences.Default.Set(nameof(Setting.DateFormat), newSetting.DateFormat);
+            Preferences.Default.Set(nameof(Setting.UnitFormat), newSetting.UnitFormat);
+            Preferences.Default.Set(nameof(Setting.Language), (int)newSetting.Language);
         }
     }
 }

@@ -9,5 +9,7 @@
         public const string DEFAULT_UNIT_FORMAT = $"###.# {DEFAULT_UNIT}";
 
         public const string DEFAULT_DATE_FORMAT = "yyyy-MM-dd";
+
+        public const int DEFAULT_LANGUAGE = 0;
     }
 }
