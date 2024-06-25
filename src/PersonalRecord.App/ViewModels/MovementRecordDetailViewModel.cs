@@ -78,8 +78,13 @@
         [RelayCommand]
         public async Task SaveAndGoBack()
         {
+            var navigationParameter = new ShellNavigationQueryParameters
+            {
+                { NavigationConstants.RELOAD, true }
+            };
+
             await _movementRecordRepository.AddMovementRecordAsync(MovementRecord);
-            await _navigationService.GoBackAsync();
+            await _navigationService.GoBackAsync(navigationParameter);
         }
     }
 }

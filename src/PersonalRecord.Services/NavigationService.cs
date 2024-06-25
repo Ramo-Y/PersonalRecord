@@ -26,5 +26,10 @@
         {
             await Shell.Current.GoToAsync("..");
         }
+
+        public async Task GoBackAsync(ShellNavigationQueryParameters parameters)
+        {
+            await Shell.Current.GoToAsync("..", parameters);
+        }
     }
 }

@@ -6,10 +6,12 @@
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure;
+    using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Services.Interfaces;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    public partial class MovementRecordAllViewModel : ObservableObject
+    public partial class MovementRecordAllViewModel : ObservableObject, IQueryAttributable
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
@@ -64,12 +66,14 @@
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
+                Movements.Clear();
                 var movements = await _movementRepository.GetAllMovementsAsync();
                 foreach (var movement in movements)
                 {
                     Movements.Add(movement);
                 }
 
+                MovementRecords.Clear();
                 var movementRecords = await _movementRecordRepository.GetAllMovementRecordsAsync();
                 foreach (var movementRecord in movementRecords)
                 {
@@ -105,6 +109,19 @@
         public async Task GoToMovementRecordDetailsViewAsync()
         {
             await _navigationService.GoToAsync(Routes.MovementRecordDetailView);
+        }
+
+        public void ApplyQueryAttributes(IDictionary<string, object> query)
+        {
+            if (query.Any())
+            {
+                query.TryGetValue(NavigationConstants.RELOAD, out var reloadValue);
+                var reload = reloadValue as bool?;
+                if (reload.Equals(true))
+                {
+                    LoadItems();
+                }
+            }
         }
     }
 }

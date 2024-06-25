@@ -9,5 +9,7 @@
         Task GoToAsync(ShellNavigationState state, Dictionary<string, object> navigationParameter);
 
         Task GoBackAsync();
+
+        Task GoBackAsync(ShellNavigationQueryParameters parameters);
     }
 }
