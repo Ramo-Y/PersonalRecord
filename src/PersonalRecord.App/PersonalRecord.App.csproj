@@ -100,6 +100,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\ic_launcher-web.png" />
+	  <None Remove="Resources\AppIcon\personalrecord_icon.png" />
 	</ItemGroup>
 
 	<ItemGroup>
