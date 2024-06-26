@@ -30,7 +30,7 @@
 
         public async Task<IEnumerable<MovementRecord>> GetAllMovementRecordsAsync()
         {
-            var movementRecordItems = await _context.MovementRecordItems.ToListAsync();
+            var movementRecordItems = await _context.MovementRecordItems.Include(m => m.Movement).ToListAsync();
             return movementRecordItems;
         }
 

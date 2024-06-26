@@ -28,12 +28,9 @@
                            RowHeight="48">
 
             <sfgrid:SfDataGrid.Columns>
-
-                <sfgrid:DataGridComboBoxColumn HeaderText="{x:Static resources:AppResources.Movement}"
-                                               ItemsSource="{Binding Movements}"
-                                               DisplayMemberPath="MovName"
-                                               ValueBinding="{Binding Movement}">
-                </sfgrid:DataGridComboBoxColumn>
+                <sfgrid:DataGridTextColumn HeaderText="{x:Static resources:AppResources.Movement}"
+                                           MappingName="Movement.MovName">
+                </sfgrid:DataGridTextColumn>
 
                 <sfgrid:DataGridNumericColumn HeaderText="{x:Static resources:AppResources.Weight}"
                                               Format="{Binding Setting.UnitFormat}"
