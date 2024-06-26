@@ -2,7 +2,6 @@
 {
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
-    using Microsoft.Extensions.Logging;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure;
@@ -23,20 +22,16 @@
 
         private Setting _setting;
 
-        private readonly ILogger<MovementRecordAllViewModel> _logger;
-
         public MovementRecordAllViewModel(
             INavigationService navigationService,
             IMovementRepository movementRepository,
             IMovementRecordRepository movementRecordRepository,
-            ISettingsService settingsService,
-            ILogger<MovementRecordAllViewModel> logger)
+            ISettingsService settingsService)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
             _movementRecordRepository = movementRecordRepository;
             _settingsService = settingsService;
-            _logger = logger;
 
             Movements = [];
             MovementRecords = [];
@@ -88,7 +83,6 @@
         [RelayCommand]
         public async Task DeleteEntry(MovementRecord movementRecord)
         {
-            _logger.LogInformation($"going to delete MovementRecord with id='{movementRecord.MovementRecordID}'");
             var record = MovementRecords.SingleOrDefault(m => m.MovementRecordID == movementRecord.MovementRecordID);
             if (record != null)
             {

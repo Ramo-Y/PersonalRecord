@@ -136,8 +136,6 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="epj.RouteGenerator" Version="1.0.1" />
-		<PackageReference Include="MetroLog.Maui" Version="2.1.0" />
-		<PackageReference Include="MetroLog.Net6" Version="2.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.6" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Syncfusion.Licensing" Version="26.1.35" />

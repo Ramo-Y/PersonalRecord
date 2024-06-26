@@ -1,7 +1,6 @@
 ﻿namespace PersonalRecord.Domain.Repositories
 {
     using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Logging;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
     using System;
@@ -11,12 +10,10 @@
     public class MovementRecordRepository : IMovementRecordRepository
     {
         private readonly PersonalRecordContext _context;
-        private readonly ILogger<MovementRecordRepository> _logger;
 
-        public MovementRecordRepository(PersonalRecordContext context, ILogger<MovementRecordRepository> logger)
+        public MovementRecordRepository(PersonalRecordContext context)
         {
             _context = context;
-            _logger = logger;
         }
 
         public async Task AddMovementRecordAsync(MovementRecord movementRecord)
@@ -49,18 +46,11 @@
 
         public async Task DeleteMovementRecordAsync(MovementRecord movementRecord)
         {
-            try
+            var record = await _context.MovementRecordItems.SingleOrDefaultAsync(r => r.MovementRecordID == movementRecord.MovementRecordID);
+            if (record != null)
             {
-                var record = await _context.MovementRecordItems.SingleOrDefaultAsync(r => r.MovementRecordID == movementRecord.MovementRecordID);
-                if (record != null)
-                {
-                    _context.MovementRecordItems.Remove(record);
-                    await _context.SaveChangesAsync();
-                }
-            }
-            catch (Exception exception)
-            {
-                _logger.LogError(exception.Message, exception);
+                _context.MovementRecordItems.Remove(record);
+                await _context.SaveChangesAsync();
             }
         }
 
