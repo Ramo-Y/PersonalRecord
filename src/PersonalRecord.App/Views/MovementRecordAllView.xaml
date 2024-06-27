@@ -28,6 +28,8 @@
         <sfgrid:SfDataGrid x:Name="dataGrid"
                            Grid.Column="0" Grid.Row="0"
                            ItemsSource="{Binding MovementRecords}"
+                           SortingMode="Single"
+                           AllowTriStateSorting="True"
                            GroupCaptionTextFormat="{}{Key} - {ItemsCount} Item(s)"
                            AllowDeleting="True"
                            AllowGroupExpandCollapse="True"

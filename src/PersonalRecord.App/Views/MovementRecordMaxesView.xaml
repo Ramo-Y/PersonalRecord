@@ -22,6 +22,8 @@
 
         <sfgrid:SfDataGrid Grid.Column="0" Grid.Row="0"
                            ItemsSource="{Binding MovementRecords}"
+                           SortingMode="Single"
+                           AllowTriStateSorting="True"
                            AutoGenerateColumnsMode="None"
                            ColumnWidthMode="Fill"
                            HeaderRowHeight="52"
