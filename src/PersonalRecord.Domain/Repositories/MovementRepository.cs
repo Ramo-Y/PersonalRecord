@@ -39,9 +39,16 @@
             return movementItems;
         }
 
+        public bool IsMovementInUse(Movement movement)
+        {
+            var isInUse = _context.MovementRecordItems.Any(m => m.Movement.Equals(movement));
+            return isInUse;
+        }
+
         public async Task DeleteMovementAsync(Movement movement)
         {
             await _context.MovementItems.Where(m => m.MovementID == movement.MovementID).ExecuteDeleteAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task SaveAsync()

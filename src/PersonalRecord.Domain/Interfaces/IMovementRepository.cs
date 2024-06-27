@@ -10,6 +10,8 @@
 
         Task<IEnumerable<Movement>> GetAllMovementsAsync();
 
+        bool IsMovementInUse(Movement movement);
+
         Task DeleteMovementAsync(Movement movement);
 
         Task SaveAsync();

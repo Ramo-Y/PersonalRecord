@@ -26,6 +26,12 @@
             LoadItems();
         }
 
+        public ObservableCollection<Movement> Movements
+        {
+            get => _movements;
+            set => SetProperty(ref _movements, value);
+        }
+
         private void LoadItems()
         {
             MainThread.BeginInvokeOnMainThread(async () =>
@@ -56,10 +62,17 @@
             await _navigationService.GoBackAsync();
         }
 
-        public ObservableCollection<Movement> Movements
+        [RelayCommand(CanExecute = nameof(CanDelete))]
+        public async Task DeleteEntry(Movement movement)
         {
-            get => _movements;
-            set => SetProperty(ref _movements, value);
+            await _movementRepository.DeleteMovementAsync(movement);
+            Movements.Remove(movement);
+        }
+
+        public bool CanDelete(Movement movement)
+        {
+            var isInUse = _movementRepository.IsMovementInUse(movement);
+            return !isInUse;
         }
     }
 }
