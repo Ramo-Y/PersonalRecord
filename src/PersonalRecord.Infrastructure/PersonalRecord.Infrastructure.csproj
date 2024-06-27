@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.6" />
-    <PackageReference Include="Syncfusion.Licensing" Version="26.1.35" />
+    <PackageReference Include="Syncfusion.Licensing" Version="26.1.39" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\Languages\AppResources.Designer.cs">
@@ -15,5 +15,9 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.61" />
+    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.61" />
   </ItemGroup>
 </Project>

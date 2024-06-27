@@ -18,4 +18,9 @@
 	  <ProjectReference Include="..\PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.61" />
+	  <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.61" />
+	</ItemGroup>
+
 </Project>
