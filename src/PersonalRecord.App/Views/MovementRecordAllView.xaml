@@ -4,6 +4,7 @@
              x:Class="PersonalRecord.App.Views.MovementRecordAllView"
              x:Name="MovementRecordAllViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
+             xmlns:entities="clr-namespace:PersonalRecord.Domain.Models.Entities;assembly=PersonalRecord.Domain"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
@@ -55,16 +56,16 @@
                                            ValueBinding="{Binding MvrDate}">
                 </sfgrid:DataGridDateColumn>
 
-                <!--<sfgrid:DataGridTemplateColumn MaximumWidth="50" >
+                <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="entities:MovementRecord">
                             <button:SfButton Background="Transparent"
                                              Text="&#128465;"
                                              Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.DeleteEntryCommand}"
                                              CommandParameter="{Binding .}" />
                         </DataTemplate>
                     </sfgrid:DataGridTemplateColumn.CellTemplate>
-                </sfgrid:DataGridTemplateColumn>-->
+                </sfgrid:DataGridTemplateColumn>
 
             </sfgrid:SfDataGrid.Columns>
             <sfgrid:SfDataGrid.GroupColumnDescriptions>
