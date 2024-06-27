@@ -35,7 +35,7 @@
 
         public async Task<IEnumerable<Movement>> GetAllMovementsAsync()
         {
-            var movementItems = await _context.MovementItems.ToListAsync();
+            var movementItems = await _context.MovementItems.OrderBy(m => m.MovName).ToListAsync();
             return movementItems;
         }
 
