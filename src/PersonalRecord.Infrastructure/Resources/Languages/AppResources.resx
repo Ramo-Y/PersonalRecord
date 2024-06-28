@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value>Date</value>
   </data>
   <data name="DateFormat" xml:space="preserve">
     <value>Date format</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteAskForConfirmation" xml:space="preserve">
+    <value>Are you sure you want to delete the entry?</value>
+  </data>
+  <data name="DeleteEntryTitle" xml:space="preserve">
+    <value>Delete entry</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>

@@ -4,6 +4,7 @@
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
+    using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
@@ -11,15 +12,17 @@
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
-
+        private readonly IAlertService _alertService;
         private ObservableCollection<Movement> _movements;
 
         public MovementsViewModel(
             INavigationService navigationService,
-            IMovementRepository movementRepository)
+            IMovementRepository movementRepository,
+            IAlertService alertService)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
+            _alertService = alertService;
 
             Movements = [];
             
@@ -65,8 +68,16 @@
         [RelayCommand(CanExecute = nameof(CanDelete))]
         public async Task DeleteEntry(Movement movement)
         {
-            await _movementRepository.DeleteMovementAsync(movement);
-            Movements.Remove(movement);
+            var deleteConfirmation = await _alertService.ShowConfirmationAsync(
+                AppResources.DeleteEntryTitle,
+                AppResources.DeleteAskForConfirmation,
+                AppResources.Delete,
+                AppResources.Cancel);
+            if (deleteConfirmation)
+            {
+                await _movementRepository.DeleteMovementAsync(movement);
+                Movements.Remove(movement);
+            }
         }
 
         public bool CanDelete(Movement movement)

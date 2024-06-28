@@ -61,6 +61,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string Date {
@@ -75,6 +84,33 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string DateFormat {
             get {
                 return ResourceManager.GetString("DateFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete the entry?.
+        /// </summary>
+        public static string DeleteAskForConfirmation {
+            get {
+                return ResourceManager.GetString("DeleteAskForConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete entry.
+        /// </summary>
+        public static string DeleteEntryTitle {
+            get {
+                return ResourceManager.GetString("DeleteEntryTitle", resourceCulture);
             }
         }
         

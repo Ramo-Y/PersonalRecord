@@ -6,6 +6,7 @@
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure;
     using PersonalRecord.Infrastructure.Constants;
+    using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -15,6 +16,7 @@
         private readonly INavigationService _navigationService;
         private readonly IMovementRecordRepository _movementRecordRepository;
         private readonly ISettingsService _settingsService;
+        private readonly IAlertService _alertService;
 
         private ObservableCollection<MovementRecord> _movementRecords;
 
@@ -23,11 +25,13 @@
         public MovementRecordAllViewModel(
             INavigationService navigationService,
             IMovementRecordRepository movementRecordRepository,
-            ISettingsService settingsService)
+            ISettingsService settingsService,
+            IAlertService alertService)
         {
             _navigationService = navigationService;
             _movementRecordRepository = movementRecordRepository;
             _settingsService = settingsService;
+            _alertService = alertService;
 
             MovementRecords = [];
 
@@ -64,13 +68,16 @@
         [RelayCommand]
         public async Task DeleteEntry(MovementRecord movementRecord)
         {
-            var record = MovementRecords.SingleOrDefault(m => m.MovementRecordID == movementRecord.MovementRecordID);
-            if (record != null)
+            var deleteConfirmation = await _alertService.ShowConfirmationAsync(
+                AppResources.DeleteEntryTitle,
+                AppResources.DeleteAskForConfirmation,
+                AppResources.Delete,
+                AppResources.Cancel);
+            if (deleteConfirmation)
             {
+                await _movementRecordRepository.DeleteMovementRecordAsync(movementRecord);
                 MovementRecords.Remove(movementRecord);
             }
-
-            await _movementRecordRepository.DeleteMovementRecordAsync(movementRecord);
         }
 
         [RelayCommand]
