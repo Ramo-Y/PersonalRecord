@@ -19,6 +19,11 @@
 		<ApplicationId>com.companyname.personalrecord.app</ApplicationId>
 
 	</PropertyGroup>
+  
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+  </PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->
