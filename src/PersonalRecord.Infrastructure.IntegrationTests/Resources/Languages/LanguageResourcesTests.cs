@@ -1,4 +1,4 @@
-namespace PersonalRecord.Infrastructure.IntegrationTests
+namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
 {
     using System.Collections.Generic;
     using System.Linq;
