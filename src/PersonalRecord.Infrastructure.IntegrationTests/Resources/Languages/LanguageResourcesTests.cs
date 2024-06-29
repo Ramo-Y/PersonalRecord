@@ -116,9 +116,40 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
             // asser
             foreach (var dictionary in languageDictionary)
             {
+                if (dictionary.Key.Equals(DEFAULT_LANGUAGE_CODE))
+                {
+                    continue;
+                }
+
                 var currentCount = dictionary.Value.Count;
                 var dictionaryCountErrorMessage = $"The language '{dictionary.Key}' should have {defaultCount} entries but actually has {currentCount} entries";
                 Assert.That(currentCount, Is.EqualTo(defaultCount), dictionaryCountErrorMessage);
+            }
+        }
+
+        [Test]
+        public void ReadAllLanguageResources_CheckOtherLanguages_AllEntriesExistInDefaultLanguage()
+        {
+            // arrange
+            var languageDictionary = GetLanguageDictionary();
+
+            // act
+            languageDictionary.TryGetValue(DEFAULT_LANGUAGE_CODE, out var defaultLanguageList);
+
+            // asser
+            foreach (var dictionary in languageDictionary)
+            {
+                if (dictionary.Key.Equals(DEFAULT_LANGUAGE_CODE))
+                {
+                    continue;
+                }
+
+                foreach (var entry in dictionary.Value)
+                {
+                    var exists = defaultLanguageList!.Any(l => l.Name.Equals(entry.Name));
+                    var entryDoesntExistInDefaultLanguageMessage = $"Entry with the name '{entry.Name}' does not exist in default language but in language '{dictionary.Key}'";
+                    Assert.That(exists, entryDoesntExistInDefaultLanguageMessage);
+                }
             }
         }
     }
