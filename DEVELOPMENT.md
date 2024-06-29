@@ -5,7 +5,9 @@ EF Core cannot be used to migrate projects that targets platform Android. The of
 ```
 Startup project 'PersonalRecord.App' targets platform 'Android'. The Entity Framework Core Package Manager Console Tools don't support this platform. See https://aka.ms/efcore-docs-pmc-tfms for more information.
 ```
+
 Bug Report on MAUI: https://github.com/dotnet/maui/issues/9940
+
 Documentation of EF Core: https://learn.microsoft.com/en-us/ef/core/cli/powershell#other-target-frameworks
 
 ### Migrations Repository
