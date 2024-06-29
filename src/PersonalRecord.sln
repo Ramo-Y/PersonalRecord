@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Domain", "Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Infrastructure", "PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj", "{96557DCD-4575-4658-8731-E9FA044B34B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalRecord.Services", "PersonalRecord.Services\PersonalRecord.Services.csproj", "{8185752B-5302-4C14-AE5C-D676253E1E06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Services", "PersonalRecord.Services\PersonalRecord.Services.csproj", "{8185752B-5302-4C14-AE5C-D676253E1E06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalRecord.Infrastructure.IntegrationTests", "PersonalRecord.Infrastructure.IntegrationTests\PersonalRecord.Infrastructure.IntegrationTests.csproj", "{FABCDAB0-E910-4C29-B430-50B2C2110761}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{8185752B-5302-4C14-AE5C-D676253E1E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8185752B-5302-4C14-AE5C-D676253E1E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8185752B-5302-4C14-AE5C-D676253E1E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABCDAB0-E910-4C29-B430-50B2C2110761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABCDAB0-E910-4C29-B430-50B2C2110761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABCDAB0-E910-4C29-B430-50B2C2110761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABCDAB0-E910-4C29-B430-50B2C2110761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
