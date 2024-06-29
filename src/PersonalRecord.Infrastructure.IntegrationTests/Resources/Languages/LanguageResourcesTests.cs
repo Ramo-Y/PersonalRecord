@@ -95,7 +95,7 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
 
                 var languageCodePart = parts[1];
                 var languageCodeErrorMessage = $"Language code should be {LANGUAGE_CODE_LENGTH} characters string, actual one is named '{languageCodePart}'";
-                Assert.That(languageCodePart.Length, Is.EqualTo(LANGUAGE_CODE_LENGTH), languageCodeErrorMessage);
+                Assert.That(languageCodePart, Has.Length.EqualTo(LANGUAGE_CODE_LENGTH), languageCodeErrorMessage);
 
                 var fileEndingPart = parts[2];
                 var fileEndingPartErrorMessage = $"The language resource file name has to end with '{APP_RESOURCES_FILE_ENDING}', actual is '{fileEndingPart}'";
@@ -111,12 +111,12 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
 
             // act
             languageDictionary.TryGetValue(DEFAULT_LANGUAGE_CODE, out var defaultLanguageList);
-            var defaultCount = defaultLanguageList!.Count();
+            var defaultCount = defaultLanguageList!.Count;
 
             // asser
             foreach (var dictionary in languageDictionary)
             {
-                var currentCount = dictionary.Value.Count();
+                var currentCount = dictionary.Value.Count;
                 var dictionaryCountErrorMessage = $"The language '{dictionary.Key}' should have {defaultCount} entries but actually has {currentCount} entries";
                 Assert.That(currentCount, Is.EqualTo(defaultCount), dictionaryCountErrorMessage);
             }
