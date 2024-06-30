@@ -113,7 +113,6 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
             languageDictionary.TryGetValue(DEFAULT_LANGUAGE_CODE, out var defaultLanguageList);
             var defaultCount = defaultLanguageList!.Count;
 
-            // asser
             foreach (var dictionary in languageDictionary)
             {
                 if (dictionary.Key.Equals(DEFAULT_LANGUAGE_CODE))
@@ -123,7 +122,28 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
 
                 var currentCount = dictionary.Value.Count;
                 var dictionaryCountErrorMessage = $"The language '{dictionary.Key}' should have {defaultCount} entries but actually has {currentCount} entries";
+
+                // assert
                 Assert.That(currentCount, Is.EqualTo(defaultCount), dictionaryCountErrorMessage);
+            }
+        }
+
+        [Test]
+        public void ReadAllLanguageResources_CheckAllValues_NoneOfThemIsEmpty()
+        {
+            // arrange
+            var languageDictionary = GetLanguageDictionary();
+
+            foreach (var dictionary in languageDictionary)
+            {
+                foreach (var entry in dictionary.Value)
+                {
+                    // act
+                    var entryHasEmptyValueErrorMessage = $"Entry with the name '{entry.Name}' has an empty value in '{dictionary.Key}' language";
+
+                    // assert
+                    Assert.That(entry.Value, Is.Not.Empty, entryHasEmptyValueErrorMessage);
+                }
             }
         }
 
@@ -136,7 +156,6 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
             // act
             languageDictionary.TryGetValue(DEFAULT_LANGUAGE_CODE, out var defaultLanguageList);
 
-            // asser
             foreach (var dictionary in languageDictionary)
             {
                 if (dictionary.Key.Equals(DEFAULT_LANGUAGE_CODE))
@@ -148,6 +167,8 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
                 {
                     var exists = defaultLanguageList!.Any(l => l.Name.Equals(entry.Name));
                     var entryDoesntExistInDefaultLanguageMessage = $"Entry with the name '{entry.Name}' does not exist in default language but in language '{dictionary.Key}'";
+ 
+                    // assert
                     Assert.That(exists, entryDoesntExistInDefaultLanguageMessage);
                 }
             }
