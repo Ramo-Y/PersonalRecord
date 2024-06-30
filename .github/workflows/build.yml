@@ -1,0 +1,34 @@
+on:
+  workflow_call:
+
+env:
+  TARGET_FRAMEWORK: net8.0-android
+  BUILD_CONFIGURATION: Release
+  APP_PROJECT: src\PersonalRecord.App\PersonalRecord.App.csproj
+  PACKAGE_NAME: com.ramo.personalrecord
+  APP_NAME: PersonalRecord.App
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set License
+      shell: pwsh
+      run: Set-Content -Path src\PersonalRecord.App\SyncfusionLicense.txt -Value ${{ secrets.SYNCFUSION_LICENSE }}
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.APP_PROJECT }} 
+    - name: Restore keystore
+      uses: timheuer/base64-to-file@v1.2
+      with:
+        filename: ${{ secrets.KEYSTORE_FILENAME }}
+        filedir: ${{ runner.temp }}
+        encodedString: ${{ secrets.KEYSTORE_BASE64 }}
+    - name: Publish MAUI Android AAB
+      run: dotnet publish ${{ env.APP_PROJECT }} -c ${{ env.BUILD_CONFIGURATION }} -f ${{ env.TARGET_FRAMEWORK }} /p:AndroidPackageFormats=aab /p:AndroidKeyStore=true /p:AndroidSigningKeyStore=${{ runner.temp }}\${{ secrets.KEYSTORE_FILENAME }} /p:AndroidSigningKeyAlias=${{ secrets.KEYSTORE_ALIAS }} /p:AndroidSigningKeyPass="${{ secrets.KEYSTORE_PASSWORD }}" /p:AndroidSigningStorePass="${{ secrets.KEYSTORE_PASSWORD }}" --no-restore
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ env.PACKAGE_NAME }}-Signed.aab
+        path: ${{ github.workspace }}\src\${{ env.APP_NAME }}\bin\${{ env.BUILD_CONFIGURATION }}\${{ env.TARGET_FRAMEWORK }}\publish\${{ env.PACKAGE_NAME }}-Signed.aab

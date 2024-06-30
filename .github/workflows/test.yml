@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+env:
+  TEST_FILES: src\PersonalRecord.Infrastructure.IntegrationTests\PersonalRecord.Infrastructure.IntegrationTests.csproj
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Integration Tests
+      run: dotnet test ${{ env.TEST_FILES }}
