@@ -19,7 +19,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Infrastructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Services", "PersonalRecord.Services\PersonalRecord.Services.csproj", "{8185752B-5302-4C14-AE5C-D676253E1E06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalRecord.Infrastructure.IntegrationTests", "PersonalRecord.Infrastructure.IntegrationTests\PersonalRecord.Infrastructure.IntegrationTests.csproj", "{FABCDAB0-E910-4C29-B430-50B2C2110761}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Infrastructure.IntegrationTests", "PersonalRecord.Infrastructure.IntegrationTests\PersonalRecord.Infrastructure.IntegrationTests.csproj", "{FABCDAB0-E910-4C29-B430-50B2C2110761}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{B8054003-18DD-4669-AA44-F809B6459F9A}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\build-test.yml = ..\.github\workflows\build-test.yml
+		..\.github\workflows\build.yml = ..\.github\workflows\build.yml
+		..\.github\workflows\test-build-upload.yml = ..\.github\workflows\test-build-upload.yml
+		..\.github\workflows\test.yml = ..\.github\workflows\test.yml
+		..\.github\workflows\upload.yml = ..\.github\workflows\upload.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +61,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B8054003-18DD-4669-AA44-F809B6459F9A} = {FB97B10F-1644-4E02-B18D-888AD2BCF0A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EDBDDCD-73E5-4053-94EC-D256E22261C0}
