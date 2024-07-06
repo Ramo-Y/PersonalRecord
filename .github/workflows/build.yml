@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@v4
     - name: Set License
       shell: pwsh
-      run: Set-Content -Path src\PersonalRecord.App\SyncfusionLicense.txt -Value ${{ secrets.SYNCFUSION_LICENSE }}
+      run: Set-Content -Path src\PersonalRecord.App\SyncfusionLicense.txt -Value ${{ secrets.SYNCFUSION_LICENSE }} -NoNewline -Force
     - name: Restore dependencies
       run: dotnet restore ${{ env.APP_PROJECT }} 
     - name: Restore keystore
