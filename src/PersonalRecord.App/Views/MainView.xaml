@@ -19,7 +19,7 @@
                         <ColumnDefinition Width="25"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="10"/>
                         <RowDefinition Height="70"/>
                         <RowDefinition Height="15"/>
@@ -32,17 +32,19 @@
                         <RowDefinition Height="25"/>
                     </Grid.RowDefinitions>
                     <HorizontalStackLayout Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"
-                                           HorizontalOptions="Start">
-                        <button:SfButton Text="☰"
-                                         TextColor="White"
-                                         Background="Transparent"
-                                         BackgroundColor="Transparent"
-                                         FontSize="Large"
-                                         MaximumWidthRequest="50"
-                                         Clicked="hamburgerButton_Clicked" />
+                                           Spacing="10"
+                                           Padding="5,0,0,0"
+                                           HorizontalOptions="Fill"
+                                           BackgroundColor="#6750A4">
+                        <ImageButton HeightRequest="50"
+                                     WidthRequest="50"
+                                     HorizontalOptions="Start"
+                                     Source="burgericon.png"
+                                     BackgroundColor="#6750A4"
+                                     Clicked="hamburgerButton_Clicked"/>
                         <Label Text="Personal Record"
                                Margin="10,0,0,0"
-                               TextColor="White"
+                               BackgroundColor="#6750A4"
                                VerticalTextAlignment="Center"
                                FontSize="Large" />
                     </HorizontalStackLayout>
