@@ -10,5 +10,10 @@ namespace PersonalRecord.App.Views
 
             BindingContext = viewModel;
         }
+
+        private void hamburgerButton_Clicked(object sender, EventArgs e)
+        {
+            navigationDrawer.ToggleDrawer();
+        }
     }
 }

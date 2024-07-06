@@ -5,44 +5,93 @@
              x:Name="MainViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MainViewModel"
              Title="{x:Static resources:AppResources.PersonalRecordTitle}">
+    <Shell.TitleView>
+        <HorizontalStackLayout HorizontalOptions="Start">
+            <button:SfButton Text="☰"
+                             TextColor="White"
+                             Background="Transparent"
+                             BackgroundColor="Transparent"
+                             Margin="-20,0,0,0"
+                             FontSize="Large"
+                             MaximumWidthRequest="50"
+                             Clicked="hamburgerButton_Clicked" />
+            <Label Text="Personal Record"
+                   Margin="10,0,0,0"
+                   TextColor="White"
+                   VerticalTextAlignment="Center"
+                   FontSize="Large" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>
     
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="&#9881;"
-                     Command="{Binding GoToSettingsViewCommand}"/>
-    </ContentPage.ToolbarItems>
-
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="25"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="25"/>
-        </Grid.RowDefinitions>
+        <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer">
+            <navigationdrawer:SfNavigationDrawer.ContentView>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    
+                    <button:SfButton Grid.Column="1" Grid.Row="1"
+                                             Text="{x:Static resources:AppResources.MovementRecordMaxes}"
+                                             Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
 
-        <button:SfButton Grid.Column="1" Grid.Row="1"
-                         Text="{x:Static resources:AppResources.MovementRecordMaxes}"
-                         Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
+                    <button:SfButton Grid.Column="1" Grid.Row="3"
+                                             Text="{x:Static resources:AppResources.Movements}"
+                                             Command="{Binding GoToMovementsViewCommand}"/>
 
-        <button:SfButton Grid.Column="1" Grid.Row="3"
-                         Text="{x:Static resources:AppResources.Movements}"
-                         Command="{Binding GoToMovementsViewCommand}"/>
+                    <button:SfButton Grid.Column="1" Grid.Row="5"
+                                             Text="{x:Static resources:AppResources.MovementRecordAll}"
+                                             Command="{Binding GoToMovementRecordAllViewCommand}"/>
+                </Grid>
 
-        <button:SfButton Grid.Column="1" Grid.Row="5"
-                         Text="{x:Static resources:AppResources.MovementRecordAll}"
-                         Command="{Binding GoToMovementRecordAllViewCommand}"/>
+            </navigationdrawer:SfNavigationDrawer.ContentView>
+            <navigationdrawer:SfNavigationDrawer.DrawerSettings>
+                <navigationdrawer:DrawerSettings>
+                    <navigationdrawer:DrawerSettings.DrawerContentView>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="25"/>
+                            </Grid.RowDefinitions>
+                            <button:SfButton Grid.Column="1" Grid.Row="1"
+                                             Text="{x:Static resources:AppResources.Settings}"
+                                             Command="{Binding GoToSettingsViewCommand}"/>
+
+                        </Grid>
+                    </navigationdrawer:DrawerSettings.DrawerContentView>
+                </navigationdrawer:DrawerSettings>
+            </navigationdrawer:SfNavigationDrawer.DrawerSettings>
+        </navigationdrawer:SfNavigationDrawer>
     </Grid>
 </ContentPage>
