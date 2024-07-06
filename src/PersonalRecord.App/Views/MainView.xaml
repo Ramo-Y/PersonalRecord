@@ -63,8 +63,9 @@
                 </Grid>
 
             </navigationdrawer:SfNavigationDrawer.ContentView>
+            
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
-                <navigationdrawer:DrawerSettings>
+                <navigationdrawer:DrawerSettings DrawerWidth="250">
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -87,7 +88,6 @@
                             <button:SfButton Grid.Column="1" Grid.Row="1"
                                              Text="{x:Static resources:AppResources.Settings}"
                                              Command="{Binding GoToSettingsViewCommand}"/>
-
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
                 </navigationdrawer:DrawerSettings>
