@@ -8,7 +8,7 @@
     Title="PersonalRecord.App">
 
     <ShellContent
-        Title="Home"
+        Title="Personal Record"
         ContentTemplate="{DataTemplate views:MainView}" />
 
 </Shell>
