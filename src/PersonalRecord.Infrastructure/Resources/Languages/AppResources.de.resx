@@ -135,6 +135,9 @@
   <data name="DeleteEntryTitle" xml:space="preserve">
     <value>Eintrag löschen</value>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Sprache</value>
   </data>
@@ -162,6 +165,9 @@
   <data name="PersonalRecordTitle" xml:space="preserve">
     <value>Personal Record</value>
   </data>
+  <data name="ReportAProblem" xml:space="preserve">
+    <value>Ein Problem melden</value>
+  </data>
   <data name="Reps" xml:space="preserve">
     <value>Wiederholungen</value>
   </data>
@@ -170,6 +176,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Einstellungen</value>
+  </data>
+  <data name="SupportThisProject" xml:space="preserve">
+    <value>Unterstütze das Projekt</value>
   </data>
   <data name="Unit" xml:space="preserve">
     <value>Einheit</value>
