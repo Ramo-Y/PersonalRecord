@@ -50,21 +50,24 @@
                     </HorizontalStackLayout>
 
                     <button:SfButton Grid.Column="1" Grid.Row="2"
-                                             Text="{x:Static resources:AppResources.MovementRecordMaxes}"
-                                             Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
+                                     Text="{x:Static resources:AppResources.MovementRecordMaxes}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
 
                     <button:SfButton Grid.Column="1" Grid.Row="4"
-                                             Text="{x:Static resources:AppResources.Movements}"
-                                             Command="{Binding GoToMovementsViewCommand}"/>
+                                     Text="{x:Static resources:AppResources.Movements}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToMovementsViewCommand}"/>
 
                     <button:SfButton Grid.Column="1" Grid.Row="6"
-                                             Text="{x:Static resources:AppResources.MovementRecordAll}"
-                                             Command="{Binding GoToMovementRecordAllViewCommand}"/>
+                                     Text="{x:Static resources:AppResources.MovementRecordAll}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToMovementRecordAllViewCommand}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
             
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
-                <navigationdrawer:DrawerSettings DrawerWidth="250"
+                <navigationdrawer:DrawerSettings DrawerWidth="300"
                                                  EnableSwipeGesture="True">
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
@@ -88,19 +91,27 @@
 
                             <button:SfButton Grid.Column="1" Grid.Row="1"
                                              Text="{x:Static resources:AppResources.Settings}"
+                                             Padding="25,0,0,0"
+                                             HorizontalTextAlignment="Start"
                                              FontSize="Medium"
                                              Command="{Binding GoToSettingsViewCommand}"/>
 
                             <button:SfButton Grid.Column="1" Grid.Row="3"
                                              Text="{x:Static resources:AppResources.ReportAProblem}"
+                                             Padding="25,0,0,0"
+                                             HorizontalTextAlignment="Start"
                                              FontSize="Medium"/>
                             
-                            <button:SfButton Grid.Column="1" Grid.Row="3"
+                            <button:SfButton Grid.Column="1" Grid.Row="5"
                                              Text="{x:Static resources:AppResources.Help}"
+                                             Padding="25,0,0,0"
+                                             HorizontalTextAlignment="Start"
                                              FontSize="Medium"/>
 
-                            <button:SfButton Grid.Column="1" Grid.Row="3"
+                            <button:SfButton Grid.Column="1" Grid.Row="7"
                                              Text="{x:Static resources:AppResources.SupportThisProject}"
+                                             Padding="25,0,0,0"
+                                             HorizontalTextAlignment="Start"
                                              FontSize="Medium"/>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
