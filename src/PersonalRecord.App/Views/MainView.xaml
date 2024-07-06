@@ -62,7 +62,8 @@
             </navigationdrawer:SfNavigationDrawer.ContentView>
             
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
-                <navigationdrawer:DrawerSettings DrawerWidth="250">
+                <navigationdrawer:DrawerSettings DrawerWidth="250"
+                                                 EnableSwipeGesture="True">
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -82,9 +83,23 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="25"/>
                             </Grid.RowDefinitions>
+
                             <button:SfButton Grid.Column="1" Grid.Row="1"
                                              Text="{x:Static resources:AppResources.Settings}"
+                                             FontSize="Medium"
                                              Command="{Binding GoToSettingsViewCommand}"/>
+
+                            <button:SfButton Grid.Column="1" Grid.Row="3"
+                                             Text="{x:Static resources:AppResources.ReportAProblem}"
+                                             FontSize="Medium"/>
+                            
+                            <button:SfButton Grid.Column="1" Grid.Row="3"
+                                             Text="{x:Static resources:AppResources.Help}"
+                                             FontSize="Medium"/>
+
+                            <button:SfButton Grid.Column="1" Grid.Row="3"
+                                             Text="{x:Static resources:AppResources.SupportThisProject}"
+                                             FontSize="Medium"/>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
                 </navigationdrawer:DrawerSettings>
