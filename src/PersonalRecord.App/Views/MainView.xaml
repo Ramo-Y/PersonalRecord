@@ -68,7 +68,17 @@
             
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
                 <navigationdrawer:DrawerSettings DrawerWidth="300"
+                                                 DrawerHeaderHeight="150"
                                                  EnableSwipeGesture="True">
+                    
+                    <navigationdrawer:DrawerSettings.DrawerHeaderView>
+                        <Grid BackgroundColor="#6750A4">
+                            <VerticalStackLayout VerticalOptions="Center"
+                                                 HorizontalOptions="Center">
+                            </VerticalStackLayout>
+                        </Grid>
+                    </navigationdrawer:DrawerSettings.DrawerHeaderView>
+                    
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
                             <Grid.ColumnDefinitions>
