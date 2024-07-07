@@ -9,9 +9,19 @@
     {
         private readonly INavigationService _navigationService;
 
+        private string _appVersion;
+
         public MainViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+
+            AppVersion = GetVersion();
+        }
+
+        public string AppVersion
+        {
+            get => _appVersion;
+            set => SetProperty(ref _appVersion, value);
         }
 
         [RelayCommand]
@@ -57,6 +67,13 @@
         {
             var uri = new Uri(EnvironmentConstants.PROJECT_ISSUES_URL);
             await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        }
+
+        private string GetVersion()
+        {
+            var versionString = AppInfo.Current.VersionString;
+            var version = $"V{versionString}";
+            return version;
         }
     }
 }

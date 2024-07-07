@@ -87,6 +87,7 @@
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
                 <navigationdrawer:DrawerSettings DrawerWidth="300"
                                                  DrawerHeaderHeight="220"
+                                                 DrawerFooterHeight="50"
                                                  EnableSwipeGesture="True">
                     
                     <navigationdrawer:DrawerSettings.DrawerHeaderView>
@@ -148,6 +149,16 @@
                                              Command="{Binding OpenSupportPageCommand}" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
+                    
+                    <navigationdrawer:DrawerSettings.DrawerFooterView>
+                        <Grid BackgroundColor="#00E1FB">
+                            <VerticalStackLayout VerticalOptions="Center"
+                                                 HorizontalOptions="Center">
+                                <Label Text="{Binding AppVersion}"
+                                       TextColor="Black"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </navigationdrawer:DrawerSettings.DrawerFooterView>
                 </navigationdrawer:DrawerSettings>
             </navigationdrawer:SfNavigationDrawer.DrawerSettings>
         </navigationdrawer:SfNavigationDrawer>
