@@ -34,7 +34,6 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -106,6 +105,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\ic_launcher-web.png" />
 	  <None Remove="Resources\AppIcon\personalrecord_icon.png" />
+	  <None Remove="Resources\Images\personalrecord.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -147,6 +147,7 @@
 		<PackageReference Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
 		<PackageReference Include="Syncfusion.Maui.Buttons" Version="$(SyncfusionVersion)" />
 		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="$(SyncfusionVersion)" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -5,44 +5,163 @@
              x:Name="MainViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
-             x:DataType="viewModels:MainViewModel"
-             Title="{x:Static resources:AppResources.PersonalRecordTitle}">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="&#9881;"
-                     Command="{Binding GoToSettingsViewCommand}"/>
-    </ContentPage.ToolbarItems>
+             x:DataType="viewModels:MainViewModel">
+
+    <ContentPage.Resources>
+        <Color x:Key="TextWhite">#FFFFFF</Color>
+        <Color x:Key="TextBlack">#000000</Color>
+        <Color x:Key="TransparentBackground">#00FFFFFF</Color>
+        
+        <Style x:Key="SfButtonCustomStyle"
+               TargetType="button:SfButton">
+            <Setter Property="Padding" Value="15,0,0,0" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="CornerRadius" Value="0" />
+            <!--<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextBlack}}", Dark={StaticResource TextWhite} />-->
+        </Style>
+    </ContentPage.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="25"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="25"/>
-        </Grid.RowDefinitions>
+        <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer">
+            <navigationdrawer:SfNavigationDrawer.ContentView>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <HorizontalStackLayout Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"
+                                           Spacing="10"
+                                           Padding="5,0,0,0"
+                                           HorizontalOptions="Fill"
+                                           BackgroundColor="#6750A4">
+                        <button:SfButton Text="☰"
+                                         HeightRequest="50"
+                                         WidthRequest="50"
+                                         HorizontalOptions="Start"
+                                         TextColor="White"
+                                         Background="Transparent"
+                                         FontSize="Large"
+                                         Clicked="hamburgerButton_Clicked" />
+                        <Label Text="{x:Static resources:AppResources.PersonalRecordTitle}"
+                               TextColor="White"
+                               Margin="10,0,0,0"
+                               BackgroundColor="#6750A4"
+                               VerticalTextAlignment="Center"
+                               FontSize="Large" />
+                    </HorizontalStackLayout>
 
-        <button:SfButton Grid.Column="1" Grid.Row="1"
-                         Text="{x:Static resources:AppResources.MovementRecordMaxes}"
-                         Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
+                    <button:SfButton Grid.Column="1" Grid.Row="2"
+                                     Text="{x:Static resources:AppResources.MovementRecordMaxes}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
 
-        <button:SfButton Grid.Column="1" Grid.Row="3"
-                         Text="{x:Static resources:AppResources.Movements}"
-                         Command="{Binding GoToMovementsViewCommand}"/>
+                    <button:SfButton Grid.Column="1" Grid.Row="4"
+                                     Text="{x:Static resources:AppResources.Movements}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToMovementsViewCommand}"/>
 
-        <button:SfButton Grid.Column="1" Grid.Row="5"
-                         Text="{x:Static resources:AppResources.MovementRecordAll}"
-                         Command="{Binding GoToMovementRecordAllViewCommand}"/>
+                    <button:SfButton Grid.Column="1" Grid.Row="6"
+                                     Text="{x:Static resources:AppResources.MovementRecordAll}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToMovementRecordAllViewCommand}"/>
+                </Grid>
+            </navigationdrawer:SfNavigationDrawer.ContentView>
+            
+            <navigationdrawer:SfNavigationDrawer.DrawerSettings>
+                <navigationdrawer:DrawerSettings DrawerWidth="300"
+                                                 DrawerHeaderHeight="220"
+                                                 DrawerFooterHeight="50"
+                                                 EnableSwipeGesture="True">
+                    
+                    <navigationdrawer:DrawerSettings.DrawerHeaderView>
+                        <Grid BackgroundColor="#00E1FB">
+                            <VerticalStackLayout VerticalOptions="Center"
+                                                 HorizontalOptions="Center">
+                                <Label Text="{x:Static resources:AppResources.PersonalRecordTitle}"
+                                       BackgroundColor="#00E1FB"
+                                       TextColor="Black"
+                                       HorizontalOptions="Center"
+                                       FontSize="Title"/>
+                                <Image Source="personalrecord.png" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </navigationdrawer:DrawerSettings.DrawerHeaderView>
+                    
+                    <navigationdrawer:DrawerSettings.DrawerContentView>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="15"/>
+                            </Grid.RowDefinitions>
+
+                            <button:SfButton Grid.Column="1" Grid.Row="1"
+                                             Background="Transparent"
+                                             TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
+                                             Text="{x:Static resources:AppResources.Settings}"
+                                             Style="{StaticResource SfButtonCustomStyle}"
+                                             Command="{Binding GoToSettingsViewCommand}"/>
+
+                            <!--TODO: Enable buttons as soon as project is open source-->
+                            <!--<button:SfButton Grid.Column="1" Grid.Row="2"
+                                             Background="Transparent"
+                                             TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
+                                             Text="{x:Static resources:AppResources.ReportAProblem}"
+                                             Style="{StaticResource SfButtonCustomStyle}"
+                                             Command="{Binding OpenProjectIssuesPageCommand}" />
+
+                            <button:SfButton Grid.Column="1" Grid.Row="3"
+                                             Background="Transparent"
+                                             TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
+                                             Text="{x:Static resources:AppResources.Help}"
+                                             Style="{StaticResource SfButtonCustomStyle}"
+                                             Command="{Binding OpenProjectPageCommand}" />-->
+
+                            <button:SfButton Grid.Column="1" Grid.Row="2"
+                                             Background="Transparent"
+                                             TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
+                                             Text="{x:Static resources:AppResources.SupportThisProject}"
+                                             Style="{StaticResource SfButtonCustomStyle}"
+                                             Command="{Binding OpenSupportPageCommand}" />
+                        </Grid>
+                    </navigationdrawer:DrawerSettings.DrawerContentView>
+                    
+                    <navigationdrawer:DrawerSettings.DrawerFooterView>
+                        <Grid BackgroundColor="#00E1FB">
+                            <VerticalStackLayout VerticalOptions="Center"
+                                                 HorizontalOptions="Center">
+                                <Label Text="{Binding AppVersion}"
+                                       TextColor="Black"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </navigationdrawer:DrawerSettings.DrawerFooterView>
+                </navigationdrawer:DrawerSettings>
+            </navigationdrawer:SfNavigationDrawer.DrawerSettings>
+        </navigationdrawer:SfNavigationDrawer>
     </Grid>
 </ContentPage>

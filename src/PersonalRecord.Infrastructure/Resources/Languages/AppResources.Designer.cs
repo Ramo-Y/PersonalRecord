@@ -115,6 +115,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string Language {
@@ -196,6 +205,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Report a problem.
+        /// </summary>
+        public static string ReportAProblem {
+            get {
+                return ResourceManager.GetString("ReportAProblem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reps.
         /// </summary>
         public static string Reps {
@@ -219,6 +237,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support this project.
+        /// </summary>
+        public static string SupportThisProject {
+            get {
+                return ResourceManager.GetString("SupportThisProject", resourceCulture);
             }
         }
         

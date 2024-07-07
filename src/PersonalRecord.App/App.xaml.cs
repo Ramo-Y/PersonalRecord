@@ -72,7 +72,7 @@ namespace PersonalRecord.App
         private void SetTheme()
         {
             var plattformTheme = Current!.PlatformAppTheme;
-            ICollection<ResourceDictionary> mergedDictionaries = Current.Resources.MergedDictionaries;
+            var mergedDictionaries = Current.Resources.MergedDictionaries;
 
             if (mergedDictionaries != null)
             {
