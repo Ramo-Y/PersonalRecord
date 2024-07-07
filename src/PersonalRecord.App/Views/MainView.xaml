@@ -127,7 +127,8 @@
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding GoToSettingsViewCommand}"/>
 
-                            <button:SfButton Grid.Column="1" Grid.Row="2"
+                            <!--TODO: Enable buttons as soon as project is open source-->
+                            <!--<button:SfButton Grid.Column="1" Grid.Row="2"
                                              Background="Transparent"
                                              TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
                                              Text="{x:Static resources:AppResources.ReportAProblem}"
@@ -139,9 +140,9 @@
                                              TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
                                              Text="{x:Static resources:AppResources.Help}"
                                              Style="{StaticResource SfButtonCustomStyle}"
-                                             Command="{Binding OpenProjectPageCommand}" />
+                                             Command="{Binding OpenProjectPageCommand}" />-->
 
-                            <button:SfButton Grid.Column="1" Grid.Row="4"
+                            <button:SfButton Grid.Column="1" Grid.Row="2"
                                              Background="Transparent"
                                              TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
                                              Text="{x:Static resources:AppResources.SupportThisProject}"
