@@ -90,42 +90,46 @@
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="25"/>
-                                <RowDefinition Height="70"/>
                                 <RowDefinition Height="15"/>
-                                <RowDefinition Height="70"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
                                 <RowDefinition Height="15"/>
-                                <RowDefinition Height="70"/>
-                                <RowDefinition Height="15"/>
-                                <RowDefinition Height="70"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="25"/>
                             </Grid.RowDefinitions>
 
-                            <button:SfButton Grid.Column="1" Grid.Row="1"
-                                             Text="{x:Static resources:AppResources.Settings}"
-                                             Padding="25,0,0,0"
-                                             HorizontalTextAlignment="Start"
-                                             FontSize="Medium"
-                                             Command="{Binding GoToSettingsViewCommand}"/>
+                            <Button Grid.Column="1" Grid.Row="1"
+                                    Text="{x:Static resources:AppResources.Settings}"
+                                    Padding="25,0,0,0"
+                                    HorizontalOptions="Start"
+                                    Background="Transparent"
+                                    TextColor="{AppThemeBinding Dark=White, Light=Black}"
+                                    FontSize="Medium"
+                                    Command="{Binding GoToSettingsViewCommand}"/>
 
-                            <button:SfButton Grid.Column="1" Grid.Row="3"
-                                             Text="{x:Static resources:AppResources.ReportAProblem}"
-                                             Padding="25,0,0,0"
-                                             HorizontalTextAlignment="Start"
-                                             FontSize="Medium"/>
-                            
-                            <button:SfButton Grid.Column="1" Grid.Row="5"
-                                             Text="{x:Static resources:AppResources.Help}"
-                                             Padding="25,0,0,0"
-                                             HorizontalTextAlignment="Start"
-                                             FontSize="Medium"/>
+                            <Button Grid.Column="1" Grid.Row="2"
+                                    Text="{x:Static resources:AppResources.ReportAProblem}"
+                                    Padding="25,0,0,0"
+                                    HorizontalOptions="Start"
+                                    Background="Transparent"
+                                    TextColor="{AppThemeBinding Dark=White, Light=Black}"
+                                    FontSize="Medium" />
 
-                            <button:SfButton Grid.Column="1" Grid.Row="7"
-                                             Text="{x:Static resources:AppResources.SupportThisProject}"
-                                             Padding="25,0,0,0"
-                                             HorizontalTextAlignment="Start"
-                                             FontSize="Medium"/>
+                            <Button Grid.Column="1" Grid.Row="3"
+                                    Text="{x:Static resources:AppResources.Help}"
+                                    Padding="25,0,0,0"
+                                    HorizontalOptions="Start"
+                                    Background="Transparent"
+                                    TextColor="{AppThemeBinding Dark=White, Light=Black}"
+                                    FontSize="Medium" />
+
+                            <Button Grid.Column="1" Grid.Row="4"
+                                    Text="{x:Static resources:AppResources.SupportThisProject}"
+                                    Padding="25,0,0,0"
+                                    HorizontalOptions="Start"
+                                    Background="Transparent"
+                                    TextColor="{AppThemeBinding Dark=White, Light=Black}"
+                                    FontSize="Medium" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
                 </navigationdrawer:DrawerSettings>
