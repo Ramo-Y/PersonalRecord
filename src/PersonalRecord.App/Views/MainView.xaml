@@ -71,13 +71,19 @@
             
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
                 <navigationdrawer:DrawerSettings DrawerWidth="300"
-                                                 DrawerHeaderHeight="150"
+                                                 DrawerHeaderHeight="220"
                                                  EnableSwipeGesture="True">
                     
                     <navigationdrawer:DrawerSettings.DrawerHeaderView>
-                        <Grid BackgroundColor="#6750A4">
+                        <Grid BackgroundColor="#00E1FB">
                             <VerticalStackLayout VerticalOptions="Center"
                                                  HorizontalOptions="Center">
+                                <Label Text="{x:Static resources:AppResources.PersonalRecordTitle}"
+                                       BackgroundColor="#00E1FB"
+                                       TextColor="Black"
+                                       HorizontalOptions="Center"
+                                       FontSize="Title"/>
+                                <Image Source="personalrecord.png" />
                             </VerticalStackLayout>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerHeaderView>
