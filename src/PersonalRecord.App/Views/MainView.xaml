@@ -113,7 +113,8 @@
                                     HorizontalOptions="Start"
                                     Background="Transparent"
                                     TextColor="{AppThemeBinding Dark=White, Light=Black}"
-                                    FontSize="Medium" />
+                                    FontSize="Medium"
+                                    Command="{Binding OpenProjectIssuesPageCommand}" />
 
                             <Button Grid.Column="1" Grid.Row="3"
                                     Text="{x:Static resources:AppResources.Help}"
@@ -121,7 +122,8 @@
                                     HorizontalOptions="Start"
                                     Background="Transparent"
                                     TextColor="{AppThemeBinding Dark=White, Light=Black}"
-                                    FontSize="Medium" />
+                                    FontSize="Medium"
+                                    Command="{Binding OpenProjectPageCommand}" />
 
                             <Button Grid.Column="1" Grid.Row="4"
                                     Text="{x:Static resources:AppResources.SupportThisProject}"
@@ -129,7 +131,8 @@
                                     HorizontalOptions="Start"
                                     Background="Transparent"
                                     TextColor="{AppThemeBinding Dark=White, Light=Black}"
-                                    FontSize="Medium" />
+                                    FontSize="Medium"
+                                    Command="{Binding OpenSupportPageCommand}" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
                 </navigationdrawer:DrawerSettings>
