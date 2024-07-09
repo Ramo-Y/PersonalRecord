@@ -21,14 +21,30 @@
             <Setter Property="FontSize" Value="Medium" />
             <Setter Property="CornerRadius" Value="0" />
 
-            <!--Button Problem-->
-            <!--This does not work if it is set here, but it does work if it is set directly on the buttons-->
-            <!--I have tried it with the "StaticResource TransparentBackground", "Transparent", or #00FFFFFF, but it does not work in any of the cases-->
-            <!--<Setter Property="Background" Value="{StaticResource TransparentBackground}" />-->
-
-            <!--Button Problem-->
-            <!--This does not work either here or if it is set directly on the button-->
-            <!--<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextBlack}}", Dark={StaticResource TextWhite} />-->
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Hovered">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
         </Style>
     </ContentPage.Resources>
 
@@ -128,33 +144,23 @@
                                 <RowDefinition Height="15"/>
                             </Grid.RowDefinitions>
 
-                            <!--Button Problem-->
                             <button:SfButton Grid.Column="1" Grid.Row="1"
-                                             Background="Transparent"
-                                             TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
                                              Text="{x:Static resources:AppResources.Settings}"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding GoToSettingsViewCommand}"/>
 
                             <!--TODO: Enable buttons as soon as project is open source-->
                             <!--<button:SfButton Grid.Column="1" Grid.Row="2"
-                                             Background="Transparent"
-                                             TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
                                              Text="{x:Static resources:AppResources.ReportAProblem}"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenProjectIssuesPageCommand}" />
 
                             <button:SfButton Grid.Column="1" Grid.Row="3"
-                                             Background="Transparent"
-                                             TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
                                              Text="{x:Static resources:AppResources.Help}"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenProjectPageCommand}" />-->
 
-                            <!--Button Problem-->
                             <button:SfButton Grid.Column="1" Grid.Row="2"
-                                             Background="Transparent"
-                                             TextColor="{AppThemeBinding Light={StaticResource TextBlack}, Dark={StaticResource TextWhite}}"
                                              Text="{x:Static resources:AppResources.SupportThisProject}"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenSupportPageCommand}" />
