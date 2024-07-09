@@ -35,11 +35,13 @@
                 </sfgrid:DataGridTextColumn>
 
                 <sfgrid:DataGridNumericColumn HeaderText="{x:Static resources:AppResources.Weight}"
+                                              MaximumWidth="80"
                                               Format="{Binding Setting.UnitFormat}"
                                               ValueBinding="{Binding MvrWeight}">
                 </sfgrid:DataGridNumericColumn>
 
                 <sfgrid:DataGridDateColumn HeaderText="{x:Static resources:AppResources.Date}"
+                                           MaximumWidth="130"
                                            Format="{Binding Setting.DateFormat}"
                                            ValueBinding="{Binding MvrDate}">
                 </sfgrid:DataGridDateColumn>
