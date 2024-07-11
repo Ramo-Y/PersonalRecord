@@ -146,22 +146,30 @@
 
                             <button:SfButton Grid.Column="1" Grid.Row="1"
                                              Text="{x:Static resources:AppResources.Settings}"
+                                             ImageSource="{AppThemeBinding Dark=settings_dark_theme.svg, Light=settings_light_theme.svg}"
+                                             ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding GoToSettingsViewCommand}"/>
 
                             <!--TODO: Enable buttons as soon as project is open source-->
                             <!--<button:SfButton Grid.Column="1" Grid.Row="2"
                                              Text="{x:Static resources:AppResources.ReportAProblem}"
+                                             ImageSource="{AppThemeBinding Dark=bug_report_dark_theme.svg, Light=bug_report_light_theme.svg}"
+                                             ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenProjectIssuesPageCommand}" />
 
                             <button:SfButton Grid.Column="1" Grid.Row="3"
                                              Text="{x:Static resources:AppResources.Help}"
+                                             ImageSource="{AppThemeBinding Dark=help_dark_theme.svg, Light=help_light_theme.svg}"
+                                             ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenProjectPageCommand}" />-->
 
                             <button:SfButton Grid.Column="1" Grid.Row="2"
                                              Text="{x:Static resources:AppResources.SupportThisProject}"
+                                             ImageSource="{AppThemeBinding Dark=favorite_dark_theme.svg, Light=favorite_light_theme.svg}"
+                                             ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenSupportPageCommand}" />
                         </Grid>
