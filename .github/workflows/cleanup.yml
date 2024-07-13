@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+
+env:
+  AAB_NAME: com.ramo.personalrecord-Signed.aab
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - uses: geekyeggo/delete-artifact@v5
+      with:
+          name: ${{ env.AAB_NAME }}
+          failOnError: false

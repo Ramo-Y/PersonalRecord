@@ -18,3 +18,7 @@ jobs:
     needs: build
     uses: ./.github/workflows/test.yml
     secrets: inherit
+  cleanup:
+    if: always()
+    uses: ./.github/workflows/cleanup.yml
+    secrets: inherit
