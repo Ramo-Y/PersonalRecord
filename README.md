@@ -25,15 +25,18 @@
 # Usage
 
 # Contribution
-TODO
 
-# Syncfusion
+
+## Translations and languages
+This app can provide multiple languages and includes already the languages `English` and `German`. A new language can be added within a few steps, to do this, please check out the [documentation](./DEVELOPMENT.md#languages).
+
+## Syncfusion
 Syncfusion components are used in this project, therefore a community license is required for each developer. Please make sure that you never commit your license key.
 
-## Get a community license
+### Get a community license
 You can apply for a community license here: https://www.syncfusion.com/sales/communitylicense
 
-# Development
+## Development
 Please read the [development documentation](./DEVELOPMENT.md) if you would like to participate in the development.
 
 ## Contributors ✨

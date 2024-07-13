@@ -50,3 +50,29 @@ Foreign key fields follow the given pattern:
 - `_FK` as a suffix to highlight that it is a foreign key
 
 So we have a foreign key field named `MvrMovementID_FK`.
+
+# Languages
+A new language can be added very easily, you need Visual Studio, you can download it [here](https://visualstudio.microsoft.com/downloads/). In this example, we will add `Spanish` as a new language.
+
+## Resource file
+Create a new resource file in the folder [Languages](./src/PersonalRecord.Infrastructure/Resources/Languages) and provide your language code between the file `AppResources` name and the extension `resx`, for example `AppResources.es.resx`. Copy all the keys from the [default language file](./src/PersonalRecord.Infrastructure/Resources/Languages/AppResources.resx) which is English, and add the translations. Check out this [Microsoft documentation](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/localization?view=net-maui-8.0#create-resource-files-to-store-strings) to learn more about resource files.
+
+### Integration Tests
+There are a few integration tests, that will ensure that all the language keys, that exist in the English version, have also been translated to the new language. Please run [these tests](./src/PersonalRecord.Infrastructure.IntegrationTests/Resources/Languages/LanguageResourcesTests.cs) before creating a pull request.
+
+## Language enum
+Extend the [Language enum](./src/PersonalRecord.Infrastructure/Language.cs) with your language name that will be displayed on the settings page e.g. `Spanish`.
+
+## Map the language to a culture
+Go to the class [App.xaml.cs](./src/PersonalRecord.App/App.xaml.cs) and register your language withing the method `SetLanguage()` with the corresponding culture.
+
+```c#
+culture = settings.Language switch
+{
+    Infrastructure.Language.English => "en-US",
+    Infrastructure.Language.German => "de-DE",
+    // Map your new language here like this one
+    Infrastructure.Language.Spanish => "es-ES",
+    _ => "en-US",
+};
+```
