@@ -20,6 +20,6 @@ jobs:
     secrets: inherit
   cleanup:
     if: always()
-    needs: build
+    needs: test
     uses: ./.github/workflows/cleanup.yml
     secrets: inherit
