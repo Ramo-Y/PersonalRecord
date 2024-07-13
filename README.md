@@ -16,6 +16,7 @@
 - [Contribution](#contribution)
 - [Syncfusion](#syncfusion)
   - [Get a community license](#get-a-community-license)
+- [Development](#development)
   - [Contributors ✨](#contributors-)
 
 
@@ -27,11 +28,13 @@
 TODO
 
 # Syncfusion
-Syncfusion components are used in this project, therefore a community license is required for each developer. Please make sure that you never commit your own license key.
+Syncfusion components are used in this project, therefore a community license is required for each developer. Please make sure that you never commit your license key.
 
 ## Get a community license
 You can apply for a community license here: https://www.syncfusion.com/sales/communitylicense
 
+# Development
+Please read the [development documentation](./DEVELOPMENT.md) if you would like to participate in the development.
 
 ## Contributors ✨
 
