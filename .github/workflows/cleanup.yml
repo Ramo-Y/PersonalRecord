@@ -5,7 +5,7 @@ env:
   AAB_NAME: com.ramo.personalrecord-Signed.aab
 
 jobs:
-  upload:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
