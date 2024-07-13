@@ -20,5 +20,6 @@ jobs:
     secrets: inherit
   cleanup:
     if: always()
+    needs: upload
     uses: ./.github/workflows/cleanup.yml
     secrets: inherit
