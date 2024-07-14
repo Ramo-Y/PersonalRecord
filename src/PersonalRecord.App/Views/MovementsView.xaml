@@ -42,12 +42,11 @@
                            RowHeight="48">
             <sfgrid:SfDataGrid.Columns>
                 <sfgrid:DataGridTemplateColumn MappingName="MovName"
-                                               CellPadding="10,0"
                                                HeaderTextAlignment="Start"
                                                HeaderText="{x:Static resources:AppResources.Movement}">
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="entities:Movement">
-                            <Entry 
+                            <Entry Margin="10, 0"
                                    HeightRequest="48"
                                    VerticalOptions="Center"
                                    TextColor="{AppThemeBinding Dark=White, Light=Black}"
