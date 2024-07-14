@@ -5,7 +5,7 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
     using System.Xml;
 
     [TestFixture]
-    public class Tests
+    public class LanguageResourcesTests
     {
         private const string APP_RESOURCES = "AppResources";
 
@@ -35,11 +35,7 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
                 var name = element.GetAttribute("name");
                 var value = element.ChildNodes[1]!.InnerText;
 
-                list.Add(new LanguageResourceEntry
-                {
-                    Name = name,
-                    Value = value
-                });
+                list.Add(new LanguageResourceEntry(name, value));
             }
 
             return list;
