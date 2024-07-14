@@ -5,7 +5,7 @@ namespace PersonalRecord.Infrastructure.IntegrationTests.Resources.Languages
     using System.Xml;
 
     [TestFixture]
-    public class Tests
+    public class LanguageResourcesTests
     {
         private const string APP_RESOURCES = "AppResources";
 
