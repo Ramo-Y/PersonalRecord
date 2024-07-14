@@ -25,7 +25,7 @@
 # Usage
 
 # Contribution
-
+Anyone is welcome to work on this project, for which a bug or a change request can be reported, texts translated, or code adjustments made directly and a pull request created. Please refer to the documentation for the respective topics you would like to contribute to.
 
 ## Translations and languages
 This app can provide multiple languages and includes already the languages `English` and `German`. A new language can be added within a few steps, to do this, please check out the [documentation](./DEVELOPMENT.md#languages).
