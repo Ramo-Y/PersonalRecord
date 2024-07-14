@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
-    <DisplayVersion>1.0.24</DisplayVersion>
+    <DisplayVersion>1.0.25</DisplayVersion>
     <VersionPrefix>$(DisplayVersion)</VersionPrefix>
     <ApplicationDisplayVersion>$(DisplayVersion)</ApplicationDisplayVersion>
-    <ApplicationVersion>24</ApplicationVersion>
+    <ApplicationVersion>25</ApplicationVersion>
 
     <Authors>Ramazan Yilmaz</Authors>
     <Copyright>Copyright © Ramazan Yilmaz, $([System.DateTime]::Now.ToString(yyyy))</Copyright>
