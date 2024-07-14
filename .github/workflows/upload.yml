@@ -4,6 +4,7 @@ on:
 env:
   PACKAGE_NAME: com.ramo.personalrecord
   AAB_NAME: com.ramo.personalrecord-Signed.aab
+  WHATS_NEW_DIRECTORY: .dist/whatsnew
 
 jobs:
   upload:
@@ -26,5 +27,6 @@ jobs:
         serviceAccountJsonPlainText: ${{ secrets.PLAY_STORE_SERVICE_ACCOUNT }}
         packageName: ${{ env.PACKAGE_NAME }}
         releaseFiles: "/tmp/${{ env.AAB_NAME }}"
+        whatsNewDirectory: ${{ env.WHATS_NEW_DIRECTORY }}
         track: internal
         status: draft
