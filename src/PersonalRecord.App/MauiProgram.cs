@@ -30,6 +30,12 @@
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                })
+                .ConfigureMauiHandlers(handlers =>
+                {
+#if ANDROID
+                    handlers.AddHandler(typeof(Entry), typeof(Platforms.Android.Handlers.CustomEntryHandler));
+#endif
                 });
 
             LicenseHelper.RegisterLicense();
