@@ -2,8 +2,14 @@
 {
     internal class LanguageResourceEntry
     {
-        public string Name { get; set; }
+        public LanguageResourceEntry(string name, string value)
+        {
+            Name = name;
+            Value = value;
+        }
 
-        public string Value { get; set; }
+        public string Name { get; }
+
+        public string Value { get; }
     }
 }
