@@ -5,7 +5,6 @@
              x:Name="MovementsViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:entities="clr-namespace:PersonalRecord.Domain.Models.Entities;assembly=PersonalRecord.Domain"
-             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
@@ -41,28 +40,9 @@
                            HeaderRowHeight="52"
                            RowHeight="48">
             <sfgrid:SfDataGrid.Columns>
-                <sfgrid:DataGridTemplateColumn MappingName="MovName"
-                                               CellPadding="10,0"
-                                               HeaderTextAlignment="Start"
-                                               HeaderText="{x:Static resources:AppResources.Movement}">
-                    <sfgrid:DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate x:DataType="entities:Movement">
-                            <Entry 
-                                   HeightRequest="48"
-                                   VerticalOptions="Center"
-                                   TextColor="{AppThemeBinding Dark=White, Light=Black}"
-                                   Text="{Binding MovName}">
-                                <Entry.Keyboard>
-                                    <Keyboard x:FactoryMethod="Create">
-                                        <x:Arguments>
-                                            <KeyboardFlags>CapitalizeWord</KeyboardFlags>
-                                        </x:Arguments>
-                                    </Keyboard>
-                                </Entry.Keyboard>
-                            </Entry>
-                        </DataTemplate>
-                    </sfgrid:DataGridTemplateColumn.CellTemplate>
-                </sfgrid:DataGridTemplateColumn>
+                <sfgrid:DataGridTextColumn HeaderText="{x:Static resources:AppResources.Movement}"
+                                           ValueBinding="{Binding MovName, UpdateSourceEventName=PropertyChanged}">
+                </sfgrid:DataGridTextColumn>
                 
                 <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
