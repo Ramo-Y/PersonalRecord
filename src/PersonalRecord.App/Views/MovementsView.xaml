@@ -41,7 +41,7 @@
                            RowHeight="48">
             <sfgrid:SfDataGrid.Columns>
                 <sfgrid:DataGridTextColumn HeaderText="{x:Static resources:AppResources.Movement}"
-                                           ValueBinding="{Binding MovName, UpdateSourceEventName=PropertyChanged}">
+                                           ValueBinding="{Binding MovName}">
                 </sfgrid:DataGridTextColumn>
                 
                 <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
