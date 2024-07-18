@@ -14,9 +14,10 @@
 - [Description](#description)
 - [Usage](#usage)
 - [Contribution](#contribution)
-- [Syncfusion](#syncfusion)
-  - [Get a community license](#get-a-community-license)
-- [Development](#development)
+  - [Translations and languages](#translations-and-languages)
+  - [Syncfusion](#syncfusion)
+    - [Get a community license](#get-a-community-license)
+  - [Development](#development)
   - [Contributors ✨](#contributors-)
 
 
