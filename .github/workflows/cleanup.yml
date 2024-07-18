@@ -1,9 +1,6 @@
 on:
   workflow_call:
 
-env:
-  AAB_NAME: com.ramo.personalrecord-Signed.aab
-
 jobs:
   cleanup:
     runs-on: ubuntu-latest
@@ -12,5 +9,5 @@ jobs:
       uses: actions/checkout@v4
     - uses: geekyeggo/delete-artifact@v5
       with:
-          name: ${{ env.AAB_NAME }}
+          name: ${{ vars.AAB_NAME }}
           failOnError: false

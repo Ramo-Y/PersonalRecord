@@ -1,11 +1,6 @@
 on:
   workflow_call:
 
-env:
-  PACKAGE_NAME: com.ramo.personalrecord
-  AAB_NAME: com.ramo.personalrecord-Signed.aab
-  WHATS_NEW_DIRECTORY: .dist/whatsnew
-
 jobs:
   upload:
     runs-on: ubuntu-latest
@@ -15,18 +10,18 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v4
       with:
-        name: ${{ env.AAB_NAME }}
+        name: ${{ vars.AAB_NAME }}
         path: /tmp
     - name: Check file
       shell: pwsh
       run: |
-        Test-Path "/tmp/${{ env.AAB_NAME }}"
+        Test-Path "/tmp/${{ vars.AAB_NAME }}"
     - uses: r0adkll/upload-google-play@v1
       name: Upload to Play Console
       with:
         serviceAccountJsonPlainText: ${{ secrets.PLAY_STORE_SERVICE_ACCOUNT }}
-        packageName: ${{ env.PACKAGE_NAME }}
-        releaseFiles: "/tmp/${{ env.AAB_NAME }}"
-        whatsNewDirectory: ${{ env.WHATS_NEW_DIRECTORY }}
+        packageName: ${{ vars.PACKAGE_NAME }}
+        releaseFiles: "/tmp/${{ vars.AAB_NAME }}"
+        whatsNewDirectory: ${{ vars.WHATS_NEW_DIRECTORY }}
         track: internal
         status: draft
