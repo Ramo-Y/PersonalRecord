@@ -18,3 +18,8 @@ jobs:
     needs: build
     uses: ./.github/workflows/upload.yml
     secrets: inherit
+  cleanup:
+    if: always()
+    needs: upload
+    uses: ./.github/workflows/cleanup.yml
+    secrets: inherit

@@ -5,7 +5,6 @@ on:
   push:
     branches-ignore:
       - master
-      - develop
   pull_request:
     branches:
       - master
@@ -18,4 +17,9 @@ jobs:
   test:
     needs: build
     uses: ./.github/workflows/test.yml
+    secrets: inherit
+  cleanup:
+    if: always()
+    needs: test
+    uses: ./.github/workflows/cleanup.yml
     secrets: inherit

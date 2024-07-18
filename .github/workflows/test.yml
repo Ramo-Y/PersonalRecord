@@ -1,7 +1,5 @@
 on:
   workflow_call:
-env:
-  TEST_FILES: src\PersonalRecord.Infrastructure.IntegrationTests\PersonalRecord.Infrastructure.IntegrationTests.csproj
 
 jobs:
   test:
@@ -10,4 +8,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Integration Tests
-      run: dotnet test ${{ env.TEST_FILES }}
+      run: dotnet test ${{ vars.TEST_PROJECTS }}

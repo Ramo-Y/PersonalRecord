@@ -14,24 +14,32 @@
 - [Description](#description)
 - [Usage](#usage)
 - [Contribution](#contribution)
-- [Syncfusion](#syncfusion)
-  - [Get a community license](#get-a-community-license)
+  - [Translations and languages](#translations-and-languages)
+  - [Syncfusion](#syncfusion)
+    - [Get a community license](#get-a-community-license)
+  - [Development](#development)
   - [Contributors ✨](#contributors-)
 
 
 # Description
 
 # Usage
-
-# Contribution
 TODO
 
-# Syncfusion
-Syncfusion components are used in this project, therefore a community license is required for each developer. Please make sure that you never commit your own license key.
+# Contribution
+Anyone is welcome to work on this project, for which a bug or a change request can be reported, texts translated, or code adjustments made directly and a pull request created. Please refer to the documentation for the respective topics you would like to contribute to.
 
-## Get a community license
+## Translations and languages
+This app can provide multiple languages and includes already the languages `English` and `German`. A new language can be added within a few steps, to do this, please check out the [documentation](./DEVELOPMENT.md#languages).
+
+## Syncfusion
+Syncfusion components are used in this project, therefore a community license is required for each developer. Please make sure that you never commit your license key.
+
+### Get a community license
 You can apply for a community license here: https://www.syncfusion.com/sales/communitylicense
 
+## Development
+Please read the [development documentation](./DEVELOPMENT.md) if you would like to participate in the development.
 
 ## Contributors ✨
 
