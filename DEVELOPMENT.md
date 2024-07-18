@@ -1,3 +1,25 @@
+- [Description](#description)
+- [Documentation](#documentation)
+- [Branches](#branches)
+  - [Version](#version)
+- [Workflows](#workflows)
+  - [Secrets and variables](#secrets-and-variables)
+    - [Secrets](#secrets)
+    - [Variables](#variables)
+- [Database](#database)
+  - [Migrations](#migrations)
+    - [Migrations Repository](#migrations-repository)
+  - [Database fields](#database-fields)
+    - [Primary key](#primary-key)
+    - [All fields](#all-fields)
+    - [Foreign Keys](#foreign-keys)
+- [Languages](#languages)
+  - [Resource file](#resource-file)
+    - [Integration Tests](#integration-tests)
+  - [Language enum](#language-enum)
+  - [Map the language to a culture](#map-the-language-to-a-culture)
+
+
 # Description
 You are welcome to participate in the development of this tool, in this file some information and rules for the development are described.
 
@@ -21,6 +43,7 @@ The workflows are described in the following table:
 ## Secrets and variables
 To publish this app on the play store, you need first to create a [keystore](https://learn.microsoft.com/en-us/dotnet/maui/android/deployment/publish-google-play?view=net-maui-8.0) and upload your signing key to [Google Play Console](https://developer.android.com/studio/publish/app-signing#sign_release). You also need a Google Service Account, that has the permission to upload app bundles, check out [this guide](https://support.readyeducation.com/hc/en-us/articles/360047693573-Google-Play-Service-Account-Setup) to create this account.
 
+### Secrets
 The secrets are described in the following table:
 
 | Name                       | Type   | Description                                                                                            |
@@ -31,6 +54,20 @@ The secrets are described in the following table:
 | KEYSTORE_PASSWORD          | Secret | The password of your key store                                                                         |
 | PLAY_STORE_SERVICE_ACCOUNT | Secret | The Google service account JSON                                                                        |
 | SYNCFUSION_LICENSE         | Secret | The Snycfusion license you have to apply for [here](https://www.syncfusion.com/sales/communitylicense) |
+
+### Variables
+The variables are described in the following table:
+
+| Name                | Value                                                                                                    | Description                                                                                                                              |
+|---------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| AAB_NAME            | com.ramo.personalrecord-Signed.aab                                                                       | Name of the signed AAB file that will be uploaded to Google Play Store                                                                   |
+| APP_NAME            | PersonalRecord.App                                                                                       | Folder name of the startup project                                                                                                       |
+| APP_PROJECT         | src\PersonalRecord.App\PersonalRecord.App.csproj                                                         | Startup project path                                                                                                                     |
+| BUILD_CONFIGURATION | Release                                                                                                  | Build configuration that will be used the dotnet publish command                                                                         |
+| PACKAGE_NAME        | com.ramo.personalrecord                                                                                  | Package name that will be published to Google Play Store                                                                                 |
+| TARGET_FRAMEWORK    | net8.0-android                                                                                           | Target framework that will be used for .NET MAUI deployment                                                                              |
+| TEST_PROJECTS       | src\PersonalRecord.Infrastructure.IntegrationTests\PersonalRecord.Infrastructure.IntegrationTests.csproj | Relative path of the test projects, space separated                                                                                      |
+| WHATS_NEW_DIRECTORY | .dist/whatsnew                                                                                           | Folder that contains the what's new files (see [documentation](https://github.com/r0adkll/upload-google-play?tab=readme-ov-file#inputs)) |
 
 # Database
 
