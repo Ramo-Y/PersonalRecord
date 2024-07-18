@@ -26,7 +26,7 @@ You are welcome to participate in the development of this tool, in this file som
 If changes are made to the interface or functionality, the screenshots and documentation should also be updated.
 
 # Branches
-To contribute, please create a fork of the repository, work on the develop branch and create a pull request in the `develop` branch. Once ci has run successfully with the tests, it can be merged into the `develop` branch. As soon as a new version is to be made available, the version is set and the develop branch is merged into the master.
+To contribute, please create a fork of the repository, work on the develop branch and create a pull request in the `develop` branch. Once ci has run successfully with the tests, it can be merged into the `develop` branch. As soon as a new version is to be made available, the version is set and the `develop` branch is merged into the `master` branch.
 
 ## Version
 The versioning of the app is set in the `DisplayVersion` (e.g. 1.0.25) and also the `ApplicationVersion` (e.g. 25) in the file [Directory.Build.props](./src/Directory.Build.props). Once the application has been published on the Play Store, it is no longer possible to republish it with the same `ApplicationVersion`.
