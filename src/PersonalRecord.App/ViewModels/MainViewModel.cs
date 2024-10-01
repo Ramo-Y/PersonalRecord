@@ -3,7 +3,6 @@
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.Infrastructure.Constants;
-    using PersonalRecord.Services;
     using PersonalRecord.Services.Interfaces;
 
     public partial class MainViewModel : ObservableObject
