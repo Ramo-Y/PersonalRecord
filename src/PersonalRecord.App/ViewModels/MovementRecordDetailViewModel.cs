@@ -76,7 +76,7 @@
         }
 
         [RelayCommand]
-        public async Task SaveAndGoBack()
+        public async Task SaveAndGoBackAsync()
         {
             var navigationParameter = new ShellNavigationQueryParameters
             {

@@ -59,14 +59,14 @@
         }
 
         [RelayCommand]
-        public async Task SaveAndGoBack()
+        public async Task SaveAndGoBackAsync()
         {
             await _movementRepository.AddOrUpdateAllAsync(Movements);
             await _navigationService.GoBackAsync();
         }
 
         [RelayCommand(CanExecute = nameof(CanDelete))]
-        public async Task DeleteEntry(Movement movement)
+        public async Task DeleteEntryAsync(Movement movement)
         {
             var deleteConfirmation = await _alertService.ShowConfirmationAsync(
                 AppResources.DeleteEntryTitle,

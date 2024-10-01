@@ -11,5 +11,7 @@
         Task GoBackAsync();
 
         Task GoBackAsync(ShellNavigationQueryParameters parameters);
+
+        Task OpenSystemBrowserAsync(Uri uri);
     }
 }

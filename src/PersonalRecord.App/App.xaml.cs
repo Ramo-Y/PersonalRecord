@@ -21,7 +21,7 @@ namespace PersonalRecord.App
 
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                await preparationDatabase.PreparatePopulation();
+                await preparationDatabase.PreparatePopulationAsync();
             });
 
             // Language

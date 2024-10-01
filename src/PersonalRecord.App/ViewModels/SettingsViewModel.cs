@@ -39,7 +39,7 @@
         }
 
         [RelayCommand]
-        public async Task SaveAndGoBack()
+        public async Task SaveAndGoBackAsync()
         {
             _settingsService.UpdateSettings(Setting);
             await _navigationService.GoBackAsync();
