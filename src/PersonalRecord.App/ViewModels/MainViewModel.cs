@@ -3,6 +3,7 @@
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.Infrastructure.Constants;
+    using PersonalRecord.Services;
     using PersonalRecord.Services.Interfaces;
 
     public partial class MainViewModel : ObservableObject
@@ -52,21 +53,21 @@
         public async Task OpenSupportPageAsync()
         {
             var uri = new Uri(EnvironmentConstants.SPONSOR_URL);
-            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+            await _navigationService.OpenSystemBrowserAsync(uri);
         }
 
         [RelayCommand]
         public async Task OpenProjectPageAsync()
         {
             var uri = new Uri(EnvironmentConstants.PROJECT_URL);
-            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+            await _navigationService.OpenSystemBrowserAsync(uri);
         }
 
         [RelayCommand]
         public async Task OpenProjectIssuesPageAsync()
         {
             var uri = new Uri(EnvironmentConstants.PROJECT_ISSUES_URL);
-            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+            await _navigationService.OpenSystemBrowserAsync(uri);
         }
 
         private string GetVersion()

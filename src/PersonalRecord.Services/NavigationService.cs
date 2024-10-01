@@ -31,5 +31,10 @@
         {
             await Shell.Current.GoToAsync("..", parameters);
         }
+
+        public async Task OpenSystemBrowserAsync(Uri uri)
+        {
+            await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+        }
     }
 }
