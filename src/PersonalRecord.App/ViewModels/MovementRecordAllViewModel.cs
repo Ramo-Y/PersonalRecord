@@ -66,7 +66,7 @@
         }
 
         [RelayCommand]
-        public async Task DeleteEntry(MovementRecord movementRecord)
+        public async Task DeleteEntryAsync(MovementRecord movementRecord)
         {
             var deleteConfirmation = await _alertService.ShowConfirmationAsync(
                 AppResources.DeleteEntryTitle,
@@ -81,7 +81,7 @@
         }
 
         [RelayCommand]
-        public async Task SaveAndGoBack()
+        public async Task SaveAndGoBackAsync()
         {
             await _movementRecordRepository.UpdateAllEntriesAsync(MovementRecords);
             await _navigationService.GoBackAsync();

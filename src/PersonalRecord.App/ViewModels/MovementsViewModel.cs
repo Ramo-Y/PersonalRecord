@@ -59,7 +59,7 @@
         }
 
         [RelayCommand]
-        public async Task SaveAndGoBack()
+        public async Task SaveAndGoBackAsync()
         {
             await _movementRepository.AddOrUpdateAllAsync(Movements);
             await _navigationService.GoBackAsync();
