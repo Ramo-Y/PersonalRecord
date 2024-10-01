@@ -12,7 +12,7 @@
             _context = context;
         }
 
-        public async Task PreparatePopulation()
+        public async Task PreparatePopulationAsync()
         {
             await _context.Database.MigrateAsync();
         }
