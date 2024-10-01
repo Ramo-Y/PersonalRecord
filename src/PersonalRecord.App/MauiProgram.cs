@@ -32,8 +32,11 @@
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            LicenseHelper.RegisterLicense();
-            
+            Task.Run(async () =>
+            {
+                await LicenseHelper.RegisterLicenseAsync();
+            });
+
             // Register ViewModels
             builder.Services.AddTransient<MainView>();
             builder.Services.AddTransient<MovementRecordAllView>();

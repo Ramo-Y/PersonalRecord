@@ -5,11 +5,11 @@
 
     public static class LicenseHelper
     {
-        public static void RegisterLicense()
+        public async static Task RegisterLicenseAsync()
         {
-            var stream = FileSystem.OpenAppPackageFileAsync(EnvironmentConstants.LICENSE_FILENAME).Result;
+            var stream = await FileSystem.OpenAppPackageFileAsync(EnvironmentConstants.LICENSE_FILENAME);
             var reader = new StreamReader(stream);
-            var license = reader.ReadToEnd();
+            var license = await reader.ReadToEndAsync();
             SyncfusionLicenseProvider.RegisterLicense(license);
         }
     }
