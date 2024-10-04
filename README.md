@@ -28,6 +28,7 @@
   - [Translations and languages](#translations-and-languages)
   - [Syncfusion](#syncfusion)
     - [Get a community license](#get-a-community-license)
+    - [Open Source](#open-source)
   - [Development](#development)
   - [Contributors ✨](#contributors-)
 
@@ -86,6 +87,9 @@ Syncfusion components are used in this project, therefore a community license is
 
 ### Get a community license
 You can apply for a community license here: https://www.syncfusion.com/sales/communitylicense
+
+### Open Source
+In order to use Syncfusion with an open source project, you must contact Syncfusion via the [contact form](https://www.syncfusion.com/products/community-contact-us). This has been done in this project and approved by Syncfusion. More information can be found [here](https://www.syncfusion.com/products/communitylicense?question=can-the-community-license-be-used-for-open-source-projects)
 
 ## Development
 Please read the [development documentation](./DEVELOPMENT.md) if you would like to participate in the development.
