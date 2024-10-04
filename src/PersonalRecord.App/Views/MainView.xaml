@@ -165,7 +165,7 @@
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenProjectPageCommand}" />
 
-                            <button:SfButton Grid.Column="1" Grid.Row="2"
+                            <button:SfButton Grid.Column="1" Grid.Row="4"
                                              Text="{x:Static resources:AppResources.SupportThisProject}"
                                              ImageSource="{AppThemeBinding Dark=favorite_dark_theme.svg, Light=favorite_light_theme.svg}"
                                              ShowIcon="True"
