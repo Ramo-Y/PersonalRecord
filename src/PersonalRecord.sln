@@ -23,9 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalRecord.Infrastructu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{B8054003-18DD-4669-AA44-F809B6459F9A}"
 	ProjectSection(SolutionItems) = preProject
-		..\.github\workflows\build-test.yml = ..\.github\workflows\build-test.yml
+		..\.github\workflows\build-test-cleanup.yml = ..\.github\workflows\build-test-cleanup.yml
 		..\.github\workflows\build.yml = ..\.github\workflows\build.yml
-		..\.github\workflows\test-build-upload.yml = ..\.github\workflows\test-build-upload.yml
+		..\.github\workflows\cleanup.yml = ..\.github\workflows\cleanup.yml
+		..\.github\workflows\test-build-upload-cleanup.yml = ..\.github\workflows\test-build-upload-cleanup.yml
 		..\.github\workflows\test.yml = ..\.github\workflows\test.yml
 		..\.github\workflows\upload.yml = ..\.github\workflows\upload.yml
 	EndProjectSection
