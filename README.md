@@ -59,12 +59,12 @@ The burger button at the top left takes you to the settings, you can report a pr
 ## Movements
 <img src="./.github/images/movements_view.png" alt="Movements" style="width:250px;"/>
 
-To add movement records, you must first define your movements. By pressing the plus button, a new line is added in which you can name your movement. Movements can only be deleted, as long as they are not in use.
+To add movement records, you must first define your movements. By pressing the add button, a new line is added in which you can name your movement. Movements can only be deleted, as long as they are not in use.
 
 ## All movement records
 <img src="./.github/images/all_movement_records_view.png" alt="All movement records" style="width:250px;"/>
 
-In this menu you can enter all your data records with a movement, the weight and a date. This is the overview to see them all, they are sorted by the name of the movement and then the most recent movements at the top. New entries can be added with the plus button and deleted with the recycle bin button.
+In this menu you can enter all your records with a date, weight and movement. This is the overview to see them all, they are sorted by the name of the movement and then the most recent movements at the top. New entries can be added with the add button and deleted with the trash button.
 
 ## Movement record maxes
 <img src="./.github/images/movement_record_maxes_view.png" alt="Movement record maxes" style="width:250px;"/>
@@ -78,7 +78,7 @@ This is an overview screen in which all maximum values for the respective moveme
 The unit is a free text field and is only used for display purposes. No conversions take place when changing.
 
 ### Date format
-You can use a format identifier to specify how your date format should be displayed. For example, yyyy-MM-dd (ISO 8601 Date Format) displays the date as follows: 2023-12-31. See the [standard date and time format specifiers](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings#table-of-format-specifiers) here. Invalid inputs can lead to the date no longer being displayed correctly.
+You can use a format identifier to specify how your date format should be displayed. For example, yyyy-MM-dd (ISO 8601 Date Format) displays the date as follows: 2023-12-31. See the [standard date and time format specifiers](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings#table-of-format-specifiers). Invalid inputs can lead to the date no longer being displayed correctly.
 
 ### Language
 The language can be changed and will be applied directly after saving. New languages can be added, see also [translations and languages](#translations-and-languages) for more information.
