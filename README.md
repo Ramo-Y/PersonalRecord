@@ -22,6 +22,7 @@
 
 
 # Description
+With this app you can track all your personal records and have a good overview of your progress. Define your own movements and add the maximum values achieved. A feature for workouts will follow soon.
 
 # Usage
 TODO
