@@ -14,8 +14,9 @@
 - [Description](#description)
 - [Usage](#usage)
   - [Overview](#overview)
-  - [Themes](#themes)
-  - [Data and storage](#data-and-storage)
+  - [General information](#general-information)
+    - [Themes](#themes)
+    - [Data and storage](#data-and-storage)
   - [Burger menu](#burger-menu)
   - [Movements](#movements)
   - [All movement records](#all-movement-records)
@@ -39,10 +40,11 @@ With this app you can track all your personal records and have a good overview o
 ## Overview
 ![Overview](./.github/images/feature_graphic.png)
 
-## Themes
+## General information
+### Themes
 There is a dark and a light theme, it is automatically adapted to the system theme.
 
-## Data and storage
+### Data and storage
 The settings are saved as preferences and the data in the app folder. This means that the data is transferred to the new device with a backup/restore. Synchronization between multiple devices is currently not supported.
 
 ## Burger menu
@@ -87,10 +89,10 @@ This app can provide multiple languages and includes already the languages `Engl
 Syncfusion components are used in this project, therefore a community license is required for each developer. Please make sure that you never commit your license key.
 
 ### Get a community license
-You can apply for a community license here: https://www.syncfusion.com/sales/communitylicense
+You can apply for a community license [here](https://www.syncfusion.com/sales/communitylicense).
 
 ### Open Source
-In order to use Syncfusion with an open source project, you must contact Syncfusion via the [contact form](https://www.syncfusion.com/products/community-contact-us). This has been done in this project and approved by Syncfusion. More information can be found [here](https://www.syncfusion.com/products/communitylicense?question=can-the-community-license-be-used-for-open-source-projects)
+In order to use Syncfusion with an open source project, you must contact Syncfusion via this [contact form](https://www.syncfusion.com/products/community-contact-us). This has been done in this project and approved by Syncfusion. More information can be found [here](https://www.syncfusion.com/products/communitylicense?question=can-the-community-license-be-used-for-open-source-projects).
 
 ## Development
 Please read the [development documentation](./DEVELOPMENT.md) if you would like to participate in the development.
