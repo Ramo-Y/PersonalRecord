@@ -32,7 +32,6 @@
   - [Development](#development)
   - [Contributors ✨](#contributors-)
 
-
 # Description
 With this app you can track all your personal records and have a good overview of your progress. Define your own movements and add the maximum values achieved. A feature for workouts will follow soon.
 
@@ -47,6 +46,8 @@ There is a dark and a light theme, it is automatically adapted to the system the
 The settings are saved as preferences and the data in the app folder. This means that the data is transferred to the new device with a backup/restore. Synchronization between multiple devices is currently not supported.
 
 ## Burger menu
+<img src="./.github/images/burger_menu_view.png" alt="Burger menu" style="width:200px;"/>
+
 The burger button at the top left takes you to the settings, you can report a problem, go to the project page or switch to the page for sponsoring the project. You can also see the version here.
 
 ## Movements
@@ -71,7 +72,7 @@ This is an overview screen in which all maximum values for the respective moveme
 The unit is a free text field and is only used for display purposes. No conversions take place when changing.
 
 ### Date format
-You can use a format identifier to specify how your date format should be displayed. For example, yyyy-MM-dd (ISO 8601 Date Format) displays the date as follows: 2023-12-31. See the [standard date and time format specifiers](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings#table-of-format-specifiers) here.
+You can use a format identifier to specify how your date format should be displayed. For example, yyyy-MM-dd (ISO 8601 Date Format) displays the date as follows: 2023-12-31. See the [standard date and time format specifiers](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings#table-of-format-specifiers) here. Invalid inputs can lead to the date no longer being displayed correctly.
 
 ### Language
 The language can be changed and will be applied directly after saving. New languages can be added, see also [translations and languages](#translations-and-languages) for more information.
