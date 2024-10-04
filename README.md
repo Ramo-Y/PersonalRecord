@@ -49,22 +49,22 @@ The settings are saved as preferences and the data in the app folder. This means
 The burger button at the top left takes you to the settings, you can report a problem, go to the project page or switch to the page for sponsoring the project. You can also see the version here.
 
 ## Movements
-<img src="./.github/images/movements_view.png" alt="Movements" style="width:185px;"/>
+<img src="./.github/images/movements_view.png" alt="Movements" style="width:200px;"/>
 
 To add movement records, you must first define your movements. By pressing the plus button, a new line is added in which you can name your movement. Movements can only be deleted, as long as they are not in use.
 
 ## All movement records
-<img src="./.github/images/all_movement_records_view.png" alt="All movement records" style="width:185px;"/>
+<img src="./.github/images/all_movement_records_view.png" alt="All movement records" style="width:200px;"/>
 
 In this menu you can enter all your data records with a movement, the weight and a date. This is the overview to see them all, they are sorted by the name of the movement and then the most recent movements at the top. New entries can be added with the plus button and deleted with the recycle bin button.
 
 ## Movement record maxes
-<img src="./.github/images/movement_record_maxes_view.png" alt="Movement record maxes" style="width:185px;"/>
+<img src="./.github/images/movement_record_maxes_view.png" alt="Movement record maxes" style="width:200px;"/>
 
 This is an overview screen in which all maximum values for the respective movement are displayed. New entries can also be added here.
 
 ## Settings
-<img src="./.github/images/settings_view.png" alt="Settings" style="width:185px;"/>
+<img src="./.github/images/settings_view.png" alt="Settings" style="width:200px;"/>
 
 ### Unit
 The unit is a free text field and is only used for display purposes. No conversions take place when changing.
