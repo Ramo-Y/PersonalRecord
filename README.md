@@ -13,6 +13,14 @@
 
 - [Description](#description)
 - [Usage](#usage)
+  - [Overview](#overview)
+  - [Movements](#movements)
+  - [All movement records](#all-movement-records)
+  - [Movement record maxes](#movement-record-maxes)
+  - [Settings](#settings)
+    - [Unit](#unit)
+    - [Date format](#date-format)
+    - [Language](#language)
 - [Contribution](#contribution)
   - [Translations and languages](#translations-and-languages)
   - [Syncfusion](#syncfusion)
@@ -25,7 +33,22 @@
 With this app you can track all your personal records and have a good overview of your progress. Define your own movements and add the maximum values achieved. A feature for workouts will follow soon.
 
 # Usage
-TODO
+## Overview
+![Overview](./.github/feature_graphic.png)
+
+## Movements
+
+## All movement records
+
+## Movement record maxes
+
+## Settings
+
+### Unit
+
+### Date format
+
+### Language
 
 # Contribution
 Anyone is welcome to work on this project, for which a bug or a change request can be reported, texts translated, or code adjustments made directly and a pull request created. Please refer to the documentation for the respective topics you would like to contribute to.
