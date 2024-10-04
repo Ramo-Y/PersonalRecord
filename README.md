@@ -1,9 +1,9 @@
 <div align="center">
 
-[![MIT Licensed](https://img.shields.io/github/license/ramo-y/PersonalRecord.svg)](https://github.com/Ramo-Y/PersonalRecord/blob/master/LICENSE)
+[![MIT Licensed](https://img.shields.io/github/license/Ramo-Y/PersonalRecord.svg)](https://github.com/Ramo-Y/PersonalRecord/blob/master/LICENSE)
 [![Activity](https://img.shields.io/github/commit-activity/m/Ramo-Y/PersonalRecord)](https://github.com/Ramo-Y/PersonalRecord/pulse)
-![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/PersonalRecord/build-test.yml?label=ci)
-![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/PersonalRecord/test-build-upload.yml?label=release)
+![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/PersonalRecord/build-test-cleanup.yml?label=ci)
+![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/PersonalRecord/test-build-upload-cleanup.yml?label=release)
 [![GitHub contributors](https://img.shields.io/github/all-contributors/Ramo-Y/PersonalRecord)](#contributors-)
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/Ramo-Y)
 ![Open Issues](https://img.shields.io/github/issues/Ramo-Y/PersonalRecord)
