@@ -43,6 +43,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "whatsnew", "whatsnew", "{DA
 		..\.dist\whatsnew\whatsnew-en-US = ..\.dist\whatsnew\whatsnew-en-US
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalRecord.Services.UnitTests", "PersonalRecord.Services.UnitTests\PersonalRecord.Services.UnitTests.csproj", "{9611366B-97A1-4546-B348-BDCFBC662F8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{FABCDAB0-E910-4C29-B430-50B2C2110761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FABCDAB0-E910-4C29-B430-50B2C2110761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FABCDAB0-E910-4C29-B430-50B2C2110761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9611366B-97A1-4546-B348-BDCFBC662F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9611366B-97A1-4546-B348-BDCFBC662F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9611366B-97A1-4546-B348-BDCFBC662F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9611366B-97A1-4546-B348-BDCFBC662F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
