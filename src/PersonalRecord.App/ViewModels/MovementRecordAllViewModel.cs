@@ -16,7 +16,7 @@
         private readonly INavigationService _navigationService;
         private readonly IMovementRecordRepository _movementRecordRepository;
         private readonly ISettingsService _settingsService;
-        private readonly IAlertService _alertService;
+        private readonly IPromptService _promptService;
 
         private ObservableCollection<MovementRecord> _movementRecords;
 
@@ -26,12 +26,12 @@
             INavigationService navigationService,
             IMovementRecordRepository movementRecordRepository,
             ISettingsService settingsService,
-            IAlertService alertService)
+            IPromptService promptService)
         {
             _navigationService = navigationService;
             _movementRecordRepository = movementRecordRepository;
             _settingsService = settingsService;
-            _alertService = alertService;
+            _promptService = promptService;
 
             MovementRecords = [];
 
@@ -68,7 +68,7 @@
         [RelayCommand]
         public async Task DeleteEntryAsync(MovementRecord movementRecord)
         {
-            var deleteConfirmation = await _alertService.ShowConfirmationAsync(
+            var deleteConfirmation = await _promptService.ShowConfirmationAsync(
                 AppResources.DeleteEntryTitle,
                 AppResources.DeleteAskForConfirmation,
                 AppResources.Delete,
