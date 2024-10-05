@@ -8,14 +8,21 @@
     public partial class MainViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
+        private readonly IPromptService _promptService;
+        private readonly IVersionService _versionService;
 
         private string _appVersion;
 
-        public MainViewModel(INavigationService navigationService)
+        public MainViewModel(
+            INavigationService navigationService,
+            IPromptService promptService,
+            IVersionService versionService)
         {
             _navigationService = navigationService;
+            _promptService = promptService;
+            _versionService = versionService;
 
-            AppVersion = GetVersion();
+            AppVersion = _versionService.GetAppVersion();
         }
 
         public string AppVersion
@@ -69,11 +76,16 @@
             await _navigationService.OpenSystemBrowserAsync(uri);
         }
 
-        private string GetVersion()
+        [RelayCommand]
+        public async Task ShowVersionInfoAsync()
         {
-            var versionString = AppInfo.Current.VersionString;
-            var version = $"V{versionString}";
-            return version;
+            var informationalVersion = _versionService.GetInformationalVersion();
+            var commitHash = _versionService.GetCommitHash();
+            var commitUrl = $"{EnvironmentConstants.PROJECT_URL}/commit/{commitHash}";
+            var uri = new Uri(commitUrl);
+
+            // TODO: Show prompt with versions, author and commit url
+            await _promptService.ShowPromptAsync("Version info", "");
         }
     }
 }
