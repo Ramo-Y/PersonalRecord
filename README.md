@@ -43,7 +43,7 @@ With this app you can track all your personal records and have a good overview o
 
 ## General information
 ### OS
-It is currently implemented for Android and published on the Play Store. Additional operating systems such as iOS or Windows deployments are also technically possible, but are not currently planned.
+It is currently implemented for Android and published on the Play Store.
 
 ### Themes
 There is a dark and a light theme, it is automatically adapted to the system theme.
