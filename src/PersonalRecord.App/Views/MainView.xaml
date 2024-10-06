@@ -6,6 +6,7 @@
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:navigationdrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
+             xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MainViewModel">
 
@@ -107,13 +108,13 @@
                                      Command="{Binding GoToMovementRecordAllViewCommand}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
-            
+
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
                 <navigationdrawer:DrawerSettings DrawerWidth="300"
                                                  DrawerHeaderHeight="220"
                                                  DrawerFooterHeight="50"
                                                  EnableSwipeGesture="True">
-                    
+
                     <navigationdrawer:DrawerSettings.DrawerHeaderView>
                         <Grid BackgroundColor="#00E1FB">
                             <VerticalStackLayout VerticalOptions="Center"
@@ -127,7 +128,7 @@
                             </VerticalStackLayout>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerHeaderView>
-                    
+
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -173,18 +174,23 @@
                                              Command="{Binding OpenSupportPageCommand}" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
-                    
+
                     <navigationdrawer:DrawerSettings.DrawerFooterView>
-                        <Grid BackgroundColor="#00E1FB">
-                            <VerticalStackLayout VerticalOptions="Center"
-                                                 HorizontalOptions="Center">
-                                <Label Text="{Binding AppVersion}"
-                                       TextColor="Black"/>
-                            </VerticalStackLayout>
-                        </Grid>
+                        <button:SfButton BackgroundColor="#00E1FB"
+                                         HorizontalOptions="Center"
+                                         WidthRequest="300"
+                                         CornerRadius="0"
+                                         TextColor="Black"                                   
+                                         Text="{Binding AppVersion}"
+                                         Command="{Binding ShowDetailInformationCommand}">
+                        </button:SfButton>
                     </navigationdrawer:DrawerSettings.DrawerFooterView>
                 </navigationdrawer:DrawerSettings>
             </navigationdrawer:SfNavigationDrawer.DrawerSettings>
         </navigationdrawer:SfNavigationDrawer>
+        
+        <popup:SfPopup IsOpen="{Binding IsOpen}"
+                       HeaderTitle="About">
+        </popup:SfPopup>
     </Grid>
 </ContentPage>
