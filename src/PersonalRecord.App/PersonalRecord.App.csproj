@@ -8,7 +8,7 @@
 	</PropertyGroup>
   
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
+    <TargetFrameworks>net8.0;net8.0-android;net8.0-ios</TargetFrameworks>
   </PropertyGroup>
 
 	<ItemGroup>
