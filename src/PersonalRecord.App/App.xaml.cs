@@ -1,12 +1,12 @@
-﻿using CommunityToolkit.Mvvm.Messaging;
-using PersonalRecord.Domain.Models;
-using PersonalRecord.Services.Events;
-using PersonalRecord.Services.Interfaces;
-using Syncfusion.Maui.Themes;
-using System.Globalization;
-
-namespace PersonalRecord.App
+﻿namespace PersonalRecord.App
 {
+    using CommunityToolkit.Mvvm.Messaging;
+    using PersonalRecord.Domain.Models;
+    using PersonalRecord.Services.Events;
+    using PersonalRecord.Services.Interfaces;
+    using Syncfusion.Maui.Themes;
+    using System.Globalization;
+
     public partial class App : Application
     {
         private readonly ISettingsService _settingsService;
