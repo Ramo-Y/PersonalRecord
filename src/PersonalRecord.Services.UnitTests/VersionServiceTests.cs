@@ -14,7 +14,22 @@ namespace PersonalRecord.Services.UnitTests
         }
 
         [Fact]
-        public void GetAppVersion_IsNotEmpty()
+        public void GetAppVersion_CheckString_ContainsNumbers()
+        {
+            // arrange
+            var appVersion = _versionService.GetAppVersion();
+            const int START_INDEX_FOR_NUMBER = 1;
+
+            // act
+            var numerString = appVersion[START_INDEX_FOR_NUMBER].ToString();
+            var isInt = int.TryParse(numerString, out var number);
+
+            // assert
+            Assert.True(isInt, $"The version info '{appVersion}' should start with a number");
+        }
+
+        [Fact]
+        public void GetAppVersion_CheckString_IsNotEmpty()
         {
             // arrange
             var appVersion = _versionService.GetAppVersion();
@@ -27,7 +42,34 @@ namespace PersonalRecord.Services.UnitTests
         }
 
         [Fact]
-        public void GetInformationalVersion_IsNotEmpty()
+        public void GetCommitHash_CheckString_DoesntContainPlus()
+        {
+            // arrange
+            var commitHash = _versionService.GetCommitHash();
+
+            // act
+            var containsPlus = commitHash.Contains(PLUS);
+
+            // assert
+            Assert.False(containsPlus, $"The informational version info '{commitHash}' should contain a '{PLUS}'");
+        }
+
+        [Fact]
+        public void GetCommitHash_CheckString_Has40Characters()
+        {
+            // arrange
+            var commitHash = _versionService.GetCommitHash();
+            const int COMMIT_HASH_LENGTH = 40;
+
+            // act
+            var hashLength = commitHash.Length;
+
+            // assert
+            Assert.True(hashLength.Equals(COMMIT_HASH_LENGTH), $"The commit hash '{commitHash}' should have a length of {COMMIT_HASH_LENGTH} characters, but actually has {hashLength}");
+        }
+
+        [Fact]
+        public void GetInformationalVersion_CheckString_IsNotEmpty()
         {
             // arrange
             var informationalVersion = _versionService.GetInformationalVersion();
@@ -40,7 +82,7 @@ namespace PersonalRecord.Services.UnitTests
         }
 
         [Fact]
-        public void GetInformationalVersion_HasVersionNumberAndPlus()
+        public void GetInformationalVersion_CheckString_ContainsPlusAndVersionNumber()
         {
             // arrange
             var informationalVersion = _versionService.GetInformationalVersion();
