@@ -8,18 +8,15 @@
     public partial class MainViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
-        private readonly IPromptService _promptService;
         private readonly IVersionService _versionService;
 
         private string _appVersion;
 
         public MainViewModel(
             INavigationService navigationService,
-            IPromptService promptService,
             IVersionService versionService)
         {
             _navigationService = navigationService;
-            _promptService = promptService;
             _versionService = versionService;
 
             AppVersion = _versionService.GetAppVersion();
