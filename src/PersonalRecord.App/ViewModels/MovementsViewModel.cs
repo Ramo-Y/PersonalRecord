@@ -12,17 +12,18 @@
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
-        private readonly IAlertService _alertService;
+        private readonly IPromptService _promptService;
+
         private ObservableCollection<Movement> _movements;
 
         public MovementsViewModel(
             INavigationService navigationService,
             IMovementRepository movementRepository,
-            IAlertService alertService)
+            IPromptService promptService)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
-            _alertService = alertService;
+            _promptService = promptService;
 
             Movements = [];
             
@@ -68,7 +69,7 @@
         [RelayCommand(CanExecute = nameof(CanDelete))]
         public async Task DeleteEntryAsync(Movement movement)
         {
-            var deleteConfirmation = await _alertService.ShowConfirmationAsync(
+            var deleteConfirmation = await _promptService.ShowConfirmationAsync(
                 AppResources.DeleteEntryTitle,
                 AppResources.DeleteAskForConfirmation,
                 AppResources.Delete,

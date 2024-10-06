@@ -8,14 +8,18 @@
     public partial class MainViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
+        private readonly IVersionService _versionService;
 
         private string _appVersion;
 
-        public MainViewModel(INavigationService navigationService)
+        public MainViewModel(
+            INavigationService navigationService,
+            IVersionService versionService)
         {
             _navigationService = navigationService;
+            _versionService = versionService;
 
-            AppVersion = GetVersion();
+            AppVersion = _versionService.GetAppVersion();
         }
 
         public string AppVersion
@@ -67,13 +71,6 @@
         {
             var uri = new Uri(EnvironmentConstants.PROJECT_ISSUES_URL);
             await _navigationService.OpenSystemBrowserAsync(uri);
-        }
-
-        private string GetVersion()
-        {
-            var versionString = AppInfo.Current.VersionString;
-            var version = $"V{versionString}";
-            return version;
         }
     }
 }

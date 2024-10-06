@@ -4,7 +4,7 @@
     using System;
     using System.Threading.Tasks;
 
-    public class AlertService : IAlertService
+    public class PromptService : IPromptService
     {
         public async Task ShowAlertAsync(string title, string message, string cancel = "OK")
         {
@@ -20,8 +20,9 @@
         public void ShowAlert(string title, string message, string cancel = "OK")
         {
             Application.Current!.MainPage!.Dispatcher.Dispatch(async () =>
-                await ShowAlertAsync(title, message, cancel)
-            );
+            {
+                await ShowAlertAsync(title, message, cancel);
+            });
         }
 
         public void ShowConfirmation(string title, string message, Action<bool> callback, string accept = "Yes", string cancel = "No")
@@ -31,6 +32,11 @@
                 bool answer = await ShowConfirmationAsync(title, message, accept, cancel);
                 callback(answer);
             });
+        }
+
+        public async Task ShowPromptAsync(string title, string message)
+        {
+            await Application.Current!.MainPage!.DisplayPromptAsync(title, message);
         }
     }
 }

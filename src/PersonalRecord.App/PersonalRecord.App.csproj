@@ -1,20 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-
-		<OutputType>Exe</OutputType>
 		<RootNamespace>PersonalRecord.App</RootNamespace>
-
-		<!-- Display name -->
 		<ApplicationTitle>PersonalRecord.App</ApplicationTitle>
-
-		<!-- App Identifier -->
 		<ApplicationId>com.companyname.personalrecord.app</ApplicationId>
-
+		<OutputType Condition="'$(TargetFramework)' != 'net8.0'">Exe</OutputType>
 	</PropertyGroup>
   
   <PropertyGroup>
-    <TargetFrameworks>net8.0-android</TargetFrameworks>
+    <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -140,6 +134,7 @@
 		<PackageReference Include="Syncfusion.Maui.Buttons" Version="$(SyncfusionVersion)" />
 		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="$(SyncfusionVersion)" />
 		<PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.Maui.Popup" Version="$(SyncfusionVersion)" />
 	</ItemGroup>
 
 	<ItemGroup>

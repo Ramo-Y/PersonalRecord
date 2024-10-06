@@ -7,5 +7,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Unit Tests
+      run: dotnet test ${{ vars.UNIT_TEST_PROJECTS }} --framework net8.0
     - name: Integration Tests
-      run: dotnet test ${{ vars.TEST_PROJECTS }}
+      run: dotnet test ${{ vars.INTEGRATION_TEST_PROJECTS }}
