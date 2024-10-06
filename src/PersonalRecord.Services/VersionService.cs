@@ -10,7 +10,9 @@
 
         public string GetAppVersion()
         {
-            var versionString = AppInfo.Current.VersionString;
+            var assembly = GetType().Assembly;
+            var assemblyVersion = assembly.GetCustomAttribute<AssemblyFileVersionAttribute>();
+            var versionString = assemblyVersion!.Version;
             var version = $"V{versionString}";
             return version;
         }
