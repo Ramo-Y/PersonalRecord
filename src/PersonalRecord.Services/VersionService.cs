@@ -11,7 +11,7 @@
         public string GetAppVersion()
         {
             var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version!;
-            var version = $"V{assemblyVersion.Major}.{assemblyVersion.Minor}.{assemblyVersion.Revision}";
+            var version = $"V{assemblyVersion.Major}.{assemblyVersion.Minor}.{assemblyVersion.Build}";
             return version;
         }
 
