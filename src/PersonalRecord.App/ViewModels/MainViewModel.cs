@@ -75,17 +75,5 @@
             var uri = new Uri(EnvironmentConstants.PROJECT_ISSUES_URL);
             await _navigationService.OpenSystemBrowserAsync(uri);
         }
-
-        [RelayCommand]
-        public async Task ShowVersionInfoAsync()
-        {
-            var informationalVersion = _versionService.GetInformationalVersion();
-            var commitHash = _versionService.GetCommitHash();
-            var commitUrl = $"{EnvironmentConstants.PROJECT_URL}/commit/{commitHash}";
-            var uri = new Uri(commitUrl);
-
-            // TODO: Show prompt with versions, author and commit url
-            await _promptService.ShowPromptAsync("Version info", "");
-        }
     }
 }
