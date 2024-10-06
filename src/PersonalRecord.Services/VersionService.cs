@@ -10,10 +10,8 @@
 
         public string GetAppVersion()
         {
-            var assembly = GetType().Assembly;
-            var assemblyVersion = assembly.GetCustomAttribute<AssemblyFileVersionAttribute>();
-            var versionString = assemblyVersion!.Version;
-            var version = $"V{versionString}";
+            var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version!;
+            var version = $"V{assemblyVersion.Major}.{assemblyVersion.Minor}.{assemblyVersion.Revision}";
             return version;
         }
 
