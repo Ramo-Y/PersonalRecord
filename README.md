@@ -11,7 +11,11 @@
 
 </div>
 
-[![Get it on Google Play](./.github/images/Google/GetItOnGooglePlay_Badge_Web_color_English.png 'Title')](https://play.google.com/store/apps/details?id=com.ramo.personalrecord)
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=com.ramo.personalrecord">
+    <img src="./.github/images/Google/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play">
+  </a>
+</p>
 
 - [Description](#description)
 - [Usage](#usage)
