@@ -11,6 +11,8 @@
 
 </div>
 
+[![Get it on Google Play](./.github/images/Google/GetItOnGooglePlay_Badge_Web_color_English.png 'Title')](https://play.google.com/store/apps/details?id=com.ramo.personalrecord)
+
 - [Description](#description)
 - [Usage](#usage)
   - [Overview](#overview)
