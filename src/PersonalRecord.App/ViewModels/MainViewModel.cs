@@ -3,7 +3,9 @@
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.Infrastructure.Constants;
+    using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
+    using System.Text;
 
     public partial class MainViewModel : ObservableObject
     {
@@ -11,6 +13,7 @@
         private readonly IVersionService _versionService;
 
         private string _appVersion;
+        private string _message;
         private bool _isOpen;
 
         public MainViewModel(
@@ -27,6 +30,12 @@
         {
             get => _appVersion;
             set => SetProperty(ref _appVersion, value);
+        }
+
+        public string Message
+        {
+            get => _message;
+            set => SetProperty(ref _message, value);
         }
 
         public bool IsOpen
@@ -81,17 +90,30 @@
         }
 
         [RelayCommand]
-        public async Task ShowDetailInformationAsync()
+        public async Task OpenCommitOnRepositoryAsync()
         {
             var commitHash = _versionService.GetCommitHash();
             var commitUrl = $"{EnvironmentConstants.PROJECT_URL}/commit/{commitHash}";
             var uri = new Uri(commitUrl);
+            await _navigationService.OpenSystemBrowserAsync(uri);
+        }
 
-            // TODO: Show prompt with versions, author and technology behind project
+        [RelayCommand]
+        public async Task ShowDetailInformationAsync()
+        {
+            var copyright = _versionService.GetCopyright();
+            var informationalVersion = _versionService.GetInformationalVersion();
+
+            var stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine(copyright);
+            stringBuilder.AppendLine(string.Empty);
+            stringBuilder.AppendLine(AppResources.DevelopedWithDotNetMaui);
+            stringBuilder.AppendLine(string.Empty);
+            stringBuilder.AppendLine(informationalVersion);
+
+            Message = stringBuilder.ToString();
 
             IsOpen = true;
-
-            // TODO: open browser with commit if button 'show revision' pressed
         }
     }
 }

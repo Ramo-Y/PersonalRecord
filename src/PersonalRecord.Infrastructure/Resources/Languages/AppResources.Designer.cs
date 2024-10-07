@@ -61,11 +61,29 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
             }
         }
         
@@ -111,6 +129,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string DeleteEntryTitle {
             get {
                 return ResourceManager.GetString("DeleteEntryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Developed with .NET MAUI.
+        /// </summary>
+        public static string DevelopedWithDotNetMaui {
+            get {
+                return ResourceManager.GetString("DevelopedWithDotNetMaui", resourceCulture);
             }
         }
         
@@ -237,6 +264,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show commit.
+        /// </summary>
+        public static string ShowCommit {
+            get {
+                return ResourceManager.GetString("ShowCommit", resourceCulture);
             }
         }
         

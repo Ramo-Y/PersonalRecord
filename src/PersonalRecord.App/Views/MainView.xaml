@@ -108,13 +108,13 @@
                                      Command="{Binding GoToMovementRecordAllViewCommand}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
-
+            
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
                 <navigationdrawer:DrawerSettings DrawerWidth="300"
                                                  DrawerHeaderHeight="220"
                                                  DrawerFooterHeight="50"
                                                  EnableSwipeGesture="True">
-
+                    
                     <navigationdrawer:DrawerSettings.DrawerHeaderView>
                         <Grid BackgroundColor="#00E1FB">
                             <VerticalStackLayout VerticalOptions="Center"
@@ -128,7 +128,7 @@
                             </VerticalStackLayout>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerHeaderView>
-
+                    
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -174,7 +174,7 @@
                                              Command="{Binding OpenSupportPageCommand}" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
-
+                    
                     <navigationdrawer:DrawerSettings.DrawerFooterView>
                         <button:SfButton BackgroundColor="#00E1FB"
                                          HorizontalOptions="Center"
@@ -188,9 +188,16 @@
                 </navigationdrawer:DrawerSettings>
             </navigationdrawer:SfNavigationDrawer.DrawerSettings>
         </navigationdrawer:SfNavigationDrawer>
-        
+
         <popup:SfPopup IsOpen="{Binding IsOpen}"
-                       HeaderTitle="About">
+                       Message="{Binding Message}"
+                       ShowFooter="True"
+                       HeaderTitle="{x:Static resources:AppResources.About}"
+                       AppearanceMode="TwoButton"
+                       AcceptButtonText="{x:Static resources:AppResources.ShowCommit}"
+                       AcceptCommand="{Binding OpenCommitOnRepositoryCommand}"
+                       DeclineButtonText="{x:Static resources:AppResources.Close}"
+                       AutoSizeMode="Both">
         </popup:SfPopup>
     </Grid>
 </ContentPage>

@@ -1,5 +1,6 @@
 ﻿namespace PersonalRecord.Services
 {
+    using System.Diagnostics;
     using System.Reflection;
     using PersonalRecord.Services.Interfaces;
 
@@ -13,6 +14,14 @@
             var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version!;
             var version = $"V{assemblyVersion.Major}.{assemblyVersion.Minor}.{assemblyVersion.Build}";
             return version;
+        }
+
+        public string GetCopyright()
+        {
+            var assemblyFullName = Assembly.GetExecutingAssembly().Location;
+            var fileVersionInfo = FileVersionInfo.GetVersionInfo(assemblyFullName);
+            var legalCopyright = fileVersionInfo.LegalCopyright;
+            return legalCopyright;
         }
 
         public string GetCommitHash()
