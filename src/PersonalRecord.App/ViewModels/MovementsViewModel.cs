@@ -4,7 +4,6 @@
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
-    using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
@@ -14,7 +13,9 @@
         private readonly IMovementRepository _movementRepository;
         private readonly IPromptService _promptService;
 
+        private bool _pupupIsOpen;
         private ObservableCollection<Movement> _movements;
+        private Movement _selectedMovement;
 
         public MovementsViewModel(
             INavigationService navigationService,
@@ -28,6 +29,18 @@
             Movements = [];
             
             LoadItems();
+        }
+
+        public bool PopupIsOpen
+        {
+            get => _pupupIsOpen;
+            set => SetProperty(ref _pupupIsOpen, value);
+        }
+
+        public Movement SelectedMovement
+        {
+            get => _selectedMovement;
+            set => SetProperty(ref _selectedMovement, value);
         }
 
         public ObservableCollection<Movement> Movements
@@ -67,18 +80,17 @@
         }
 
         [RelayCommand(CanExecute = nameof(CanDelete))]
-        public async Task DeleteEntryAsync(Movement movement)
+        public void ConfirmEntryDeletion(Movement movement)
         {
-            var deleteConfirmation = await _promptService.ShowConfirmationAsync(
-                AppResources.DeleteEntryTitle,
-                AppResources.DeleteAskForConfirmation,
-                AppResources.Delete,
-                AppResources.Cancel);
-            if (deleteConfirmation)
-            {
-                await _movementRepository.DeleteMovementAsync(movement);
-                Movements.Remove(movement);
-            }
+            SelectedMovement = movement;
+            PopupIsOpen = true;
+        }
+
+        [RelayCommand]
+        public async Task DeleteEntryAsync()
+        {
+            await _movementRepository.DeleteMovementAsync(SelectedMovement);
+            Movements.Remove(SelectedMovement);
         }
 
         public bool CanDelete(Movement movement)

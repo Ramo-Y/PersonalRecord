@@ -14,7 +14,7 @@
 
         private string _appVersion;
         private string _message;
-        private bool _isOpen;
+        private bool _pupupIsOpen;
 
         public MainViewModel(
             INavigationService navigationService,
@@ -38,10 +38,10 @@
             set => SetProperty(ref _message, value);
         }
 
-        public bool IsOpen
+        public bool PopupIsOpen
         {
-            get => _isOpen;
-            set => SetProperty(ref _isOpen, value);
+            get => _pupupIsOpen;
+            set => SetProperty(ref _pupupIsOpen, value);
         }
 
         [RelayCommand]
@@ -113,7 +113,7 @@
 
             Message = stringBuilder.ToString();
 
-            IsOpen = true;
+            PopupIsOpen = true;
         }
     }
 }

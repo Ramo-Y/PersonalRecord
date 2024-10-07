@@ -189,7 +189,7 @@
             </navigationdrawer:SfNavigationDrawer.DrawerSettings>
         </navigationdrawer:SfNavigationDrawer>
 
-        <popup:SfPopup IsOpen="{Binding IsOpen}"
+        <popup:SfPopup IsOpen="{Binding PopupIsOpen}"
                        Message="{Binding Message}"
                        ShowFooter="True"
                        HeaderTitle="{x:Static resources:AppResources.About}"

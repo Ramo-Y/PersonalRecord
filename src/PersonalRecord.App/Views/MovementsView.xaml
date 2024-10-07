@@ -7,6 +7,7 @@
              xmlns:entities="clr-namespace:PersonalRecord.Domain.Models.Entities;assembly=PersonalRecord.Domain"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MovementsViewModel"
              Title="{x:Static resources:AppResources.Movements}">
@@ -49,7 +50,7 @@
                         <DataTemplate x:DataType="entities:Movement">
                             <button:SfButton Background="Transparent"
                                              Text="&#128465;"
-                                             Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.DeleteEntryCommand}"
+                                             Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ConfirmEntryDeletionCommand}"
                                              CommandParameter="{Binding .}" />
                         </DataTemplate>
                     </sfgrid:DataGridTemplateColumn.CellTemplate>
@@ -78,5 +79,16 @@
                 </DataTemplate>
             </button:SfButton.Content>
         </button:SfButton>
+
+        <popup:SfPopup IsOpen="{Binding PopupIsOpen}"
+                       Message="{x:Static resources:AppResources.DeleteAskForConfirmation}"
+                       ShowFooter="True"
+                       HeaderTitle="{x:Static resources:AppResources.DeleteEntryTitle}"
+                       AppearanceMode="TwoButton"
+                       AcceptButtonText="{x:Static resources:AppResources.Delete}"
+                       AcceptCommand="{Binding DeleteEntryCommand}"
+                       DeclineButtonText="{x:Static resources:AppResources.Cancel}"
+                       AutoSizeMode="Both">
+        </popup:SfPopup>
     </Grid>
 </ContentPage>
