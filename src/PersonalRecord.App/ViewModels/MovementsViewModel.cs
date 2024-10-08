@@ -13,8 +13,13 @@
         private readonly IMovementRepository _movementRepository;
         private readonly IPromptService _promptService;
 
-        private bool _pupupIsOpen;
+        [ObservableProperty]
+        private bool _popupIsOpen;
+
+        [ObservableProperty]
         private ObservableCollection<Movement> _movements;
+
+        [ObservableProperty]
         private Movement _selectedMovement;
 
         public MovementsViewModel(
@@ -29,24 +34,6 @@
             Movements = [];
             
             LoadItems();
-        }
-
-        public bool PopupIsOpen
-        {
-            get => _pupupIsOpen;
-            set => SetProperty(ref _pupupIsOpen, value);
-        }
-
-        public Movement SelectedMovement
-        {
-            get => _selectedMovement;
-            set => SetProperty(ref _selectedMovement, value);
-        }
-
-        public ObservableCollection<Movement> Movements
-        {
-            get => _movements;
-            set => SetProperty(ref _movements, value);
         }
 
         private void LoadItems()
