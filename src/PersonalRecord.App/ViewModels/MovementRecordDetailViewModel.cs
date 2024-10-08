@@ -16,8 +16,17 @@
         private readonly IMovementRecordRepository _movementRecordRepository;
         private readonly ISettingsService _settingsService;
 
+        [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(SaveAndGoBackCommand))]
+        private Movement _selectedMovement;
+
+        [ObservableProperty]
         private ObservableCollection<Movement> _movements;
+
+        [ObservableProperty]
         private MovementRecord _movementRecord;
+
+        [ObservableProperty]
         private Setting _setting;
 
         public MovementRecordDetailViewModel(
@@ -29,6 +38,7 @@
             _navigationService = navigationService;
             _movementRepository = movementRepository;
             _movementRecordRepository = movementRecordRepository;
+
             _settingsService = settingsService;
 
             Movements = [];
@@ -57,34 +67,24 @@
             });
         }
 
-        public Setting Setting
-        {
-            get => _setting;
-            set => SetProperty(ref _setting, value);
-        }
-
-        public MovementRecord MovementRecord
-        {
-            get => _movementRecord;
-            set => SetProperty(ref _movementRecord, value);
-        }
-
-        public ObservableCollection<Movement> Movements
-        {
-            get => _movements;
-            set => SetProperty(ref _movements, value);
-        }
-
-        [RelayCommand]
-        public async Task SaveAndGoBackAsync()
+        [RelayCommand(CanExecute = nameof(CanSave))]
+        public async Task SaveAndGoBackAsync(Movement movement)
         {
             var navigationParameter = new ShellNavigationQueryParameters
             {
                 { NavigationConstants.RELOAD, true }
             };
+            
+            MovementRecord.Movement = movement;
 
             await _movementRecordRepository.AddMovementRecordAsync(MovementRecord);
             await _navigationService.GoBackAsync(navigationParameter);
+        }
+
+        public bool CanSave(Movement movement)
+        {
+            var isNotNull = movement is not null;
+            return isNotNull;
         }
     }
 }

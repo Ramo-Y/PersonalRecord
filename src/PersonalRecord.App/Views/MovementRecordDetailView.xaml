@@ -37,7 +37,7 @@
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Movements}"
                             DisplayMemberPath="MovName"
-                            SelectedItem="{Binding MovementRecord.Movement}"/>
+                            SelectedItem="{Binding SelectedMovement}"/>
 
         <Label Grid.Column="0" Grid.Row="3"
                Margin="5, 0"
@@ -60,6 +60,7 @@
         <button:SfButton Grid.Column="0" Grid.Row="9"
                          Margin="5, 0"
                          Text="{x:Static resources:AppResources.Save}"
-                         Command="{Binding SaveAndGoBackCommand}"/>
+                         Command="{Binding SaveAndGoBackCommand}"
+                         CommandParameter="{Binding SelectedMovement}"/>
     </Grid>
 </ContentPage>
