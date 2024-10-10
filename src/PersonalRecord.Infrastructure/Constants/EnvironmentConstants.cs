@@ -6,6 +6,8 @@
 
         public const string LICENSE_FILENAME = "SyncfusionLicense.txt";
 
+        public const string PRIVACY_POLICY_URL = $"{PROJECT_URL}/blob/master/.dist/privacy.md";
+
         public const string PROJECT_URL = "https://github.com/Ramo-Y/PersonalRecord";
 
         public const string PROJECT_ISSUES_URL = $"{PROJECT_URL}/issues";

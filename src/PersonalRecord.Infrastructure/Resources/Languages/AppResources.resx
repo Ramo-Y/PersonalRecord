@@ -198,4 +198,10 @@
   <data name="ShowCommit" xml:space="preserve">
     <value>Show commit</value>
   </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privacy policy</value>
+  </data>
+  <data name="FullVersion" xml:space="preserve">
+    <value>Full version</value>
+  </data>
 </root>

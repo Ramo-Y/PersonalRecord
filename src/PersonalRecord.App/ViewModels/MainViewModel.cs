@@ -99,7 +99,15 @@
         }
 
         [RelayCommand]
-        public async Task ShowDetailInformationAsync()
+        public async Task OpenPrivacyPolicyAsync()
+        {
+            var privacyPolicyUrl = $"{EnvironmentConstants.PRIVACY_POLICY_URL}";
+            var uri = new Uri(privacyPolicyUrl);
+            await _navigationService.OpenSystemBrowserAsync(uri);
+        }
+
+        [RelayCommand]
+        public void ShowDetailInformation()
         {
             var copyright = _versionService.GetCopyright();
             var informationalVersion = _versionService.GetInformationalVersion();
@@ -109,7 +117,7 @@
             stringBuilder.AppendLine(string.Empty);
             stringBuilder.AppendLine(AppResources.DevelopedWithDotNetMaui);
             stringBuilder.AppendLine(string.Empty);
-            stringBuilder.AppendLine(informationalVersion);
+            stringBuilder.AppendLine($"{AppResources.FullVersion}: {informationalVersion}");
 
             Message = stringBuilder.ToString();
 

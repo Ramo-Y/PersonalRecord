@@ -190,14 +190,56 @@
         </navigationdrawer:SfNavigationDrawer>
 
         <popup:SfPopup IsOpen="{Binding PopupIsOpen}"
-                       Message="{Binding Message}"
-                       ShowFooter="True"
                        HeaderTitle="{x:Static resources:AppResources.About}"
-                       AppearanceMode="TwoButton"
-                       AcceptButtonText="{x:Static resources:AppResources.ShowCommit}"
-                       AcceptCommand="{Binding OpenCommitOnRepositoryCommand}"
-                       DeclineButtonText="{x:Static resources:AppResources.Close}"
+                       AcceptButtonText="{x:Static resources:AppResources.Close}"
+                       AppearanceMode="OneButton"
+                       ShowFooter="True"
                        AutoSizeMode="Both">
+            <popup:SfPopup.ContentTemplate>
+                <DataTemplate>
+                    <Grid MaximumWidthRequest="360">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0"
+                               Text="{Binding Message}"
+                               VerticalTextAlignment="Start"
+                               Padding="10"/>
+                        <Label Grid.Row="1"
+                               VerticalOptions="Start"
+                               Padding="10,0,0,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Static resources:AppResources.PrivacyPolicy}"
+                                          TextColor="DeepSkyBlue"
+                                          TextDecorations="Underline">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding OpenPrivacyPolicyCommand}"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="2"
+                               VerticalOptions="Start"
+                               Padding="10,0,0,0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Static resources:AppResources.ShowCommit}"
+                                          TextColor="DeepSkyBlue"
+                                          TextDecorations="Underline">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding OpenCommitOnRepositoryCommand}"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                </DataTemplate>
+            </popup:SfPopup.ContentTemplate>
         </popup:SfPopup>
     </Grid>
 </ContentPage>

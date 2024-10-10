@@ -142,6 +142,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Full version.
+        /// </summary>
+        public static string FullVersion {
+            get {
+                return ResourceManager.GetString("FullVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         public static string Help {
@@ -228,6 +237,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string PersonalRecordTitle {
             get {
                 return ResourceManager.GetString("PersonalRecordTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy policy.
+        /// </summary>
+        public static string PrivacyPolicy {
+            get {
+                return ResourceManager.GetString("PrivacyPolicy", resourceCulture);
             }
         }
         
