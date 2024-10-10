@@ -3,14 +3,23 @@
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.Infrastructure.Constants;
+    using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
+    using System.Text;
 
     public partial class MainViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
         private readonly IVersionService _versionService;
 
+        [ObservableProperty]
         private string _appVersion;
+
+        [ObservableProperty]
+        private string _message;
+        
+        [ObservableProperty]
+        private bool _popupIsOpen;
 
         public MainViewModel(
             INavigationService navigationService,
@@ -19,13 +28,7 @@
             _navigationService = navigationService;
             _versionService = versionService;
 
-            AppVersion = _versionService.GetAppVersion();
-        }
-
-        public string AppVersion
-        {
-            get => _appVersion;
-            set => SetProperty(ref _appVersion, value);
+            AppVersion = _versionService.GetAppVersion() + " ⓘ";
         }
 
         [RelayCommand]
@@ -71,6 +74,41 @@
         {
             var uri = new Uri(EnvironmentConstants.PROJECT_ISSUES_URL);
             await _navigationService.OpenSystemBrowserAsync(uri);
+        }
+
+        [RelayCommand]
+        public async Task OpenCommitOnRepositoryAsync()
+        {
+            var commitHash = _versionService.GetCommitHash();
+            var commitUrl = $"{EnvironmentConstants.PROJECT_URL}/commit/{commitHash}";
+            var uri = new Uri(commitUrl);
+            await _navigationService.OpenSystemBrowserAsync(uri);
+        }
+
+        [RelayCommand]
+        public async Task OpenPrivacyPolicyAsync()
+        {
+            var privacyPolicyUrl = $"{EnvironmentConstants.PRIVACY_POLICY_URL}";
+            var uri = new Uri(privacyPolicyUrl);
+            await _navigationService.OpenSystemBrowserAsync(uri);
+        }
+
+        [RelayCommand]
+        public void ShowDetailInformation()
+        {
+            var copyright = _versionService.GetCopyright();
+            var informationalVersion = _versionService.GetInformationalVersion();
+
+            var stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine(copyright);
+            stringBuilder.AppendLine(string.Empty);
+            stringBuilder.AppendLine(AppResources.DevelopedWithDotNetMaui);
+            stringBuilder.AppendLine(string.Empty);
+            stringBuilder.AppendLine($"{AppResources.FullVersion}: {informationalVersion}");
+
+            Message = stringBuilder.ToString();
+
+            PopupIsOpen = true;
         }
     }
 }

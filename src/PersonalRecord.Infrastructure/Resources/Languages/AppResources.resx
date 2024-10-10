@@ -186,4 +186,22 @@
   <data name="Weight" xml:space="preserve">
     <value>Weight</value>
   </data>
+  <data name="DevelopedWithDotNetMaui" xml:space="preserve">
+    <value>Developed with .NET MAUI</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ShowCommit" xml:space="preserve">
+    <value>Show commit</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privacy policy</value>
+  </data>
+  <data name="FullVersion" xml:space="preserve">
+    <value>Full version</value>
+  </data>
 </root>

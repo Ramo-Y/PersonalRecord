@@ -10,6 +10,7 @@
         private readonly INavigationService _navigationService;
         private readonly ISettingsService _settingsService;
 
+        [ObservableProperty]
         private Setting _setting;
 
         public SettingsViewModel(
@@ -25,12 +26,6 @@
         private void LoadSettings()
         {
             Setting = _settingsService.LoadSettings();
-        }
-
-        public Setting Setting
-        {
-            get => _setting;
-            set => SetProperty(ref _setting, value);
         }
 
         public IEnumerable<Language> Languages
