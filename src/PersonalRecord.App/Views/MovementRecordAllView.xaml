@@ -88,7 +88,7 @@
                                    VerticalTextAlignment="Center"
                                    HorizontalOptions="Start"
                                    FontSize="28"
-                                   TextColor="White">
+                                   TextColor="Black">
                             </Label>
                         </Grid>
                     </Grid>
