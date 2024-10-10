@@ -206,36 +206,26 @@
                         <Label Grid.Row="0"
                                Text="{Binding Message}"
                                VerticalTextAlignment="Start"
-                               Padding="10"/>
+                               Padding="10,0,0,0"/>
                         <Label Grid.Row="1"
+                               Text="{x:Static resources:AppResources.PrivacyPolicy}"
+                               TextColor="DeepSkyBlue"
+                               TextDecorations="Underline"
                                VerticalOptions="Start"
                                Padding="10,0,0,0">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span Text="{x:Static resources:AppResources.PrivacyPolicy}"
-                                          TextColor="DeepSkyBlue"
-                                          TextDecorations="Underline">
-                                        <Span.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding OpenPrivacyPolicyCommand}"/>
-                                        </Span.GestureRecognizers>
-                                    </Span>
-                                </FormattedString>
-                            </Label.FormattedText>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenPrivacyPolicyCommand}"/>
+                            </Label.GestureRecognizers>
                         </Label>
                         <Label Grid.Row="2"
+                               Text="{x:Static resources:AppResources.ShowCommit}"
+                               TextColor="DeepSkyBlue"
+                               TextDecorations="Underline"
                                VerticalOptions="Start"
                                Padding="10,0,0,0">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span Text="{x:Static resources:AppResources.ShowCommit}"
-                                          TextColor="DeepSkyBlue"
-                                          TextDecorations="Underline">
-                                        <Span.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding OpenCommitOnRepositoryCommand}"/>
-                                        </Span.GestureRecognizers>
-                                    </Span>
-                                </FormattedString>
-                            </Label.FormattedText>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenCommitOnRepositoryCommand}"/>
+                            </Label.GestureRecognizers>
                         </Label>
                     </Grid>
                 </DataTemplate>
