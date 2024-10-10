@@ -17,23 +17,25 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="85"/>
+            <RowDefinition Height="95"/>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="85"/>
+            <RowDefinition Height="95"/>
             <RowDefinition Height="5"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="95"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="55"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="1"
+                                       ContainerType="Outlined"
                                        Hint="{x:Static resources:AppResources.Unit}">
-            <Entry Text="{Binding Setting.Unit}"/>
+            <Entry Text="{Binding Setting.Unit}" />
         </inputLayout:SfTextInputLayout>
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="3"
+                                       ContainerType="Outlined"
                                        Hint="{x:Static resources:AppResources.DateFormat}">
             <Entry Text="{Binding Setting.DateFormat}" />
         </inputLayout:SfTextInputLayout>
