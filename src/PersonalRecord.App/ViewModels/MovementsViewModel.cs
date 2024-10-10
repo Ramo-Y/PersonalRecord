@@ -11,7 +11,6 @@
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
-        private readonly IPromptService _promptService;
 
         [ObservableProperty]
         private bool _popupIsOpen;
@@ -24,12 +23,10 @@
 
         public MovementsViewModel(
             INavigationService navigationService,
-            IMovementRepository movementRepository,
-            IPromptService promptService)
+            IMovementRepository movementRepository)
         {
             _navigationService = navigationService;
             _movementRepository = movementRepository;
-            _promptService = promptService;
 
             Movements = [];
             

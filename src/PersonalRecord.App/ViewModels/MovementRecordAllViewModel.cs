@@ -6,7 +6,6 @@
     using PersonalRecord.Domain.Models.Entities;
     using PersonalRecord.Infrastructure;
     using PersonalRecord.Infrastructure.Constants;
-    using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -16,7 +15,12 @@
         private readonly INavigationService _navigationService;
         private readonly IMovementRecordRepository _movementRecordRepository;
         private readonly ISettingsService _settingsService;
-        private readonly IPromptService _promptService;
+
+        [ObservableProperty]
+        private MovementRecord _selectedMovementRecod;
+
+        [ObservableProperty]
+        private bool _popupIsOpen;
 
         [ObservableProperty]
         private ObservableCollection<MovementRecord> _movementRecords;
@@ -27,13 +31,11 @@
         public MovementRecordAllViewModel(
             INavigationService navigationService,
             IMovementRecordRepository movementRecordRepository,
-            ISettingsService settingsService,
-            IPromptService promptService)
+            ISettingsService settingsService)
         {
             _navigationService = navigationService;
             _movementRecordRepository = movementRecordRepository;
             _settingsService = settingsService;
-            _promptService = promptService;
 
             MovementRecords = [];
 
@@ -56,18 +58,10 @@
         }
 
         [RelayCommand]
-        public async Task DeleteEntryAsync(MovementRecord movementRecord)
+        public async Task DeleteEntryAsync()
         {
-            var deleteConfirmation = await _promptService.ShowConfirmationAsync(
-                AppResources.DeleteEntryTitle,
-                AppResources.DeleteAskForConfirmation,
-                AppResources.Delete,
-                AppResources.Cancel);
-            if (deleteConfirmation)
-            {
-                await _movementRecordRepository.DeleteMovementRecordAsync(movementRecord);
-                MovementRecords.Remove(movementRecord);
-            }
+            await _movementRecordRepository.DeleteMovementRecordAsync(SelectedMovementRecod);
+            MovementRecords.Remove(SelectedMovementRecod);
         }
 
         [RelayCommand]
@@ -81,6 +75,13 @@
         public async Task GoToMovementRecordDetailsViewAsync()
         {
             await _navigationService.GoToAsync(Routes.MovementRecordDetailView);
+        }
+
+        [RelayCommand]
+        public void ConfirmEntryDeletion(MovementRecord movementRecord)
+        {
+            SelectedMovementRecod = movementRecord;
+            PopupIsOpen = true;
         }
 
         public void ApplyQueryAttributes(IDictionary<string, object> query)
