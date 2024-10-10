@@ -18,8 +18,10 @@
         private readonly ISettingsService _settingsService;
         private readonly IPromptService _promptService;
 
+        [ObservableProperty]
         private ObservableCollection<MovementRecord> _movementRecords;
 
+        [ObservableProperty]
         private Setting _setting;
 
         public MovementRecordAllViewModel(
@@ -36,18 +38,6 @@
             MovementRecords = [];
 
             LoadItems();
-        }
-
-        public Setting Setting
-        {
-            get => _setting;
-            set => SetProperty(ref _setting, value);
-        }
-
-        public ObservableCollection<MovementRecord> MovementRecords
-        {
-            get => _movementRecords;
-            set => SetProperty(ref _movementRecords, value);
         }
 
         private void LoadItems()

@@ -15,8 +15,10 @@
         private readonly IMovementRecordRepository _movementRecordRepository;
         private readonly ISettingsService _settingsService;
 
+        [ObservableProperty]
         private ObservableCollection<MovementRecord> _movementRecords;
 
+        [ObservableProperty]
         private Setting _setting;
 
         public MovementRecordMaxesViewModel(
@@ -31,18 +33,6 @@
             MovementRecords = [];
 
             LoadItems();
-        }
-
-        public Setting Setting
-        {
-            get => _setting;
-            set => SetProperty(ref _setting, value);
-        }
-
-        public ObservableCollection<MovementRecord> MovementRecords
-        {
-            get => _movementRecords;
-            set => SetProperty(ref _movementRecords, value);
         }
 
         private void LoadItems()

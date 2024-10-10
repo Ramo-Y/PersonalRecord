@@ -12,9 +12,14 @@
         private readonly INavigationService _navigationService;
         private readonly IVersionService _versionService;
 
+        [ObservableProperty]
         private string _appVersion;
+
+        [ObservableProperty]
         private string _message;
-        private bool _pupupIsOpen;
+        
+        [ObservableProperty]
+        private bool _popupIsOpen;
 
         public MainViewModel(
             INavigationService navigationService,
@@ -24,24 +29,6 @@
             _versionService = versionService;
 
             AppVersion = _versionService.GetAppVersion() + " ⓘ";
-        }
-
-        public string AppVersion
-        {
-            get => _appVersion;
-            set => SetProperty(ref _appVersion, value);
-        }
-
-        public string Message
-        {
-            get => _message;
-            set => SetProperty(ref _message, value);
-        }
-
-        public bool PopupIsOpen
-        {
-            get => _pupupIsOpen;
-            set => SetProperty(ref _pupupIsOpen, value);
         }
 
         [RelayCommand]
