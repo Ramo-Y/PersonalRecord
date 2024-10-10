@@ -53,7 +53,6 @@
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();
             builder.Services.AddSingleton<ISettingsService, SettingsService>();
-            builder.Services.AddSingleton<IPromptService, PromptService>();
             builder.Services.AddSingleton<IVersionService, VersionService>();
 
             // DB Context
