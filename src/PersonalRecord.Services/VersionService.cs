@@ -18,8 +18,9 @@
 
         public string GetCopyright()
         {
-            var assemblyFullName = Assembly.GetExecutingAssembly().Location;
-            var fileVersionInfo = FileVersionInfo.GetVersionInfo(assemblyFullName);
+            var assembly = VersionTracking.Default.GetType().Assembly;
+            var assemblyLocation = assembly.Location;
+            var fileVersionInfo = FileVersionInfo.GetVersionInfo(assemblyLocation);
             var legalCopyright = fileVersionInfo.LegalCopyright;
             return legalCopyright;
         }
