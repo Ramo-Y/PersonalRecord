@@ -96,7 +96,7 @@
         [RelayCommand]
         public void ShowDetailInformation()
         {
-            var copyright = _versionService.GetCopyright();
+            var copyright = EnvironmentConstants.COPYRIGHT + DateTime.Now.Year.ToString();
             var informationalVersion = _versionService.GetInformationalVersion();
 
             var stringBuilder = new StringBuilder();
