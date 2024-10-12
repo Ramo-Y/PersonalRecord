@@ -204,4 +204,7 @@
   <data name="FullVersion" xml:space="preserve">
     <value>Full version</value>
   </data>
+  <data name="ShareThisApp" xml:space="preserve">
+    <value>Share this app</value>
+  </data>
 </root>

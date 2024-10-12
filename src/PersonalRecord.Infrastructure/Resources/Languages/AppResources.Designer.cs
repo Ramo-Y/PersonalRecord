@@ -286,6 +286,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Share this app.
+        /// </summary>
+        public static string ShareThisApp {
+            get {
+                return ResourceManager.GetString("ShareThisApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show commit.
         /// </summary>
         public static string ShowCommit {
