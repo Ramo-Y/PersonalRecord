@@ -2,7 +2,9 @@
 {
     public static class EnvironmentConstants
     {
-        public const string COPYRIGHT = "Copyright © Ramazan Yilmaz, ";
+        public const string AUTHOR_NAME = "Ramazan Yilmaz";
+
+        public const string COPYRIGHT = $"Copyright © {AUTHOR_NAME}, ";
 
         public const string DATABASE_NAME = "PersonalRecord.db";
 
