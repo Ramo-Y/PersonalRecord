@@ -204,4 +204,10 @@
   <data name="FullVersion" xml:space="preserve">
     <value>Vollständige Version</value>
   </data>
+  <data name="ShareThisApp" xml:space="preserve">
+    <value>Teile diese App</value>
+  </data>
+  <data name="ShareAppText" xml:space="preserve">
+    <value>Ich verwende die PersonalRecord-App, um meine PRs zu verfolgen. Probier's mal aus, es ist Open Source, kostenlos und enthält keine Werbung.</value>
+  </data>
 </root>

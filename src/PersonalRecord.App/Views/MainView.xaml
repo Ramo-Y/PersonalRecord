@@ -14,6 +14,7 @@
         <Color x:Key="TextWhite">#FFFFFF</Color>
         <Color x:Key="TextBlack">#000000</Color>
         <Color x:Key="TransparentBackground">#00FFFFFF</Color>
+        <Color x:Key="LogoBackgroundColor">#00E1FB</Color>
         
         <Style x:Key="SfButtonCustomStyle"
                TargetType="button:SfButton">
@@ -116,11 +117,11 @@
                                                  EnableSwipeGesture="True">
                     
                     <navigationdrawer:DrawerSettings.DrawerHeaderView>
-                        <Grid BackgroundColor="#00E1FB">
+                        <Grid BackgroundColor="{StaticResource LogoBackgroundColor}">
                             <VerticalStackLayout VerticalOptions="Center"
                                                  HorizontalOptions="Center">
                                 <Label Text="{x:Static resources:AppResources.PersonalRecordTitle}"
-                                       BackgroundColor="#00E1FB"
+                                       BackgroundColor="{StaticResource LogoBackgroundColor}"
                                        TextColor="Black"
                                        HorizontalOptions="Center"
                                        FontSize="Title"/>
@@ -138,6 +139,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="15"/>
+                                <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
@@ -172,11 +174,18 @@
                                              ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenSupportPageCommand}" />
+
+                            <button:SfButton Grid.Column="1" Grid.Row="5"
+                                             Text="{x:Static resources:AppResources.ShareThisApp}"
+                                             ImageSource="{AppThemeBinding Dark=share_dark_theme.svg, Light=share_light_theme.svg}"
+                                             ShowIcon="True"
+                                             Style="{StaticResource SfButtonCustomStyle}"
+                                             Command="{Binding ShareThisAppCommand}" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
                     
                     <navigationdrawer:DrawerSettings.DrawerFooterView>
-                        <button:SfButton BackgroundColor="#00E1FB"
+                        <button:SfButton Background="{StaticResource LogoBackgroundColor}"
                                          HorizontalOptions="Center"
                                          WidthRequest="300"
                                          CornerRadius="0"
