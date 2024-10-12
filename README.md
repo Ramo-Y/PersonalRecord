@@ -60,7 +60,7 @@ The settings are saved as preferences and the data in the app folder. This means
 ## Burger menu
 <img src="./.github/images/burger_menu_view.png" alt="Burger menu" style="width:250px;"/>
 
-The burger button at the top left takes you to the settings, you can report a problem, go to the project page or switch to the page for sponsoring the project. You can also see the version here.
+The burger button at the top left takes you to the settings. You can also report a problem, go to the project page, go to the project sponsorship page or share the app. At the bottom is the button with the version, where you can see detailled information about this version and the technology.
 
 ## Movements
 <img src="./.github/images/movements_view.png" alt="Movements" style="width:250px;"/>
