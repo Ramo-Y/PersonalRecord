@@ -286,6 +286,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I use the PersonalRecord app to track my PRs. Give it a try, it&apos;s open source, free and contains no ads..
+        /// </summary>
+        public static string ShareAppText {
+            get {
+                return ResourceManager.GetString("ShareAppText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Share this app.
         /// </summary>
         public static string ShareThisApp {

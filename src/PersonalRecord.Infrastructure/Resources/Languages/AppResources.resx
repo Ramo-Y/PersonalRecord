@@ -207,4 +207,7 @@
   <data name="ShareThisApp" xml:space="preserve">
     <value>Share this app</value>
   </data>
+  <data name="ShareAppText" xml:space="preserve">
+    <value>I use the PersonalRecord app to track my PRs. Give it a try, it's open source, free and contains no ads.</value>
+  </data>
 </root>

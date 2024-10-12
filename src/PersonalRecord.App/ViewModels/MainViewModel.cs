@@ -94,6 +94,16 @@
         }
 
         [RelayCommand]
+        public async Task ShareThisAppAsync()
+        {
+            await Share.Default.RequestAsync(new ShareTextRequest
+            {
+                Text = AppResources.ShareAppText,
+                Uri = EnvironmentConstants.PLAY_STORE_URL
+            });
+        }
+
+        [RelayCommand]
         public void ShowDetailInformation()
         {
             var copyright = EnvironmentConstants.COPYRIGHT + DateTime.Now.Year.ToString();

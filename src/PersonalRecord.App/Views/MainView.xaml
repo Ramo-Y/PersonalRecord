@@ -142,6 +142,7 @@
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
                                 <RowDefinition Height="15"/>
                             </Grid.RowDefinitions>
 
@@ -172,6 +173,13 @@
                                              ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenSupportPageCommand}" />
+
+                            <button:SfButton Grid.Column="1" Grid.Row="5"
+                                             Text="{x:Static resources:AppResources.ShareThisApp}"
+                                             ImageSource="{AppThemeBinding Dark=share_dark_theme.svg, Light=share_light_theme.svg}"
+                                             ShowIcon="True"
+                                             Style="{StaticResource SfButtonCustomStyle}"
+                                             Command="{Binding ShareThisAppCommand}" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
                     
