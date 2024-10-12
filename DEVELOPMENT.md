@@ -44,7 +44,7 @@ The workflows are described in the following table:
 | release  | [test-build-upload-cleanup.yml](./.github/workflows/test-build-upload-cleanup.yml) | Commits or merges to master                                                  | Builds, tests and publishes the app to Google Play Store |
 
 ## Secrets and variables
-To publish this app on the play store, you need first to create a [keystore](https://learn.microsoft.com/en-us/dotnet/maui/android/deployment/publish-google-play?view=net-maui-8.0) and upload your signing key to [Google Play Console](https://developer.android.com/studio/publish/app-signing#sign_release). You also need a Google Service Account, that has the permission to upload app bundles, check out [this guide](https://support.readyeducation.com/hc/en-us/articles/360047693573-Google-Play-Service-Account-Setup) to create this account.
+To publish this app on the play store, you need first to create a [keystore](https://learn.microsoft.com/en-us/dotnet/maui/android/deployment/publish-google-play?view=net-maui-8.0) and upload your signing key to [Google Play Console](https://developer.android.com/studio/publish/app-signing#sign_release). You also need a Google Service Account, that has the permission to upload app bundles, check out [this guide](https://medium.com/@vontonnie/setting-up-a-service-account-on-google-cloud-for-android-app-deployment-c6e16d8fc57b) to create this account.
 
 ### Secrets
 The secrets are described in the following table:
