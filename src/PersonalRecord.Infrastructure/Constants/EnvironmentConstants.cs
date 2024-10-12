@@ -2,6 +2,8 @@
 {
     public static class EnvironmentConstants
     {
+        public const string COPYRIGHT = "Copyright © Ramazan Yilmaz, ";
+
         public const string DATABASE_NAME = "PersonalRecord.db";
 
         public const string LICENSE_FILENAME = "SyncfusionLicense.txt";
