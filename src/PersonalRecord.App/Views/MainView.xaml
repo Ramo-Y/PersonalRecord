@@ -17,7 +17,9 @@
         <Color x:Key="LogoBackgroundColor">#00E1FB</Color>
         <Color x:Key="DarkHyperLink">DeepSkyBlue</Color>
         <Color x:Key="LightHyperLink">MediumBlue</Color>
-        
+        <Color x:Key="LabelTextLight">#26262C</Color>
+        <Color x:Key="LabelTextDark">#A7A3AC</Color>
+
         <Style x:Key="SfButtonCustomStyle"
                TargetType="button:SfButton">
             <Setter Property="Padding" Value="15,0,0,0" />
@@ -50,7 +52,7 @@
                 </VisualStateGroupList>
             </Setter>
         </Style>
-        
+
         <Style x:Key="HyperLinkLabelCustomStyle"
                TargetType="Label">
             <Setter Property="TextDecorations" Value="Underline" />
@@ -75,6 +77,37 @@
                         <VisualState Name="Pressed">
                             <VisualState.Setters>
                                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DarkLightLabelCustomStyle"
+               TargetType="Label">
+            <Setter Property="VerticalTextAlignment" Value="Start" />
+            <Setter Property="Padding" Value="10,0,0,0" />
+
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Hovered">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
                                 <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
                             </VisualState.Setters>
                         </VisualState>
@@ -143,13 +176,13 @@
                                      Command="{Binding GoToMovementRecordAllViewCommand}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
-            
+
             <navigationdrawer:SfNavigationDrawer.DrawerSettings>
                 <navigationdrawer:DrawerSettings DrawerWidth="300"
                                                  DrawerHeaderHeight="220"
                                                  DrawerFooterHeight="50"
                                                  EnableSwipeGesture="True">
-                    
+
                     <navigationdrawer:DrawerSettings.DrawerHeaderView>
                         <Grid BackgroundColor="{StaticResource LogoBackgroundColor}">
                             <VerticalStackLayout VerticalOptions="Center"
@@ -163,7 +196,7 @@
                             </VerticalStackLayout>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerHeaderView>
-                    
+
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -217,7 +250,7 @@
                                              Command="{Binding ShareThisAppCommand}" />
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerContentView>
-                    
+
                     <navigationdrawer:DrawerSettings.DrawerFooterView>
                         <button:SfButton Background="{StaticResource LogoBackgroundColor}"
                                          HorizontalOptions="Center"
@@ -247,9 +280,8 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Label Grid.Row="0"
-                               Text="{Binding Message}"
-                               VerticalTextAlignment="Start"
-                               Padding="10,0,0,0"/>
+                               Style="{StaticResource DarkLightLabelCustomStyle}"
+                               Text="{Binding Message}"/>
                         <Label Grid.Row="1"
                                Style="{StaticResource HyperLinkLabelCustomStyle}"
                                Text="{x:Static resources:AppResources.PrivacyPolicy}">
