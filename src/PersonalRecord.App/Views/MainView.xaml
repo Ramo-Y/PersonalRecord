@@ -185,21 +185,30 @@
 
                     <navigationdrawer:DrawerSettings.DrawerHeaderView>
                         <Grid BackgroundColor="{StaticResource LogoBackgroundColor}">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Grid.GestureRecognizers>
                             <VerticalStackLayout VerticalOptions="Center"
                                                  HorizontalOptions="Center">
                                 <Label Text="{x:Static resources:AppResources.PersonalRecordTitle}"
                                        BackgroundColor="{StaticResource LogoBackgroundColor}"
-                                       TextColor="Black"
+                                       TextColor="{StaticResource TextBlack}"
                                        HorizontalOptions="Center"
                                        FontSize="Title"/>
-                                <Image Source="personalrecord.png"
-                                       InputTransparent="False" />
+                                <Image Source="personalrecord.png">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer/>
+                                    </Image.GestureRecognizers>
+                                </Image>
                             </VerticalStackLayout>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerHeaderView>
 
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Grid.GestureRecognizers>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="5"/>
                                 <ColumnDefinition Width="*"/>
