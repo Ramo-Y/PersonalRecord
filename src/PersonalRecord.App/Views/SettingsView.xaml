@@ -29,22 +29,27 @@
         </Grid.RowDefinitions>
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="1"
+                                       Margin="5, 0"
                                        ContainerType="Outlined"
-                                       Content="{Binding Setting.Unit}"
                                        Hint="{x:Static resources:AppResources.Unit}">
+            <Entry Text="{Binding Setting.Unit}"
+                   HeightRequest="55"/>
         </inputLayout:SfTextInputLayout>
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="3"
+                                       Margin="5, 0"
                                        ContainerType="Outlined"
-                                       Content="{Binding Setting.DateFormat}"
                                        Hint="{x:Static resources:AppResources.DateFormat}">
+            <Entry Text="{Binding Setting.DateFormat}"
+                   HeightRequest="55"/>
         </inputLayout:SfTextInputLayout>
 
         <Label Grid.Column="0" Grid.Row="5"
-               Margin="5, 0"
+               Margin="10, 0"
                VerticalTextAlignment="Center"
                Text="{x:Static resources:AppResources.Language}"/>
         <editors:SfComboBox Grid.Column="0" Grid.Row="6"
+                            Margin="5, 0"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Languages}"
                             SelectedItem="{Binding Setting.Language}"/>
