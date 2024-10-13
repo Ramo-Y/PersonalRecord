@@ -10,19 +10,19 @@
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:SettingsViewModel"
              Title="{x:Static resources:AppResources.Settings}">
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="95"/>
+            <RowDefinition Height="85"/>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="95"/>
+            <RowDefinition Height="85"/>
             <RowDefinition Height="5"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="95"/>
+            <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="55"/>
             <RowDefinition Height="10"/>
@@ -30,14 +30,14 @@
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="1"
                                        ContainerType="Outlined"
+                                       Content="{Binding Setting.Unit}"
                                        Hint="{x:Static resources:AppResources.Unit}">
-            <Entry Text="{Binding Setting.Unit}" />
         </inputLayout:SfTextInputLayout>
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="3"
                                        ContainerType="Outlined"
+                                       Content="{Binding Setting.DateFormat}"
                                        Hint="{x:Static resources:AppResources.DateFormat}">
-            <Entry Text="{Binding Setting.DateFormat}" />
         </inputLayout:SfTextInputLayout>
 
         <Label Grid.Column="0" Grid.Row="5"
