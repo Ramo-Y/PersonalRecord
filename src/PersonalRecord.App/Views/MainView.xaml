@@ -185,30 +185,28 @@
 
                     <navigationdrawer:DrawerSettings.DrawerHeaderView>
                         <Grid BackgroundColor="{StaticResource LogoBackgroundColor}">
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer/>
-                            </Grid.GestureRecognizers>
-                            <VerticalStackLayout VerticalOptions="Center"
-                                                 HorizontalOptions="Center">
-                                <Label Text="{x:Static resources:AppResources.PersonalRecordTitle}"
-                                       BackgroundColor="{StaticResource LogoBackgroundColor}"
-                                       TextColor="{StaticResource TextBlack}"
-                                       HorizontalOptions="Center"
-                                       FontSize="Title"/>
-                                <Image Source="personalrecord.png">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer/>
-                                    </Image.GestureRecognizers>
-                                </Image>
-                            </VerticalStackLayout>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"
+                                   Text="{x:Static resources:AppResources.PersonalRecordTitle}"
+                                   BackgroundColor="{StaticResource LogoBackgroundColor}"
+                                   TextColor="{StaticResource TextBlack}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   FontSize="Title"/>
+                            <Image Grid.Row="1"
+                                   Source="personalrecord.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer/>
+                                </Image.GestureRecognizers>
+                            </Image>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerHeaderView>
 
                     <navigationdrawer:DrawerSettings.DrawerContentView>
                         <Grid>
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer/>
-                            </Grid.GestureRecognizers>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="5"/>
                                 <ColumnDefinition Width="*"/>
@@ -223,6 +221,12 @@
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="15"/>
                             </Grid.RowDefinitions>
+
+                            <Grid Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
 
                             <button:SfButton Grid.Column="1" Grid.Row="1"
                                              Text="{x:Static resources:AppResources.Settings}"
@@ -266,7 +270,7 @@
                                          HorizontalOptions="Center"
                                          WidthRequest="300"
                                          CornerRadius="0"
-                                         TextColor="Black"                                   
+                                         TextColor="{StaticResource TextBlack}"                                   
                                          Text="{Binding AppVersion}"
                                          Command="{Binding ShowDetailInformationCommand}">
                         </button:SfButton>
