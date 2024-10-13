@@ -1,3 +1,4 @@
 ﻿- Fixed crash when version info button pressed
 - Added button to share the app
 - Updated the components
+- Fixed touch target size of the fields in the settings view
