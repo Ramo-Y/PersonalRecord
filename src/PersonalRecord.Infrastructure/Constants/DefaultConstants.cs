@@ -6,10 +6,12 @@
 
         public const string DEFAULT_UNIT = "kg";
 
-        public const string DEFAULT_UNIT_FORMAT = $"###.# {DEFAULT_UNIT}";
+        public const string DEFAULT_UNIT_FORMAT = $"{UNIT_FORMAT_PREFIX}{DEFAULT_UNIT}";
 
         public const string DEFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
         public const int DEFAULT_LANGUAGE = 0;
+
+        public const string UNIT_FORMAT_PREFIX = "###.# ";
     }
 }
