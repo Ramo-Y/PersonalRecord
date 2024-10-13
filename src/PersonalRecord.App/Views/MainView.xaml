@@ -15,6 +15,8 @@
         <Color x:Key="TextBlack">#000000</Color>
         <Color x:Key="TransparentBackground">#00FFFFFF</Color>
         <Color x:Key="LogoBackgroundColor">#00E1FB</Color>
+        <Color x:Key="DarkHyperLink">DeepSkyBlue</Color>
+        <Color x:Key="LightHyperLink">MediumBlue</Color>
         
         <Style x:Key="SfButtonCustomStyle"
                TargetType="button:SfButton">
@@ -41,6 +43,38 @@
                         <VisualState Name="Pressed">
                             <VisualState.Setters>
                                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="HyperLinkLabelCustomStyle"
+               TargetType="Label">
+            <Setter Property="TextDecorations" Value="Underline" />
+            <Setter Property="VerticalOptions" Value="Start" />
+            <Setter Property="Padding" Value="10,0,0,0" />
+
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Hovered">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
+                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
                                 <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
                             </VisualState.Setters>
                         </VisualState>
@@ -217,21 +251,15 @@
                                VerticalTextAlignment="Start"
                                Padding="10,0,0,0"/>
                         <Label Grid.Row="1"
-                               Text="{x:Static resources:AppResources.PrivacyPolicy}"
-                               TextColor="DeepSkyBlue"
-                               TextDecorations="Underline"
-                               VerticalOptions="Start"
-                               Padding="10,0,0,0">
+                               Style="{StaticResource HyperLinkLabelCustomStyle}"
+                               Text="{x:Static resources:AppResources.PrivacyPolicy}">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding OpenPrivacyPolicyCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
                         <Label Grid.Row="2"
-                               Text="{x:Static resources:AppResources.ShowCommit}"
-                               TextColor="DeepSkyBlue"
-                               TextDecorations="Underline"
-                               VerticalOptions="Start"
-                               Padding="10,0,0,0">
+                               Style="{StaticResource HyperLinkLabelCustomStyle}"
+                               Text="{x:Static resources:AppResources.ShowCommit}">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding OpenCommitOnRepositoryCommand}"/>
                             </Label.GestureRecognizers>
