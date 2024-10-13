@@ -192,7 +192,8 @@
                                        TextColor="Black"
                                        HorizontalOptions="Center"
                                        FontSize="Title"/>
-                                <Image Source="personalrecord.png" />
+                                <Image Source="personalrecord.png"
+                                       InputTransparent="False" />
                             </VerticalStackLayout>
                         </Grid>
                     </navigationdrawer:DrawerSettings.DrawerHeaderView>
