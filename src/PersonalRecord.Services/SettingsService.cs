@@ -45,7 +45,7 @@
         {
             Preferences.Default.Set(nameof(Setting.Unit), newSetting.Unit);
             Preferences.Default.Set(nameof(Setting.DateFormat), newSetting.DateFormat);
-            Preferences.Default.Set(nameof(Setting.UnitFormat), newSetting.UnitFormat);
+            Preferences.Default.Set(nameof(Setting.UnitFormat), $"{DefaultConstants.UNIT_FORMAT_PREFIX}{newSetting.Unit}");
             Preferences.Default.Set(nameof(Setting.Language), (int)newSetting.Language);
         }
     }
