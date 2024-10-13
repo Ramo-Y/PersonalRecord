@@ -2,3 +2,4 @@
 - Button zum Teilen der App hinzugefügt
 - Komponenten aktualisiert
 - Berührungszielgrösse der Felder in der Einstellungsansicht korrigiert
+- Fehler behoben, bei dem sich die angezeigte Einheit nicht ändert wenn sie in den Einstellungen geändert wurde
