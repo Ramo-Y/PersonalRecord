@@ -4,3 +4,4 @@
 - Berührungszielgrösse der Felder in der Einstellungsansicht korrigiert
 - Fehler behoben, bei dem sich die angezeigte Einheit nicht ändert wenn sie in den Einstellungen geändert wurde
 - Niedrigen Kontrast im Versions-Popup korrigiert
+- Fehler behoben, bei dem Buttons hinter dem Logo anklickbar waren
