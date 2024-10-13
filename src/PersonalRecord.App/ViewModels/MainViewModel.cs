@@ -16,8 +16,14 @@
         private string _appVersion;
 
         [ObservableProperty]
-        private string _message;
-        
+        private string _copyright;
+
+        [ObservableProperty]
+        private string _technology;
+
+        [ObservableProperty]
+        private string _fullVersion;
+
         [ObservableProperty]
         private bool _popupIsOpen;
 
@@ -106,17 +112,10 @@
         [RelayCommand]
         public void ShowDetailInformation()
         {
-            var copyright = EnvironmentConstants.COPYRIGHT + DateTime.Now.Year.ToString();
+            Copyright = EnvironmentConstants.COPYRIGHT + DateTime.Now.Year.ToString();
+            Technology = AppResources.DevelopedWithDotNetMaui;
             var informationalVersion = _versionService.GetInformationalVersion();
-
-            var stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine(copyright);
-            stringBuilder.AppendLine(string.Empty);
-            stringBuilder.AppendLine(AppResources.DevelopedWithDotNetMaui);
-            stringBuilder.AppendLine(string.Empty);
-            stringBuilder.AppendLine($"{AppResources.FullVersion}: {informationalVersion}");
-
-            Message = stringBuilder.ToString();
+            FullVersion = $"{AppResources.FullVersion}: {informationalVersion}";
 
             PopupIsOpen = true;
         }

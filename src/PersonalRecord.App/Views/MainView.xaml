@@ -275,21 +275,33 @@
                 <DataTemplate>
                     <Grid MaximumWidthRequest="360">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="5*"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Label Grid.Row="0"
                                Style="{StaticResource DarkLightLabelCustomStyle}"
-                               Text="{Binding Message}"/>
-                        <Label Grid.Row="1"
+                               Text="{Binding Copyright}"/>
+                        <Label Grid.Row="2"
+                               Style="{StaticResource DarkLightLabelCustomStyle}"
+                               Text="{Binding Technology}"/>
+                        <Label Grid.Row="4"
+                               Style="{StaticResource DarkLightLabelCustomStyle}"
+                               Text="{Binding FullVersion}"/>
+                        <Label Grid.Row="6"
                                Style="{StaticResource HyperLinkLabelCustomStyle}"
                                Text="{x:Static resources:AppResources.PrivacyPolicy}">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding OpenPrivacyPolicyCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
-                        <Label Grid.Row="2"
+                        <Label Grid.Row="8"
                                Style="{StaticResource HyperLinkLabelCustomStyle}"
                                Text="{x:Static resources:AppResources.ShowCommit}">
                             <Label.GestureRecognizers>
