@@ -3,3 +3,4 @@
 - Updated the components
 - Fixed touch target size of the fields in the settings view
 - Fixed a bug where the displayed unit does not change when changed in the settings
+- Fixed low contrast in version popup
