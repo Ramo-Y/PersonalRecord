@@ -216,6 +216,15 @@
   <data name="Exercise" xml:space="preserve">
     <value>Übung</value>
   </data>
+  <data name="Discard" xml:space="preserve">
+    <value>Verwerfen</value>
+  </data>
+  <data name="SaveOrDiscardChangesQuestion" xml:space="preserve">
+    <value>Es gibt Änderungen, möchtest Du diese speichern?</value>
+  </data>
+  <data name="SaveChangesTitle" xml:space="preserve">
+    <value>Änderungen speichern?</value>
+  </data>
   <data name="DistanceUnit" xml:space="preserve">
     <value>Distanz Einheit</value>
   </data>
