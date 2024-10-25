@@ -50,10 +50,5 @@
             await _context.MovementItems.Where(m => m.MovementID == movement.MovementID).ExecuteDeleteAsync();
             await _context.SaveChangesAsync();
         }
-
-        public async Task SaveAsync()
-        {
-            await _context.SaveChangesAsync();
-        }
     }
 }
