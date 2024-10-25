@@ -14,7 +14,5 @@
         Task UpdateAllEntriesAsync(IEnumerable<MovementRecord> movementRecords);
 
         Task DeleteMovementRecordAsync(MovementRecord movementRecord);
-
-        Task SaveAsync();
     }
 }

@@ -58,10 +58,5 @@
                 await _context.SaveChangesAsync();
             }
         }
-
-        public async Task SaveAsync()
-        {
-            await _context.SaveChangesAsync();
-        }
     }
 }
