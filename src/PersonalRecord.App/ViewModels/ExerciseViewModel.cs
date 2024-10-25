@@ -12,14 +12,22 @@
         private readonly INavigationService _navigationService;
         private readonly IExerciseRepository _exerciseRepository;
 
+        public event EventHandler SelectExercise;
+
         [ObservableProperty]
-        private bool _popupIsOpen;
+        private bool _deletePopupIsOpen;
 
         [ObservableProperty]
         private ObservableCollection<Exercise> _exercises;
 
         [ObservableProperty]
         private Exercise _selectedExercise;
+
+        [ObservableProperty]
+        private bool _hasUnsavedChanges;
+
+        [ObservableProperty]
+        private bool _hasUnsavedChangesPopupIsOpen;
 
         public ExerciseViewModel(
             INavigationService navigationService,
@@ -54,12 +62,23 @@
             };
 
             Exercises.Add(exercise);
+            SelectedExercise = exercise;
+            HasUnsavedChanges = true;
+            SelectExercise?.Invoke(this, EventArgs.Empty);
         }
 
         [RelayCommand]
         public async Task SaveAndGoBackAsync()
         {
             await _exerciseRepository.AddOrUpdateAllAsync(Exercises);
+            HasUnsavedChanges = false;
+            await _navigationService.GoBackAsync();
+        }
+
+        [RelayCommand]
+        public async Task DiscardAndGoBackAsync()
+        {
+            HasUnsavedChanges = false;
             await _navigationService.GoBackAsync();
         }
 
@@ -67,9 +86,8 @@
         public void ConfirmEntryDeletion(Exercise exercise)
         {
             SelectedExercise = exercise;
-            PopupIsOpen = true;
+            DeletePopupIsOpen = true;
         }
-
 
         [RelayCommand]
         public async Task DeleteEntryAsync()
