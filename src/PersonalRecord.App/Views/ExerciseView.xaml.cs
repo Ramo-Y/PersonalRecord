@@ -5,9 +5,11 @@ namespace PersonalRecord.App.Views
     public partial class ExerciseView : ContentPage
     {
         private readonly ExerciseViewModel _viewModel;
+
         public ExerciseView(ExerciseViewModel viewModel)
         {
             InitializeComponent();
+
             _viewModel = viewModel;
             BindingContext = viewModel;
             viewModel.SelectExercise += OnSelected;
