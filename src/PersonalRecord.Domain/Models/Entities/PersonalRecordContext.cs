@@ -18,5 +18,7 @@
         public DbSet<Exercise> ExerciseItems { get; set; }
 
         public DbSet<WorkoutToExercise> WorkoutToExerciseItems { get; set; }
+
+        public DbSet<WorkoutRecord> WorkoutRecordItems { get; set; }
     }
 }
