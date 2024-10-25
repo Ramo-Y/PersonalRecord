@@ -35,6 +35,7 @@
             Task.Run(LicenseHelper.RegisterLicenseAsync);
 
             // Register ViewModels
+            builder.Services.AddTransient<ExerciseView>();
             builder.Services.AddTransient<MainView>();
             builder.Services.AddTransient<MovementRecordAllView>();
             builder.Services.AddTransient<MovementRecordDetailView>();
@@ -43,6 +44,7 @@
             builder.Services.AddTransient<SettingsView>();
 
             // Register ViewModels
+            builder.Services.AddTransient<ExerciseViewModel>();
             builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddTransient<MovementRecordAllViewModel>();
             builder.Services.AddTransient<MovementRecordDetailViewModel>();
@@ -60,6 +62,7 @@
             builder.Services.AddTransient<PreparationDatabase>();
 
             // Register repositories
+            builder.Services.AddSingleton<IExerciseRepository, ExerciseRepository>();
             builder.Services.AddSingleton<IMovementRepository, MovementRepository>();
             builder.Services.AddSingleton<IMovementRecordRepository, MovementRecordRepository>();
 

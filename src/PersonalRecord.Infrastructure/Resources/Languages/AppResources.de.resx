@@ -210,14 +210,11 @@
   <data name="ShareAppText" xml:space="preserve">
     <value>Ich verwende die PersonalRecord-App, um meine PRs zu verfolgen. Probier's mal aus, es ist Open Source, kostenlos und enthält keine Werbung.</value>
   </data>
-  <data name="SaveOrDiscardChangesQuestion" xml:space="preserve">
-    <value>Es gibt Änderungen, möchtest Du diese speichern?</value>
+  <data name="Exercises" xml:space="preserve">
+    <value>Übungen</value>
   </data>
-  <data name="Discard" xml:space="preserve">
-    <value>Verwerfen</value>
-  </data>
-  <data name="SaveChangesTitle" xml:space="preserve">
-    <value>Änderungen speichern?</value>
+  <data name="Exercise" xml:space="preserve">
+    <value>Übung</value>
   </data>
   <data name="DistanceUnit" xml:space="preserve">
     <value>Distanz Einheit</value>
