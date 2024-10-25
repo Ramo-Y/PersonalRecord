@@ -142,11 +142,20 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Discard.
+        ///   Looks up a localized string similar to Exercise.
         /// </summary>
-        public static string Discard {
+        public static string Exercise {
             get {
-                return ResourceManager.GetString("Discard", resourceCulture);
+                return ResourceManager.GetString("Exercise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exercises.
+        /// </summary>
+        public static string Exercises {
+            get {
+                return ResourceManager.GetString("Exercises", resourceCulture);
             }
         }
         
@@ -291,24 +300,6 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save changes?.
-        /// </summary>
-        public static string SaveChangesTitle {
-            get {
-                return ResourceManager.GetString("SaveChangesTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There are changes, would you like to save them?.
-        /// </summary>
-        public static string SaveOrDiscardChangesQuestion {
-            get {
-                return ResourceManager.GetString("SaveOrDiscardChangesQuestion", resourceCulture);
             }
         }
         

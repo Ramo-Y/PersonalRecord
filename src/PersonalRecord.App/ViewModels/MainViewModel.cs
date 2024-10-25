@@ -56,6 +56,12 @@
         }
 
         [RelayCommand]
+        public async Task GoToExercisesViewAsync()
+        {
+            await _navigationService.GoToAsync(Routes.ExerciseView);
+        }
+
+        [RelayCommand]
         public async Task GoToSettingsViewAsync()
         {
             await _navigationService.GoToAsync(Routes.SettingsView);

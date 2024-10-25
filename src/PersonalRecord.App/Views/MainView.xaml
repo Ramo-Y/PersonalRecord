@@ -29,6 +29,8 @@
                         <RowDefinition Height="70"/>
                         <RowDefinition Height="15"/>
                         <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="70"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="25"/>
                     </Grid.RowDefinitions>
@@ -67,6 +69,11 @@
                                      Text="{x:Static resources:AppResources.MovementRecordAll}"
                                      FontSize="Medium"
                                      Command="{Binding GoToMovementRecordAllViewCommand}"/>
+
+                    <button:SfButton Grid.Column="1" Grid.Row="8"
+                                     Text="{x:Static resources:AppResources.Exercises}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToExercisesViewCommand}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
 

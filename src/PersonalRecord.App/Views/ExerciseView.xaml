@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalRecord.App.Views.ExerciseView"
+             x:Name="ExercisesViewXaml"
+             xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
+             xmlns:entities="clr-namespace:PersonalRecord.Domain.Models.Entities;assembly=PersonalRecord.Domain"
+             xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
+             x:DataType="viewModels:ExerciseViewModel"
+             Title="{x:Static resources:AppResources.Exercises}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="&#128190;"
+                     Command="{Binding SaveAndGoBackCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <sfgrid:SfDataGrid x:Name="dataGrid"
+                           Grid.Column="0" Grid.Row="0"
+                           ItemsSource="{Binding Exercises}"
+                           SortingMode="Single"
+                           AllowTriStateSorting="True"
+                           AllowDeleting="True"
+                           AutoGenerateColumnsMode="None"
+                           SelectionMode="Single"
+                           AllowEditing="True"
+                           ColumnWidthMode="Fill"
+                           EditTapAction="OnTap"
+                           HeaderRowHeight="52"
+                           RowHeight="48">
+            <sfgrid:SfDataGrid.Columns>
+                <sfgrid:DataGridTextColumn HeaderText="{x:Static resources:AppResources.Exercise}"
+                                           ValueBinding="{Binding ExrName}">
+                </sfgrid:DataGridTextColumn>
+
+                <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
+                    <sfgrid:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="entities:Exercise">
+                            <button:SfButton Background="Transparent"
+                                             Text="&#128465;"
+                                             Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ConfirmEntryDeletionCommand}"
+                                             CommandParameter="{Binding .}" />
+                        </DataTemplate>
+                    </sfgrid:DataGridTemplateColumn.CellTemplate>
+                </sfgrid:DataGridTemplateColumn>
+            </sfgrid:SfDataGrid.Columns>
+        </sfgrid:SfDataGrid>
+
+        <button:SfButton Grid.Column="0" Grid.Row="1"
+                         WidthRequest="50"
+                         CornerRadius="25"
+                         Command="{Binding AddNewExerciseCommand}">
+            <button:SfButton.Content>
+                <DataTemplate>
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                        <Grid Padding="5,0,5,0"  Grid.Column="1" >
+                            <Label Text="+"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="Start"
+                                   FontSize="28"
+                                   TextColor="Black">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </button:SfButton.Content>
+        </button:SfButton>
+
+        <popup:SfPopup IsOpen="{Binding PopupIsOpen}"
+                       Message="{x:Static resources:AppResources.DeleteAskForConfirmation}"
+                       ShowFooter="True"
+                       HeaderTitle="{x:Static resources:AppResources.DeleteEntryTitle}"
+                       AppearanceMode="TwoButton"
+                       AcceptButtonText="{x:Static resources:AppResources.Delete}"
+                       AcceptCommand="{Binding DeleteEntryCommand}"
+                       DeclineButtonText="{x:Static resources:AppResources.Cancel}"
+                       AutoSizeMode="Both">
+        </popup:SfPopup>
+    </Grid>
+</ContentPage>
