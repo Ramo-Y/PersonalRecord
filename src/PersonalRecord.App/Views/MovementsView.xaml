@@ -30,6 +30,7 @@
         <sfgrid:SfDataGrid x:Name="dataGrid"
                            Grid.Column="0" Grid.Row="0"
                            ItemsSource="{Binding Movements}"
+                           SelectedRow="{Binding SelectedMovement}"
                            SortingMode="Single"
                            AllowTriStateSorting="True"
                            AllowDeleting="True"

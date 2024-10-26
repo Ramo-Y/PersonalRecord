@@ -11,8 +11,9 @@ namespace PersonalRecord.App.Views
         {
             InitializeComponent();
 
-            BindingContext = viewModel;
             _viewModel = viewModel;
+            BindingContext = viewModel;
+            viewModel.SelectMovement += OnSelected;
 
             dataGrid.CellRenderers.Remove("Text");
             dataGrid.CellRenderers.Add("Text", new CustomTextRenderer());
