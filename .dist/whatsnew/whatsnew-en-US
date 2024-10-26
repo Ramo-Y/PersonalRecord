@@ -1,7 +1,2 @@
-﻿- Fixed crash when version info button pressed
-- Added button to share the app
-- Updated the components
-- Fixed touch target size of the fields in the settings view
-- Fixed a bug where the displayed unit does not change when changed in the settings
-- Fixed low contrast in version popup
-- Fixed bug where buttons behind logo were clickable
+﻿- When a new entry is made in movements, the app scrolls down to it
+- Pop-up for unsaved changes appears for movements

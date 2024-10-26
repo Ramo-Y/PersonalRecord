@@ -1,7 +1,2 @@
-﻿- Absturz bei Betätigung des Buttons für Versionsinformationen behoben
-- Button zum Teilen der App hinzugefügt
-- Komponenten aktualisiert
-- Berührungszielgrösse der Felder in der Einstellungsansicht korrigiert
-- Fehler behoben, bei dem sich die angezeigte Einheit nicht ändert wenn sie in den Einstellungen geändert wurde
-- Niedrigen Kontrast im Versions-Popup korrigiert
-- Fehler behoben, bei dem Buttons hinter dem Logo anklickbar waren
+﻿- Popup für ungespeicherte Änderungen erscheint bei Bewegungen
+- Wenn ein neuer Eintrag in Bewegungen gemacht wird, scrollt die App nach unten zu diesem Eintrag
