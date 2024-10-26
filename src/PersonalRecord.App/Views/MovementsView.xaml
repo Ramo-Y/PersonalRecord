@@ -80,7 +80,7 @@
             </button:SfButton.Content>
         </button:SfButton>
 
-        <popup:SfPopup IsOpen="{Binding PopupIsOpen}"
+        <popup:SfPopup IsOpen="{Binding DeletePopupIsOpen}"
                        Message="{x:Static resources:AppResources.DeleteAskForConfirmation}"
                        ShowFooter="True"
                        HeaderTitle="{x:Static resources:AppResources.DeleteEntryTitle}"
@@ -88,6 +88,18 @@
                        AcceptButtonText="{x:Static resources:AppResources.Delete}"
                        AcceptCommand="{Binding DeleteEntryCommand}"
                        DeclineButtonText="{x:Static resources:AppResources.Cancel}"
+                       AutoSizeMode="Both">
+        </popup:SfPopup>
+
+        <popup:SfPopup IsOpen="{Binding HasUnsavedChangesPopupIsOpen}"
+                       Message="{x:Static resources:AppResources.SaveChangesTitle}"
+                       ShowFooter="True"
+                       HeaderTitle="{x:Static resources:AppResources.SaveOrDiscardChangesQuestion}"
+                       AppearanceMode="TwoButton"
+                       AcceptButtonText="{x:Static resources:AppResources.Save}"
+                       AcceptCommand="{Binding SaveAndGoBackCommand}"
+                       DeclineButtonText="{x:Static resources:AppResources.Discard}"
+                       DeclineCommand="{Binding DiscardAndGoBackCommand}"
                        AutoSizeMode="Both">
         </popup:SfPopup>
     </Grid>

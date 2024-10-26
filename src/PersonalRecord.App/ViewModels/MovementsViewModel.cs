@@ -12,14 +12,22 @@
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
 
+        public event EventHandler SelectMovement;
+
         [ObservableProperty]
-        private bool _popupIsOpen;
+        private bool _deletePopupIsOpen;
 
         [ObservableProperty]
         private ObservableCollection<Movement> _movements;
 
         [ObservableProperty]
         private Movement _selectedMovement;
+
+        [ObservableProperty]
+        private bool _hasUnsavedChanges;
+
+        [ObservableProperty]
+        private bool _hasUnsavedChangesPopupIsOpen;
 
         public MovementsViewModel(
             INavigationService navigationService,
@@ -54,12 +62,23 @@
             };
 
             Movements.Add(movement);
+            SelectedMovement = movement;
+            HasUnsavedChanges = true;
+            SelectMovement?.Invoke(this, EventArgs.Empty);
         }
 
         [RelayCommand]
         public async Task SaveAndGoBackAsync()
         {
             await _movementRepository.AddOrUpdateAllAsync(Movements);
+            HasUnsavedChanges = false;
+            await _navigationService.GoBackAsync();
+        }
+
+        [RelayCommand]
+        public async Task DiscardAndGoBackAsync()
+        {
+            HasUnsavedChanges = false;
             await _navigationService.GoBackAsync();
         }
 
@@ -67,7 +86,7 @@
         public void ConfirmEntryDeletion(Movement movement)
         {
             SelectedMovement = movement;
-            PopupIsOpen = true;
+            DeletePopupIsOpen = true;
         }
 
         [RelayCommand]
