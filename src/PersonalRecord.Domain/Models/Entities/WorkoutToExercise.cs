@@ -19,5 +19,11 @@
         public Exercise Exercise { get; set; }
 
         public float WteExerciseRepCount { get; set; }
+
+        public float WteExerciseWeight { get; set; }
+
+        public float WteExerciseDistance { get; set; }
+
+        public TimeOnly WteExerciseTime { get; set; }
     }
 }
