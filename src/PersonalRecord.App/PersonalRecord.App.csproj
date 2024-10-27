@@ -91,6 +91,8 @@
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\ic_launcher-web.png" />
 	  <None Remove="Resources\AppIcon\personalrecord_icon.png" />
+	  <None Remove="Resources\Images\delete_dark_theme.svg" />
+	  <None Remove="Resources\Images\delete_light_theme.svg" />
 	  <None Remove="Resources\Images\download_dark_theme.svg" />
 	  <None Remove="Resources\Images\download_light_theme.svg" />
 	  <None Remove="Resources\Images\personalrecord.png" />
