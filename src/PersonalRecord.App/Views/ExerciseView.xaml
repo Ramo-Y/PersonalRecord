@@ -13,7 +13,7 @@
              Title="{x:Static resources:AppResources.Exercises}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="&#128190;"
+        <ToolbarItem IconImageSource="{AppThemeBinding Dark=save_dark_theme.svg, Light=save_dark_theme.svg}"
                      Command="{Binding SaveAndGoBackCommand}"/>
     </ContentPage.ToolbarItems>
 
@@ -50,7 +50,8 @@
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="entities:Exercise">
                             <button:SfButton Background="Transparent"
-                                             Text="&#128465;"
+                                             ShowIcon="True"
+                                             ImageSource="{AppThemeBinding Dark=delete_dark_theme.svg, Light=delete_light_theme.svg}"
                                              Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ConfirmEntryDeletionCommand}"
                                              CommandParameter="{Binding .}" />
                         </DataTemplate>
