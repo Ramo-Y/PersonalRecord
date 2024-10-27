@@ -13,7 +13,7 @@
              Title="{x:Static resources:AppResources.Movements}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="&#128190;"
+        <ToolbarItem IconImageSource="{AppThemeBinding Dark=save_dark_theme.svg, Light=save_dark_theme.svg}"
                      Command="{Binding SaveAndGoBackCommand}"/>
     </ContentPage.ToolbarItems>
 
