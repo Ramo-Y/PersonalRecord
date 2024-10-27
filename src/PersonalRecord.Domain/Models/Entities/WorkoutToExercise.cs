@@ -19,7 +19,5 @@
         public Exercise Exercise { get; set; }
 
         public float WteExerciseRepCount { get; set; }
-
-        public string WteExerciseRepUnit { get; set; }
     }
 }
