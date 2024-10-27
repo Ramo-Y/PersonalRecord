@@ -225,6 +225,9 @@
   <data name="SaveChangesTitle" xml:space="preserve">
     <value>Save changes?</value>
   </data>
+  <data name="Workouts" xml:space="preserve">
+    <value>Workouts</value>
+  </data>
   <data name="DistanceUnit" xml:space="preserve">
     <value>Distance unit</value>
   </data>

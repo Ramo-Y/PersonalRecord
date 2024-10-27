@@ -151,6 +151,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Distance unit.
+        /// </summary>
+        public static string DistanceUnit {
+            get {
+                return ResourceManager.GetString("DistanceUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exercise.
         /// </summary>
         public static string Exercise {
@@ -165,15 +174,6 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string Exercises {
             get {
                 return ResourceManager.GetString("Exercises", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Distance unit.
-        /// </summary>
-        public static string DistanceUnit {
-            get {
-                return ResourceManager.GetString("DistanceUnit", resourceCulture);
             }
         }
         
@@ -390,6 +390,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string WeightUnit {
             get {
                 return ResourceManager.GetString("WeightUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workouts.
+        /// </summary>
+        public static string Workouts {
+            get {
+                return ResourceManager.GetString("Workouts", resourceCulture);
             }
         }
     }
