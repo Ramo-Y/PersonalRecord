@@ -10,113 +10,6 @@
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MainViewModel">
 
-    <ContentPage.Resources>
-        <Color x:Key="TextWhite">#FFFFFF</Color>
-        <Color x:Key="TextBlack">#000000</Color>
-        <Color x:Key="TransparentBackground">#00FFFFFF</Color>
-        <Color x:Key="LogoBackgroundColor">#00E1FB</Color>
-        <Color x:Key="DarkHyperLink">DeepSkyBlue</Color>
-        <Color x:Key="LightHyperLink">MediumBlue</Color>
-        <Color x:Key="LabelTextLight">#26262C</Color>
-        <Color x:Key="LabelTextDark">#A7A3AC</Color>
-
-        <Style x:Key="SfButtonCustomStyle"
-               TargetType="button:SfButton">
-            <Setter Property="Padding" Value="15,0,0,0" />
-            <Setter Property="HorizontalTextAlignment" Value="Start" />
-            <Setter Property="FontSize" Value="Medium" />
-            <Setter Property="CornerRadius" Value="0" />
-
-            <Setter Property="VisualStateManager.VisualStateGroups">
-                <VisualStateGroupList>
-                    <VisualStateGroup x:Name="CommonStates">
-                        <VisualState Name="Normal">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                        <VisualState Name="Hovered">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                        <VisualState Name="Pressed">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                    </VisualStateGroup>
-                </VisualStateGroupList>
-            </Setter>
-        </Style>
-
-        <Style x:Key="HyperLinkLabelCustomStyle"
-               TargetType="Label">
-            <Setter Property="TextDecorations" Value="Underline" />
-            <Setter Property="VerticalOptions" Value="Start" />
-            <Setter Property="Padding" Value="10,0,0,0" />
-
-            <Setter Property="VisualStateManager.VisualStateGroups">
-                <VisualStateGroupList>
-                    <VisualStateGroup x:Name="CommonStates">
-                        <VisualState Name="Normal">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                        <VisualState Name="Hovered">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                        <VisualState Name="Pressed">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                    </VisualStateGroup>
-                </VisualStateGroupList>
-            </Setter>
-        </Style>
-
-        <Style x:Key="DarkLightLabelCustomStyle"
-               TargetType="Label">
-            <Setter Property="VerticalTextAlignment" Value="Start" />
-            <Setter Property="Padding" Value="10,0,0,0" />
-
-            <Setter Property="VisualStateManager.VisualStateGroups">
-                <VisualStateGroupList>
-                    <VisualStateGroup x:Name="CommonStates">
-                        <VisualState Name="Normal">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                        <VisualState Name="Hovered">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                        <VisualState Name="Pressed">
-                            <VisualState.Setters>
-                                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
-                                <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                    </VisualStateGroup>
-                </VisualStateGroupList>
-            </Setter>
-        </Style>
-    </ContentPage.Resources>
-
     <Grid>
         <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer">
             <navigationdrawer:SfNavigationDrawer.ContentView>
@@ -143,19 +36,19 @@
                                            Spacing="10"
                                            Padding="5,0,0,0"
                                            HorizontalOptions="Fill"
-                                           BackgroundColor="#6750A4">
+                                           BackgroundColor="{StaticResource ToolBarBackgroundColor}">
                         <button:SfButton Text="☰"
                                          HeightRequest="50"
                                          WidthRequest="50"
                                          HorizontalOptions="Start"
-                                         TextColor="White"
-                                         Background="Transparent"
+                                         TextColor="{StaticResource TextWhite}"
+                                         Background="{StaticResource TransparentBackground}"
                                          FontSize="Large"
                                          Clicked="hamburgerButton_Clicked" />
                         <Label Text="{x:Static resources:AppResources.PersonalRecordTitle}"
-                               TextColor="White"
+                               TextColor="{StaticResource TextWhite}"
                                Margin="10,0,0,0"
-                               BackgroundColor="#6750A4"
+                               BackgroundColor="{StaticResource ToolBarBackgroundColor}"
                                VerticalTextAlignment="Center"
                                FontSize="Large" />
                     </HorizontalStackLayout>

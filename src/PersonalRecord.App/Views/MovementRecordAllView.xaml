@@ -59,7 +59,7 @@
                 <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="entities:MovementRecord">
-                            <button:SfButton Background="Transparent"
+                            <button:SfButton Background="{StaticResource TransparentBackground}"
                                              ShowIcon="True"
                                              ImageSource="{AppThemeBinding Dark=delete_dark_theme.svg, Light=delete_light_theme.svg}"
                                              Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ConfirmEntryDeletionCommand}"
@@ -88,7 +88,7 @@
                                    VerticalTextAlignment="Center"
                                    HorizontalOptions="Start"
                                    FontSize="28"
-                                   TextColor="{AppThemeBinding Dark=Black, Light=White}">
+                                   TextColor="{AppThemeBinding Dark={StaticResource TextBlack}, Light={StaticResource TextWhite}}">
                             </Label>
                         </Grid>
                     </Grid>
