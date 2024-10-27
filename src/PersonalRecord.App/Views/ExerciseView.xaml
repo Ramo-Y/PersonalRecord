@@ -93,9 +93,9 @@
         </popup:SfPopup>
 
         <popup:SfPopup IsOpen="{Binding HasUnsavedChangesPopupIsOpen}"
-                       Message="{x:Static resources:AppResources.SaveChangesTitle}"
+                       Message="{x:Static resources:AppResources.SaveOrDiscardChangesQuestion}"
                        ShowFooter="True"
-                       HeaderTitle="{x:Static resources:AppResources.SaveOrDiscardChangesQuestion}"
+                       HeaderTitle="{x:Static resources:AppResources.SaveChangesTitle}"
                        AppearanceMode="TwoButton"
                        AcceptButtonText="{x:Static resources:AppResources.Save}"
                        AcceptCommand="{Binding SaveAndGoBackCommand}"
