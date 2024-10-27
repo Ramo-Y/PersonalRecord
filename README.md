@@ -2,12 +2,14 @@
 
 [![MIT Licensed](https://img.shields.io/github/license/Ramo-Y/PersonalRecord.svg)](https://github.com/Ramo-Y/PersonalRecord/blob/master/LICENSE)
 [![Activity](https://img.shields.io/github/commit-activity/m/Ramo-Y/PersonalRecord)](https://github.com/Ramo-Y/PersonalRecord/pulse)
-![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/PersonalRecord/build-test-cleanup.yml?label=ci)
-![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/PersonalRecord/test-build-upload-cleanup.yml?label=release)
+[![ci](https://img.shields.io/github/actions/workflow/status/Ramo-Y/PersonalRecord/build-test-cleanup.yml?label=ci)](https://github.com/Ramo-Y/PersonalRecord/actions/workflows/build-test-cleanup.yml)
+[![release](https://img.shields.io/github/actions/workflow/status/Ramo-Y/PersonalRecord/test-build-upload-cleanup.yml?label=release)](https://github.com/Ramo-Y/PersonalRecord/actions/workflows/test-build-upload-cleanup.yml)
 [![GitHub contributors](https://img.shields.io/github/all-contributors/Ramo-Y/PersonalRecord)](#contributors-)
-![GitHub Sponsors](https://img.shields.io/github/sponsors/Ramo-Y)
-![Open Issues](https://img.shields.io/github/issues/Ramo-Y/PersonalRecord)
-![Closed Issues](https://img.shields.io/github/issues-closed/Ramo-Y/PersonalRecord)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/Ramo-Y)](https://github.com/sponsors/Ramo-Y)
+[![Open Issues](https://img.shields.io/github/issues/Ramo-Y/PersonalRecord)](https://github.com/Ramo-Y/PersonalRecord/issues)
+[![Closed Issues](https://img.shields.io/github/issues-closed/Ramo-Y/PersonalRecord)](https://github.com/Ramo-Y/PersonalRecord/issues?q=is%3Aissue+is%3Aclosed)
+[![Downloads](https://PlayBadges.pavi2410.me/badge/downloads?id=com.ramo.personalrecord&pretty)](https://play.google.com/store/apps/details?id=com.ramo.personalrecord)
+[![Ratings](https://PlayBadges.pavi2410.me/badge/ratings?id=com.ramo.personalrecord&pretty)](https://play.google.com/store/apps/details?id=com.ramo.personalrecord)
 
 </div>
 
