@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <DisplayVersion>1.0.47</DisplayVersion>
-    <ApplicationVersion>47</ApplicationVersion>
+    <DisplayVersion>1.0.48</DisplayVersion>
+    <ApplicationVersion>48</ApplicationVersion>
     <VersionPrefix>$(DisplayVersion)</VersionPrefix>
     <ApplicationDisplayVersion>$(DisplayVersion)</ApplicationDisplayVersion>
 
