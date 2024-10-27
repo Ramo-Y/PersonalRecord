@@ -13,7 +13,7 @@
              Title="{x:Static resources:AppResources.MovementRecordAll}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="&#128190;"
+        <ToolbarItem IconImageSource="{AppThemeBinding Dark=save_dark_theme.svg, Light=save_dark_theme.svg}"
                      Command="{Binding SaveAndGoBackCommand}"/>
     </ContentPage.ToolbarItems>
 
@@ -46,7 +46,6 @@
                            RowHeight="48">
 
             <sfgrid:SfDataGrid.Columns>
-
                 <sfgrid:DataGridNumericColumn HeaderText="{x:Static resources:AppResources.Weight}"
                                               Format="{Binding Setting.UnitFormat}"
                                               ValueBinding="{Binding MvrWeight, UpdateSourceEventName=PropertyChanged}">
@@ -60,8 +59,9 @@
                 <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="entities:MovementRecord">
-                            <button:SfButton Background="Transparent"
-                                             Text="&#128465;"
+                            <button:SfButton Background="{StaticResource TransparentBackground}"
+                                             ShowIcon="True"
+                                             ImageSource="{AppThemeBinding Dark=delete_dark_theme.svg, Light=delete_light_theme.svg}"
                                              Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ConfirmEntryDeletionCommand}"
                                              CommandParameter="{Binding .}" />
                         </DataTemplate>
@@ -88,7 +88,7 @@
                                    VerticalTextAlignment="Center"
                                    HorizontalOptions="Start"
                                    FontSize="28"
-                                   TextColor="Black">
+                                   TextColor="{AppThemeBinding Dark={StaticResource TextBlack}, Light={StaticResource TextWhite}}">
                             </Label>
                         </Grid>
                     </Grid>

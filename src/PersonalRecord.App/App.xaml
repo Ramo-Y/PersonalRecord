@@ -2,14 +2,123 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PersonalRecord.App"
+             xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              x:Name="AppXaml"
-             x:Class="PersonalRecord.App.App"
-             xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core">
+             x:Class="PersonalRecord.App.App">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <syncTheme:SyncfusionThemeResourceDictionary />
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- Custom colors -->
+            <Color x:Key="TextWhite">#FFFFFF</Color>
+            <Color x:Key="TextBlack">#000000</Color>
+            <Color x:Key="TransparentBackground">#00FFFFFF</Color>
+            <Color x:Key="LogoBackgroundColor">#00E1FB</Color>
+            <Color x:Key="ToolBarBackgroundColor">#6750A4</Color>
+            <Color x:Key="DarkHyperLink">DeepSkyBlue</Color>
+            <Color x:Key="LightHyperLink">MediumBlue</Color>
+            <Color x:Key="LabelTextLight">#26262C</Color>
+            <Color x:Key="LabelTextDark">#A7A3AC</Color>
+
+            <!-- Styles -->
+            <Style x:Key="SfButtonCustomStyle"
+                   TargetType="button:SfButton">
+                <Setter Property="Padding" Value="15,0,0,0" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="CornerRadius" Value="0" />
+
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Hovered">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextWhite}, Light={StaticResource TextBlack}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style x:Key="HyperLinkLabelCustomStyle"
+                   TargetType="Label">
+                <Setter Property="TextDecorations" Value="Underline" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Padding" Value="10,0,0,0" />
+
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Hovered">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkHyperLink}, Light={StaticResource LightHyperLink}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style x:Key="DarkLightLabelCustomStyle"
+                   TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Start" />
+                <Setter Property="Padding" Value="10,0,0,0" />
+
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Hovered">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"/>
+                                    <Setter Property="Background" Value="{StaticResource TransparentBackground}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

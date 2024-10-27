@@ -56,14 +56,14 @@
             <button:SfButton.Content>
                 <DataTemplate>
                     <Grid HorizontalOptions="Center" VerticalOptions="Center">
-                        <Grid Padding="5,0,5,0"  Grid.Column="1" >
+                        <Grid Grid.Column="1" Padding="5,0,5,0">
                             <Label Text="+"
                                    HorizontalTextAlignment="Center"
                                    VerticalOptions="Center"
                                    VerticalTextAlignment="Center"
                                    HorizontalOptions="Start"
                                    FontSize="28"
-                                   TextColor="Black">
+                                   TextColor="{AppThemeBinding Dark={StaticResource TextBlack}, Light={StaticResource TextWhite}}">
                             </Label>
                         </Grid>
                     </Grid>
