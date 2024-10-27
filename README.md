@@ -8,6 +8,8 @@
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/Ramo-Y)
 ![Open Issues](https://img.shields.io/github/issues/Ramo-Y/PersonalRecord)
 ![Closed Issues](https://img.shields.io/github/issues-closed/Ramo-Y/PersonalRecord)
+![Downloads](https://PlayBadges.pavi2410.me/badge/downloads?id=com.ramo.personalrecord&pretty)
+![Ratings](https://PlayBadges.pavi2410.me/badge/ratings?id=com.ramo.personalrecord&pretty)
 
 </div>
 
