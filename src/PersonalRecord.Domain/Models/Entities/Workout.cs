@@ -9,6 +9,8 @@
 
         public string WokName { get; set; }
 
+        public string WokHeader { get; set; }
+
         public string WokNotes { get; set; }
     }
 }
