@@ -46,7 +46,6 @@
                            RowHeight="48">
 
             <sfgrid:SfDataGrid.Columns>
-
                 <sfgrid:DataGridNumericColumn HeaderText="{x:Static resources:AppResources.Weight}"
                                               Format="{Binding Setting.UnitFormat}"
                                               ValueBinding="{Binding MvrWeight, UpdateSourceEventName=PropertyChanged}">

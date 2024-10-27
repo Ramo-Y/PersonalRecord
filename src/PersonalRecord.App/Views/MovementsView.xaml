@@ -45,7 +45,7 @@
                 <sfgrid:DataGridTextColumn HeaderText="{x:Static resources:AppResources.Movement}"
                                            ValueBinding="{Binding MovName}">
                 </sfgrid:DataGridTextColumn>
-                
+
                 <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="entities:Movement">
