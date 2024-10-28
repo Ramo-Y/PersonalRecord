@@ -31,6 +31,8 @@
                         <RowDefinition Height="70"/>
                         <RowDefinition Height="15"/>
                         <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="70"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="25"/>
                     </Grid.RowDefinitions>
@@ -74,6 +76,11 @@
                                      Text="{x:Static resources:AppResources.Exercises}"
                                      FontSize="Medium"
                                      Command="{Binding GoToExercisesViewCommand}"/>
+
+                    <button:SfButton Grid.Column="1" Grid.Row="8"
+                                     Text="{x:Static resources:AppResources.Workouts}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToWorkoutsViewCommand}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
 
