@@ -182,15 +182,15 @@
                 <DataTemplate>
                     <Grid MaximumWidthRequest="360">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="5"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="5"/>
-                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="5"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="5"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Label Grid.Row="0"
                                Style="{StaticResource DarkLightLabelCustomStyle}"
