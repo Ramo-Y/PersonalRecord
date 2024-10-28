@@ -151,6 +151,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Distance unit.
+        /// </summary>
+        public static string DistanceUnit {
+            get {
+                return ResourceManager.GetString("DistanceUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Full version.
         /// </summary>
         public static string FullVersion {
@@ -349,20 +358,20 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unit.
-        /// </summary>
-        public static string Unit {
-            get {
-                return ResourceManager.GetString("Unit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Weight.
         /// </summary>
         public static string Weight {
             get {
                 return ResourceManager.GetString("Weight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weight unit.
+        /// </summary>
+        public static string WeightUnit {
+            get {
+                return ResourceManager.GetString("WeightUnit", resourceCulture);
             }
         }
     }

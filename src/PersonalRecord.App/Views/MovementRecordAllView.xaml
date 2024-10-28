@@ -47,7 +47,7 @@
 
             <sfgrid:SfDataGrid.Columns>
                 <sfgrid:DataGridNumericColumn HeaderText="{x:Static resources:AppResources.Weight}"
-                                              Format="{Binding Setting.UnitFormat}"
+                                              Format="{Binding Setting.WeightUnitFormat}"
                                               ValueBinding="{Binding MvrWeight, UpdateSourceEventName=PropertyChanged}">
                 </sfgrid:DataGridNumericColumn>
 
