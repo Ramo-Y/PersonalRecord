@@ -394,6 +394,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Workout.
+        /// </summary>
+        public static string Workout {
+            get {
+                return ResourceManager.GetString("Workout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Workouts.
         /// </summary>
         public static string Workouts {

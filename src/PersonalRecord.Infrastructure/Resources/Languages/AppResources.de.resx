@@ -228,6 +228,9 @@
   <data name="Workouts" xml:space="preserve">
     <value>Workouts</value>
   </data>
+  <data name="Workout" xml:space="preserve">
+    <value>Workout</value>
+  </data>
   <data name="DistanceUnit" xml:space="preserve">
     <value>Distanz Einheit</value>
   </data>
