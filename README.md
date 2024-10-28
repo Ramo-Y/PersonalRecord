@@ -84,10 +84,10 @@ This is an overview screen in which all maximum values for the respective moveme
 <img src="./.github/images/settings_view.png" alt="Settings" style="width:250px;"/>
 
 ### Weight unit
-The weight unit is a free text field and is only used for display purposes. No conversions take place when changing.
+The weight unit is a free text field and is only used to display weights for movements and workouts. No conversions take place when changing.
 
 ### Distance unit
-The distance unit is a free text field and is only used for display purposes. No conversions take place when changing.
+The distance unit is a free text field and is only used to display distances for movements and workouts. No conversions take place when changing.
 
 ### Date format
 You can use a format identifier to specify how your date format should be displayed. For example, yyyy-MM-dd (ISO 8601 Date Format) displays the date as follows: 2023-12-31. See the [standard date and time format specifiers](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings#table-of-format-specifiers). Invalid inputs can lead to the date no longer being displayed correctly.
