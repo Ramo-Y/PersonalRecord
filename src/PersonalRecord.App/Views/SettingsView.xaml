@@ -21,6 +21,8 @@
             <RowDefinition Height="5"/>
             <RowDefinition Height="85"/>
             <RowDefinition Height="5"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="5"/>
             <RowDefinition Height="35"/>
             <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
@@ -31,12 +33,20 @@
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="1"
                                        Margin="5, 0"
                                        ContainerType="Outlined"
-                                       Hint="{x:Static resources:AppResources.Unit}">
-            <Entry Text="{Binding Setting.Unit}"
+                                       Hint="{x:Static resources:AppResources.WeightUnit}">
+            <Entry Text="{Binding Setting.WeightUnit}"
                    HeightRequest="55"/>
         </inputLayout:SfTextInputLayout>
 
         <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="3"
+                                       Margin="5, 0"
+                                       ContainerType="Outlined"
+                                       Hint="{x:Static resources:AppResources.DistanceUnit}">
+            <Entry Text="{Binding Setting.DistanceUnit}"
+                   HeightRequest="55"/>
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="5"
                                        Margin="5, 0"
                                        ContainerType="Outlined"
                                        Hint="{x:Static resources:AppResources.DateFormat}">
@@ -44,17 +54,17 @@
                    HeightRequest="55"/>
         </inputLayout:SfTextInputLayout>
 
-        <Label Grid.Column="0" Grid.Row="5"
+        <Label Grid.Column="0" Grid.Row="7"
                Margin="10, 0"
                VerticalTextAlignment="Center"
                Text="{x:Static resources:AppResources.Language}"/>
-        <editors:SfComboBox Grid.Column="0" Grid.Row="6"
+        <editors:SfComboBox Grid.Column="0" Grid.Row="8"
                             Margin="5, 0"
                             IsClearButtonVisible="False"
                             ItemsSource="{Binding Languages}"
                             SelectedItem="{Binding Setting.Language}"/>
 
-        <button:SfButton Grid.Column="0" Grid.Row="8"
+        <button:SfButton Grid.Column="0" Grid.Row="10"
                          Margin="5, 0"
                          Text="{x:Static resources:AppResources.Save}"
                          Command="{Binding SaveAndGoBackCommand}"/>

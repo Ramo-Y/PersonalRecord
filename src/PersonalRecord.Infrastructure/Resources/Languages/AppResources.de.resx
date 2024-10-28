@@ -180,8 +180,8 @@
   <data name="SupportThisProject" xml:space="preserve">
     <value>Unterstütze das Projekt</value>
   </data>
-  <data name="Unit" xml:space="preserve">
-    <value>Einheit</value>
+  <data name="WeightUnit" xml:space="preserve">
+    <value>Gewichtseinheit</value>
   </data>
   <data name="Weight" xml:space="preserve">
     <value>Gewicht</value>
@@ -218,5 +218,8 @@
   </data>
   <data name="SaveChangesTitle" xml:space="preserve">
     <value>Änderungen speichern?</value>
+  </data>
+  <data name="DistanceUnit" xml:space="preserve">
+    <value>Distanz Einheit</value>
   </data>
 </root>

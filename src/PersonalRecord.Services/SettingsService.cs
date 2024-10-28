@@ -32,9 +32,10 @@
         {
             var setting = new Setting()
             {
-                Unit = Preferences.Default.Get(nameof(Setting.Unit), DefaultConstants.DEFAULT_UNIT),
+                WeightUnit = Preferences.Default.Get(nameof(Setting.WeightUnit), DefaultConstants.DEFAULT_WEIGHT_UNIT),
+                WeightUnitFormat = Preferences.Default.Get(nameof(Setting.WeightUnitFormat), DefaultConstants.DEFAULT_WEIGHT_UNIT_FORMAT),
+                DistanceUnit = Preferences.Default.Get(nameof(Setting.DistanceUnit), DefaultConstants.DEFAULT_DISTANCE_UNIT),
                 DateFormat = Preferences.Default.Get(nameof(Setting.DateFormat), DefaultConstants.DEFAULT_DATE_FORMAT),
-                UnitFormat = Preferences.Default.Get(nameof(Setting.UnitFormat), DefaultConstants.DEFAULT_UNIT_FORMAT),
                 Language = (Language)Preferences.Default.Get(nameof(Setting.Language), DefaultConstants.DEFAULT_LANGUAGE)
             };
 
@@ -43,9 +44,10 @@
 
         private void UpdatePreferences(Setting newSetting)
         {
-            Preferences.Default.Set(nameof(Setting.Unit), newSetting.Unit);
+            Preferences.Default.Set(nameof(Setting.WeightUnit), newSetting.WeightUnit);
+            Preferences.Default.Set(nameof(Setting.WeightUnitFormat), $"{DefaultConstants.UNIT_FORMAT_PREFIX}{newSetting.WeightUnit}");
+            Preferences.Default.Set(nameof(Setting.DistanceUnit), newSetting.DistanceUnit);
             Preferences.Default.Set(nameof(Setting.DateFormat), newSetting.DateFormat);
-            Preferences.Default.Set(nameof(Setting.UnitFormat), $"{DefaultConstants.UNIT_FORMAT_PREFIX}{newSetting.Unit}");
             Preferences.Default.Set(nameof(Setting.Language), (int)newSetting.Language);
         }
     }
