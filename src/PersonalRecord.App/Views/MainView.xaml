@@ -77,7 +77,7 @@
                                      FontSize="Medium"
                                      Command="{Binding GoToExercisesViewCommand}"/>
 
-                    <button:SfButton Grid.Column="1" Grid.Row="8"
+                    <button:SfButton Grid.Column="1" Grid.Row="10"
                                      Text="{x:Static resources:AppResources.Workouts}"
                                      FontSize="Medium"
                                      Command="{Binding GoToWorkoutsViewCommand}"/>
