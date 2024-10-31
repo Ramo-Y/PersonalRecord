@@ -68,6 +68,7 @@
             builder.Services.AddSingleton<IMovementRepository, MovementRepository>();
             builder.Services.AddSingleton<IMovementRecordRepository, MovementRecordRepository>();
             builder.Services.AddSingleton<IWorkoutRepository, WorkoutRepository>();
+            builder.Services.AddSingleton<IWorkoutToExerciseItemsRepository, WorkoutToExerciseItemsRepository>();
 
             // Language
             builder.Services.AddLocalization();

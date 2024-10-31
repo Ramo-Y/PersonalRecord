@@ -24,7 +24,6 @@
 
         public async Task DeleteWorkoutAsync(Workout workout)
         {
-            await _context.WorkoutToExerciseItems.Where(w => w.WteWorkoutID_FK == workout.WorkoutID).ExecuteDeleteAsync();
             await _context.WorkoutItems.Where(w => w.WorkoutID == workout.WorkoutID).ExecuteDeleteAsync();
             await _context.SaveChangesAsync();
         }
@@ -32,8 +31,6 @@
         public async Task<IEnumerable<Workout>> GetAllWorkoutsAsync()
         {
             var workoutItems = await _context.WorkoutItems
-                .Include(w => _context.WorkoutToExerciseItems)
-                .Include(w => _context.ExerciseItems)
                 .OrderBy(w => w.WokName)
                 .ToListAsync();
             return workoutItems;

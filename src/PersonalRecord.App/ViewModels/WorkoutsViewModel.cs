@@ -9,6 +9,7 @@
     public partial class WorkoutsViewModel : ObservableObject
     {
         private readonly IWorkoutRepository _workoutRepository;
+        private readonly IWorkoutToExerciseItemsRepository _workoutToExerciseItemsRepository;
 
         [ObservableProperty]
         private bool _deletePopupIsOpen;
@@ -19,11 +20,18 @@
         [ObservableProperty]
         private ObservableCollection<Workout> _workouts;
 
-        public WorkoutsViewModel(IWorkoutRepository workoutRepository)
+        [ObservableProperty]
+        private ObservableCollection<WorkoutToExercise> _workoutToExercises;
+
+        public WorkoutsViewModel(
+            IWorkoutRepository workoutRepository,
+            IWorkoutToExerciseItemsRepository workoutToExerciseItemsRepository)
         {
             _workoutRepository = workoutRepository;
+            _workoutToExerciseItemsRepository = workoutToExerciseItemsRepository;
 
             Workouts = [];
+            WorkoutToExercises = [];
 
             LoadItems();
         }
@@ -36,6 +44,12 @@
                 foreach (var workout in workouts)
                 {
                     Workouts.Add(workout);
+                }
+
+                var workoutToExercises = await _workoutToExerciseItemsRepository.GetAllWorkoutToExerciseItemsAsync();
+                foreach (var workoutToExercise in workoutToExercises)
+                {
+                    WorkoutToExercises.Add(workoutToExercise);
                 }
             });
         }
@@ -55,6 +69,7 @@
         [RelayCommand]
         public async Task DeleteEntryAsync()
         {
+            await _workoutToExerciseItemsRepository.WorkoutToExerciseItemsFromWorkout(SelectedWorkout);
             await _workoutRepository.DeleteWorkoutAsync(SelectedWorkout);
             Workouts.Remove(SelectedWorkout);
         }
