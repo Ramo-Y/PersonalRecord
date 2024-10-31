@@ -9,6 +9,8 @@
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
+             xmlns:converters="clr-namespace:PersonalRecord.App.Converters"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:DataType="viewModels:MovementsViewModel"
              Title="{x:Static resources:AppResources.Movements}">
 
@@ -51,11 +53,24 @@
                 <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="entities:Movement">
-                            <button:SfButton Background="{StaticResource TransparentBackground}"
-                                             ShowIcon="True"
-                                             ImageSource="{AppThemeBinding Dark=delete_dark_theme.svg, Light=delete_light_theme.svg}"
+                            <button:SfButton x:Name="DeleteButton"
+                                             Background="{StaticResource TransparentBackground}"
                                              Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ConfirmEntryDeletionCommand}"
-                                             CommandParameter="{Binding .}" />
+                                             CommandParameter="{Binding .}">
+                                <button:SfButton.Content>
+                                    <DataTemplate>
+                                        <Image WidthRequest="20"
+                                               Source="{AppThemeBinding Dark=delete_dark_theme.svg, Light=delete_light_theme.svg}">
+                                            <Image.Behaviors>
+                                                <toolkit:IconTintColorBehavior
+                                                    TintColor="{Binding Source={x:Reference DeleteButton},
+                                                                        Path=IsEnabled,
+                                                                        Converter={converters:IsEnabledToColorConverter}}" />
+                                            </Image.Behaviors>
+                                        </Image>
+                                    </DataTemplate>
+                                </button:SfButton.Content>
+                            </button:SfButton>
                         </DataTemplate>
                     </sfgrid:DataGridTemplateColumn.CellTemplate>
                 </sfgrid:DataGridTemplateColumn>

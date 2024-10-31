@@ -4,3 +4,4 @@
 - Enhanced look of app
 - Added new unit for distances in the settings (unit setting will be reset to kg if it was changed)
 - Fix an accessibility issue of the save button
+- Fix buttons that were not greyed out even if disabled

@@ -65,7 +65,15 @@
                                              ShowIcon="True"
                                              ImageSource="{AppThemeBinding Dark=delete_dark_theme.svg, Light=delete_light_theme.svg}"
                                              Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ConfirmEntryDeletionCommand}"
-                                             CommandParameter="{Binding .}" />
+                                             CommandParameter="{Binding .}">
+                                <button:SfButton.Content>
+                                    <DataTemplate>
+                                        <Image WidthRequest="20"
+                                               Source="{AppThemeBinding Dark=delete_dark_theme.svg, Light=delete_light_theme.svg}">
+                                        </Image>
+                                    </DataTemplate>
+                                </button:SfButton.Content>
+                            </button:SfButton>
                         </DataTemplate>
                     </sfgrid:DataGridTemplateColumn.CellTemplate>
                 </sfgrid:DataGridTemplateColumn>
