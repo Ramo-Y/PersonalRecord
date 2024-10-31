@@ -4,3 +4,4 @@
 - Aussehen der App verbessert
 - Neue Einheit für Distanzen in den Einstellungen hinzugefügt (Einheiteneinstellung wird auf kg zurückgesetzt falls es geändert wurde)
 - Problem mit der Barrierefreiheit des Speichern-Buttons behoben
+- Korrektur von Buttons, die nicht ausgegraut waren, obwohl sie deaktiviert waren
