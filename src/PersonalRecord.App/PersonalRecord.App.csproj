@@ -95,6 +95,8 @@
 	  <None Remove="Resources\Images\delete_light_theme.svg" />
 	  <None Remove="Resources\Images\download_dark_theme.svg" />
 	  <None Remove="Resources\Images\download_light_theme.svg" />
+	  <None Remove="Resources\Images\edit_dark_theme.svg" />
+	  <None Remove="Resources\Images\edit_light_theme.svg" />
 	  <None Remove="Resources\Images\personalrecord.png" />
 	  <None Remove="Resources\Images\save_dark_theme.svg" />
 	  <None Remove="Resources\Images\save_light_theme.svg" />
