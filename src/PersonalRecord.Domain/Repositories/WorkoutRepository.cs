@@ -44,7 +44,7 @@
 
         public bool IsWorkoutInUse(Workout workout)
         {
-            var isInUse = _context.WorkoutRecordItems.Any(wr => wr.WreWorkoutID_FK == workout.WorkoutID);
+            var isInUse = _context.WorkoutRecordItems.Any(wr => wr.Workout.Equals(workout));
             return isInUse;
         }
     }
