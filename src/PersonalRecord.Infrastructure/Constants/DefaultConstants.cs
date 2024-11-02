@@ -10,6 +10,8 @@
         
         public const string DEFAULT_DISTANCE_UNIT = "m";
 
+        public const string DEFAULT_DISTANCE_UNIT_FORMAT = $"{UNIT_FORMAT_PREFIX}{DEFAULT_DISTANCE_UNIT}";
+
         public const string DEFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
         public const int DEFAULT_LANGUAGE = 0;

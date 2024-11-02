@@ -35,6 +35,7 @@
                 WeightUnit = Preferences.Default.Get(nameof(Setting.WeightUnit), DefaultConstants.DEFAULT_WEIGHT_UNIT),
                 WeightUnitFormat = Preferences.Default.Get(nameof(Setting.WeightUnitFormat), DefaultConstants.DEFAULT_WEIGHT_UNIT_FORMAT),
                 DistanceUnit = Preferences.Default.Get(nameof(Setting.DistanceUnit), DefaultConstants.DEFAULT_DISTANCE_UNIT),
+                DistanceUnitFormat = Preferences.Default.Get(nameof(Setting.DistanceUnitFormat), DefaultConstants.DEFAULT_DISTANCE_UNIT_FORMAT),
                 DateFormat = Preferences.Default.Get(nameof(Setting.DateFormat), DefaultConstants.DEFAULT_DATE_FORMAT),
                 Language = (Language)Preferences.Default.Get(nameof(Setting.Language), DefaultConstants.DEFAULT_LANGUAGE)
             };
@@ -47,6 +48,7 @@
             Preferences.Default.Set(nameof(Setting.WeightUnit), newSetting.WeightUnit);
             Preferences.Default.Set(nameof(Setting.WeightUnitFormat), $"{DefaultConstants.UNIT_FORMAT_PREFIX}{newSetting.WeightUnit}");
             Preferences.Default.Set(nameof(Setting.DistanceUnit), newSetting.DistanceUnit);
+            Preferences.Default.Set(nameof(Setting.DistanceUnitFormat), $"{DefaultConstants.UNIT_FORMAT_PREFIX}{newSetting.DistanceUnit}");
             Preferences.Default.Set(nameof(Setting.DateFormat), newSetting.DateFormat);
             Preferences.Default.Set(nameof(Setting.Language), (int)newSetting.Language);
         }
