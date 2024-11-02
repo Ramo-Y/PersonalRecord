@@ -32,6 +32,7 @@
         {
             var workoutItems = await _context.WorkoutItems
                 .Include(w => w.WokWorkoutToExerciseItems)
+                .ThenInclude(w => w.Exercise)
                 .OrderBy(w => w.WokName)
                 .ToListAsync();
             return workoutItems;
