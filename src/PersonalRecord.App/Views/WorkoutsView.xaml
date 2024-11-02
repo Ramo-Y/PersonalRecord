@@ -65,16 +65,6 @@
                                                                             Converter={StaticResource floatToVisibleBoolean}}"
                                                                   Format="{Binding Setting.DistanceUnitFormat}"
                                                                   ValueBinding="{Binding WteExerciseDistance}"/>
-                                    <!--<sfgrid:DataGridTemplateColumn MaximumWidth="50" >
-                                        <sfgrid:DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <Label Text="{Binding Setting.DistanceUnit}"
-                                                       IsVisible="{Binding WteExerciseDistance,
-                                                                           Converter={StaticResource floatToVisibility}}"
-                                                       VerticalTextAlignment="Center"/>
-                                            </DataTemplate>
-                                        </sfgrid:DataGridTemplateColumn.CellTemplate>
-                                    </sfgrid:DataGridTemplateColumn>-->
                                     <sfgrid:DataGridNumericColumn HeaderText=" "
                                                                   ColumnWidthMode="Auto"
                                                                   Visible="{Binding WteExerciseWeight,
