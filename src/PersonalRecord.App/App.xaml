@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:PersonalRecord.App"
              xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:converters="clr-namespace:PersonalRecord.App.Converters"
              x:Name="AppXaml"
              x:Class="PersonalRecord.App.App">
     <Application.Resources>
@@ -11,6 +12,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <syncTheme:SyncfusionThemeResourceDictionary />
             </ResourceDictionary.MergedDictionaries>
+            
+            <!-- Converters -->
+            <converters:FloatToVisibleBooleanConverter x:Key="floatToVisibleBoolean"/>
 
             <!-- Custom colors -->
             <Color x:Key="TextWhite">#FFFFFF</Color>

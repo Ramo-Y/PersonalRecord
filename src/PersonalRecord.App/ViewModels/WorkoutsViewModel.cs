@@ -4,12 +4,15 @@
     using CommunityToolkit.Mvvm.Input;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
+    using PersonalRecord.Infrastructure;
+    using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
     public partial class WorkoutsViewModel : ObservableObject
     {
         private readonly IWorkoutRepository _workoutRepository;
         private readonly IWorkoutToExerciseItemsRepository _workoutToExerciseItemsRepository;
+        private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
         private bool _deletePopupIsOpen;
@@ -18,14 +21,19 @@
         private Workout _selectedWorkout;
 
         [ObservableProperty]
+        private Setting _setting;
+
+        [ObservableProperty]
         private ObservableCollection<Workout> _workouts;
 
         public WorkoutsViewModel(
             IWorkoutRepository workoutRepository,
-            IWorkoutToExerciseItemsRepository workoutToExerciseItemsRepository)
+            IWorkoutToExerciseItemsRepository workoutToExerciseItemsRepository,
+            ISettingsService settingsService)
         {
             _workoutRepository = workoutRepository;
             _workoutToExerciseItemsRepository = workoutToExerciseItemsRepository;
+            _settingsService = settingsService;
 
             Workouts = [];
 
@@ -36,6 +44,8 @@
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
+                Setting = _settingsService.LoadSettings();
+
                 var workouts = await _workoutRepository.GetAllWorkoutsAsync();
                 foreach (var workout in workouts)
                 {

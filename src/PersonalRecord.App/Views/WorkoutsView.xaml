@@ -4,14 +4,13 @@
              x:Class="PersonalRecord.App.Views.WorkoutsView"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:entities="clr-namespace:PersonalRecord.Domain.Models.Entities;assembly=PersonalRecord.Domain"
+             xmlns:infrastructure="clr-namespace:PersonalRecord.Infrastructure;assembly=PersonalRecord.Infrastructure"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
              xmlns:accordion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"             
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
-             x:DataType="viewModels:WorkoutsViewModel"
              Title="{x:Static resources:AppResources.Workouts}">
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,7 +24,7 @@
         <accordion:SfAccordion x:Name="workoutAccordion"                               
                                BindableLayout.ItemsSource="{Binding Workouts}">
             <BindableLayout.ItemTemplate>
-                <DataTemplate x:DataType="entities:Workout">
+                <DataTemplate>
                     <accordion:AccordionItem IsExpanded="{Binding IsExpanded}">
                         <accordion:AccordionItem.Header>
                             <Grid HeightRequest="48">
@@ -40,22 +39,47 @@
                             <sfgrid:SfDataGrid x:Name="workoutToExerciseGrid"
                                                ItemsSource="{Binding WokWorkoutToExerciseItems}"
                                                AutoGenerateColumnsMode="None"
-                                               AllowEditing="False">
+                                               AllowEditing="False"
+                                               HeaderGridLinesVisibility="None">
                                 <sfgrid:SfDataGrid.Columns>
                                     <sfgrid:DataGridNumericColumn HeaderText=" "
                                                                   ColumnWidthMode="Auto"
+                                                                  Visible="{Binding WteExerciseRepCount,
+                                                                            Converter={StaticResource floatToVisibleBoolean}}"
                                                                   Format="#"
                                                                   ValueBinding="{Binding WteExerciseRepCount}"/>
-                                    <sfgrid:DataGridNumericColumn HeaderText=" "
-                                                                  ColumnWidthMode="Auto"
-                                                                  Format="#.#"
-                                                                  ValueBinding="{Binding WteExerciseDistance}"/>
                                     <sfgrid:DataGridTextColumn HeaderText="Exercises"
                                                                ColumnWidthMode="Auto"
                                                                MappingName="Exercise.ExrName"/>
+                                    <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
+                                        <sfgrid:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Label Text=","
+                                                       VerticalTextAlignment="Center"/>
+                                            </DataTemplate>
+                                        </sfgrid:DataGridTemplateColumn.CellTemplate>
+                                    </sfgrid:DataGridTemplateColumn>
                                     <sfgrid:DataGridNumericColumn HeaderText=" "
                                                                   ColumnWidthMode="Auto"
-                                                                  Format="#.#"
+                                                                  Visible="{Binding WteExerciseDistance,
+                                                                            Converter={StaticResource floatToVisibleBoolean}}"
+                                                                  Format="{Binding Setting.DistanceUnitFormat}"
+                                                                  ValueBinding="{Binding WteExerciseDistance}"/>
+                                    <!--<sfgrid:DataGridTemplateColumn MaximumWidth="50" >
+                                        <sfgrid:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Label Text="{Binding Setting.DistanceUnit}"
+                                                       IsVisible="{Binding WteExerciseDistance,
+                                                                           Converter={StaticResource floatToVisibility}}"
+                                                       VerticalTextAlignment="Center"/>
+                                            </DataTemplate>
+                                        </sfgrid:DataGridTemplateColumn.CellTemplate>
+                                    </sfgrid:DataGridTemplateColumn>-->
+                                    <sfgrid:DataGridNumericColumn HeaderText=" "
+                                                                  ColumnWidthMode="Auto"
+                                                                  Visible="{Binding WteExerciseWeight,
+                                                                            Converter={StaticResource floatToVisibleBoolean}}"
+                                                                  Format="{Binding Setting.WeightUnitFormat}"
                                                                   ValueBinding="{Binding WteExerciseWeight}"/>
                                 </sfgrid:SfDataGrid.Columns>
                             </sfgrid:SfDataGrid>
