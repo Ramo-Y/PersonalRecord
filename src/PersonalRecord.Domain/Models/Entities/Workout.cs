@@ -12,5 +12,7 @@
         public string WokHeader { get; set; }
 
         public string WokNotes { get; set; }
+
+        public List<WorkoutToExercise> WokWorkoutToExerciseItems { get; set; }
     }
 }
