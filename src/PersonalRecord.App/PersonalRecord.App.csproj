@@ -141,6 +141,7 @@
 		<PackageReference Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
 		<PackageReference Include="Syncfusion.Maui.Buttons" Version="$(SyncfusionVersion)" />
 		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="$(SyncfusionVersion)" />
+		<PackageReference Include="Syncfusion.Maui.Expander" Version="$(SyncfusionVersion)" />
 		<PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="$(SyncfusionVersion)" />
 		<PackageReference Include="Syncfusion.Maui.Popup" Version="$(SyncfusionVersion)" />
 	</ItemGroup>

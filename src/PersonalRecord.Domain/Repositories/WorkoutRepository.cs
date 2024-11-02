@@ -31,6 +31,7 @@
         public async Task<IEnumerable<Workout>> GetAllWorkoutsAsync()
         {
             var workoutItems = await _context.WorkoutItems
+                .Include(w => w.WokWorkoutToExerciseItems)
                 .OrderBy(w => w.WokName)
                 .ToListAsync();
             return workoutItems;

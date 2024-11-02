@@ -20,9 +20,6 @@
         [ObservableProperty]
         private ObservableCollection<Workout> _workouts;
 
-        [ObservableProperty]
-        private ObservableCollection<WorkoutToExercise> _workoutToExercises;
-
         public WorkoutsViewModel(
             IWorkoutRepository workoutRepository,
             IWorkoutToExerciseItemsRepository workoutToExerciseItemsRepository)
@@ -31,7 +28,6 @@
             _workoutToExerciseItemsRepository = workoutToExerciseItemsRepository;
 
             Workouts = [];
-            WorkoutToExercises = [];
 
             LoadItems();
         }
@@ -44,12 +40,6 @@
                 foreach (var workout in workouts)
                 {
                     Workouts.Add(workout);
-                }
-
-                var workoutToExercises = await _workoutToExerciseItemsRepository.GetAllWorkoutToExerciseItemsAsync();
-                foreach (var workoutToExercise in workoutToExercises)
-                {
-                    WorkoutToExercises.Add(workoutToExercise);
                 }
             });
         }
