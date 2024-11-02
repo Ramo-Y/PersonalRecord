@@ -8,6 +8,8 @@
 
         public string DistanceUnit { get; set; }
 
+        public string DistanceUnitFormat { get; set; }
+
         public string DateFormat { get; set; }
 
         public Language Language { get; set; }
