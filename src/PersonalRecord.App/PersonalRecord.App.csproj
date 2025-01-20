@@ -134,6 +134,9 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="epj.RouteGenerator" Version="1.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.12" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.11" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 		<PackageReference Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
