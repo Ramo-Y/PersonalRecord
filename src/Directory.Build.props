@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <DisplayVersion>1.0.54</DisplayVersion>
-    <ApplicationVersion>54</ApplicationVersion>
+    <DisplayVersion>1.0.55</DisplayVersion>
+    <ApplicationVersion>55</ApplicationVersion>
     <VersionPrefix>$(DisplayVersion)</VersionPrefix>
     <ApplicationDisplayVersion>$(DisplayVersion)</ApplicationDisplayVersion>
 
@@ -15,7 +15,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <SyncfusionVersion>27.1.52</SyncfusionVersion>
+    <SyncfusionVersion>28.2.9</SyncfusionVersion>
     <MauiVersion>8.0.100</MauiVersion>
 
     <UseMaui>true</UseMaui>
