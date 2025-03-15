@@ -59,6 +59,7 @@
                 </sfgrid:DataGridDateColumn>
 
                 <sfgrid:DataGridTextColumn HeaderText="{x:Static resources:AppResources.Notes}"
+                                           LineBreakMode="MiddleTruncation"
                                            ValueBinding="{Binding MvrNotes}">
                 </sfgrid:DataGridTextColumn>
 
