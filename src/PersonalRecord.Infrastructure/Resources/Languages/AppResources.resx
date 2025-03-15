@@ -222,4 +222,7 @@
   <data name="DistanceUnit" xml:space="preserve">
     <value>Distance unit</value>
   </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
 </root>

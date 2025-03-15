@@ -58,6 +58,11 @@
                                            ValueBinding="{Binding MvrDate}">
                 </sfgrid:DataGridDateColumn>
 
+                <sfgrid:DataGridTextColumn HeaderText="{x:Static resources:AppResources.Notes}"
+                                           LineBreakMode="MiddleTruncation"
+                                           ValueBinding="{Binding MvrNotes}">
+                </sfgrid:DataGridTextColumn>
+
                 <sfgrid:DataGridTemplateColumn MaximumWidth="50" >
                     <sfgrid:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="entities:MovementRecord">

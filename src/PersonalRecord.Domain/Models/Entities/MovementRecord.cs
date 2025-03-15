@@ -14,6 +14,8 @@
 
         public DateTime MvrDate { get; set; }
 
+        public string MvrNotes { get; set; }
+
         public Guid MvrMovementID_FK { get; set; }
 
         [ForeignKey(nameof(MvrMovementID_FK))]
