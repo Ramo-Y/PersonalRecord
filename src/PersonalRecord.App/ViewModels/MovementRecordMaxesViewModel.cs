@@ -41,7 +41,10 @@
             {
                 MovementRecords.Clear();
                 var movementRecords = await _movementRecordRepository.GetAllMovementRecordsAsync();
-                var highest = movementRecords.OrderByDescending(m => m.MvrWeight).DistinctBy(m => m.Movement).ToList();
+                var highest = movementRecords.OrderByDescending(m => m.MvrWeight)
+                                             .DistinctBy(m => m.Movement)
+                                             .OrderBy(m => m.Movement.MovName)
+                                             .ToList();
                 foreach (var movementRecord in highest)
                 {
                     MovementRecords.Add(movementRecord);
