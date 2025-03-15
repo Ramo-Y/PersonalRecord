@@ -22,8 +22,4 @@
 	  <ProjectReference Include="..\PersonalRecord.Infrastructure\PersonalRecord.Infrastructure.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Models\Models\Entities\" />
-	</ItemGroup>
-
 </Project>
