@@ -14,7 +14,7 @@
 
         public DateTime MvrDate { get; set; }
 
-        public string MvrNotes { get; set; }
+        public string? MvrNotes { get; set; }
 
         public Guid MvrMovementID_FK { get; set; }
 
