@@ -153,10 +153,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\PersonalRecordAllView.xaml.cs">
+	    <DependentUpon>PersonalRecordAllView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\MainView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MovementRecordAllView.xaml">
+	  <MauiXaml Update="Views\PersonalRecordAllView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MovementRecordDetailView.xaml">

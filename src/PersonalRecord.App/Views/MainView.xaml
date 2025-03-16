@@ -61,7 +61,7 @@
                     <button:SfButton Grid.Column="1" Grid.Row="4"
                                      Text="{x:Static resources:AppResources.PersonalRecordsAll}"
                                      FontSize="Medium"
-                                     Command="{Binding GoToMovementRecordAllViewCommand}"/>
+                                     Command="{Binding GoToPersonalRecordAllViewCommand}"/>
 
                     <button:SfButton Grid.Column="1" Grid.Row="6"
                                      Text="{x:Static resources:AppResources.Movements}"

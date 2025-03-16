@@ -10,7 +10,7 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    public partial class MovementRecordAllViewModel : ObservableObject, IQueryAttributable
+    public partial class PersonalRecordAllViewModel : ObservableObject, IQueryAttributable
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRecordRepository _movementRecordRepository;
@@ -28,7 +28,7 @@
         [ObservableProperty]
         private Setting _setting;
 
-        public MovementRecordAllViewModel(
+        public PersonalRecordAllViewModel(
             INavigationService navigationService,
             IMovementRecordRepository movementRecordRepository,
             ISettingsService settingsService)

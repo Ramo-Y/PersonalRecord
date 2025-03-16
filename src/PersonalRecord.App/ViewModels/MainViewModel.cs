@@ -50,9 +50,9 @@
         }
 
         [RelayCommand]
-        public async Task GoToMovementRecordAllViewAsync()
+        public async Task GoToPersonalRecordAllViewAsync()
         {
-            await _navigationService.GoToAsync(Routes.MovementRecordAllView);
+            await _navigationService.GoToAsync(Routes.PersonalRecordAllView);
         }
 
         [RelayCommand]
