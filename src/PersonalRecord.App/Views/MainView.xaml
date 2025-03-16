@@ -59,14 +59,14 @@
                                      Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
 
                     <button:SfButton Grid.Column="1" Grid.Row="4"
-                                     Text="{x:Static resources:AppResources.Movements}"
-                                     FontSize="Medium"
-                                     Command="{Binding GoToMovementsViewCommand}"/>
-
-                    <button:SfButton Grid.Column="1" Grid.Row="6"
                                      Text="{x:Static resources:AppResources.PersonalRecordsAll}"
                                      FontSize="Medium"
                                      Command="{Binding GoToMovementRecordAllViewCommand}"/>
+
+                    <button:SfButton Grid.Column="1" Grid.Row="6"
+                                     Text="{x:Static resources:AppResources.Movements}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToMovementsViewCommand}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
 
