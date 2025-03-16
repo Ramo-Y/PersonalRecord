@@ -144,7 +144,7 @@
   <data name="Movement" xml:space="preserve">
     <value>Movement</value>
   </data>
-  <data name="MovementRecord" xml:space="preserve">
+  <data name="PersonalRecord" xml:space="preserve">
     <value>PR</value>
   </data>
   <data name="PersonalRecordsAll" xml:space="preserve">

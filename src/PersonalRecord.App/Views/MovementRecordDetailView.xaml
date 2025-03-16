@@ -9,7 +9,7 @@
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MovementRecordDetailViewModel"
-             Title="{x:Static resources:AppResources.MovementRecord}">
+             Title="{x:Static resources:AppResources.PersonalRecord}">
 
     <Grid>
         <Grid.ColumnDefinitions>

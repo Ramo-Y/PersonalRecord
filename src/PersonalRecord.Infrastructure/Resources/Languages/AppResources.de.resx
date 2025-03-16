@@ -144,14 +144,11 @@
   <data name="Movement" xml:space="preserve">
     <value>Bewegung</value>
   </data>
-  <data name="MovementRecord" xml:space="preserve">
+  <data name="PersonalRecord" xml:space="preserve">
     <value>PR</value>
   </data>
   <data name="PersonalRecordsAll" xml:space="preserve">
     <value>Alle PRs</value>
-  </data>
-  <data name="MovementRecords" xml:space="preserve">
-    <value>PRs</value>
   </data>
   <data name="Movements" xml:space="preserve">
     <value>Bewegungen</value>
@@ -224,5 +221,8 @@
   </data>
   <data name="PersonalRecordMaxes" xml:space="preserve">
     <value>PR Höchstwerte</value>
+  </data>
+  <data name="MovementRecords" xml:space="preserve">
+    <value>PRs</value>
   </data>
 </root>

@@ -196,15 +196,6 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PR.
-        /// </summary>
-        public static string MovementRecord {
-            get {
-                return ResourceManager.GetString("MovementRecord", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to PRs.
         /// </summary>
         public static string MovementRecords {
@@ -237,6 +228,15 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         public static string Notes {
             get {
                 return ResourceManager.GetString("Notes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PR.
+        /// </summary>
+        public static string PersonalRecord {
+            get {
+                return ResourceManager.GetString("PersonalRecord", resourceCulture);
             }
         }
         
