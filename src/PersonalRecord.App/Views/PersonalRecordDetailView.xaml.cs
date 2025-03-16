@@ -2,9 +2,9 @@ namespace PersonalRecord.App.Views
 {
     using PersonalRecord.App.ViewModels;
 
-    public partial class MovementRecordDetailView : ContentPage
+    public partial class PersonalRecordDetailView : ContentPage
     {
-        public MovementRecordDetailView(MovementRecordDetailViewModel viewmodel)
+        public PersonalRecordDetailView(PersonalRecordDetailViewModel viewmodel)
         {
             InitializeComponent();
 

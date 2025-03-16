@@ -9,7 +9,7 @@
     using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
-    public partial class MovementRecordDetailViewModel : ObservableObject
+    public partial class PersonalRecordDetailViewModel : ObservableObject
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRepository _movementRepository;
@@ -29,7 +29,7 @@
         [ObservableProperty]
         private Setting _setting;
 
-        public MovementRecordDetailViewModel(
+        public PersonalRecordDetailViewModel(
             INavigationService navigationService,
             IMovementRepository movementRepository,
             IMovementRecordRepository movementRecordRepository,

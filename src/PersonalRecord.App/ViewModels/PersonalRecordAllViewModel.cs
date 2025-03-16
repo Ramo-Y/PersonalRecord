@@ -74,7 +74,7 @@
         [RelayCommand]
         public async Task GoToMovementRecordDetailsViewAsync()
         {
-            await _navigationService.GoToAsync(Routes.MovementRecordDetailView);
+            await _navigationService.GoToAsync(Routes.PersonalRecordDetailView);
         }
 
         [RelayCommand]
