@@ -145,16 +145,16 @@
     <value>Bewegung</value>
   </data>
   <data name="MovementRecord" xml:space="preserve">
-    <value>Bewegungsaufzeichnung</value>
+    <value>PR</value>
   </data>
-  <data name="MovementRecordAll" xml:space="preserve">
-    <value>Alle Bewegungsaufzeichnungen</value>
+  <data name="PersonalRecordsAll" xml:space="preserve">
+    <value>Alle PRs</value>
   </data>
   <data name="MovementRecordMaxes" xml:space="preserve">
-    <value>Bewegungsaufzeichnungen Höchstwerte</value>
+    <value>PR Höchstwerte</value>
   </data>
   <data name="MovementRecords" xml:space="preserve">
-    <value>Bewegungsaufzeichnungen</value>
+    <value>PRs</value>
   </data>
   <data name="Movements" xml:space="preserve">
     <value>Bewegungen</value>

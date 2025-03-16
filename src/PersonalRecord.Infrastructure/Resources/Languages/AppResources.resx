@@ -145,16 +145,16 @@
     <value>Movement</value>
   </data>
   <data name="MovementRecord" xml:space="preserve">
-    <value>Movement record</value>
+    <value>PR</value>
   </data>
-  <data name="MovementRecordAll" xml:space="preserve">
-    <value>All movement records</value>
+  <data name="PersonalRecordsAll" xml:space="preserve">
+    <value>All PRs</value>
   </data>
   <data name="MovementRecordMaxes" xml:space="preserve">
-    <value>Movement record maxes</value>
+    <value>PR max values</value>
   </data>
   <data name="MovementRecords" xml:space="preserve">
-    <value>Movement records</value>
+    <value>PRs</value>
   </data>
   <data name="Movements" xml:space="preserve">
     <value>Movements</value>

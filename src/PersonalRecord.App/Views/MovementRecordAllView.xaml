@@ -10,7 +10,7 @@
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
              x:DataType="viewModels:MovementRecordAllViewModel"
-             Title="{x:Static resources:AppResources.MovementRecordAll}">
+             Title="{x:Static resources:AppResources.PersonalRecordsAll}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="{AppThemeBinding Dark=save_dark_theme.svg, Light=save_dark_theme.svg}"

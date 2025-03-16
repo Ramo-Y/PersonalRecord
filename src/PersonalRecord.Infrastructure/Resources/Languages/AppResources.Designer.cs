@@ -196,7 +196,7 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Movement record.
+        ///   Looks up a localized string similar to PR.
         /// </summary>
         public static string MovementRecord {
             get {
@@ -205,16 +205,16 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All movement records.
+        ///   Looks up a localized string similar to All PRs.
         /// </summary>
-        public static string MovementRecordAll {
+        public static string PersonalRecordsAll {
             get {
-                return ResourceManager.GetString("MovementRecordAll", resourceCulture);
+                return ResourceManager.GetString("PersonalRecordsAll", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Movement record maxes.
+        ///   Looks up a localized string similar to PR max values.
         /// </summary>
         public static string MovementRecordMaxes {
             get {
@@ -223,7 +223,7 @@ namespace PersonalRecord.Infrastructure.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Movement records.
+        ///   Looks up a localized string similar to PRs.
         /// </summary>
         public static string MovementRecords {
             get {
