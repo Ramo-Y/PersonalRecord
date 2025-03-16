@@ -54,7 +54,7 @@
                     </HorizontalStackLayout>
 
                     <button:SfButton Grid.Column="1" Grid.Row="2"
-                                     Text="{x:Static resources:AppResources.MovementRecordMaxes}"
+                                     Text="{x:Static resources:AppResources.PersonalRecordMaxes}"
                                      FontSize="Medium"
                                      Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
 
