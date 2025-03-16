@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PersonalRecord.App.Views.MovementRecordDetailView"
-             x:Name="MovementRecordDetailViewXaml"
+             x:Class="PersonalRecord.App.Views.PersonalRecordDetailView"
+             x:Name="PersonalRecordDetailViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
-             x:DataType="viewModels:MovementRecordDetailViewModel"
-             Title="{x:Static resources:AppResources.MovementRecord}">
+             x:DataType="viewModels:PersonalRecordDetailViewModel"
+             Title="{x:Static resources:AppResources.PersonalRecord}">
 
     <Grid>
         <Grid.ColumnDefinitions>

@@ -54,19 +54,19 @@
                     </HorizontalStackLayout>
 
                     <button:SfButton Grid.Column="1" Grid.Row="2"
-                                     Text="{x:Static resources:AppResources.MovementRecordMaxes}"
+                                     Text="{x:Static resources:AppResources.PersonalRecordMaxes}"
                                      FontSize="Medium"
-                                     Command="{Binding GoToMovementRecordMaxesViewCommand}"/>
+                                     Command="{Binding GoToPersonalRecordMaxesViewCommand}"/>
 
                     <button:SfButton Grid.Column="1" Grid.Row="4"
+                                     Text="{x:Static resources:AppResources.PersonalRecordsAll}"
+                                     FontSize="Medium"
+                                     Command="{Binding GoToPersonalRecordAllViewCommand}"/>
+
+                    <button:SfButton Grid.Column="1" Grid.Row="6"
                                      Text="{x:Static resources:AppResources.Movements}"
                                      FontSize="Medium"
                                      Command="{Binding GoToMovementsViewCommand}"/>
-
-                    <button:SfButton Grid.Column="1" Grid.Row="6"
-                                     Text="{x:Static resources:AppResources.MovementRecordAll}"
-                                     FontSize="Medium"
-                                     Command="{Binding GoToMovementRecordAllViewCommand}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
 

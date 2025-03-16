@@ -153,16 +153,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\PersonalRecordDetailView.xaml.cs">
+	    <DependentUpon>PersonalRecordDetailView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\PersonalRecordMaxesView.xaml.cs">
+	    <DependentUpon>PersonalRecordMaxesView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\PersonalRecordAllView.xaml.cs">
+	    <DependentUpon>PersonalRecordAllView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\MainView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MovementRecordAllView.xaml">
+	  <MauiXaml Update="Views\PersonalRecordAllView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MovementRecordDetailView.xaml">
+	  <MauiXaml Update="Views\PersonalRecordDetailView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MovementRecordMaxesView.xaml">
+	  <MauiXaml Update="Views\PersonalRecordMaxesView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MovementsView.xaml">

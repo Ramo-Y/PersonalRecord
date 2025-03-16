@@ -2,9 +2,9 @@ namespace PersonalRecord.App.Views
 {
     using PersonalRecord.App.ViewModels;
 
-    public partial class MovementRecordMaxesView : ContentPage
+    public partial class PersonalRecordAllView : ContentPage
     {
-        public MovementRecordMaxesView(MovementRecordMaxesViewModel viewModel)
+        public PersonalRecordAllView(PersonalRecordAllViewModel viewModel)
         {
             InitializeComponent();
 

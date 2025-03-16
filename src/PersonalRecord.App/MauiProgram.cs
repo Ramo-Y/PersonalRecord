@@ -36,18 +36,18 @@
 
             // Register ViewModels
             builder.Services.AddTransient<MainView>();
-            builder.Services.AddTransient<MovementRecordAllView>();
-            builder.Services.AddTransient<MovementRecordDetailView>();
-            builder.Services.AddTransient<MovementRecordMaxesView>();
             builder.Services.AddTransient<MovementsView>();
+            builder.Services.AddTransient<PersonalRecordAllView>();
+            builder.Services.AddTransient<PersonalRecordDetailView>();
+            builder.Services.AddTransient<PersonalRecordMaxesView>();
             builder.Services.AddTransient<SettingsView>();
 
             // Register ViewModels
             builder.Services.AddTransient<MainViewModel>();
-            builder.Services.AddTransient<MovementRecordAllViewModel>();
-            builder.Services.AddTransient<MovementRecordDetailViewModel>();
-            builder.Services.AddTransient<MovementRecordMaxesViewModel>();
             builder.Services.AddTransient<MovementsViewModel>();
+            builder.Services.AddTransient<PersonalRecordAllViewModel>();
+            builder.Services.AddTransient<PersonalRecordDetailViewModel>();
+            builder.Services.AddTransient<PersonalRecordMaxesViewModel>();
             builder.Services.AddTransient<SettingsViewModel>();
 
             // Register services

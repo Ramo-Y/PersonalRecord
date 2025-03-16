@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PersonalRecord.App.Views.MovementRecordMaxesView"
-             x:Name="MovementRecordMaxesViewXaml"
+             x:Class="PersonalRecord.App.Views.PersonalRecordMaxesView"
+             x:Name="PersonalRecordMaxesViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
              xmlns:sfgrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
-             x:DataType="viewModels:MovementRecordMaxesViewModel"
-             Title="{x:Static resources:AppResources.MovementRecordMaxes}">
+             x:DataType="viewModels:PersonalRecordMaxesViewModel"
+             Title="{x:Static resources:AppResources.PersonalRecordMaxes}">
 
     <Grid>
         <Grid.ColumnDefinitions>
