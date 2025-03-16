@@ -9,7 +9,7 @@
     using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
 
-    public partial class MovementRecordMaxesViewModel : ObservableObject, IQueryAttributable
+    public partial class PersonalRecordMaxesViewModel : ObservableObject, IQueryAttributable
     {
         private readonly INavigationService _navigationService;
         private readonly IMovementRecordRepository _movementRecordRepository;
@@ -21,7 +21,7 @@
         [ObservableProperty]
         private Setting _setting;
 
-        public MovementRecordMaxesViewModel(
+        public PersonalRecordMaxesViewModel(
             INavigationService navigationService,
             IMovementRecordRepository movementRecordRepository,
             ISettingsService settingsService)

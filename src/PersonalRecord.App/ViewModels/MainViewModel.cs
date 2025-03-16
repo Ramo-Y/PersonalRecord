@@ -38,9 +38,9 @@
         }
 
         [RelayCommand]
-        public async Task GoToMovementRecordMaxesViewAsync()
+        public async Task GoToPersonalRecordMaxesViewAsync()
         {
-            await _navigationService.GoToAsync(Routes.MovementRecordMaxesView);
+            await _navigationService.GoToAsync(Routes.PersonalRecordMaxesView);
         }
 
         [RelayCommand]
