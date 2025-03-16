@@ -150,9 +150,6 @@
   <data name="PersonalRecordsAll" xml:space="preserve">
     <value>All PRs</value>
   </data>
-  <data name="MovementRecords" xml:space="preserve">
-    <value>PRs</value>
-  </data>
   <data name="Movements" xml:space="preserve">
     <value>Movements</value>
   </data>

@@ -222,7 +222,4 @@
   <data name="PersonalRecordMaxes" xml:space="preserve">
     <value>PR Höchstwerte</value>
   </data>
-  <data name="MovementRecords" xml:space="preserve">
-    <value>PRs</value>
-  </data>
 </root>
