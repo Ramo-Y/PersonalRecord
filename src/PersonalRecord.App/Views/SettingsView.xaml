@@ -23,7 +23,6 @@
             <RowDefinition Height="5"/>
             <RowDefinition Height="85"/>
             <RowDefinition Height="5"/>
-            <RowDefinition Height="35"/>
             <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="55"/>
@@ -54,17 +53,17 @@
                    HeightRequest="55"/>
         </inputLayout:SfTextInputLayout>
 
-        <Label Grid.Column="0" Grid.Row="7"
-               Margin="10, 0"
-               VerticalTextAlignment="Center"
-               Text="{x:Static resources:AppResources.Language}"/>
-        <editors:SfComboBox Grid.Column="0" Grid.Row="8"
-                            Margin="5, 0"
-                            IsClearButtonVisible="False"
-                            ItemsSource="{Binding Languages}"
-                            SelectedItem="{Binding Setting.Language}"/>
+        <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="7"
+                                       Margin="5, 0"
+                                       ContainerType="Outlined"
+                                       Hint="{x:Static resources:AppResources.Language}">
+            <editors:SfComboBox Margin="5, 0"
+                                IsClearButtonVisible="False"
+                                ItemsSource="{Binding Languages}"
+                                SelectedItem="{Binding Setting.Language}"/>
+        </inputLayout:SfTextInputLayout>
 
-        <button:SfButton Grid.Column="0" Grid.Row="10"
+        <button:SfButton Grid.Column="0" Grid.Row="9"
                          Margin="5, 0"
                          Text="{x:Static resources:AppResources.Save}"
                          Command="{Binding SaveAndGoBackCommand}"/>
