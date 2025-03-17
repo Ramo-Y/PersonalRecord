@@ -71,12 +71,12 @@ The burger button at the top left takes you to the settings. You can also report
 To add movement records, you must first define your movements. By pressing the add button, a new line is added in which you can name your movement. Movements can only be deleted, as long as they are not in use.
 
 ## All movement records
-<img src="./.github/images/all_movement_records_view.png" alt="All movement records" style="width:250px;"/>
+<img src="./.github/images/all_personal_records_view.png" alt="All movement records" style="width:250px;"/>
 
 In this menu you can enter all your records with a date, weight and movement. This is the overview to see them all, they are sorted by the name of the movement and then the most recent movements at the top. New entries can be added with the add button and deleted with the trash button.
 
 ## Movement record maxes
-<img src="./.github/images/movement_record_maxes_view.png" alt="Movement record maxes" style="width:250px;"/>
+<img src="./.github/images/personal_record_maxes_view.png" alt="Movement record maxes" style="width:250px;"/>
 
 This is an overview screen in which all maximum values for the respective movement are displayed. New entries can also be added here.
 
