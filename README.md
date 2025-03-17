@@ -27,9 +27,9 @@
     - [Themes](#themes)
     - [Data and storage](#data-and-storage)
   - [Burger menu](#burger-menu)
+  - [PR max values](#pr-max-values)
+  - [All PRs](#all-prs)
   - [Movements](#movements)
-  - [All movement records](#all-movement-records)
-  - [Movement record maxes](#movement-record-maxes)
   - [Settings](#settings)
     - [Weight unit](#weight-unit)
     - [Distance unit](#distance-unit)
@@ -65,20 +65,20 @@ The settings are saved as preferences and the data in the app folder. This means
 
 The burger button at the top left takes you to the settings. You can also report a problem, go to the project page, go to the project sponsorship page or share the app. At the bottom is the button with the version, where you can see detailed information about this version and the technology.
 
+## PR max values
+<img src="./.github/images/personal_record_maxes_view.png" alt="PR max values" style="width:250px;"/>
+
+This is an overview screen in which all maximum values for the respective movement are displayed. New entries can be added here.
+
+## All PRs
+<img src="./.github/images/all_personal_records_view.png" alt="All PRs" style="width:250px;"/>
+
+In this menu you can enter all your records with a date, weight, movement and notes. This is the overview to see them all, they are grouped by the movement, sorted by the name of the movement and then the most recent movements at the top. New entries can be added with the add button and deleted with the trash button.
+
 ## Movements
 <img src="./.github/images/movements_view.png" alt="Movements" style="width:250px;"/>
 
-To add movement records, you must first define your movements. By pressing the add button, a new line is added in which you can name your movement. Movements can only be deleted, as long as they are not in use.
-
-## All movement records
-<img src="./.github/images/all_movement_records_view.png" alt="All movement records" style="width:250px;"/>
-
-In this menu you can enter all your records with a date, weight and movement. This is the overview to see them all, they are sorted by the name of the movement and then the most recent movements at the top. New entries can be added with the add button and deleted with the trash button.
-
-## Movement record maxes
-<img src="./.github/images/movement_record_maxes_view.png" alt="Movement record maxes" style="width:250px;"/>
-
-This is an overview screen in which all maximum values for the respective movement are displayed. New entries can also be added here.
+To add PRs, you must first define your movements. By pressing the add button, a new line is added in which you can name your movement. Movements can only be deleted, as long as they are not in use.
 
 ## Settings
 <img src="./.github/images/settings_view.png" alt="Settings" style="width:250px;"/>
