@@ -2,7 +2,7 @@
 {
     using Syncfusion.Maui.DataGrid;
 
-    public class CustomTextRenderer : DataGridTextBoxCellRenderer
+    public class CustomCapitalizedWordTextRenderer : DataGridTextBoxCellRenderer
     {
         public override void OnInitializeEditView(DataColumnBase dataColumn, SfDataGridEntry view)
         {

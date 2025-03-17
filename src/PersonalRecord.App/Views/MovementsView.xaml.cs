@@ -16,7 +16,7 @@ namespace PersonalRecord.App.Views
             viewModel.SelectMovement += OnSelected;
 
             dataGrid.CellRenderers.Remove("Text");
-            dataGrid.CellRenderers.Add("Text", new CustomTextRenderer());
+            dataGrid.CellRenderers.Add("Text", new CustomCapitalizedWordTextRenderer());
         }
 
         private void OnSelected(object sender, EventArgs e)

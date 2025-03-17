@@ -17,45 +17,53 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
-            <RowDefinition Height="55"/>
-            <RowDefinition Height="55"/>
-            <RowDefinition Height="55"/>
-            <RowDefinition Height="55"/>
-            <RowDefinition Height="55"/>
-            <RowDefinition Height="55"/>
-            <RowDefinition Height="55"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="55"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="1"
-               Margin="5, 0"
-               VerticalTextAlignment="Center"
-               Text="{x:Static resources:AppResources.Movement}"/>
-        <editors:SfComboBox Grid.Column="0" Grid.Row="2"
-                            IsClearButtonVisible="False"
-                            ItemsSource="{Binding Movements}"
-                            DisplayMemberPath="MovName"
-                            SelectedItem="{Binding SelectedMovement}"/>
+        <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="1"
+                                       Margin="5, 0"
+                                       ContainerType="Outlined"
+                                       Hint="{x:Static resources:AppResources.Movement}">
+            <editors:SfComboBox IsClearButtonVisible="False"
+                                ItemsSource="{Binding Movements}"
+                                DisplayMemberPath="MovName"
+                                SelectedItem="{Binding SelectedMovement}"/>
+        </inputLayout:SfTextInputLayout>
 
-        <Label Grid.Column="0" Grid.Row="3"
-               Margin="5, 0"
-               VerticalTextAlignment="Center"
-               Text="{x:Static resources:AppResources.Weight}"/>
-        <editors:SfNumericEntry Grid.Column="0" Grid.Row="4"
-                                Value="{Binding MovementRecord.MvrWeight}"
-                                ValueChangeMode="OnKeyFocus"
-                                CustomFormat="N1"
-                                AllowNull="False"/>
-        
-        <Label Grid.Column="0" Grid.Row="5"
-               Margin="5, 0"
-               VerticalTextAlignment="Center"
-               Text="{x:Static resources:AppResources.Date}"/>
-        <DatePicker Grid.Column="0" Grid.Row="6"
-                    Format="{Binding Setting.DateFormat}"
-                    Date="{Binding MovementRecord.MvrDate}"/>
+        <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="3"
+                                       Margin="5, 0"
+                                       ContainerType="Outlined"
+                                       Hint="{x:Static resources:AppResources.Weight}">
+            <editors:SfNumericEntry Value="{Binding MovementRecord.MvrWeight}"
+                                    ValueChangeMode="OnKeyFocus"
+                                    CustomFormat="N1"
+                                    AllowNull="False"/>
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="5"
+                                       Margin="5, 0"
+                                       ContainerType="Outlined"
+                                       Hint="{x:Static resources:AppResources.Date}">
+            <DatePicker Format="{Binding Setting.DateFormat}"
+                        Date="{Binding MovementRecord.MvrDate}"/>
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Grid.Column="0" Grid.Row="7"
+                                       Margin="5, 0"
+                                       ContainerType="Outlined"
+                                       Hint="{x:Static resources:AppResources.Notes}">
+            <Entry x:Name="customEntry" Text="{Binding MovementRecord.MvrNotes}">
+            </Entry>
+        </inputLayout:SfTextInputLayout>
 
         <button:SfButton Grid.Column="0" Grid.Row="9"
                          Margin="5, 0"

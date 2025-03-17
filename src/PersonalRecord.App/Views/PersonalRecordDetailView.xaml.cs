@@ -9,6 +9,8 @@ namespace PersonalRecord.App.Views
             InitializeComponent();
 
             BindingContext = viewmodel;
+            
+            customEntry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeSentence);
         }
     }
 }
