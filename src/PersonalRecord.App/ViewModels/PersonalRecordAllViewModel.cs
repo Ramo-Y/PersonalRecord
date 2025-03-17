@@ -49,7 +49,7 @@
                 MovementRecords.Clear();
                 var movementRecords = await _movementRecordRepository.GetAllMovementRecordsAsync();
                 movementRecords = movementRecords.OrderBy(m => m.Movement.MovName)
-                                                 .OrderByDescending(m => m.MvrDate);
+                                                 .ThenByDescending(m => m.MvrDate);
 
                 foreach (var movementRecord in movementRecords)
                 {
