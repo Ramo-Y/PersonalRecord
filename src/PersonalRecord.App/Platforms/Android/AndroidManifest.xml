@@ -5,6 +5,7 @@
     android:roundIcon="@mipmap/ic_launcher_round"
   </application>
 	<uses-permission android:name="android.permission.INTERNET" />
+  <uses-sdk android:targetSdkVersion="35" />
   <queries>
     <intent>
       <action android:name="android.intent.action.VIEW" />
