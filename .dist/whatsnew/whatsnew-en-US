@@ -1,6 +1,2 @@
-﻿﻿- PR max values are sorted alphabetically
-- Updated used Libraries
-- Added notes for movement record
-- Enhanced UI and namings
-- Harmonized appearance of the app
-- Updated documentation
+﻿- Updated used Libraries
+- Set target Android version to 15 (Google Play requirement)
