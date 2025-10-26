@@ -5,7 +5,6 @@
     using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
-    using System.Text;
 
     public partial class MainViewModel : ObservableObject
     {
