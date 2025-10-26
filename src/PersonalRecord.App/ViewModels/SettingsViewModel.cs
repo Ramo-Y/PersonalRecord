@@ -28,9 +28,9 @@
             Setting = _settingsService.GetSettings();
         }
 
-        public IEnumerable<Language> Languages
+        public static IEnumerable<Language> Languages
         {
-            get => Enum.GetValues(typeof(Language)).Cast<Language>();
+            get => Enum.GetValues<Language>();
         }
 
         [RelayCommand]
