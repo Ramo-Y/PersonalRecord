@@ -2,11 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PersonalRecord.App.Views.ImportExportView"
-             Title="ImportExportView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Name="ImportExportViewXaml"
+             xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             x:DataType="viewModels:ImportExportViewModel"
+             Title="{x:Static resources:AppResources.ImportExport}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>        
+    </Grid>    
 </ContentPage>

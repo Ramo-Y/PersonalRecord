@@ -35,6 +35,7 @@
             Task.Run(LicenseHelper.RegisterLicenseAsync);
 
             // Register ViewModels
+            builder.Services.AddTransient<ImportExportView>();
             builder.Services.AddTransient<MainView>();
             builder.Services.AddTransient<MovementsView>();
             builder.Services.AddTransient<PersonalRecordAllView>();
@@ -43,6 +44,7 @@
             builder.Services.AddTransient<SettingsView>();
 
             // Register ViewModels
+            builder.Services.AddTransient<ImportExportViewModel>();
             builder.Services.AddTransient<MainViewModel>();
             builder.Services.AddTransient<MovementsViewModel>();
             builder.Services.AddTransient<PersonalRecordAllViewModel>();
