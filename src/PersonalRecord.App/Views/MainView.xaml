@@ -113,6 +113,7 @@
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
                                 <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
                                 <RowDefinition Height="15"/>
                             </Grid.RowDefinitions>
 
@@ -130,34 +131,41 @@
                                              Command="{Binding GoToSettingsViewCommand}"/>
 
                             <button:SfButton Grid.Column="1" Grid.Row="2"
+                                             Text="{x:Static resources:AppResources.ImportExport}"
+                                             ImageSource="{AppThemeBinding Dark=import_export_dark_theme.svg, Light=import_export_light_theme.svg}"
+                                             ShowIcon="True"
+                                             Style="{StaticResource SfButtonCustomStyle}"
+                                             Command="{Binding GoToImportExportViewCommand}" />
+
+                            <button:SfButton Grid.Column="1" Grid.Row="3"
                                              Text="{x:Static resources:AppResources.ReportAProblem}"
                                              ImageSource="{AppThemeBinding Dark=bug_report_dark_theme.svg, Light=bug_report_light_theme.svg}"
                                              ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenProjectIssuesPageCommand}" />
 
-                            <button:SfButton Grid.Column="1" Grid.Row="3"
+                            <button:SfButton Grid.Column="1" Grid.Row="4"
                                              Text="{x:Static resources:AppResources.Help}"
                                              ImageSource="{AppThemeBinding Dark=help_dark_theme.svg, Light=help_light_theme.svg}"
                                              ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenProjectPageCommand}" />
 
-                            <button:SfButton Grid.Column="1" Grid.Row="4"
+                            <button:SfButton Grid.Column="1" Grid.Row="5"
                                              Text="{x:Static resources:AppResources.SupportThisProject}"
                                              ImageSource="{AppThemeBinding Dark=favorite_dark_theme.svg, Light=favorite_light_theme.svg}"
                                              ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding OpenSupportPageCommand}" />
 
-                            <button:SfButton Grid.Column="1" Grid.Row="5"
+                            <button:SfButton Grid.Column="1" Grid.Row="6"
                                              Text="{x:Static resources:AppResources.ShareThisApp}"
                                              ImageSource="{AppThemeBinding Dark=share_dark_theme.svg, Light=share_light_theme.svg}"
                                              ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
                                              Command="{Binding ShareThisAppCommand}" />
 
-                            <button:SfButton Grid.Column="1" Grid.Row="6"
+                            <button:SfButton Grid.Column="1" Grid.Row="7"
                                              Text="{x:Static resources:AppResources.RateThisApp}"
                                              ImageSource="{AppThemeBinding Dark=star_rate_dark_theme.svg, Light=star_rat_light_theme.svg}"
                                              ShowIcon="True"

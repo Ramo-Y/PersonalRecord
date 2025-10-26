@@ -71,6 +71,12 @@
         }
 
         [RelayCommand]
+        public async Task GoToImportExportViewAsync()
+        {
+            await _navigationService.GoToAsync(Routes.ImportExportView);
+        }
+
+        [RelayCommand]
         public async Task OpenSupportPageAsync()
         {
             var uri = new Uri(EnvironmentConstants.SPONSOR_URL);

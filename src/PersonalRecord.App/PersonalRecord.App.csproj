@@ -148,6 +148,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <MauiXaml Update="Views\ImportExportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>

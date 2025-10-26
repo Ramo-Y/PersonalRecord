@@ -228,4 +228,7 @@
   <data name="BuildDate" xml:space="preserve">
     <value>Build date</value>
   </data>
+  <data name="ImportExport" xml:space="preserve">
+    <value>Import / Export</value>
+  </data>
 </root>
