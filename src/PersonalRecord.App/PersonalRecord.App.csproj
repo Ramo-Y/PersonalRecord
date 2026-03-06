@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>PersonalRecord.App</RootNamespace>
     <ApplicationTitle>PersonalRecord.App</ApplicationTitle>
@@ -117,19 +117,19 @@
     </MauiAsset>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Maui" Version="14.0.0" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageReference Include="epj.RouteGenerator" Version="1.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="10.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="10.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.3" />
-    <PackageReference Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.Maui.Buttons" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.Maui.DataGrid" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.Maui.NavigationDrawer" Version="$(SyncfusionVersion)" />
-    <PackageReference Include="Syncfusion.Maui.Popup" Version="$(SyncfusionVersion)" />
+    <PackageReference Include="CommunityToolkit.Maui" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="epj.RouteGenerator" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" />
+    <PackageReference Include="Microsoft.Extensions.Localization" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+    <PackageReference Include="Syncfusion.Licensing" />
+    <PackageReference Include="Syncfusion.Maui.Buttons" />
+    <PackageReference Include="Syncfusion.Maui.DataGrid" />
+    <PackageReference Include="Syncfusion.Maui.NavigationDrawer" />
+    <PackageReference Include="Syncfusion.Maui.Popup" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PersonalRecord.Domain\PersonalRecord.Domain.csproj" />
