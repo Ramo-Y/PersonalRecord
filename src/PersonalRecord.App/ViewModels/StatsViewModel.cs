@@ -17,6 +17,9 @@
         private ObservableCollection<MovementRecord> _movementRecords;
 
         [ObservableProperty]
+        private ObservableCollection<MovementRecordGroup> _movementRecordGroups;
+
+        [ObservableProperty]
         private Setting _setting;
 
         public StatsViewModel(
@@ -26,6 +29,7 @@
             _movementRecordRepository = movementRecordRepository;
             _settingsService = settingsService;
 
+            MovementRecordGroups = [];
             MovementRecords = [];
 
             LoadItems();
@@ -43,6 +47,19 @@
 
                 // TODO: Hack until records will be added dynamically to the view
                 var firstMovement = movementRecords.FirstOrDefault().Movement;
+
+                var grouped = movementRecords
+                                    .GroupBy(record => record.Movement.MovName)
+                                    .Select(group => new MovementRecordGroup
+                                    {
+                                        GroupName = group.Key,
+                                        MovementRecords = new ObservableCollection<MovementRecord>([.. group])
+                                    });
+
+                foreach (var group in grouped)
+                {
+                    MovementRecordGroups.Add(group);
+                }
 
                 foreach (var movementRecord in movementRecords)
                 {
