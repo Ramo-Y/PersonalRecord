@@ -17,46 +17,48 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <cards:SfCardView Grid.Column="1" Grid.Row="1">
-            <cards:SfCardLayout>
-                <chart:SfCartesianChart>
+        <ScrollView Grid.Column="1"
+                    Grid.Row="1">
+            <cards:SfCardView>
+                <cards:SfCardLayout>
+                    <chart:SfCartesianChart>
 
-                    <chart:SfCartesianChart.XAxes>
-                        <chart:DateTimeAxis />
-                    </chart:SfCartesianChart.XAxes>
+                        <chart:SfCartesianChart.XAxes>
+                            <chart:DateTimeAxis />
+                        </chart:SfCartesianChart.XAxes>
 
-                    <chart:SfCartesianChart.YAxes>
-                        <chart:NumericalAxis>
-                            <chart:NumericalAxis.LabelStyle>
-                                <chart:ChartAxisLabelStyle LabelFormat="{Binding Setting.WeightUnitFormat}"/>
-                            </chart:NumericalAxis.LabelStyle>
-                        </chart:NumericalAxis>
-                    </chart:SfCartesianChart.YAxes>
+                        <chart:SfCartesianChart.YAxes>
+                            <chart:NumericalAxis>
+                                <chart:NumericalAxis.LabelStyle>
+                                    <chart:ChartAxisLabelStyle LabelFormat="{Binding Setting.WeightUnitFormat}"/>
+                                </chart:NumericalAxis.LabelStyle>
+                            </chart:NumericalAxis>
+                        </chart:SfCartesianChart.YAxes>
 
-                    <chart:SfCartesianChart.Title>
-                        <!--TODO: Add text dynamically-->
-                        <Label Text="Clean"
-                               Margin="0"
-                               HorizontalOptions="Fill"
-                               HorizontalTextAlignment="Center"
-                               VerticalOptions="Center"
-                               FontSize="16" />
-                    </chart:SfCartesianChart.Title>
+                        <chart:SfCartesianChart.Title>
+                            <!--TODO: Add text dynamically-->
+                            <Label Text="Clean"
+                                   Margin="0"
+                                   HorizontalOptions="Fill"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalOptions="Center"
+                                   FontSize="16" />
+                        </chart:SfCartesianChart.Title>
 
-                    <chart:LineSeries EnableTooltip="True"
-                                      EnableAnimation="True"
-                                      StrokeWidth="1"
-                                      ShowMarkers="True"
-                                      ItemsSource="{Binding MovementRecords}"
-                                      XBindingPath="MvrDate"
-                                      YBindingPath="MvrWeight">
-                    </chart:LineSeries>
-                </chart:SfCartesianChart>
-            </cards:SfCardLayout>
-        </cards:SfCardView>
+                        <chart:LineSeries EnableTooltip="True"
+                                          EnableAnimation="True"
+                                          StrokeWidth="1"
+                                          ShowMarkers="True"
+                                          ItemsSource="{Binding MovementRecords}"
+                                          XBindingPath="MvrDate"
+                                          YBindingPath="MvrWeight">
+                        </chart:LineSeries>
+                    </chart:SfCartesianChart>
+                </cards:SfCardLayout>
+            </cards:SfCardView>
+        </ScrollView>
     </Grid>
 </ContentPage>
