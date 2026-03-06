@@ -4,6 +4,7 @@
              x:Class="PersonalRecord.App.Views.MainView"
              x:Name="MainViewXaml"
              xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
+             xmlns:app="clr-namespace:PersonalRecord.App"
              xmlns:button="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
              xmlns:navigationdrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
              xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
@@ -22,6 +23,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="55"/>
                         <RowDefinition Height="25"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="15"/>
                         <RowDefinition Height="70"/>
                         <RowDefinition Height="15"/>
                         <RowDefinition Height="70"/>
@@ -56,17 +59,20 @@
                     <button:SfButton Grid.Column="1" Grid.Row="2"
                                      Text="{x:Static resources:AppResources.PersonalRecordMaxes}"
                                      FontSize="Medium"
-                                     Command="{Binding GoToPersonalRecordMaxesViewCommand}"/>
+                                     Command="{Binding GoToViewCommand}"
+                                     CommandParameter="{x:Static app:Routes.PersonalRecordMaxesView}"/>
 
                     <button:SfButton Grid.Column="1" Grid.Row="4"
                                      Text="{x:Static resources:AppResources.PersonalRecordsAll}"
                                      FontSize="Medium"
-                                     Command="{Binding GoToPersonalRecordAllViewCommand}"/>
+                                     Command="{Binding GoToViewCommand}"
+                                     CommandParameter="{x:Static app:Routes.PersonalRecordAllView}"/>
 
                     <button:SfButton Grid.Column="1" Grid.Row="6"
                                      Text="{x:Static resources:AppResources.Movements}"
                                      FontSize="Medium"
-                                     Command="{Binding GoToMovementsViewCommand}"/>
+                                     Command="{Binding GoToViewCommand}"
+                                     CommandParameter="{x:Static app:Routes.MovementsView}"/>
                 </Grid>
             </navigationdrawer:SfNavigationDrawer.ContentView>
 
@@ -127,7 +133,8 @@
                                              ImageSource="{AppThemeBinding Dark=settings_dark_theme.svg, Light=settings_light_theme.svg}"
                                              ShowIcon="True"
                                              Style="{StaticResource SfButtonCustomStyle}"
-                                             Command="{Binding GoToSettingsViewCommand}"/>
+                                             Command="{Binding GoToViewCommand}"
+                                             CommandParameter="{x:Static app:Routes.SettingsView}"/>
 
                             <button:SfButton Grid.Column="1" Grid.Row="2"
                                              Text="{x:Static resources:AppResources.ReportAProblem}"
