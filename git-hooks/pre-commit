@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# The Syncfusion license will only be updated from the GitHub Action and must not be checked in with the actual value
+PROTECTED_FILE="src/PersonalRecord.App/SyncfusionLicense.txt"
+
+if git diff --cached --name-only | grep -q "$PROTECTED_FILE"; then
+    echo "WARNING: The file $PROTECTED_FILE contains the private Syncfusion license key."
+    echo "This key must NOT be updated in this open-source project."
+    echo "Please remove any changes to this file before committing."
+    exit 1
+fi
+
+exit 0
