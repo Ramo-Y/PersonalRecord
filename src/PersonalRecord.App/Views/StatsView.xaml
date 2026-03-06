@@ -32,14 +32,14 @@
                     <chart:SfCartesianChart.YAxes>
                         <chart:NumericalAxis>
                             <chart:NumericalAxis.LabelStyle>
-                                <!--TODO: Add from setting-->
-                                <chart:ChartAxisLabelStyle LabelFormat="0'kg"/>
+                                <chart:ChartAxisLabelStyle LabelFormat="{Binding Setting.WeightUnitFormat}"/>
                             </chart:NumericalAxis.LabelStyle>
                         </chart:NumericalAxis>
                     </chart:SfCartesianChart.YAxes>
 
                     <chart:SfCartesianChart.Title>
-                        <Label Text="Movement"
+                        <!--TODO: Add text dynamically-->
+                        <Label Text="Clean"
                                Margin="0"
                                HorizontalOptions="Fill"
                                HorizontalTextAlignment="Center"
@@ -47,8 +47,7 @@
                                FontSize="16" />
                     </chart:SfCartesianChart.Title>
 
-                    <chart:LineSeries Label="Movement"
-                                      EnableTooltip="True"
+                    <chart:LineSeries EnableTooltip="True"
                                       EnableAnimation="True"
                                       StrokeWidth="1"
                                       ShowMarkers="True"

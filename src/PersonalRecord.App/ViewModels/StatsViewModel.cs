@@ -3,19 +3,28 @@
     using CommunityToolkit.Mvvm.ComponentModel;
     using PersonalRecord.Domain.Interfaces;
     using PersonalRecord.Domain.Models.Entities;
+    using PersonalRecord.Infrastructure;
+    using PersonalRecord.Services.Interfaces;
     using System.Collections.ObjectModel;
     using System.Linq;
 
     public partial class StatsViewModel : ObservableObject
     {
         private readonly IMovementRecordRepository _movementRecordRepository;
+        private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
         private ObservableCollection<MovementRecord> _movementRecords;
 
-        public StatsViewModel(IMovementRecordRepository movementRecordRepository)
+        [ObservableProperty]
+        private Setting _setting;
+
+        public StatsViewModel(
+            IMovementRecordRepository movementRecordRepository,
+            ISettingsService settingsService)
         {
             _movementRecordRepository = movementRecordRepository;
+            _settingsService = settingsService;
 
             MovementRecords = [];
 
@@ -42,6 +51,8 @@
                         MovementRecords.Add(movementRecord);
                     }
                 }
+
+                Setting = _settingsService.GetSettings();
             });
         }
     }
