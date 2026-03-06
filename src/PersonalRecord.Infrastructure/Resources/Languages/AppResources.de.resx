@@ -228,4 +228,7 @@
   <data name="BuildDate" xml:space="preserve">
     <value>Build Datum</value>
   </data>
+  <data name="Stats" xml:space="preserve">
+    <value>Fortschritt</value>
+  </data>
 </root>

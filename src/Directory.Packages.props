@@ -23,6 +23,8 @@
     <PackageVersion Include="NUnit3TestAdapter" Version="6.1.0" />
     <PackageVersion Include="Syncfusion.Licensing" Version="$(SyncfusionVersion)" />
     <PackageVersion Include="Syncfusion.Maui.Buttons" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Maui.Cards" Version="$(SyncfusionVersion)" />
+    <PackageVersion Include="Syncfusion.Maui.Charts" Version="$(SyncfusionVersion)" />
     <PackageVersion Include="Syncfusion.Maui.DataGrid" Version="$(SyncfusionVersion)" />
     <PackageVersion Include="Syncfusion.Maui.NavigationDrawer" Version="$(SyncfusionVersion)" />
     <PackageVersion Include="Syncfusion.Maui.Popup" Version="$(SyncfusionVersion)" />

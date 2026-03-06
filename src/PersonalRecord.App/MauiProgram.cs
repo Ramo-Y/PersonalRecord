@@ -41,6 +41,7 @@
             builder.Services.AddTransient<PersonalRecordDetailView>();
             builder.Services.AddTransient<PersonalRecordMaxesView>();
             builder.Services.AddTransient<SettingsView>();
+            builder.Services.AddTransient<StatsView>();
 
             // Register ViewModels
             builder.Services.AddTransient<MainViewModel>();
@@ -49,6 +50,7 @@
             builder.Services.AddTransient<PersonalRecordDetailViewModel>();
             builder.Services.AddTransient<PersonalRecordMaxesViewModel>();
             builder.Services.AddTransient<SettingsViewModel>();
+            builder.Services.AddTransient<StatsViewModel>();
 
             // Register services
             builder.Services.AddSingleton<INavigationService, NavigationService>();

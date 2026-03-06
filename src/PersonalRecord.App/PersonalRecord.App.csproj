@@ -127,6 +127,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
     <PackageReference Include="Syncfusion.Licensing" />
     <PackageReference Include="Syncfusion.Maui.Buttons" />
+    <PackageReference Include="Syncfusion.Maui.Cards" />
+    <PackageReference Include="Syncfusion.Maui.Charts" />
     <PackageReference Include="Syncfusion.Maui.DataGrid" />
     <PackageReference Include="Syncfusion.Maui.NavigationDrawer" />
     <PackageReference Include="Syncfusion.Maui.Popup" />
@@ -164,6 +166,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Views\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Views\StatsView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
   </ItemGroup>
