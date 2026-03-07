@@ -30,7 +30,7 @@
   - [PR max values](#pr-max-values)
   - [All PRs](#all-prs)
   - [Movements](#movements)
-  - [Movements](#movements-1)
+  - [Stats](#stats)
   - [Settings](#settings)
     - [Weight unit](#weight-unit)
     - [Distance unit](#distance-unit)
@@ -81,7 +81,7 @@ In this menu you can enter all your records with a date, weight, movement and no
 
 To add PRs, you must first define your movements. By pressing the add button, a new line is added in which you can name your movement. Movements can only be deleted, as long as they are not in use.
 
-## Movements
+## Stats
 <img src="./.github/images/stats_view_dark.png" alt="Stats" style="width:250px;"/>
 
 The Stats View visually displays the progress of Personal Records over time using a line chart. It provides a quick overview of your performance, helping you track improvements and analyze your progress at a glance.
