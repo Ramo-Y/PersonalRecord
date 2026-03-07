@@ -26,7 +26,8 @@
             <StackLayout BindableLayout.ItemsSource="{Binding MovementRecordGroups}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="entities:MovementRecordGroup">
-                        <cards:SfCardView Margin="0,10,0,10" BorderWidth="3">
+                        <cards:SfCardView Margin="0,10,0,10"
+                                          BorderWidth="3">
                             <cards:SfCardLayout BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundBlack}, Light={StaticResource BackgroundWhite}}">
                                 <chart:SfCartesianChart>
                                     <chart:SfCartesianChart.XAxes>
