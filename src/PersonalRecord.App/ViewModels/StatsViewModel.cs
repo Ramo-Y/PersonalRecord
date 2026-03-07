@@ -14,9 +14,6 @@
         private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
-        private ObservableCollection<MovementRecord> _movementRecords;
-
-        [ObservableProperty]
         private ObservableCollection<MovementRecordGroup> _movementRecordGroups;
 
         [ObservableProperty]
@@ -30,7 +27,6 @@
             _settingsService = settingsService;
 
             MovementRecordGroups = [];
-            MovementRecords = [];
 
             LoadItems();
         }
@@ -39,14 +35,9 @@
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                MovementRecords.Clear();
-
                 var movementRecords = await _movementRecordRepository.GetAllMovementRecordsAsync();
                 movementRecords = movementRecords.OrderBy(m => m.Movement.MovName)
                                                  .ThenByDescending(m => m.MvrDate);
-
-                // TODO: Hack until records will be added dynamically to the view
-                var firstMovement = movementRecords.FirstOrDefault().Movement;
 
                 var grouped = movementRecords
                                     .GroupBy(record => record.Movement.MovName)
@@ -59,14 +50,6 @@
                 foreach (var group in grouped)
                 {
                     MovementRecordGroups.Add(group);
-                }
-
-                foreach (var movementRecord in movementRecords)
-                {
-                    if (movementRecord.Movement == firstMovement)
-                    {
-                        MovementRecords.Add(movementRecord);
-                    }
                 }
 
                 Setting = _settingsService.GetSettings();
