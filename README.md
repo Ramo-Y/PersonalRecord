@@ -30,6 +30,7 @@
   - [PR max values](#pr-max-values)
   - [All PRs](#all-prs)
   - [Movements](#movements)
+  - [Movements](#movements-1)
   - [Settings](#settings)
     - [Weight unit](#weight-unit)
     - [Distance unit](#distance-unit)
@@ -61,27 +62,32 @@ There is a dark and a light theme, it is automatically adapted to the system the
 The settings are saved as preferences and the data in the app folder. This means that the data is transferred to the new device with a backup/restore. Synchronization between multiple devices is currently not supported.
 
 ## Burger menu
-<img src="./.github/images/burger_menu_view.png" alt="Burger menu" style="width:250px;"/>
+<img src="./.github/images/burger_menu_view_dark.png" alt="Burger menu" style="width:250px;"/>
 
 The burger button at the top left takes you to the settings. You can also report a problem, go to the project page, go to the project sponsorship page or share the app. At the bottom is the button with the version, where you can see detailed information about this version and the technology.
 
 ## PR max values
-<img src="./.github/images/personal_record_maxes_view.png" alt="PR max values" style="width:250px;"/>
+<img src="./.github/images/personal_record_maxes_view_dark.png" alt="PR max values" style="width:250px;"/>
 
 This is an overview screen in which all maximum values for the respective movement are displayed. New entries can be added here.
 
 ## All PRs
-<img src="./.github/images/all_personal_records_view.png" alt="All PRs" style="width:250px;"/>
+<img src="./.github/images/all_personal_records_view_dark.png" alt="All PRs" style="width:250px;"/>
 
 In this menu you can enter all your records with a date, weight, movement and notes. This is the overview to see them all, they are grouped by the movement, sorted by the name of the movement and then the most recent movements at the top. New entries can be added with the add button and deleted with the trash button.
 
 ## Movements
-<img src="./.github/images/movements_view.png" alt="Movements" style="width:250px;"/>
+<img src="./.github/images/movements_view_dark.png" alt="Movements" style="width:250px;"/>
 
 To add PRs, you must first define your movements. By pressing the add button, a new line is added in which you can name your movement. Movements can only be deleted, as long as they are not in use.
 
+## Movements
+<img src="./.github/images/stats_view_dark.png" alt="Stats" style="width:250px;"/>
+
+The Stats View visually displays the progress of Personal Records over time using a line chart. It provides a quick overview of your performance, helping you track improvements and analyze your progress at a glance.
+
 ## Settings
-<img src="./.github/images/settings_view.png" alt="Settings" style="width:250px;"/>
+<img src="./.github/images/settings_view_dark.png" alt="Settings" style="width:250px;"/>
 
 ### Weight unit
 The weight unit is a free text field and is only used to display weights for movements and workouts. No conversions take place when changing.
