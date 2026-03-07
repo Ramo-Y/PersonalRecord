@@ -4,6 +4,7 @@
     <File Path="../DEVELOPMENT.md" />
     <File Path="../README.md" />
     <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
   </Folder>
   <Folder Name="/Solution Items/issue-templates/">
     <File Path="../.github/ISSUE_TEMPLATE/bug_report.md" />

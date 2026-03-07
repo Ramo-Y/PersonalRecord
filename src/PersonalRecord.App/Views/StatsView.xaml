@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalRecord.App.Views.StatsView"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:cards="clr-namespace:Syncfusion.Maui.Cards;assembly=Syncfusion.Maui.Cards"
+             xmlns:viewModels="clr-namespace:PersonalRecord.App.ViewModels"
+             xmlns:entities="clr-namespace:PersonalRecord.Domain.Models.Entities;assembly=PersonalRecord.Domain"
+             xmlns:resources="clr-namespace:PersonalRecord.Infrastructure.Resources.Languages;assembly=PersonalRecord.Infrastructure"
+             x:DataType="viewModels:StatsViewModel"
+             Title="{x:Static resources:AppResources.Stats}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Column="1"
+                    Grid.Row="1">
+            <StackLayout BindableLayout.ItemsSource="{Binding MovementRecordGroups}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="entities:MovementRecordGroup">
+                        <cards:SfCardView Margin="0,10,0,10"
+                                          BorderWidth="3">
+                            <cards:SfCardLayout BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundBlack}, Light={StaticResource BackgroundWhite}}">
+                                <chart:SfCartesianChart>
+                                    <chart:SfCartesianChart.XAxes>
+                                        <chart:DateTimeAxis />
+                                    </chart:SfCartesianChart.XAxes>
+
+                                    <chart:SfCartesianChart.YAxes>
+                                        <chart:NumericalAxis>
+                                            <chart:NumericalAxis.LabelStyle>
+                                                <chart:ChartAxisLabelStyle LabelFormat="{Binding Source={RelativeSource AncestorType={x:Type viewModels:StatsViewModel}}, Path=Setting.WeightUnitFormat}" />
+                                            </chart:NumericalAxis.LabelStyle>
+                                        </chart:NumericalAxis>
+                                    </chart:SfCartesianChart.YAxes>
+
+                                    <chart:SfCartesianChart.Title>
+                                        <Label Text="{Binding GroupName}"
+                                               TextColor="{AppThemeBinding Dark={StaticResource LabelTextDark}, Light={StaticResource LabelTextLight}}"
+                                               BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundBlack}, Light={StaticResource BackgroundWhite}}"
+                                               HorizontalOptions="Fill"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalOptions="Center"
+                                               FontSize="16" />
+                                    </chart:SfCartesianChart.Title>
+
+                                    <chart:LineSeries EnableTooltip="True"
+                                                      EnableAnimation="True"
+                                                      StrokeWidth="1"
+                                                      ShowMarkers="True"
+                                                      ItemsSource="{Binding MovementRecords}"
+                                                      XBindingPath="MvrDate"
+                                                      YBindingPath="MvrWeight">
+                                    </chart:LineSeries>
+                                </chart:SfCartesianChart>
+                            </cards:SfCardLayout>
+                        </cards:SfCardView>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

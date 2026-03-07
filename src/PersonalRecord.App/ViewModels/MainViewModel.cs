@@ -5,7 +5,6 @@
     using PersonalRecord.Infrastructure.Constants;
     using PersonalRecord.Infrastructure.Resources.Languages;
     using PersonalRecord.Services.Interfaces;
-    using System.Text;
 
     public partial class MainViewModel : ObservableObject
     {
@@ -47,27 +46,9 @@
         }
 
         [RelayCommand]
-        public async Task GoToPersonalRecordMaxesViewAsync()
+        public async Task GoToViewAsync(string route)
         {
-            await _navigationService.GoToAsync(Routes.PersonalRecordMaxesView);
-        }
-
-        [RelayCommand]
-        public async Task GoToMovementsViewAsync()
-        {
-            await _navigationService.GoToAsync(Routes.MovementsView);
-        }
-
-        [RelayCommand]
-        public async Task GoToPersonalRecordAllViewAsync()
-        {
-            await _navigationService.GoToAsync(Routes.PersonalRecordAllView);
-        }
-
-        [RelayCommand]
-        public async Task GoToSettingsViewAsync()
-        {
-            await _navigationService.GoToAsync(Routes.SettingsView);
+            await _navigationService.GoToAsync(route);
         }
 
         [RelayCommand]

@@ -30,7 +30,7 @@
 
         public IEnumerable<Language> Languages
         {
-            get => Enum.GetValues(typeof(Language)).Cast<Language>();
+            get => Enum.GetValues<Language>().Cast<Language>();
         }
 
         [RelayCommand]

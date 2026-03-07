@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <DisplayVersion>1.0.70</DisplayVersion>
-    <ApplicationVersion>70</ApplicationVersion>
+    <DisplayVersion>1.0.71</DisplayVersion>
+    <ApplicationVersion>71</ApplicationVersion>
     <VersionPrefix>$(DisplayVersion)</VersionPrefix>
     <ApplicationDisplayVersion>$(DisplayVersion)</ApplicationDisplayVersion>
 
@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <SyncfusionVersion>32.2.5</SyncfusionVersion>
+    <SyncfusionVersion>32.2.8</SyncfusionVersion>
     <MauiVersion>10.0.41</MauiVersion>
 
     <UseMaui>true</UseMaui>
@@ -37,8 +37,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+    <PackageReference Include="Microsoft.Maui.Controls" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
   </ItemGroup>
 
 </Project>

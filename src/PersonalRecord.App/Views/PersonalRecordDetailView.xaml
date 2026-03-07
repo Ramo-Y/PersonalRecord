@@ -61,8 +61,8 @@
                                        Margin="5, 0"
                                        ContainerType="Outlined"
                                        Hint="{x:Static resources:AppResources.Notes}">
-            <Entry x:Name="customEntry" Text="{Binding MovementRecord.MvrNotes}">
-            </Entry>
+            <Entry x:Name="notesEntry"
+                   Text="{Binding MovementRecord.MvrNotes}" />
         </inputLayout:SfTextInputLayout>
 
         <button:SfButton Grid.Column="0" Grid.Row="9"
