@@ -36,6 +36,12 @@
     </AssemblyAttribute>
   </ItemGroup>
 
+  <Target Name="RemoveObjAndBin" AfterTargets="Clean">
+    <RemoveDir Directories="$(TargetDir)" />
+    <RemoveDir Directories="$(BaseOutputPath)" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+  </Target>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
