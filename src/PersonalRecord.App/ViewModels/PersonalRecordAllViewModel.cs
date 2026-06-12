@@ -17,16 +17,16 @@
         private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
-        private MovementRecord _selectedMovementRecod;
+        public partial MovementRecord SelectedMovementRecod { get; set; }
 
         [ObservableProperty]
-        private bool _popupIsOpen;
+        public partial bool PopupIsOpen { get; set; }
 
         [ObservableProperty]
-        private ObservableCollection<MovementRecord> _movementRecords;
+        public partial ObservableCollection<MovementRecord> MovementRecords { get; set; }
 
         [ObservableProperty]
-        private Setting _setting;
+        public partial Setting Setting { get; set; }
 
         public PersonalRecordAllViewModel(
             INavigationService navigationService,

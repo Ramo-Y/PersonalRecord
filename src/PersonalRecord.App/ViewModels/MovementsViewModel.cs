@@ -15,19 +15,19 @@
         public event EventHandler SelectMovement;
 
         [ObservableProperty]
-        private bool _deletePopupIsOpen;
+        public partial bool DeletePopupIsOpen { get; set; }
 
         [ObservableProperty]
-        private ObservableCollection<Movement> _movements;
+        public partial ObservableCollection<Movement> Movements { get; set; }
 
         [ObservableProperty]
-        private Movement _selectedMovement;
+        public partial Movement SelectedMovement { get; set; }
 
         [ObservableProperty]
-        private bool _hasUnsavedChanges;
+        public partial bool HasUnsavedChanges { get; set; }
 
         [ObservableProperty]
-        private bool _hasUnsavedChangesPopupIsOpen;
+        public partial bool HasUnsavedChangesPopupIsOpen { get; set; }
 
         public MovementsViewModel(
             INavigationService navigationService,

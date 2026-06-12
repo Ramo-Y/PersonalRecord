@@ -14,10 +14,10 @@
         private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
-        private ObservableCollection<MovementRecordGroup> _movementRecordGroups;
+        public partial ObservableCollection<MovementRecordGroup> MovementRecordGroups { get; set; }
 
         [ObservableProperty]
-        private Setting _setting;
+        public partial Setting Setting { get; set; }
 
         public StatsViewModel(
             IMovementRecordRepository movementRecordRepository,

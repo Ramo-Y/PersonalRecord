@@ -11,7 +11,7 @@
         private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
-        private Setting _setting;
+        public partial Setting Setting { get; set; }
 
         public SettingsViewModel(
             INavigationService navigationService,

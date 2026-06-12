@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <DisplayVersion>1.0.71</DisplayVersion>
-    <ApplicationVersion>71</ApplicationVersion>
+    <DisplayVersion>1.0.72</DisplayVersion>
+    <ApplicationVersion>72</ApplicationVersion>
     <VersionPrefix>$(DisplayVersion)</VersionPrefix>
     <ApplicationDisplayVersion>$(DisplayVersion)</ApplicationDisplayVersion>
 
@@ -15,8 +15,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <SyncfusionVersion>32.2.8</SyncfusionVersion>
-    <MauiVersion>10.0.41</MauiVersion>
+    <SyncfusionVersion>33.2.12</SyncfusionVersion>
+    <MauiVersion>10.0.71</MauiVersion>
 
     <UseMaui>true</UseMaui>
     <SingleProject>true</SingleProject>
@@ -35,6 +35,12 @@
       <_Parameter2>$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</_Parameter2>
     </AssemblyAttribute>
   </ItemGroup>
+
+  <Target Name="RemoveObjAndBin" AfterTargets="Clean">
+    <RemoveDir Directories="$(TargetDir)" />
+    <RemoveDir Directories="$(BaseOutputPath)" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+  </Target>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" />
