@@ -36,7 +36,6 @@ Run the following command to set up the hooks for this repository:
 
 This configuration applies only to this project and ensures the hooks in the git-hooks/ directory are used automatically.
 
-
 # Icons
 To add new icons to the user interface, use the Material Design icons from Google Fonts.  They can be downloaded [here](https://fonts.google.com/icons) for free. Use the default settings and always download a dark and a light theme icon as an SVG file.
 
