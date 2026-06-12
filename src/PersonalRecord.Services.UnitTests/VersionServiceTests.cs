@@ -23,7 +23,7 @@ namespace PersonalRecord.Services.UnitTests
 
             // act
             var numerString = appVersion[START_INDEX_FOR_NUMBER].ToString();
-            var isInt = int.TryParse(numerString, out var number);
+            var isInt = int.TryParse(numerString, out _);
 
             // assert
             Assert.True(isInt, $"The version info '{appVersion}' should start with a number");
@@ -90,7 +90,7 @@ namespace PersonalRecord.Services.UnitTests
 
             // act
             var numberString = informationalVersion[0].ToString();
-            var isInt = int.TryParse(numberString, out var number);
+            var isInt = int.TryParse(numberString, out _);
             var containsPlus = informationalVersion.Contains(PLUS);
 
             // assert
