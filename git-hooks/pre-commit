@@ -10,4 +10,14 @@ if git diff --cached --name-only | grep -q "$PROTECTED_FILE"; then
     exit 1
 fi
 
+# SyncfusionVersion license key reminder
+BUILD_PROPS_FILE="src/Directory.Build.props"
+
+if git diff --cached --name-only | grep -q "$BUILD_PROPS_FILE"; then
+    if git diff --cached "$BUILD_PROPS_FILE" | grep -E "\+.*<SyncfusionVersion>.*</SyncfusionVersion>"; then
+        echo "WARNING: The SyncfusionVersion in $BUILD_PROPS_FILE has been updated."
+        echo "If a new major version of Syncfusion is being used, ensure the Syncfusion license key is updated in the GitHub Action."
+    fi
+fi
+
 exit 0
