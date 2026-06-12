@@ -1,5 +1,6 @@
 - [Description](#description)
 - [Documentation](#documentation)
+- [Hooks](#hooks)
 - [Icons](#icons)
 - [Branches](#branches)
   - [Version](#version)
@@ -25,6 +26,16 @@ You are welcome to participate in the development of this tool, in this file som
 
 # Documentation
 If changes are made to the interface or functionality, the screenshots and documentation should also be updated.
+
+# Hooks
+To ensure warnings appear when changes are made to specific files (e.g., to prevent committing sensitive files or forgetting dependent updates), configure the Git hooks for this project.
+
+Run the following command to set up the hooks for this repository:
+
+`git config core.hooksPath git-hooks`
+
+This configuration applies only to this project and ensures the hooks in the git-hooks/ directory are used automatically.
+
 
 # Icons
 To add new icons to the user interface, use the Material Design icons from Google Fonts.  They can be downloaded [here](https://fonts.google.com/icons) for free. Use the default settings and always download a dark and a light theme icon as an SVG file.
