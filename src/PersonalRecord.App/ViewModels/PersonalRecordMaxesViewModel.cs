@@ -16,10 +16,10 @@
         private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
-        private ObservableCollection<MovementRecord> _movementRecords;
+        public partial ObservableCollection<MovementRecord> MovementRecords { get; set; }
 
         [ObservableProperty]
-        private Setting _setting;
+        public partial Setting Setting { get; set; }
 
         public PersonalRecordMaxesViewModel(
             INavigationService navigationService,

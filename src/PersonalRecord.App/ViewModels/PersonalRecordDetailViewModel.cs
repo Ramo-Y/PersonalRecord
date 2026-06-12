@@ -18,16 +18,16 @@
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(SaveAndGoBackCommand))]
-        private Movement _selectedMovement;
+        public partial Movement SelectedMovement { get; set; }
 
         [ObservableProperty]
-        private ObservableCollection<Movement> _movements;
+        public partial ObservableCollection<Movement> Movements { get; set; }
 
         [ObservableProperty]
-        private MovementRecord _movementRecord;
+        public partial MovementRecord MovementRecord { get; set; }
 
         [ObservableProperty]
-        private Setting _setting;
+        public partial Setting Setting { get; set; }
 
         public PersonalRecordDetailViewModel(
             INavigationService navigationService,

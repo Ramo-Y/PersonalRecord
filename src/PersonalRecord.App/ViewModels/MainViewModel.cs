@@ -13,22 +13,22 @@
         private readonly ISettingsService _settingsService;
 
         [ObservableProperty]
-        private string _appVersion;
+        public partial string AppVersion { get; set; }
 
         [ObservableProperty]
-        private string _copyright;
+        public partial string Copyright { get; set; }
 
         [ObservableProperty]
-        private string _technology;
+        public partial string Technology { get; set; }
 
         [ObservableProperty]
-        private string _fullVersion;
+        public partial string FullVersion { get; set; }
 
         [ObservableProperty]
-        private string _buildDate;
+        public partial string BuildDate { get; set; }
 
         [ObservableProperty]
-        private bool _popupIsOpen;
+        public partial bool PopupIsOpen { get; set; }
 
         private readonly string _repositoryUrl;
 
