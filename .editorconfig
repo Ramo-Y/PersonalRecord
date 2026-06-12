@@ -1,0 +1,8 @@
+# Set default charset
+[*.{cs,sql,config,ts,html,css,js,json,md}]
+charset = utf-8
+
+[*.{cs,vb}]
+dotnet_naming_rule.interface_should_be_begins_with_i.severity = error
+dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
+dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
