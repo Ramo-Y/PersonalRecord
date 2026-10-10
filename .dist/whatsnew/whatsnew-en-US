@@ -1,2 +1,3 @@
 ﻿- Added new view for visual stats
 - Technical improvements and stability updates
+- Incread minimum supported Android version to Android 7.0 (API 24) to meet the current Google Play requirements
