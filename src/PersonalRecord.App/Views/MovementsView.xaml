@@ -57,6 +57,18 @@
                                              Background="{StaticResource TransparentBackground}"
                                              Command="{Binding Source={x:Reference dataGrid},Path=BindingContext.ConfirmEntryDeletionCommand}"
                                              CommandParameter="{Binding .}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroupList>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Disabled">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Background" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateGroupList>
+                                </VisualStateManager.VisualStateGroups>
                                 <button:SfButton.Content>
                                     <DataTemplate>
                                         <Image WidthRequest="20"
