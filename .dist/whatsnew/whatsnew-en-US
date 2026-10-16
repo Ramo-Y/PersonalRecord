@@ -1,4 +1,4 @@
-﻿- Added new view for visual stats
-- Technical improvements and stability updates
+﻿- Technical improvements and stability updates
 - Increased minimum supported Android version to Android 7.0 (API 24) to meet the current Google Play requirements
 - Fixed a visual issue where disabled delete buttons on the Movements screen displayed a gray background
+- Enhanced security and performance

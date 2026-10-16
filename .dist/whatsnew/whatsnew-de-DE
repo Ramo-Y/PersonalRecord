@@ -1,4 +1,4 @@
-﻿- Neue Ansicht für die visuelle Fortschrittsanzeige hinzugefügt
-- Technische Verbesserungen und Stabilitätsupdates
+﻿- Technische Verbesserungen und Stabilitätsupdates
 - Die Mindestversion für Android auf 7.0 (API 24) erhöht, um die aktuellen Google-Play-Anforderungen zu erfüllen
 - Ein Darstellungsproblem wurde behoben, bei dem deaktivierte Löschbuttons in der Bewegungsübersicht einen grauen Hintergrund hatten.
+- Verbesserte Sicherheit und Performance
